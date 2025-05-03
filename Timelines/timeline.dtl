@@ -1,0 +1,82 @@
+Introdução (placeholder)
+[background arg="res://Fundos/pesadeloCozinha.png" fade="1.0"]
+[wait time="1.0"]
+join Chef center [animation="Slide In Up" wait="true"]
+Chef: Ok. Tá tudo no lugar. As mesas estão limpinhas, os talheres reluzentes, a ratoeira da despensa tá armada…
+Chef: O banheiro tá bonitinho também. Muito importante. Dá pra julgar bem a qualidade de um restaurante pelo quão bem mantido e confortável o banheiro é. Pelo menos é o que minha mãe dizia.
+Chef: Putz. Ela chegou.
+Chef: Meu Deus ela é mais alta do que eu estava esperando... Se ela ficar muito irritada ela vai me arremessar pela janela?
+Chef: Ok, calma. Respira.
+Chef: É importante ter uma boa primeira impressão. Vamos lá.
+leave Chef [animation="Zoom Out" wait="true"]
+[wait time="1.0"]
+join Aliane leftmost [animation="Fade In" length="2.0" wait="true" mirrored="true"]
+Aliane: Olá.
+join Chef right [animation="Slide In Right" wait="true"]
+Chef: GOSTARIA DE VISITAR O BANHEIRO, MADAME????????????
+Aliane: ......Como disse?
+Chef: Eu disse "Boas vindas madame, como posso servi-la?"
+Chef: (EU VOU ENFIAR MINHA LÍNGUA ENORME NAQUELA RATOEIRA DEPOIS DESSA???)
+Aliane: Hm. Olá.
+Aliane: Me disseram que esse restaurante é digno o bastante para receber uma resenha da Elf's Digest.
+Aliane: Assumo que tenha recebido a carta da revista com os detalhes do nosso processo.
+Chef: Sim sim! Li com todo o cuidado do mundo. Estou ciente de como vocês são rigorosos nas avaliações.
+Chef: Também estou ciente das… consequências de uma resenha negativa.
+Aliane: Excelente. Bom, pode começar.
+Chef: ....Erm... Você tem um prato em mente?
+Aliane: Ah, me surpreenda.
+Chef: Como é?
+Chef: Eu tô confuso, isso tava na carta? Como que eu perdi isso?
+Aliane: Ah, não se preocupe, a carta deu toda informação que você precisa. Essa é uma das minhas marcas registradas como crítica de restaurantes.
+Aliane: Eu não escolho a comida. VOCÊ que escolhe o que melhor representa seu estabelecimento.
+Aliane: Aí eu consumo e avalio.
+Chef: Ah mas... você tem algo que gosta, ou não gosta?
+Aliane dá uma risadinha curta e discreta.
+Aliane: Eu gosto de comida boa. Eu não gosto de comida ruim.
+Aliane: Minhas convicções e meus gostos são rígidos. É dessa forma que eu formei minha fama.
+Chef: Hahahaha claro!!!! Eu super entendo!!!
+Chef: (DO QUE ELA TÁ FALANDO?? QUE JEITO É ESSE DE ANALISAR??)
+Chef: (Eu preciso entender o gosto culinário dela antes de fazer qualquer coisa.)
+Chef: Então, uhhhh…
+Chef: De que tipo de livros você gosta?
+Aliane: …Explique-se.
+Chef: Então, da mesma forma que você tem uma marca registrada em suas análises, nós também temos nosso método próprio de deixar a experiência de nossos clientes mais autêntica e uhhh… avant-garde.
+Chef: (Onde que eu li essa palavra mesmo? Espero ter usado ela corretamente)
+Chef: Basicamente, eu pergunto coisas sobre você e nós usamos o que aprendemos para fazer o melhor prato possível!
+Aliane: Hm. Isso me parece terapia.
+Aliane: Eu não sou fã de terapia, para a sua informação.
+Aliane: Apesar de que eu já fui descrita como uma pessoa desesperadamente em necessidade de ajuda psicológica.
+Aliane: Foi o que meu ex-marido disse, pelo menos.
+Aliane: E minha ex-esposa.
+Aliane: E a ex-amante com quem eu traí meu primeiro marido e que se tornou minha segunda esposa, até o dia que ela descobriu o meu caso com a mulher que iria se tornar minha terceira ex-esposa e pediu o divórcio.
+Aliane: …
+Aliane: Tá, eu vou engajar com o seu esqueminha, duende.
+Chef: (Uau. Ela é complicada.)
+Chef: (Ela tem tantas bandeiras vermelhas que eu consigo imaginar umas 4 amigas minhas se apaixonando por ela.)\
+
+- Que tipo de prato você gosta?
+	Chef: Que tipo de prato você gosta?
+	Aliane: Olha, eu sei que você criou toda essa historinha para desviar da minha política de não pedir diretamente por um prato.
+	Aliane: Eu entreti sua ideia. O mínimo que você pode fazer é seguir com ela até o fim.
+	Chef: (Não custava tentar, né)
+- Há quanto tempo você trabalha como crítica de restaurantes?
+	Chef: Então, Elf’s Digest…
+	Chef: Revista importante. Eu ouvia falar dela dos meus parentes que viajavam mundo afora, mas nunca li uma edição até me mudar para Balsas.
+	Chef: Quanto tempo você trabalha lá?
+	Aliane: Eu sou uma das fundadoras dela, na verdade.\
+
+	Chef: AH… EU… NÃO SABIA…
+	Chef: (Eu não acerto UMA dentro com ela né?)
+	Aliane: Eu comando a seção de culinária desde o início, faz sentido que eu seja mais reconhecida por isso do que qualquer outra função que já cumpri por lá.
+	Aliane: Hoje em dia temos vários especialistas lidando com restaurantes, mas eu gosto de colocar a mão na massa vez ou outra.
+	Aliane: Em especial com estabelecimentos tão promissores.
+	Chef: Obrigado…?
+	Aliane: Não precisa agradecer!
+	Aliane: Afinal…
+	Aliane: Você não sabe ainda se isso é uma benção ou uma maldição.
+- (Fale sobre a última edição da Elf’s Digest que você leu)
+	Chef: fim
+leave Chef
+leave Aliane
+[wait time="1.0"]
+Chef: fim
