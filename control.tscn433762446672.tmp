@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqvxp5khj1603"]
+
+[ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://h_box_container.gd" id="1_62e2m"]
+[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://card.tscn" id="2_qtu10"]
+[ext_resource type="Script" uid="uid://dx816lirjjiyd" path="res://button.gd" id="3_qtu10"]
+
+[sub_resource type="Curve" id="Curve_62e2m"]
+_data = [Vector2(0, 0), 0.0, 6.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_qtu10"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -140.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_62e2m")
+hand_curve = SubResource("Curve_62e2m")
+rotation_curve = SubResource("Curve_qtu10")
+
+[node name="card" parent="HBoxContainer" instance=ExtResource("2_qtu10")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 36.0
+offset_right = 168.0
+offset_bottom = 94.0
+text = "Compra"
+script = ExtResource("3_qtu10")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://dw2ivxg04id6"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_el1c3"]
+[ext_resource type="Resource" uid="uid://ruwghi58qjew" path="res://Cartas Extras/BifeDragaoAssado.tres" id="1_vdaph"]
+
+[resource]
+script = ExtResource("1_el1c3")
+nome = "Bife de Dragão"
+custo = "3"
+ingrediente = true
+is_processo = false
+desc = "+ 200 Sabor"
+on_fogo = ExtResource("1_vdaph")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "200"
+}])
+tags = Array[String](["Picante", "Umami"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

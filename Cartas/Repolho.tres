@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://fbokkynfiwtx"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_vhjy1"]
+
+[resource]
+script = ExtResource("2_vhjy1")
+nome = "Repolho Carnívoro"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "O próximo ingrediente suave tem o efeito dobrado"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "prox_ingrediente_double",
+"parametro": "Suave"
+}])
+tags = Array[String](["Crocante", "Refrescante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

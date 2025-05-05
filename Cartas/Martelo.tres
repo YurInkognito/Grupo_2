@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://dsro6eg4abb33"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_msfty"]
+
+[resource]
+script = ExtResource("2_msfty")
+nome = "martelo"
+custo = "1"
+ingrediente = false
+is_processo = true
+desc = "Amassa um ingrediente."
+efeitos_ao_jogar = Array[Dictionary]([])
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

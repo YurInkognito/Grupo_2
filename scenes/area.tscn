@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6gka6rawpuf5"]
+
+[ext_resource type="Script" uid="uid://dqjqx5rciawal" path="res://scripts/area.gd" id="1_bb12l"]
+
+[node name="Area" type="ColorRect" groups=["area"]]
+offset_right = 96.0
+offset_bottom = 145.0
+script = ExtResource("1_bb12l")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 25.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "Colocar"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "Lixo"

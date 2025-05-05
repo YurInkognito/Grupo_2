@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://d33a6hjtj6qp1"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_b607k"]
+
+[resource]
+script = ExtResource("1_b607k")
+nome = "Fatia de Queijo"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "+ 50 Sabor para cada queijo no prato"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor_queijo",
+"parametro": "50"
+}])
+tags = Array[String](["Suave"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

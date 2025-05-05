@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://cy45h8bh2tk3y"]
+
+[ext_resource type="Resource" uid="uid://dw2ivxg04id6" path="res://Cartas Extras/BifeDragao.tres" id="1_cm8au"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_n0qj2"]
+[ext_resource type="Resource" uid="uid://b5ecfwdf2avb1" path="res://Cartas Extras/DragaoAssado.tres" id="2_kmimm"]
+
+[resource]
+script = ExtResource("1_n0qj2")
+nome = "Carne de Dragão"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "+ 100 Sabor"
+on_faca = ExtResource("1_cm8au")
+on_fogo = ExtResource("2_kmimm")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "100"
+}])
+tags = Array[String](["Umami", "Picante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

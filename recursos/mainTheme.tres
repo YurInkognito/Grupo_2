@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://df8vawwr24ekp"]
+
+[ext_resource type="Texture2D" uid="uid://fi1sjnq836ut" path="res://sprites/carta template.png" id="1_re4k2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rs583"]
+texture = ExtResource("1_re4k2")
+region_rect = Rect2(11.0247, 3.0116, 95.7912, 145.044)
+
+[resource]
+default_font_size = 32
+Panel/styles/panel = SubResource("StyleBoxTexture_rs583")

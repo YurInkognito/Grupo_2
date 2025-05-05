@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://dttv4mvwr0ddf"]
+
+[ext_resource type="Resource" uid="uid://dsbbapn3q68i7" path="res://Cartas Extras/GeleiaDeSlime.tres" id="1_r3s45"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_wewdb"]
+
+[resource]
+script = ExtResource("2_wewdb")
+nome = "Slime"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Compra uma carta"
+on_martelo = ExtResource("1_r3s45")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "compra",
+"parametro": null
+}])
+tags = Array[String](["Acido"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

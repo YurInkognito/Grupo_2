@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://0qcufjffbvji"]
+
+[ext_resource type="Resource" uid="uid://bu04lxno7pmbo" path="res://Cartas Extras/PaoCortadoTorrado.tres" id="1_c8jag"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_s8uyv"]
+
+[resource]
+script = ExtResource("1_s8uyv")
+nome = "Fatia de Pão"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "orna seu prato um sanduiche"
+on_fogo = ExtResource("1_c8jag")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "set_sanduiche",
+"parametro": ""
+}])
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

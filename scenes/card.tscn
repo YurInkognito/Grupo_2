@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdb53ws7fnxt"]
+
+[ext_resource type="Theme" uid="uid://df8vawwr24ekp" path="res://recursos/mainTheme.tres" id="1_6u4wf"]
+[ext_resource type="Script" uid="uid://dku8lmad88ej1" path="res://scripts/card.gd" id="2_ktuci"]
+
+[node name="card" type="Panel"]
+custom_minimum_size = Vector2(96, 145)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1056.0
+offset_bottom = -503.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 140)
+theme = ExtResource("1_6u4wf")
+script = ExtResource("2_ktuci")
+nome_t = "sal"
+desc_t = "+ 40 sabor"
+custo_t = "1"
+
+[node name="nome" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 18.0
+offset_top = 66.0
+offset_right = 85.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "nome"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="custo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_right = -6.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "2"
+horizontal_alignment = 2
+
+[node name="desc" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 20.0
+offset_right = -8.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "faz tal coisa quando x acontece"
+horizontal_alignment = 1
+autowrap_mode = 3

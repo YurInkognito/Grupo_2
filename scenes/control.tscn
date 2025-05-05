@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqvxp5khj1603"]
+
+[ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
+[ext_resource type="PackedScene" uid="uid://b6gka6rawpuf5" path="res://scenes/area.tscn" id="2_ee4bf"]
+[ext_resource type="Script" uid="uid://br48pt7hvca12" path="res://scripts/prato.gd" id="5_kbped"]
+[ext_resource type="Script" uid="uid://bthh1smrkpqte" path="res://scenes/decartes.gd" id="6_lpubu"]
+[ext_resource type="PackedScene" uid="uid://x7x12d0x8njs" path="res://scenes/info.tscn" id="6_lt2xq"]
+
+[sub_resource type="Curve" id="Curve_62e2m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_qtu10"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_kbped"]
+_data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_fj5cn"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, -1), -6.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tjwpk"]
+size = Vector2(10, 10)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtu10")
+
+[node name="Area de areas" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -70.0
+offset_right = 250.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Area" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+layout_mode = 0
+
+[node name="Area2" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -72.5
+offset_right = 48.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Area3" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -72.5
+offset_right = 0.0
+offset_bottom = 72.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="hand" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -140.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.164706)
+script = ExtResource("1_62e2m")
+hand_curve = SubResource("Curve_62e2m")
+rotation_curve = SubResource("Curve_qtu10")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 580.0
+offset_right = 107.0
+offset_bottom = 634.0
+text = "Terminar Turno"
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 15.0
+offset_right = 1132.0
+offset_bottom = 73.0
+text = "RESET"
+
+[node name="prato" type="ColorRect" parent="." groups=["area_final"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 140.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.164706)
+script = ExtResource("5_kbped")
+hand_curve = SubResource("Curve_kbped")
+rotation_curve = SubResource("Curve_fj5cn")
+
+[node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_bottom = 125.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_tjwpk")
+script = ExtResource("6_lpubu")
+
+[node name="deck" type="Node2D" parent="."]
+position = Vector2(1066, 578)
+
+[node name="Info" parent="." instance=ExtResource("6_lt2xq")]
+layout_mode = 1
+offset_top = -280.0
+offset_bottom = 232.0
+
+[node name="mana_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 587.0
+offset_right = 165.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 32
+text = "5"
+horizontal_alignment = 1

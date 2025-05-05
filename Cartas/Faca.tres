@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://dl7exv81i0d60"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_n6528"]
+
+[resource]
+script = ExtResource("1_n6528")
+nome = "faca"
+custo = "1"
+ingrediente = false
+is_processo = true
+desc = "Corta um ingrediente."
+efeitos_ao_jogar = Array[Dictionary]([])
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

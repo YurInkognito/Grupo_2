@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://bu04lxno7pmbo"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_dsabu"]
+
+[resource]
+script = ExtResource("1_dsabu")
+nome = "Bife de Dragão"
+custo = "2"
+ingrediente = false
+is_processo = false
+desc = "+ 200 Sabor"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "mostrar_mensagem",
+"parametro": "teste"
+}])
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

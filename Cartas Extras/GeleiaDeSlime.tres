@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://dsbbapn3q68i7"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_qr2nd"]
+
+[resource]
+script = ExtResource("1_qr2nd")
+nome = "Geleia de Slime"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "+ 20 Sabor para cada Umami e Picante"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor_tag",
+"parametro": ["20", "Picante"]
+}, {
+"funcao": "add_sabor_tag",
+"parametro": ["20", "Umami"]
+}])
+tags = Array[String](["Acido"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"
