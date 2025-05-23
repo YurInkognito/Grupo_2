@@ -8,10 +8,12 @@ nome = "Fatia de Queijo"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "+ 50 Sabor para cada queijo no prato"
+desc = "+ 70 Sabor para cada queijo no prato"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_queijo",
-"parametro": "50"
+"parametro": "70"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Suave"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

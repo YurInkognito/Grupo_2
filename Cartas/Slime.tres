@@ -15,5 +15,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "compra",
 "parametro": null
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

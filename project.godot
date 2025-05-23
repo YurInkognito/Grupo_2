@@ -18,6 +18,7 @@ config/icon="res://recursos/icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalData="*res://scripts/global_data.gd"
 
 [dialogic]
 

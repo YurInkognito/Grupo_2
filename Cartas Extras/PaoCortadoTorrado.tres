@@ -4,14 +4,16 @@
 
 [resource]
 script = ExtResource("1_dsabu")
-nome = "Bife de Dragão"
-custo = "2"
-ingrediente = false
+nome = "Pão Tostado"
+custo = "3"
+ingrediente = true
 is_processo = false
-desc = "+ 200 Sabor"
+desc = "Torna seu prato um sanduiche"
 efeitos_ao_jogar = Array[Dictionary]([{
-"funcao": "mostrar_mensagem",
-"parametro": "teste"
+"funcao": "set_sanduiche",
+"parametro": ""
 }])
-tags = Array[String]([])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Crocante"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

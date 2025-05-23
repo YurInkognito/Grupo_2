@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://5yp4p727e341"]
+
+[ext_resource type="Resource" uid="uid://nite8oikyplp" path="res://Cartas Extras/FoguitoPicado.tres" id="1_bx73c"]
+[ext_resource type="Resource" uid="uid://2p3fu0dfjjo8" path="res://Cartas Extras/FoguitoQueimado.tres" id="2_fhpd8"]
+[ext_resource type="Resource" uid="uid://ybi8h5xxtutq" path="res://Cartas Extras/PateFoguito.tres" id="3_4jyl6"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_fhpd8"]
+
+[resource]
+script = ExtResource("3_fhpd8")
+nome = "Foguito"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Quando processado, adicione uma carta fogo na mão"
+on_faca = ExtResource("1_bx73c")
+on_fogo = ExtResource("2_fhpd8")
+on_martelo = ExtResource("3_4jyl6")
+efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_processar = Array[Dictionary]([{
+"funcao": "bota_na_mao",
+"parametro": "fogo"
+}])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Picante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

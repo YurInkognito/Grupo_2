@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://d3qcwraht7lw6"]
+
+[ext_resource type="Resource" uid="uid://bhv1yqugtj2vd" path="res://Cartas Extras/Laminetas.tres" id="1_362wo"]
+[ext_resource type="Resource" uid="uid://cbb14lwlp20fn" path="res://Cartas Extras/Couve-Frita.tres" id="2_pb6i5"]
+[ext_resource type="Resource" uid="uid://cfvcsd0y84rhj" path="res://Cartas Extras/PastaCouve.tres" id="3_g488v"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_pb6i5"]
+
+[resource]
+script = ExtResource("3_pb6i5")
+nome = "Couve Afiada"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Quando processada, adicione uma carta faca na mão"
+on_faca = ExtResource("1_362wo")
+on_fogo = ExtResource("2_pb6i5")
+on_martelo = ExtResource("3_g488v")
+efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_processar = Array[Dictionary]([{
+"funcao": "bota_na_mao",
+"parametro": "faca"
+}])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Acido"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

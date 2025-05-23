@@ -8,10 +8,12 @@ nome = "Dragão Assado"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "+ 200 Sabor"
+desc = "+ 100 Sabor"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
-"parametro": "200"
+"parametro": "100"
 }])
-tags = Array[String](["Picante", "Umami"])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Picante", "Umami", "Picante"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://brsrfrl3ue7l6"]
+
+[ext_resource type="Resource" uid="uid://c7vg3vfvwaoyi" path="res://Cartas Extras/PicadinhoInfinito.tres" id="1_lgtsh"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_as0tl"]
+
+[resource]
+script = ExtResource("3_as0tl")
+nome = "Algas Infinitas"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "\"Não parecem tão infinitas\""
+on_faca = ExtResource("1_lgtsh")
+efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Umami", "Suave"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

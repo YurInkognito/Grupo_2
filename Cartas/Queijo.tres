@@ -9,11 +9,16 @@ nome = "Queijo"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+ 20 Sabor para cada queijo no prato"
+desc = "+ 100 Sabor se o prato é uma sopaqueijo no prato"
 on_faca = ExtResource("1_8q2v6")
 efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor_prato",
+"parametro": ["100", "Sopa"]
+}, {
 "funcao": "add_sabor_queijo",
-"parametro": "20"
+"parametro": "0"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Suave"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

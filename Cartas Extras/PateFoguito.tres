@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://ybi8h5xxtutq"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_hecp2"]
+
+[resource]
+script = ExtResource("2_hecp2")
+nome = "Patê de Foguito"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "\"Não passe a mão no olho!\""
+efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Picante", "Picante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

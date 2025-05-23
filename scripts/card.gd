@@ -62,8 +62,9 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 	
 
 func end_drag():
-	print("enddrag")
+	print("enddrag card")
 	if is_played:
+		print('played')
 		var drop_area = get_drop_area(false)
 		if drop_area:
 			if drop_area.prato:
@@ -77,9 +78,10 @@ func end_drag():
 			position = Vector2(0.0, 0.0)
 			
 	else:
+		print('teste')
 		# Verifica se foi solta em uma área válida
 		var drop_area = get_drop_area(true)
-		if drop_area and drop_area.can_accept_card() and !card_data.is_processo:
+		if drop_area and drop_area.can_accept_card(self) and !card_data.is_processo:
 			is_dragging = false
 			is_played = true
 			play_card(drop_area)
@@ -108,6 +110,7 @@ func get_drop_area(from_hand: bool) -> Control:
 	return null
 
 func play_card(play_area: Control):
+	print("card playing")
 	is_in_hand = false
 	is_playable = false
 	play_area.drop_card(self)
@@ -130,3 +133,32 @@ func _process(delta):
 	if is_dragging:
 		# Atualiza posição mantendo o offset do clique
 		position = get_global_mouse_position() + drag_offset
+
+func on_efeito_carta_on_board():
+	print("vi processo")
+	print(card_data.nome)
+	for efeito in card_data.efeitos_on_board:
+		if efeito.has("funcao") && is_played && has_method(efeito["funcao"]):
+			var funcao_nome = efeito["funcao"]
+			var parametro = efeito.get("parametro") # get para lidar com parâmetros opcionais
+			if parametro is Array:
+				match parametro.size():
+					1:
+						call(funcao_nome, parametro[0])
+					2:
+						call(funcao_nome, parametro[0], parametro[1])
+					3:
+						call(funcao_nome, parametro[0], parametro[1], parametro[2])
+			elif parametro:
+				print(parametro)
+				call(funcao_nome, parametro)
+			else:
+				call(funcao_nome)
+		else:
+			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", card_data.nome, "'.")
+
+#funcoes on board
+
+func bota_na_mao(carta: String):
+	print("botando na mao")
+	$"../../..".bota_na_mao(carta)

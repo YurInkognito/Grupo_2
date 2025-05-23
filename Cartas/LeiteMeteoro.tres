@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://davivv61mw4ju"]
+
+[ext_resource type="Resource" uid="uid://b73bstehe4gcg" path="res://Cartas Extras/CarameloMeteoro.tres" id="1_p52cr"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_j2lsk"]
+
+[resource]
+script = ExtResource("3_j2lsk")
+nome = "Leite de Meteoro"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Define prato como *Sopa*"
+on_fogo = ExtResource("1_p52cr")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "set_sopa",
+"parametro": ""
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Suave"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjx5i6vqq1ccp"]
+
+[ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scenes/tela_resultado.gd" id="1_7plcf"]
+[ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="1_t2gs0"]
+
+[node name="TelaResultado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7plcf")
+
+[node name="AlianeButolane-1" type="Sprite2D" parent="."]
+position = Vector2(851, 521)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_t2gs0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 0.484375
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sabor" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297491
+anchor_top = 0.121914
+anchor_right = 0.704301
+anchor_bottom = 0.219136
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Sabor: 430"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Prato" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297491
+anchor_top = 0.219136
+anchor_right = 0.704301
+anchor_bottom = 0.316358
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Prato: x4"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cliente" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297491
+anchor_top = 0.316358
+anchor_right = 0.704301
+anchor_bottom = 0.41358
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Cliente: x2"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Resultado" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.270609
+anchor_top = 0.459877
+anchor_right = 0.732975
+anchor_bottom = 0.635802
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 83
+text = "$ 2580"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Estrelas" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112903
+anchor_top = 0.635802
+anchor_right = 0.890681
+anchor_bottom = 1.0571
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "* * *"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Secret" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.105101
+anchor_right = 0.473939
+anchor_bottom = 0.105101
+offset_top = 108.894
+offset_right = -0.457947
+offset_bottom = 218.894
+rotation = -0.785398
+theme_override_colors/font_color = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+theme_override_font_sizes/font_size = 80
+text = "Secret!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.555556
+anchor_top = 0.733025
+anchor_right = 0.952257
+anchor_bottom = 0.953704
+metadata/_edit_use_anchors_ = true
+
+[node name="Fala" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0459519
+anchor_top = 0.19
+anchor_right = 0.95186
+anchor_bottom = 0.81
+offset_top = -7.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 20
+text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 599.0
+offset_right = 540.0
+offset_bottom = 636.0
+text = "Menu"

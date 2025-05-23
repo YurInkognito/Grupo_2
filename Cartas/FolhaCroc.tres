@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cnfr6rao5a251"]
+
+[ext_resource type="Resource" uid="uid://cqfcw8m2jv4qt" path="res://Cartas Extras/TorraoCroc.tres" id="1_nmast"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_8h115"]
+
+[resource]
+script = ExtResource("3_8h115")
+nome = "Folhas Croc-Croc"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "Duplica carta seguinte de Tag Crocante"
+on_fogo = ExtResource("1_nmast")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "prox_ingrediente_double",
+"parametro": "Crocante"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Crocante", "Refrescante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

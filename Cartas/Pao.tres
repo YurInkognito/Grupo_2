@@ -9,11 +9,13 @@ nome = "Pão"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+10 Sabor"
+desc = "+20 Sabor"
 on_faca = ExtResource("1_ebg76")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
-"parametro": "10"
+"parametro": "20"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String]([])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

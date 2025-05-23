@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://mviei1r1rh42"]
+
+[ext_resource type="Script" uid="uid://h6w0s7frphxg" path="res://scripts/info_tags.gd" id="1_382fk"]
+
+[node name="Info_tags" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 44.0
+offset_right = 70.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_382fk")
+
+[node name="Acido" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Acido: 0"
+
+[node name="Crocante" type="Label" parent="."]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 43.0
+text = "Crocante: 0"
+
+[node name="Picante" type="Label" parent="."]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 75.0
+offset_bottom = 63.0
+text = "Picante: 0"
+
+[node name="Refrescante" type="Label" parent="."]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 75.0
+offset_bottom = 83.0
+text = "Refrescante: 0"
+
+[node name="Suave" type="Label" parent="."]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 75.0
+offset_bottom = 103.0
+text = "Suave: 0"
+
+[node name="Umami" type="Label" parent="."]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 75.0
+offset_bottom = 123.0
+text = "Suave: 0"

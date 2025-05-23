@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://cfvcsd0y84rhj"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_1dy60"]
+
+[resource]
+script = ExtResource("2_1dy60")
+nome = "Pasta-Couve"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "\"O martelo passa bem\""
+efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Acido", "Acido"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

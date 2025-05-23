@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cqfcw8m2jv4qt"]
+
+[ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas Extras/FarofaCroc.tres" id="1_2c6p8"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_s02wq"]
+
+[resource]
+script = ExtResource("2_s02wq")
+nome = "Torrão Croc-Croc"
+custo = "3"
+ingrediente = true
+is_processo = false
+desc = "'+100 de Sabor, ? (falta valor de 1 de mana)"
+on_martelo = ExtResource("1_2c6p8")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "100"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Crocante", "Crocante"])
+metadata/_custom_type_script = "uid://bemxb877oehdb"

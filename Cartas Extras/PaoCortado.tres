@@ -9,11 +9,13 @@ nome = "Fatia de Pão"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "orna seu prato um sanduiche"
+desc = "Torna seu prato um sanduiche"
 on_fogo = ExtResource("1_c8jag")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "set_sanduiche",
 "parametro": ""
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String]([])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

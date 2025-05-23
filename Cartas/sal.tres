@@ -8,10 +8,12 @@ nome = "Sal"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "Todos os proximos ingredientes tem sabor x1.5"
+desc = "Multiplica cada ingrediente futuro por 1,2"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "sal_mult",
-"parametro": "1.5"
+"parametro": "1.2"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
 tags = Array[String]([])
 metadata/_custom_type_script = "uid://bemxb877oehdb"
