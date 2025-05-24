@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wcyiwsewyu3t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 604.0
+offset_right = 69.0
+offset_bottom = 635.0
+text = "<<<< "

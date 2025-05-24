@@ -9,3 +9,11 @@ func _on_botao_cutscene_pressed() -> void:
 	
 func _on_botao_sair_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_botao_config_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/config.tscn")
+
+
+func _on_botao_creditos_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

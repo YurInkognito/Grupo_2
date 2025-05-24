@@ -50,6 +50,14 @@ layout_mode = 2
 text = "Cutscene"
 script = ExtResource("1_bp1iq")
 
+[node name="BotaoConfig" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="BotaoCreditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Créditos"
+
 [node name="BotaoSair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
@@ -57,4 +65,6 @@ text = "Sair"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoConfig" to="." method="_on_botao_config_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
