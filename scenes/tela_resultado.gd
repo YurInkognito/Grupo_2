@@ -39,7 +39,7 @@ func _ready() -> void:
 		estrelas_value = 3
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
-	if cliente_value == 4:
+	if cliente_value == 3:
 		labels.append(secret)
 	
 	fala.text = $"/root/GlobalData".gera_fala(1,estrelas_value)

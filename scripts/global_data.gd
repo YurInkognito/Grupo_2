@@ -23,10 +23,10 @@ func gera_fala(fase, nota):
 	match fase:
 		1:
 			match nota:
-				0: return "Era pra eu ter sentido alguma coisa?"
-				1: return "Minha família me ensinou a não criar espectativas..."
-				2: return "Insuportavel! Do jeito que minha mãe fazia... Obrigada pela refeição anão"
-				3: return "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
+				0: return "Era... Era pra eu ter sentido alguma coisa?"
+				1: return "Bom, com certeza já comi pratos piores. Já comi melhores, também."
+				2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
+				3: return "Já consigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
 
 func critico_1_nota():
 	var suave = tags_final.count("Suave")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mviei1r1rh42"]
+[gd_scene load_steps=3 format=3 uid="uid://mviei1r1rh42"]
 
 [ext_resource type="Script" uid="uid://h6w0s7frphxg" path="res://scripts/info_tags.gd" id="1_382fk"]
+[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5png.png" id="2_72x41"]
 
 [node name="Info_tags" type="Panel"]
 anchors_preset = 8
@@ -56,3 +57,23 @@ offset_top = 100.0
 offset_right = 75.0
 offset_bottom = 123.0
 text = "Suave: 0"
+
+[node name="Tag5Png" type="Sprite2D" parent="."]
+position = Vector2(12.5, 12.5)
+texture = ExtResource("2_72x41")
+
+[node name="Tag5Png2" type="Sprite2D" parent="."]
+position = Vector2(24.5, 12.5)
+texture = ExtResource("2_72x41")
+
+[node name="Tag5Png3" type="Sprite2D" parent="."]
+position = Vector2(36.5, 12.5)
+texture = ExtResource("2_72x41")
+
+[node name="Tag5Png4" type="Sprite2D" parent="."]
+position = Vector2(48.5, 12.5)
+texture = ExtResource("2_72x41")
+
+[node name="Tag5Png5" type="Sprite2D" parent="."]
+position = Vector2(60.5, 12.5)
+texture = ExtResource("2_72x41")

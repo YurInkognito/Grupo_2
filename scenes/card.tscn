@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhdb53ws7fnxt"]
+[gd_scene load_steps=11 format=3 uid="uid://dhdb53ws7fnxt"]
 
 [ext_resource type="Theme" uid="uid://df8vawwr24ekp" path="res://recursos/mainTheme.tres" id="1_6u4wf"]
 [ext_resource type="Script" uid="uid://dku8lmad88ej1" path="res://scripts/card.gd" id="2_ktuci"]
+[ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/carta12.png" id="3_ktuci"]
+[ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="3_we8pq"]
+[ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="4_4wvaf"]
+[ext_resource type="Texture2D" uid="uid://c0w5yrxnwobpp" path="res://sprites/TAGS/TAG3.png" id="5_u8dfr"]
+[ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4png.png" id="6_hpf3o"]
+[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5png.png" id="7_42b55"]
+[ext_resource type="Texture2D" uid="uid://l83ax324vd63" path="res://sprites/TAGS/TAG6png.png" id="8_xjciw"]
+[ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7png.png" id="9_54seb"]
 
 [node name="card" type="Panel"]
 custom_minimum_size = Vector2(96, 145)
@@ -18,6 +26,17 @@ script = ExtResource("2_ktuci")
 nome_t = "sal"
 desc_t = "+ 40 sabor"
 custo_t = "1"
+processo = ExtResource("3_we8pq")
+umami = ExtResource("4_4wvaf")
+refrescante = ExtResource("5_u8dfr")
+crocante = ExtResource("6_hpf3o")
+acido = ExtResource("7_42b55")
+picante = ExtResource("8_xjciw")
+suave = ExtResource("9_54seb")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(48, 72.25)
+texture = ExtResource("3_ktuci")
 
 [node name="nome" type="Label" parent="."]
 layout_mode = 1
@@ -44,6 +63,19 @@ theme_override_font_sizes/font_size = 16
 text = "2"
 horizontal_alignment = 2
 
+[node name="tags" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_right = 0.760417
+anchor_bottom = 0.158621
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Refrescante"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="desc" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 14
@@ -62,3 +94,18 @@ theme_override_font_sizes/font_size = 9
 text = "faz tal coisa quando x acontece"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Tag3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(38.5, 14.25)
+texture = ExtResource("3_we8pq")
+
+[node name="Tag2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(26.5, 14.25)
+texture = ExtResource("3_we8pq")
+
+[node name="Tag1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(14.5, 14.25)
+texture = ExtResource("3_we8pq")

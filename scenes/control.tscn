@@ -259,6 +259,7 @@ offset_right = -1527.0
 offset_bottom = -275.0
 
 [node name="Tutorial" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -268,12 +269,13 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 0, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.445313
-anchor_top = 0.217593
-anchor_right = 0.555556
-anchor_bottom = 0.334877
+anchor_left = 0.869792
+anchor_top = 0.743827
+anchor_right = 0.980035
+anchor_bottom = 0.861111
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -287,7 +289,7 @@ anchor_top = 0.0277778
 anchor_right = 0.827257
 anchor_bottom = 0.257716
 theme_override_font_sizes/font_size = 25
-text = "Arraste Seus ingredientes prontos para cá. Quando estiver satisfeito clique em Entregar! ao lado. Voce tem 5 turnos para acabar"
+text = "Este é seu prato, arraste ingredientes prontos para cá. As habilidades nas cartas são ativadas quando o ingrediente é colocado no prato. Quando estiver satisfeito clique em \"Entregar!\" ao lado. Voce tem 5 turnos para acabar."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -305,14 +307,15 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" type="Label" parent="Tutorial"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.282986
-anchor_top = 0.438272
+anchor_top = 0.391975
 anchor_right = 0.722222
-anchor_bottom = 0.609568
+anchor_bottom = 0.748457
 offset_bottom = -38.0
 theme_override_font_sizes/font_size = 25
-text = "Aqui é a sua area de trabalho, arraste ingredientes para cá. Voce pode processar eles"
+text = "Aqui é a sua area de trabalho, arraste ingredientes para cá. Tente usar cartas de processo neles. Alguns podem ser processados mais de uma vez."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -331,13 +334,61 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label7" type="Label" parent="Tutorial"]
-layout_mode = 0
-anchor_left = 0.0590278
-anchor_top = 0.307099
-anchor_right = 0.240451
-anchor_bottom = 0.537037
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0824653
+anchor_top = 0.351852
+anchor_right = 0.263888
+anchor_bottom = 1.10957
 theme_override_font_sizes/font_size = 25
-text = "Olhe aqui como está ficando o seu prato"
+text = "Olhe aqui como está ficando o seu prato.
+Suas tags são mostradas aqui."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Tutorial2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Tutorial2"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.869792
+anchor_top = 0.743827
+anchor_right = 0.980035
+anchor_bottom = 0.861111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Entendi!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="Tutorial2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.152778
+anchor_top = 0.117284
+anchor_right = 0.847222
+anchor_bottom = 0.919753
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 25
+text = "O prato que voce vai servir afeta o seu multiplicador em vermelho. Existem 3 tipos de prato em A La Carte:
+
+Sanduiche: Use uma fatia de pão para fazer um sanduiche, ele fica mais gostoso para cada tag diferente que seu prato possui.
+
+Sopa: Use leite para fazer uma sopa, ela fica mais gostosa quando você tem uma tag com pontos muito altos.
+
+Salada: Tenha 4 tags refrescantes no seu prato para fazer uma salada, ela fica mais gostosa quando se tem um grande conjunto de tags com o mesmo valor."
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

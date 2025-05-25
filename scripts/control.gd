@@ -5,6 +5,7 @@ extends Control
 @onready var button_2: Button = $Button2
 @onready var button_3: Button = $Button3
 @onready var button_tutorial: Button = $Tutorial/Button
+@onready var button_tutorial2: Button = $Tutorial2/Button
 
 @onready var mana_label: Label = $mana_label
 @onready var turno_label: Label = $turno_label
@@ -46,10 +47,12 @@ extends Control
 @export var sabor_Salada: int = 0
 
 func _ready() -> void:
+	$Tutorial.visible = true
 	button.pressed.connect(on_end_turn_pressed)
 	button_2.pressed.connect(reset_game)
 	button_3.pressed.connect(end_game)
 	button_tutorial.pressed.connect(close_tutorial)
+	button_tutorial2.pressed.connect(close_tutorial2)
 	mana = max_mana
 	
 	# gerenciamento de cartas
@@ -67,6 +70,10 @@ func _process(delta: float) -> void:
 
 func close_tutorial():
 	$Tutorial.visible = false
+	$Tutorial2.visible = true
+
+func close_tutorial2():
+	$Tutorial2.visible = false
 
 func on_draw_button_pressed(inicial: bool = true):
 	var card_data = null
@@ -256,6 +263,7 @@ func aplicar_efeitos_carta(carta: CartaData):
 		tipo_prato = "Salada"
 	pontuação_continua()
 	calculo_mult()
+	print(mult)
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
 	$"/root/GlobalData".set_mult(mult)
@@ -306,7 +314,7 @@ func calculo_mult():
 		'Prato': $Info.set_mult(1); mult = 1
 		'Sopa': $Info.set_mult(tags_prato.count(primario)); mult = tags_prato.count(primario)
 		'Sanduiche': $Info.set_mult(unicas.size()); mult = unicas.size()
-		'Salada': $Info.set_mult(maior_repeticao); mult = maior_repeticao
+		'Salada': $Info.set_mult(maior_repeticao); mult = 2 * maior_repeticao
 
 func jogar_carta(carta: CartaData):
 	print("Carta jogada:", carta.nome)

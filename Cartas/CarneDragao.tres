@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://cy45h8bh2tk3y"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://cy45h8bh2tk3y"]
 
 [ext_resource type="Resource" uid="uid://dw2ivxg04id6" path="res://Cartas Extras/BifeDragao.tres" id="1_cm8au"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_n0qj2"]
 [ext_resource type="Resource" uid="uid://b5ecfwdf2avb1" path="res://Cartas Extras/DragaoAssado.tres" id="2_kmimm"]
+[ext_resource type="Texture2D" uid="uid://cub31lkgtfqvs" path="res://sprites/CARTAS 21-05/carta5.png" id="4_4elhc"]
 
 [resource]
 script = ExtResource("1_n0qj2")
@@ -20,4 +21,5 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Umami", "Picante"])
+sprite = ExtResource("4_4elhc")
 metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://bu04lxno7pmbo"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bu04lxno7pmbo"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_dsabu"]
+[ext_resource type="Texture2D" uid="uid://dx4hwp6xmxwcx" path="res://sprites/CARTAS 21-05/carta3.png" id="2_uw8tk"]
 
 [resource]
 script = ExtResource("1_dsabu")
@@ -16,4 +17,5 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Crocante"])
+sprite = ExtResource("2_uw8tk")
 metadata/_custom_type_script = "uid://bemxb877oehdb"

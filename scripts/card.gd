@@ -9,12 +9,27 @@ const SIZE = Vector2(100, 140)
 @export var ingrediente_t: bool = false
 @export var card_data: CartaData
 
+@export var processo: Texture2D
+@export var umami: Texture2D
+@export var refrescante: Texture2D
+@export var crocante: Texture2D
+@export var acido: Texture2D
+@export var picante: Texture2D
+@export var suave: Texture2D
+
 @onready var control: ColorRect = $"../../ColorRect"
 @onready var prato: ColorRect = $"../../prato"
 
 @onready var nome: Label = $nome
 @onready var desc: Label = $desc
 @onready var custo: Label = $custo
+@onready var sprite: Sprite2D = $Bg
+@onready var tags: Label = $tags
+
+@onready var tag1: Sprite2D = $Tag1
+@onready var tag2: Sprite2D = $Tag2
+@onready var tag3: Sprite2D = $Tag3
+var lista_tags: Array[Sprite2D]
 
 var original_position: Vector2
 var original_size: Vector2
@@ -27,6 +42,7 @@ var is_played: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	lista_tags = [tag1,tag2,tag3]
 	nome.text = nome_t
 	desc.text = desc_t
 	custo.text = custo_t
@@ -40,6 +56,26 @@ func set_card(carta: CartaData) -> void:
 	custo_t = carta.custo
 	ingrediente_t = carta.ingrediente
 	card_data = carta
+	if carta.sprite:
+		nome.visible = false
+		sprite.texture = carta.sprite
+	var texto_tags = ''
+	var c = 0
+	if carta.is_processo:
+		lista_tags[c].texture = processo
+		lista_tags[0].visible = true
+	for t in carta.tags:
+		texto_tags = texto_tags + t + ' '
+		match t:
+			"Acido": lista_tags[c].texture = acido
+			"Crocante": lista_tags[c].texture = crocante
+			"Picante": lista_tags[c].texture = picante
+			"Refrescante": lista_tags[c].texture = refrescante
+			"Suave": lista_tags[c].texture = suave
+			"Umami": lista_tags[c].texture = umami
+		lista_tags[c].visible = true
+		c += 1
+	tags.text = texto_tags
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
