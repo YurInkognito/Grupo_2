@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://wcyiwsewyu3t"]
+
+[ext_resource type="Script" uid="uid://pkmrthqkxlpm" path="res://scripts/config.gd" id="1_duhc1"]
+
+[node name="Config" type="Control"]
+process_mode = 3
+z_index = 14
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = -1151.0
+offset_bottom = -650.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_duhc1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 184.0
+offset_right = 809.0
+offset_bottom = 479.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 452.0
+offset_bottom = 294.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Efeitos Sonoros"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Música"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="ButtonBack" type="Button" parent="Panel/VBoxContainer"]
+z_index = 12
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "VOLTAR"
+
+[connection signal="value_changed" from="Panel/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

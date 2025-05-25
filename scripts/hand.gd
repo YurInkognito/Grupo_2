@@ -4,6 +4,10 @@ extends Control
 const CARD = preload("res://scenes/card.tscn")
 signal card_drawn(card_node: Node2D)
 
+#Sons
+@onready var sfx_new_hand: AudioStreamPlayer2D = $"../SFXNewHand"
+@onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $"../SFXNewHandAlternate"
+
 @onready var control: Control = $".."
 
 @export var hand_curve: Curve

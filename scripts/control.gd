@@ -46,6 +46,13 @@ extends Control
 @export var sabor_Sanduiche: int = 0
 @export var sabor_Salada: int = 0
 
+#cena da config
+const CONFIG = preload("res://scenes/config.tscn")
+#sons
+@onready var sfx_new_hand: AudioStreamPlayer2D = $SFXNewHand
+@onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $SFXNewHandAlternate
+
+
 func _ready() -> void:
 	$Tutorial.visible = true
 	button.pressed.connect(on_end_turn_pressed)
@@ -54,7 +61,7 @@ func _ready() -> void:
 	button_tutorial.pressed.connect(close_tutorial)
 	button_tutorial2.pressed.connect(close_tutorial2)
 	mana = max_mana
-	
+	play_draw_sound()
 	# gerenciamento de cartas
 	#carregar_todas_as_cartas()
 	var novo_deck = gerar_deck()
@@ -125,6 +132,7 @@ func gastar_mana(custo: int):
 	mana = mana - custo
 
 func start_turn():
+	play_draw_sound()
 	turno = turno + 1
 	mana = max_mana
 	on_draw_button_pressed()
@@ -391,3 +399,15 @@ func mais_tag(vezes: String):
 
 func gera_mana(tag: String):
 	mana = mana + tags_prato.count(tag)
+
+
+func _on_config_button_pressed() -> void:
+	var config_instance = CONFIG.instantiate()
+	add_child(config_instance)
+
+func play_draw_sound():
+	var n = randi_range(1,2)
+	if n == 1:
+		sfx_new_hand.play()
+	else:
+		sfx_new_hand_alternate.play()

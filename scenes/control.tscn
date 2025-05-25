@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=39 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -30,6 +30,9 @@
 [ext_resource type="Resource" uid="uid://fbokkynfiwtx" path="res://Cartas/Repolho.tres" id="21_wi3jo"]
 [ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_p1ehl"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
+[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
+[ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
+[ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -390,5 +393,32 @@ Salada: Tenha 4 tags refrescantes no seu prato para fazer uma salada, ela fica m
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="ConfigButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 582.0
+offset_right = 1044.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 40
+text = "⚙"
+
+[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("31_nnsnw")
+autoplay = true
+bus = &"Music"
+
+[node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("34_7o2ue")
+bus = &"SFX"
+
+[node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("35_72v1w")
+bus = &"SFX"
+
+[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
