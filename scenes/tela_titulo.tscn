@@ -70,8 +70,6 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 28
 text = "Sair"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -4
 texture_filter = 1

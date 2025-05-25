@@ -41,7 +41,7 @@ theme_override_font_sizes/font_size = 16
 text = "Efeitos Sonoros"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
 step = 0.1
@@ -53,7 +53,7 @@ theme_override_font_sizes/font_size = 16
 text = "Música"
 horizontal_alignment = 1
 
-[node name="HSlider2" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="MusicSlider" type="HSlider" parent="Panel/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
 step = 0.1
@@ -65,4 +65,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "VOLTAR"
 
+[connection signal="value_changed" from="Panel/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

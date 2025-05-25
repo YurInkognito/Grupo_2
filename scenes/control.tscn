@@ -358,13 +358,16 @@ text = "⚙"
 position = Vector2(582, 288)
 stream = ExtResource("31_nnsnw")
 autoplay = true
+bus = &"Music"
 
 [node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("34_7o2ue")
+bus = &"SFX"
 
 [node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
+bus = &"SFX"
 
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

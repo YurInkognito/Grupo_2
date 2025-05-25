@@ -69,7 +69,9 @@ autowrap_mode = 3
 position = Vector2(582, 289)
 stream = ExtResource("3_kg30u")
 volume_db = 12.0
+bus = &"SFX"
 
 [node name="SFXThrowCard" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("4_sy11y")
+bus = &"SFX"
