@@ -11,7 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bp1iq")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainerContent" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,46 +26,46 @@ offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="MarginContainer"]
+[node name="Background" type="TextureRect" parent="MarginContainerContent"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainerContent"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerContent/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="BotaoIniciar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BotaoIniciar" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Iniciar
 "
 
-[node name="BotaoCutscene" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BotaoCutscene" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Cutscene"
 script = ExtResource("1_bp1iq")
 
-[node name="BotaoConfig" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BotaoConfig" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Configurações"
 
-[node name="BotaoCreditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BotaoCreditos" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Créditos"
 
-[node name="BotaoSair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BotaoSair" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Sair"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoConfig" to="." method="_on_botao_config_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
+[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
+[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoConfig" to="." method="_on_botao_config_pressed"]
+[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
+[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]

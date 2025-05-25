@@ -45,6 +45,9 @@ extends Control
 @export var sabor_Sanduiche: int = 0
 @export var sabor_Salada: int = 0
 
+#cena da config
+const CONFIG = preload("res://scenes/config.tscn")
+
 func _ready() -> void:
 	button.pressed.connect(on_end_turn_pressed)
 	button_2.pressed.connect(reset_game)
@@ -383,3 +386,8 @@ func mais_tag(vezes: String):
 
 func gera_mana(tag: String):
 	mana = mana + tags_prato.count(tag)
+
+
+func _on_config_button_pressed() -> void:
+	var config_instance = CONFIG.instantiate()
+	add_child(config_instance)
