@@ -2,6 +2,11 @@ class_name card
 extends Panel
 
 const SIZE = Vector2(100, 140)
+#Sons
+@onready var sfx_select_card: AudioStreamPlayer2D = $SFXSelectCard
+@onready var sfx_throw_card: AudioStreamPlayer2D = $SFXThrowCard
+
+
 
 @export var nome_t: String
 @export var desc_t: String
@@ -51,6 +56,7 @@ func _gui_input(event: InputEvent):
 			end_drag()
 
 func start_drag(event: InputEventMouseButton, from_hand: bool):
+	sfx_select_card.play()
 	is_dragging = true
 	drag_offset = position - get_global_mouse_position()
 	# Efeitos visuais
@@ -62,6 +68,7 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 	
 
 func end_drag():
+	sfx_throw_card.play()
 	print("enddrag card")
 	if is_played:
 		print('played')

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=3 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
+[ext_resource type="Texture2D" uid="uid://btu0uh3gwiehc" path="res://sprites/menu_placeholder.png" id="2_wys1u"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
@@ -19,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -52.5
-offset_right = 36.5
-offset_bottom = 52.5
+offset_left = 83.0
+offset_top = -79.0
+offset_right = 202.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -43,26 +44,40 @@ layout_mode = 2
 [node name="BotaoIniciar" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 28
 text = "Iniciar
 "
 
 [node name="BotaoCutscene" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "Cutscene"
 script = ExtResource("1_bp1iq")
 
 [node name="BotaoConfig" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "Configurações"
 
 [node name="BotaoCreditos" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "Créditos"
 
 [node name="BotaoSair" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 28
 text = "Sair"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+position = Vector2(578, 321)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_wys1u")
 
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]

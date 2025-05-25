@@ -47,6 +47,10 @@ extends Control
 
 #cena da config
 const CONFIG = preload("res://scenes/config.tscn")
+#sons
+@onready var sfx_new_hand: AudioStreamPlayer2D = $SFXNewHand
+@onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $SFXNewHandAlternate
+
 
 func _ready() -> void:
 	button.pressed.connect(on_end_turn_pressed)
@@ -54,7 +58,7 @@ func _ready() -> void:
 	button_3.pressed.connect(end_game)
 	button_tutorial.pressed.connect(close_tutorial)
 	mana = max_mana
-	
+	play_draw_sound()
 	# gerenciamento de cartas
 	#carregar_todas_as_cartas()
 	var novo_deck = gerar_deck()
@@ -121,6 +125,7 @@ func gastar_mana(custo: int):
 	mana = mana - custo
 
 func start_turn():
+	play_draw_sound()
 	turno = turno + 1
 	mana = max_mana
 	on_draw_button_pressed()
@@ -391,3 +396,10 @@ func gera_mana(tag: String):
 func _on_config_button_pressed() -> void:
 	var config_instance = CONFIG.instantiate()
 	add_child(config_instance)
+
+func play_draw_sound():
+	var n = randi_range(1,2)
+	if n == 1:
+		sfx_new_hand.play()
+	else:
+		sfx_new_hand_alternate.play()

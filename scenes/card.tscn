@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhdb53ws7fnxt"]
+[gd_scene load_steps=5 format=3 uid="uid://dhdb53ws7fnxt"]
 
 [ext_resource type="Theme" uid="uid://df8vawwr24ekp" path="res://recursos/mainTheme.tres" id="1_6u4wf"]
 [ext_resource type="Script" uid="uid://dku8lmad88ej1" path="res://scripts/card.gd" id="2_ktuci"]
+[ext_resource type="AudioStream" uid="uid://jwxcmjkbfqy4" path="res://audio/SFX/SelecionarCarta_cut.wav" id="3_kg30u"]
+[ext_resource type="AudioStream" uid="uid://rgbjt78ah5ht" path="res://audio/SFX/JogarCarta_cut.wav" id="4_sy11y"]
 
 [node name="card" type="Panel"]
 custom_minimum_size = Vector2(96, 145)
@@ -62,3 +64,12 @@ theme_override_font_sizes/font_size = 9
 text = "faz tal coisa quando x acontece"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="SFXSelectCard" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 289)
+stream = ExtResource("3_kg30u")
+volume_db = 12.0
+
+[node name="SFXThrowCard" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("4_sy11y")

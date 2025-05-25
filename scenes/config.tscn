@@ -31,7 +31,7 @@ offset_bottom = 294.0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 30
 text = "Volume"
 horizontal_alignment = 1
 
@@ -56,6 +56,7 @@ layout_mode = 2
 [node name="ButtonBack" type="Button" parent="Panel/VBoxContainer"]
 z_index = 12
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "VOLTAR"
 
 [connection signal="pressed" from="Panel/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
