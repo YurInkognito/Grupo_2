@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjx5i6vqq1ccp"]
 
-[ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scenes/tela_resultado.gd" id="1_7plcf"]
+[ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="1_t2gs0"]
 
 [node name="TelaResultado" type="Control"]

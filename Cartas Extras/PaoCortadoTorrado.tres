@@ -9,10 +9,13 @@ nome = "Pão Tostado"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "Torna seu prato um sanduiche"
+desc = "+150 de Sabor. Define prato como *Sanduíche*"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "set_sanduiche",
 "parametro": ""
+}, {
+"funcao": "add_sabor",
+"parametro": "150"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])

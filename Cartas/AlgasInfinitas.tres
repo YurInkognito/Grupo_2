@@ -9,9 +9,12 @@ nome = "Algas Infinitas"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "\"Não parecem tão infinitas\""
+desc = "+ 30 Sabor"
 on_faca = ExtResource("1_lgtsh")
-efeitos_ao_jogar = Array[Dictionary]([])
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "30"
+}])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Umami", "Suave"])

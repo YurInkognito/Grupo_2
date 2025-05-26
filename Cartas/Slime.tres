@@ -10,9 +10,12 @@ nome = "Slime"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Compra uma carta"
+desc = "Compra duas cartas"
 on_martelo = ExtResource("1_r3s45")
 efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "compra",
+"parametro": null
+}, {
 "funcao": "compra",
 "parametro": null
 }])

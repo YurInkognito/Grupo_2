@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://d183pxbckigjc"]
 
-[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_j40uv"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_ywecc"]
 
 [resource]
-script = ExtResource("2_j40uv")
-nome = "Farofa Croc-Croc"
-custo = "4"
+script = ExtResource("1_ywecc")
+nome = "Escama de Boitata"
+custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+ 200 Sabor"
+desc = "+100 de Sabor se uma carta foi descartada esse turno"
 efeitos_ao_jogar = Array[Dictionary]([{
-"funcao": "add_sabor",
-"parametro": "200"
+"funcao": "add_sabor_descarte",
+"parametro": "100"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String](["Crocante", "Crocante", "Crocante"])
+tags = Array[String](["Crocante", "Picante"])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

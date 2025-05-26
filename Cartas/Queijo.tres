@@ -6,15 +6,15 @@
 
 [resource]
 script = ExtResource("2_plf3b")
-nome = "Queijo"
+nome = "Queijo de Tauren"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+ 100 Sabor se o prato é uma sopaqueijo no prato"
+desc = "+70 de Sabor se o prato é uma *Sopa*"
 on_faca = ExtResource("1_8q2v6")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_prato",
-"parametro": ["100", "Sopa"]
+"parametro": ["70", "Sopa"]
 }, {
 "funcao": "add_sabor_queijo",
 "parametro": "0"

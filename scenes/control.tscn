@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=40 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -17,19 +17,20 @@
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_61o30"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_po8yf"]
 [ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_7o2ue"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/FolhaCroc.tres" id="11_72v1w"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="11_72v1w"]
 [ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="12_qsysb"]
 [ext_resource type="Resource" uid="uid://wkg4ki85n752" path="res://Cartas/MandragoraReal.tres" id="13_hl4in"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="14_136wn"]
 [ext_resource type="Resource" uid="uid://cx8jvvh2gjoqf" path="res://Cartas/NozPrismatica.tres" id="15_mgshk"]
 [ext_resource type="Resource" uid="uid://c1bpkdfimmev3" path="res://Cartas/OvosDeAmbrosia.tres" id="16_xbjxg"]
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="17_jo16n"]
-[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas/PedraLeve.tres" id="18_qmj53"]
+[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas/Amendoranha.tres" id="18_qmj53"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="19_5nmap"]
 [ext_resource type="Resource" uid="uid://dei2y06ynicn4" path="res://Cartas/Queijo.tres" id="20_gst0j"]
 [ext_resource type="Resource" uid="uid://fbokkynfiwtx" path="res://Cartas/Repolho.tres" id="21_wi3jo"]
 [ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_p1ehl"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
+[ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
@@ -66,6 +67,18 @@ script = ExtResource("1_qtu10")
 lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("8_61o30"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("14_136wn"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg")])
 mana = 4
 
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00237
+anchor_bottom = 1.00282
+offset_right = 80.275
+offset_bottom = 45.175
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.935, 0.935)
+texture = ExtResource("24_sxeuk")
+
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -83,45 +96,49 @@ color = Color(1, 1, 1, 0)
 
 [node name="Area" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 0
+anchor_left = -0.008
+anchor_top = 0.00714286
+anchor_right = 0.184
+anchor_bottom = 1.04286
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -72.5
-offset_right = 48.0
-offset_bottom = 72.5
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.00714286
+anchor_right = 0.588
+anchor_bottom = 1.04286
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Area3" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -72.5
+anchors_preset = -1
+anchor_left = 0.792
+anchor_top = 0.00714286
+anchor_right = 0.984
+anchor_bottom = 1.04286
 offset_right = 0.0
-offset_bottom = 72.5
+offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="hand" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.152778
+anchor_top = 0.783951
+anchor_right = 0.847222
 anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -140.0
-offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(1, 1, 1, 0.164706)
@@ -164,12 +181,13 @@ text = "ENTREGAR!"
 metadata/_edit_use_anchors_ = true
 
 [node name="prato" type="ColorRect" parent="." groups=["area_final"]]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -400.0
-offset_right = 400.0
+offset_left = -377.0
+offset_right = 359.0
 offset_bottom = 140.0
 grow_horizontal = 2
 color = Color(1, 1, 1, 0.164706)
@@ -196,11 +214,6 @@ script = ExtResource("6_lpubu")
 position = Vector2(1066, 578)
 
 [node name="Label" type="Label" parent="deck"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = -11.5
 offset_right = 20.0
@@ -210,6 +223,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "50"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Info" parent="." instance=ExtResource("6_lt2xq")]
 layout_mode = 1
@@ -219,10 +233,10 @@ offset_bottom = 232.0
 [node name="Info_tags" parent="Info" instance=ExtResource("7_lt2xq")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0454545
-anchor_top = 0.546875
-anchor_right = 0.954545
-anchor_bottom = 0.931641
+anchor_left = 0.0
+anchor_top = 0.550781
+anchor_right = 0.909091
+anchor_bottom = 0.935547
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
@@ -396,29 +410,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ConfigButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 981.0
-offset_top = 582.0
-offset_right = 1044.0
-offset_bottom = 645.0
+anchor_left = 0.851563
+anchor_top = 0.898148
+anchor_right = 0.90625
+anchor_bottom = 0.99537
 theme_override_font_sizes/font_size = 40
 text = "⚙"
+metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("31_nnsnw")
 autoplay = true
-bus = &"Music"
 
 [node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("34_7o2ue")
-bus = &"SFX"
 
 [node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
-bus = &"SFX"
-
-[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

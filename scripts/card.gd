@@ -26,10 +26,12 @@ const SIZE = Vector2(100, 140)
 @onready var prato: ColorRect = $"../../prato"
 
 @onready var nome: Label = $nome
-@onready var desc: Label = $desc
+@onready var desc: RichTextLabel = $desc
 @onready var custo: Label = $custo
 @onready var sprite: Sprite2D = $Bg
 @onready var tags: Label = $tags
+
+@onready var processavel: TextureRect = $processavel
 
 @onready var tag1: Sprite2D = $Tag1
 @onready var tag2: Sprite2D = $Tag2
@@ -61,6 +63,10 @@ func set_card(carta: CartaData) -> void:
 	custo_t = carta.custo
 	ingrediente_t = carta.ingrediente
 	card_data = carta
+	if carta.on_faca or carta.on_fogo or carta.on_martelo:
+		processavel.visible = true
+	else:
+		processavel.visible = false
 	if carta.sprite:
 		nome.visible = false
 		sprite.texture = carta.sprite

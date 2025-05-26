@@ -8,7 +8,7 @@ nome = "Broto de Névoa-Limão"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "A Próxima carta com tag Suave, Refrescante ou Ácido não custa mana"
+desc = "A Próxima carta com tag [img width=40 height=40]res://sprites/TAGS/TAG7png.png[/img], [img width=40 height=40]res://sprites/TAGS/TAG3.png[/img] ou [img width=40 height=40]res://sprites/TAGS/TAG5png.png[/img] não custa mana"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "prox_ingrediente_zero",
 "parametro": "Acido"

@@ -20,7 +20,7 @@ extends Control
 @onready var hand_node: Control = $hand # Garanta que o nome do seu nó 'hand' esteja correto e seja do tipo 'hand'
 @onready var deck_node: Node2D = $deck # Crie um Position2D chamado 'DeckPosition' na sua cena para marcar a origem da animação
 
-@export var principal: String = ""
+@export var principal: String = "nada"
 @export var principal_pontos: int = 0
 @export var mana: int = 0
 @export var max_mana: int = 3
@@ -45,6 +45,8 @@ extends Control
 @export var sabor_Sopa: int = 0
 @export var sabor_Sanduiche: int = 0
 @export var sabor_Salada: int = 0
+@export var guarda: bool = false
+@export var descarte_turno = false
 
 #cena da config
 const CONFIG = preload("res://scenes/config.tscn")
@@ -144,8 +146,11 @@ func on_end_turn_pressed():
 	if turno >= max_turno:
 		end_game()
 	else:
-		on_discard_button_pressed()
-		await get_tree().create_timer(1).timeout 
+		descarte_turno = false
+		if !guarda:
+			on_discard_button_pressed()
+			await get_tree().create_timer(1).timeout 
+		guarda = false
 		start_turn()
 
 func reset_game():
@@ -153,7 +158,7 @@ func reset_game():
 	on_discard_button_pressed()
 	mana = max_mana
 	turno = 1
-	principal = ''
+	principal = 'nada'
 	principal_pontos = 0
 	tipo_prato =  "Prato"
 	sabor = 0
@@ -167,6 +172,8 @@ func reset_game():
 	sabor_Picante = 0
 	sabor_Umami = 0
 	var prato_temp = $prato
+	descarte_turno = false
+	$Info/Info_tags.reset_tags()
 	$Info.set_pontos(0)
 	for i in range(prato_temp.get_child_count() - 1, -1, -1):
 		var child = prato_temp.get_child(i)
@@ -233,12 +240,22 @@ func gerar_nome():
 	var nome = ''
 	if vibe:
 		nome = tipo_prato + ' ' + vibe + ' de ' + principal
+	else:
+		nome = tipo_prato + ' ' + 'vazio' + ' de ' + principal
 	return nome
 
 func compara_principal(pontos, nome):
 	if pontos > principal_pontos:
 		principal_pontos = pontos
 		principal = nome
+
+func conta_cartas(tag):
+	var r = 0
+	var cartas = hand_node.get_children()
+	for c in cartas:
+		if c.card_data.tags.count(tag) > 0:
+			r += 1
+	return r
 
 func reseta_prox_zero():
 	prox_zero = []
@@ -271,6 +288,7 @@ func aplicar_efeitos_carta(carta: CartaData):
 		tipo_prato = "Salada"
 	pontuação_continua()
 	calculo_mult()
+	$Info/Info_tags.atualiza_tag()
 	print(mult)
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
@@ -333,6 +351,17 @@ func jogar_carta(carta: CartaData):
 			prox_double.erase(i)
 			aplicar_efeitos_carta(carta)
 			return null
+
+func _on_config_button_pressed() -> void:
+	var config_instance = CONFIG.instantiate()
+	add_child(config_instance)
+
+func play_draw_sound():
+	var n = randi_range(1,2)
+	if n == 1:
+		sfx_new_hand.play()
+	else:
+		sfx_new_hand_alternate.play()
 
 #lista de acoes executaveis pelas cartas:
 
@@ -400,14 +429,24 @@ func mais_tag(vezes: String):
 func gera_mana(tag: String):
 	mana = mana + tags_prato.count(tag)
 
+func guarda_mao():
+	guarda = true
 
-func _on_config_button_pressed() -> void:
-	var config_instance = CONFIG.instantiate()
-	add_child(config_instance)
+func troca_mao():
+	on_discard_button_pressed()
+	await get_tree().create_timer(1).timeout 
+	on_draw_button_pressed()
 
-func play_draw_sound():
-	var n = randi_range(1,2)
-	if n == 1:
-		sfx_new_hand.play()
-	else:
-		sfx_new_hand_alternate.play()
+func add_por_mao(pontos: String, tag: String):
+	var p
+	match tag:
+		"todas": add_sabor(str(int(pontos) * hand_node.get_child_count()))
+		"Refrescante": add_sabor(str(int(pontos) * conta_cartas("Refrescante")))
+
+func add_sabor_descarte():
+	if descarte_turno:
+		add_sabor("100")
+
+func reset_sabor():
+	if sabor < 0:
+		sabor = 0

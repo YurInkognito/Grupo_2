@@ -1,45 +1,58 @@
 extends Panel
 
-@export var Acido_t: String = '0'
-@export var Crocante_t: String = '0'
-@export var Picante_t: String = '0'
-@export var Refrescante_t: String = '0'
-@export var Suave_t: String = '0'
-@export var Umami_t: String = '0'
+@export var Acido_t: int = 0
+@export var Crocante_t: int = 0
+@export var Picante_t: int = 0
+@export var Refrescante_t: int = 0
+@export var Suave_t: int = 0
+@export var Umami_t: int = 0
 
-@onready var Acido: Label = $Acido
-@onready var Crocante: Label = $Crocante
-@onready var Picante: Label = $Picante
-@onready var Refrescante: Label = $Refrescante
-@onready var Suave: Label = $Suave
-@onready var Umami: Label = $Umami
+@export var Acido_texture: Texture2D
+@export var Crocante_texture: Texture2D
+@export var Picante_texture: Texture2D
+@export var Refrescante_texture: Texture2D
+@export var Suave_texture: Texture2D
+@export var Umami_texture: Texture2D
+
+@onready var pos_list: Array[float] =[0,0,0,0,0,0]
 
 @onready var control: Control = $"../.."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Acido.text = 'Acido = 0'
-	Crocante.text = 'Crocante = 0'
-	Picante.text = 'Picante = 0'
-	Refrescante.text = 'Refrescante = 0'
-	Suave.text = 'Suave = 0'
-	Umami.text = 'Umami = 0'
+	pass
 
 func atualiza_tag():
 	var tags = control.tags_prato
-	Acido_t = str(tags.count('Acido'))
-	Crocante_t = str(tags.count('Crocante'))
-	Picante_t = str(tags.count('Picante'))
-	Refrescante_t = str(tags.count('Refrescante'))
-	Suave_t = str(tags.count('Suave'))
-	Umami_t = str(tags.count('Umami'))
+	Acido_t = (tags.count('Acido'))
+	Crocante_t = (tags.count('Crocante'))
+	Picante_t = (tags.count('Picante'))
+	Refrescante_t = (tags.count('Refrescante'))
+	Suave_t = (tags.count('Suave'))
+	Umami_t = (tags.count('Umami'))
+	
+	posiciona_tags()
+
+func reset_tags():
+	for child in get_children():
+		child.queue_free()
+
+func posiciona_tags():
+	var tag_list = [Acido_t, Crocante_t, Picante_t, Refrescante_t, Suave_t, Umami_t]
+	var tag_texture_list = [Acido_texture, Crocante_texture, Picante_texture, Refrescante_texture, Suave_texture, Umami_texture]
+	var c = 0
+	var t = 0
+	for tag in tag_list:
+		for i in range(tag):
+			var novo_sprite = Sprite2D.new()
+			novo_sprite.position = Vector2(18.5 + c * 12, 18.5 + t * 30)
+			novo_sprite.texture = tag_texture_list[t]
+			add_child(novo_sprite)
+			print(novo_sprite)
+			c += 1
+		c = 0
+		t += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	atualiza_tag()
-	Acido.text = 'Acido = ' + Acido_t
-	Crocante.text = 'Crocante = ' + Crocante_t
-	Picante.text = 'Picante = ' + Picante_t
-	Refrescante.text = 'Refrescante = ' + Refrescante_t
-	Suave.text = 'Suave = ' + Suave_t
-	Umami.text = 'Umami = ' + Umami_t
+	pass

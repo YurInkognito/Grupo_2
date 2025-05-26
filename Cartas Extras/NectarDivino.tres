@@ -11,10 +11,7 @@ is_processo = false
 desc = "+300 de Sabor. Adiciona +1 de mana nesse turno para cada *Ácido* no prato"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
-"parametro": "300"
-}, {
-"funcao": "gera_mana",
-"parametro": "Acido"
+"parametro": "600"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])

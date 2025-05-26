@@ -1,7 +1,7 @@
 extends Panel
 
 @export var pontos: int = 0
-@onready var pontos_label: Label = $Pontos
+@onready var pontos_label: RichTextLabel = $Pontos
 @onready var nome_label: Label = $Nome
 @export var mult: int = 1
 @onready var mult_label: Label = $Mult
@@ -13,8 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pontos_label.text = str(pontos)
-	mult_label.text = 'X' + str(mult)
+	pontos_label.text = str(pontos) + '[color=red]x' + str(mult) + '[/color]'
+	#mult_label.text = 'X' + str(mult)
 	nome_label.text = $"..".gerar_nome()
 
 func set_pontos(pontos_externos: int):
