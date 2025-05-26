@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("2_t1rwa")
 nome = "Caneca de Undine"
-custo = "1"
+custo = "0"
 ingrediente = true
 is_processo = false
 desc = "Coloca o Sabor do prato em 0. Define o prato como *Sopa*"

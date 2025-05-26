@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
-[ext_resource type="Texture2D" uid="uid://btu0uh3gwiehc" path="res://sprites/menu_placeholder.png" id="2_wys1u"]
+[ext_resource type="Texture2D" uid="uid://d0p64wdujl81u" path="res://sprites/IMG_1945.PNG" id="2_wys1u"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wys1u")
+expand_mode = 1
 
 [node name="MarginContainerContent" type="MarginContainer" parent="."]
 unique_name_in_owner = true

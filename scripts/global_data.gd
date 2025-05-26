@@ -39,3 +39,6 @@ func critico_1_nota():
 	if picante < 6:
 		return 1
 	return 2
+
+func jogar():
+	get_tree().change_scene_to_file("res://scenes/control.tscn")

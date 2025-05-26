@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqfkbgadodba6"
-path="res://.godot/imported/CARTAS_COMIDA_teste.png-ba39638af455e5f6dc2e7f7c34cb45cc.ctex"
+uid="uid://d0p64wdujl81u"
+path="res://.godot/imported/IMG_1945.PNG-5f422b142822fde0d0a7c3906c230664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/CARTAS_COMIDA_teste.png"
-dest_files=["res://.godot/imported/CARTAS_COMIDA_teste.png-ba39638af455e5f6dc2e7f7c34cb45cc.ctex"]
+source_file="res://sprites/IMG_1945.PNG"
+dest_files=["res://.godot/imported/IMG_1945.PNG-5f422b142822fde0d0a7c3906c230664.ctex"]
 
 [params]
 
