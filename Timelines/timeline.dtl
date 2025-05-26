@@ -1,5 +1,4 @@
-Introdução (placeholder)
-[background arg="res://Fundos/pesadeloCozinha.png" fade="1.0"]
+[background arg="res://Fundos/BG a la carte.png" fade="0.0"]
 [wait time="1.0"]
 join Chef center [animation="Slide In Up" wait="true"]
 Chef: Ok. Tá tudo no lugar. As mesas estão limpinhas, os talheres reluzentes, a ratoeira da despensa tá armada…
@@ -53,17 +52,19 @@ Aliane: …
 Aliane: Tá, eu vou engajar com o seu esqueminha, duende.
 Chef: (Uau. Ela é complicada.)
 Chef: (Ela tem tantas bandeiras vermelhas que eu consigo imaginar umas 4 amigas minhas se apaixonando por ela.)
+label escolha
 - Que tipo de prato você gosta?
 	Chef: Que tipo de prato você gosta?
 	Aliane: Olha, eu sei que você criou toda essa historinha para desviar da minha política de não pedir diretamente por um prato.
 	Aliane: Eu entreti sua ideia. O mínimo que você pode fazer é seguir com ela até o fim.
 	Chef: (Não custava tentar, né)
+	jump escolha
 - Há quanto tempo você trabalha como crítica de restaurantes?
 	Chef: Então, Elf’s Digest…
 	Chef: Revista importante. Eu ouvia falar dela dos meus parentes que viajavam mundo afora, mas nunca li uma edição até me mudar para Balsas.
 	Chef: Quanto tempo você trabalha lá?
-	Aliane: Eu sou uma das fundadoras dela, na verdade.\
-Chef\: AH… EU… NÃO SABIA…
+	Aliane: Eu sou uma das fundadoras dela, na verdade.
+	Chef: AH… EU… NÃO SABIA…
 	Chef: (Eu não acerto UMA dentro com ela né?)
 	Aliane: Eu comando a seção de culinária desde o início, faz sentido que eu seja mais reconhecida por isso do que qualquer outra função que já cumpri por lá.
 	Aliane: Hoje em dia temos vários especialistas lidando com restaurantes, mas eu gosto de colocar a mão na massa vez ou outra.
@@ -72,6 +73,7 @@ Chef\: AH… EU… NÃO SABIA…
 	Aliane: Não precisa agradecer!
 	Aliane: Afinal…
 	Aliane: Você não sabe ainda se isso é uma benção ou uma maldição.
+	jump escolha
 - (Fale sobre a última edição da Elf’s Digest que você leu)
 	Chef: Ontem de noite eu estava dando uma lida em algumas das críticas que você escreveu…
 	Chef: A forma que seu texto descreveu a comida lá do Chama do Dragão foi impressionante. Eu quase senti o gosto daquela mandrágora apimentada.
@@ -95,6 +97,7 @@ Chef\: AH… EU… NÃO SABIA…
 	Chef: (Isso tem camadas demais pra eu conseguir processar nesse momento de estresse.)
 	Aliane: Isso é normal para elfas lésbicas, se é que é isso que você tá se perguntando.
 	Chef: Eu literalmente não tenho escolha além de acreditar em você.
+	jump escolha
 - Perguntar se ela quer que o prato acompanhe pimenta
 	Chef: Se você quiser, o seu prato pode acompanhar uma garrafinha de pimenta para você poder adicionar à gosto!
 	Aliane: Bela tentativa de novo.
