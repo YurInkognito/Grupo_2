@@ -31,7 +31,7 @@ directories/dtl_directory={
 "timeline": "res://Timelines/timeline.dtl"
 }
 variables={
-"Escolha secreta": "0"
+"fim": "0"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]

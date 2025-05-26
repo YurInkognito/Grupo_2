@@ -111,5 +111,26 @@ Chef\: AH… EU… NÃO SABIA…
 	Aliane: Você precisa estar preparada para um mundo cruel. Um mundo que pode tirar proveito seu, te descartar e te destruir caso você tenha a audácia de reclamar.
 	Aliane: Por isso que você tem que estar preparado. Especialmente em momentos que uma pessoa normal estaria desprevenida.
 	Chef: A minha mãe conseguiu filtrar esse tipo de fraqueza me alimentando exclusivamente de comidas bastante apimentadas.
+	Chef: Desde quando, exatamente?
+	Aliane: Desde quando eu deixei de ser amamentada.
+	Aliane: E até mesmo naquela época ela virava um copinho de pimenta antes.
+	Chef: Antes?
+	Chef: …
+	Chef: ... Ah.
+	Chef: Ok acho que…
+	Chef: …
+	Chef: (Bom, acho que tá aí minha resposta. Comida picante.)
+	Chef: (BEM picante.)
+	Chef: (Acho que eu consigo lidar bem com esse paladar bruto. Mas achei meio triste isso.)
+	Chef: (Ela realmente só consegue comer algo se tiver num nível absurdamente alto de pimenta? Tudo tem que ser tão intenso assim?)
+	Chef: (Eu PODERIA fazer o que ela claramente quer, mas eu poderia me diferenciar um pouco e fazer algo que seja suave, tão suave que vai ser uma sensação completamente nova pra ela.)
+QUAL PRATO NOSSO COZINHEIRO VAI TENTAR FAZER?
+- 1 - COMIDA ULTRA PICANTE FÁCIL DE AGRADAR
+- 2 - COMIDA ULTRA SUAVE PARA SURPREENDER ELA
+Chef: Decidi!
+Aliane: ?
+Chef: Seu prato estará pronto em breve, senhora.
+Aliane: Tá… Até que enfim, em?
+set {fim} = "0"
 [wait time="1.0"]
 do GlobalData.jogar()
