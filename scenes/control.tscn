@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=41 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -30,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://fbokkynfiwtx" path="res://Cartas/Repolho.tres" id="21_wi3jo"]
 [ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_p1ehl"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
+[ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
 [ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
@@ -64,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtu10")
-lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("8_61o30"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("14_136wn"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg")])
+lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("8_61o30"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("14_136wn"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw")])
 mana = 4
 
 [node name="Bg" type="TextureRect" parent="."]
@@ -422,15 +423,16 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(582, 288)
 stream = ExtResource("31_nnsnw")
 autoplay = true
+bus = &"Music"
 
 [node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("34_7o2ue")
+bus = &"SFX"
 
 [node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

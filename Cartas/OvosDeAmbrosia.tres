@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("3_g6dyr")
 nome = "Ovos de Ambrosia"
-custo = "3"
+custo = "2"
 ingrediente = true
 is_processo = false
 desc = "- 200 de Sabor"

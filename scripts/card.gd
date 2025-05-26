@@ -55,6 +55,9 @@ func _ready() -> void:
 	custo.text = custo_t
 
 func set_card(carta: CartaData) -> void:
+	lista_tags[0].texture = null
+	lista_tags[1].texture = null
+	lista_tags[2].texture = null
 	nome.text = carta.nome
 	desc.text = carta.desc
 	custo.text = carta.custo

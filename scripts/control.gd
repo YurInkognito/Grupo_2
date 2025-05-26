@@ -363,7 +363,8 @@ func play_draw_sound():
 	else:
 		sfx_new_hand_alternate.play()
 
-#lista de acoes executaveis pelas cartas:
+#lista de acoes executaveis pelas cartas: -----------------------------------------------------------------------------------------------
+
 
 func mostrar_mensagem(mensagem: String):
 	print("Mensagem da Carta:", mensagem)

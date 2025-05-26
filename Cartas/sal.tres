@@ -8,10 +8,10 @@ nome = "Sal"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "Multiplica o sabor por 1,4"
+desc = "Multiplica o sabor de ingredientes futuros por 1,5"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "sal_mult",
-"parametro": "1.4"
+"parametro": "1.5"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
