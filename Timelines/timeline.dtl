@@ -134,5 +134,4 @@ Chef: Decidi!
 Aliane: ?
 Chef: Seu prato estará pronto em breve, senhora.
 Aliane: Tá… Até que enfim, em?
-[signal arg="fim"]
-[end_timeline]
+set {fim} = "0"
