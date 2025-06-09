@@ -1,0 +1,87 @@
+[background arg="res://Fundos/BG a la carte.png" fade="0.0"]
+join Chef right [animation="Fade In" length="0.0"]
+join Aliane left [animation="Fade In" length="0.0"]
+label escolha
+[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
+- Que tipo de prato você gosta?
+	Chef: Que tipo de prato você gosta?
+	Aliane: Olha, eu sei que você criou toda essa historinha para desviar da minha política de não pedir diretamente por um prato.
+	Aliane: Eu entreti sua ideia. O mínimo que você pode fazer é seguir com ela até o fim.
+	Chef: (Não custava tentar, né)
+	jump escolha
+- Há quanto tempo você trabalha como crítica de restaurantes?
+	Chef: Então, Elf’s Digest…
+	Chef: Revista importante. Eu ouvia falar dela dos meus parentes que viajavam mundo afora, mas nunca li uma edição até me mudar para Balsas.
+	Chef: Quanto tempo você trabalha lá?
+	Aliane: Eu sou uma das fundadoras dela, na verdade.
+	Chef: AH… EU… NÃO SABIA…
+	Chef: (Será que eu não vou acertar UMA dentro hoje?)
+	Aliane: Eu comando a seção de culinária desde o início, faz sentido que eu seja mais reconhecida por isso do que qualquer outra função que já cumpri por lá.
+	Aliane: Hoje em dia temos vários especialistas lidando com restaurantes, mas eu gosto de colocar a mão na massa vez ou outra.
+	Aliane: Em especial com estabelecimentos tão promissores.
+	Chef: Obrigado…?
+	Aliane: Não precisa agradecer!
+	Aliane: Afinal…
+	Aliane: Você não sabe ainda se isso é uma benção ou uma maldição.
+	jump escolha
+- (Fale sobre a última edição da Elf’s Digest que você leu)
+	Chef: Ontem de noite eu estava dando uma lida em algumas das críticas que você escreveu…
+	Chef: A forma que seu texto descreveu a comida lá do Chama do Dragão foi impressionante. Eu quase senti o gosto daquela mandrágora apimentada.
+	Chef: Parecia até que era a MINHA língua ardendo em chamas em reação aquele tanto de pimenta.
+	Aliane: Heh… Obrigada.
+	Aliane: As cozinheiras daquele restaurante sabem bem como me agradar. Cada prato foi mais apimentado do que o anterior.
+	Aliane: A nota máxima mais fácil que eu já dei. E olha que eu sou difícil.
+	Aliane: Eu não sou como as novatas que a gente acaba contratando na Elf’s que parecem não ter padrão nenhum no tipo de… coisa que elas colocam na escotilha delas.
+	Aliane: …
+	Minhas parceiras fundadoras pediram pra eu não falar esse tipo de coisa na frente da equipe culinária. “Cria um ambiente hostil demais”, segundo elas.
+	Aliane: Eu sou a editora-chefe da seção culinária!! Eu é quem deveria estar ditando o que nossos leitores escolhem para ocupar seus estômagos.
+	Aliane: Mas isso é o que dá definir as decisões executivas em votos. Elas sempre ficam contra mim.
+	Aliane: …Não ajuda muito que as duas são minhas ex-esposas.
+	Chef: Você fundou a revista com suas duas ex-esposas????
+	Aliane: Não seja ridículo. Eu não tinha envolvimento nenhum com elas na época.
+	Aliane: …
+	Aliane: Enfim, agora as duas são casadas.
+	Aliane: Se isso não pagasse tão bem eu teria largado a tanto tempo.
+	Chef: (Ela se casou com uma, traiu ela com uma outra e se casou com essa segunda, aí elas terminaram e a traída se casou com a mulher que a ex-esposa dela usou pra trair ela…?)
+	Chef: (Isso tem camadas demais pra eu conseguir processar nesse momento de estresse.)
+	Aliane: Isso é normal para elfas lésbicas, se é que é isso que você tá se perguntando.
+	Chef: Eu literalmente não tenho escolha além de acreditar em você.
+	jump escolha
+- Perguntar se ela quer que o prato acompanhe pimenta
+	Chef: Se você quiser, o seu prato pode acompanhar uma garrafinha de pimenta para você poder adicionar à gosto!
+	Aliane: Bela tentativa de novo.
+	Chef: ?
+	Aliane: É como eu disse, eu quero sentir o que o restaurante tem de melhor e as habilidades do cozinheiro do estabelecimento.
+	Aliane: Se eu julgasse todo prato com base na quantidade de pimenta que EU adiciono, qualquer sorveteria de esquina teria uma nota mediana ou decente.
+	Chef: Sorveteri-
+	Chef: Você coloca pimenta no SORVETE?
+	Aliane: É a única forma que eu consigo tragar aquela coisa.
+	Aliane: Comida sem valor. Sem mérito. Sem gosto.
+	Chef: …
+	Chef: Então você não gosta de sorvete por ele normalmente não ser picante?
+	Aliane: Olha. Se tem uma coisa que a minha mãe me ensinou desde cedo, é que nada na vida tem valor se não tiver um pouco de sofrimento.
+	Aliane: Você precisa estar preparada para um mundo cruel. Um mundo que vai te usar, te descartar e te destruir caso você tenha a audácia de reclamar.
+	Aliane: Por isso que você tem que estar preparado. Especialmente em momentos em que uma pessoa normal estaria desprevenida.
+	Aliane: A minha mãe conseguiu filtrar esse tipo de fraqueza me alimentando exclusivamente de comidas bastante apimentadas desde cedo.
+	Chef: Desde quando, exatamente?
+	Aliane: Desde quando eu deixei de ser amamentada.
+	Aliane: E até mesmo naquela época ela virava um copinho de pimenta antes.
+	Chef: Antes?
+	Chef: …
+	Chef: ... Ah.
+	Chef: Ok acho que…
+	Chef: …
+	Chef: (Bom, acho que tá aí minha resposta. Comida picante.)
+	Chef: (BEM picante.)
+	Chef: (Acho que eu consigo lidar bem com esse paladar bruto. Mas achei meio triste isso.)
+	Chef: (Ela realmente só consegue comer algo se tiver num nível absurdamente alto de pimenta? Tudo tem que ser tão intenso assim?)
+	Chef: (Eu PODERIA fazer o que ela claramente quer, mas eu poderia me diferenciar um pouco e fazer algo que seja suave, tão suave que vai ser uma sensação completamente nova pra ela.)
+	[wait time="0.5"]
+	- 1 - COMIDA ULTRA PICANTE FÁCIL DE AGRADAR
+	- 2 - COMIDA ULTRA SUAVE PARA SURPREENDER ELA
+	Chef: Decidi!
+	Aliane: ?
+	Chef: Seu prato estará pronto em breve, senhora.
+	Aliane: Tá… Até que enfim, em?
+	[wait time="1.0"]
+	do GlobalData.jogar()
