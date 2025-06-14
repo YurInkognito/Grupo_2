@@ -1,44 +1,44 @@
-[gd_scene load_steps=45 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=45 format=3 uid="uid://bucafvdrqeglr"]
 
-[ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
-[ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
-[ext_resource type="PackedScene" uid="uid://b6gka6rawpuf5" path="res://scenes/area.tscn" id="2_ee4bf"]
-[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_rk4e5"]
-[ext_resource type="Resource" uid="uid://brsrfrl3ue7l6" path="res://Cartas/AlgasInfinitas.tres" id="3_0hfu7"]
-[ext_resource type="Resource" uid="uid://b7ftbgi1txema" path="res://Cartas/BrotoDeNévoa-Limão.tres" id="4_fd2iw"]
-[ext_resource type="Script" uid="uid://br48pt7hvca12" path="res://scripts/prato.gd" id="5_kbped"]
-[ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="5_mnht8"]
-[ext_resource type="Script" uid="uid://bthh1smrkpqte" path="res://scripts/decartes.gd" id="6_lpubu"]
-[ext_resource type="PackedScene" uid="uid://x7x12d0x8njs" path="res://scenes/info.tscn" id="6_lt2xq"]
-[ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_sxeuk"]
-[ext_resource type="PackedScene" uid="uid://mviei1r1rh42" path="res://scenes/info_tags.tscn" id="7_lt2xq"]
-[ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="7_nnsnw"]
-[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="8_1p5nq"]
-[ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_61o30"]
-[ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_po8yf"]
-[ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_7o2ue"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="11_72v1w"]
-[ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="12_qsysb"]
-[ext_resource type="Resource" uid="uid://wkg4ki85n752" path="res://Cartas/MandragoraReal.tres" id="13_hl4in"]
-[ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="14_136wn"]
-[ext_resource type="Resource" uid="uid://cx8jvvh2gjoqf" path="res://Cartas/NozPrismatica.tres" id="15_mgshk"]
-[ext_resource type="Resource" uid="uid://c1bpkdfimmev3" path="res://Cartas/OvosDeAmbrosia.tres" id="16_xbjxg"]
-[ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="17_jo16n"]
-[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas/Amendoranha.tres" id="18_qmj53"]
-[ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="19_5nmap"]
-[ext_resource type="Resource" uid="uid://dei2y06ynicn4" path="res://Cartas/Queijo.tres" id="20_gst0j"]
-[ext_resource type="Resource" uid="uid://fbokkynfiwtx" path="res://Cartas/Repolho.tres" id="21_wi3jo"]
-[ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_p1ehl"]
-[ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
-[ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
-[ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
-[ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
-[ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/carta13.png" id="30_61o30"]
-[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
-[ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
-[ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
-[ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
-[ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/pao_tutorial.png" id="36_72v1w"]
+[ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_6tbjy"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_pi3cs"]
+[ext_resource type="Resource" uid="uid://brsrfrl3ue7l6" path="res://Cartas/AlgasInfinitas.tres" id="3_pofte"]
+[ext_resource type="Resource" uid="uid://b7ftbgi1txema" path="res://Cartas/BrotoDeNévoa-Limão.tres" id="4_14jpe"]
+[ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="5_re42d"]
+[ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_ye1d3"]
+[ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="7_u6rj5"]
+[ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_1typb"]
+[ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_a1wuh"]
+[ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_wuipj"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="11_oivgf"]
+[ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="12_xd1l2"]
+[ext_resource type="Resource" uid="uid://wkg4ki85n752" path="res://Cartas/MandragoraReal.tres" id="13_5o6md"]
+[ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="14_1bipq"]
+[ext_resource type="Resource" uid="uid://cx8jvvh2gjoqf" path="res://Cartas/NozPrismatica.tres" id="15_nhs16"]
+[ext_resource type="Resource" uid="uid://c1bpkdfimmev3" path="res://Cartas/OvosDeAmbrosia.tres" id="16_1kdeq"]
+[ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="17_pglep"]
+[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas/Amendoranha.tres" id="18_5kim4"]
+[ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="19_d5f1a"]
+[ext_resource type="Resource" uid="uid://dei2y06ynicn4" path="res://Cartas/Queijo.tres" id="20_ylbb1"]
+[ext_resource type="Resource" uid="uid://fbokkynfiwtx" path="res://Cartas/Repolho.tres" id="21_5o7qn"]
+[ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_ryhqa"]
+[ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_t7u55"]
+[ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_5lw0v"]
+[ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_7pib0"]
+[ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="26_4oxoe"]
+[ext_resource type="PackedScene" uid="uid://b6gka6rawpuf5" path="res://scenes/area.tscn" id="27_0gy8y"]
+[ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="28_sq7xk"]
+[ext_resource type="Script" uid="uid://br48pt7hvca12" path="res://scripts/prato.gd" id="29_xs8xn"]
+[ext_resource type="Script" uid="uid://bthh1smrkpqte" path="res://scripts/decartes.gd" id="30_7ofwt"]
+[ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/carta13.png" id="31_ikwup"]
+[ext_resource type="PackedScene" uid="uid://x7x12d0x8njs" path="res://scenes/info.tscn" id="32_gqctx"]
+[ext_resource type="PackedScene" uid="uid://mviei1r1rh42" path="res://scenes/info_tags.tscn" id="33_ma2q0"]
+[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="34_3d3fl"]
+[ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_o8k6w"]
+[ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/pao_tutorial.png" id="36_78pat"]
+[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="37_nc3ic"]
+[ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="38_44kkh"]
+[ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="39_6sps1"]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -69,8 +69,8 @@ offset_right = -1269.76
 offset_bottom = -709.2
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qtu10")
-lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("14_136wn"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn")])
+script = ExtResource("1_6tbjy")
+lista_de_cartas = Array[ExtResource("2_pi3cs")]([ExtResource("3_pofte"), ExtResource("4_14jpe"), ExtResource("5_re42d"), ExtResource("6_ye1d3"), ExtResource("7_u6rj5"), ExtResource("8_1typb"), ExtResource("9_a1wuh"), ExtResource("10_wuipj"), ExtResource("11_oivgf"), ExtResource("12_xd1l2"), ExtResource("13_5o6md"), ExtResource("14_1bipq"), ExtResource("15_nhs16"), ExtResource("16_1kdeq"), ExtResource("17_pglep"), ExtResource("18_5kim4"), ExtResource("19_d5f1a"), ExtResource("20_ylbb1"), ExtResource("21_5o7qn"), ExtResource("22_ryhqa"), ExtResource("23_t7u55"), ExtResource("24_5lw0v"), ExtResource("25_7pib0"), ExtResource("8_1typb"), ExtResource("9_a1wuh"), ExtResource("14_1bipq")])
 mana = 4
 
 [node name="Bg" type="TextureRect" parent="."]
@@ -82,8 +82,7 @@ offset_right = -3.03357
 offset_bottom = -2.0304
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_sxeuk")
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("26_4oxoe")
 
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
@@ -99,9 +98,8 @@ offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
 
-[node name="Area" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area" parent="Area de areas" instance=ExtResource("27_0gy8y")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0555559
@@ -113,7 +111,7 @@ offset_right = 0.777954
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area2" parent="Area de areas" instance=ExtResource("27_0gy8y")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.396
@@ -126,7 +124,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area3" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area3" parent="Area de areas" instance=ExtResource("27_0gy8y")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.879324
@@ -156,7 +154,7 @@ offset_right = -89.4441
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(1, 1, 1, 0.164706)
-script = ExtResource("1_62e2m")
+script = ExtResource("28_sq7xk")
 hand_curve = SubResource("Curve_62e2m")
 rotation_curve = SubResource("Curve_qtu10")
 
@@ -245,7 +243,7 @@ offset_right = 359.0
 offset_bottom = 140.0
 grow_horizontal = 2
 color = Color(1, 1, 1, 0.164706)
-script = ExtResource("5_kbped")
+script = ExtResource("29_xs8xn")
 hand_curve = SubResource("Curve_kbped")
 rotation_curve = SubResource("Curve_fj5cn")
 
@@ -257,12 +255,12 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -136.0
-offset_top = -98.5
-offset_bottom = 98.5
+offset_top = -96.0
+offset_bottom = 101.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_tjwpk")
-script = ExtResource("6_lpubu")
+script = ExtResource("30_7ofwt")
 
 [node name="deck" type="Node2D" parent="."]
 position = Vector2(1061, 485)
@@ -272,7 +270,7 @@ offset_left = -46.0
 offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 136.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="deck"]
@@ -280,7 +278,7 @@ offset_left = -47.0
 offset_top = -10.0
 offset_right = 49.0
 offset_bottom = 135.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="deck"]
@@ -288,7 +286,7 @@ offset_left = -48.0
 offset_top = -11.0
 offset_right = 48.0
 offset_bottom = 134.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="deck"]
@@ -296,7 +294,7 @@ offset_left = -49.0
 offset_top = -12.0
 offset_right = 47.0
 offset_bottom = 133.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect5" type="TextureRect" parent="deck"]
@@ -304,7 +302,7 @@ offset_left = -50.0
 offset_top = -13.0
 offset_right = 46.0
 offset_bottom = 132.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect6" type="TextureRect" parent="deck"]
@@ -312,7 +310,7 @@ offset_left = -51.0
 offset_top = -14.0
 offset_right = 45.0
 offset_bottom = 131.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect7" type="TextureRect" parent="deck"]
@@ -320,7 +318,7 @@ offset_left = -52.0
 offset_top = -15.0
 offset_right = 44.0
 offset_bottom = 130.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect8" type="TextureRect" parent="deck"]
@@ -328,7 +326,7 @@ offset_left = -53.0
 offset_top = -16.0
 offset_right = 43.0
 offset_bottom = 129.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect9" type="TextureRect" parent="deck"]
@@ -336,7 +334,7 @@ offset_left = -54.0
 offset_top = -17.0
 offset_right = 42.0
 offset_bottom = 128.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect10" type="TextureRect" parent="deck"]
@@ -344,7 +342,7 @@ offset_left = -55.0
 offset_top = -18.0
 offset_right = 41.0
 offset_bottom = 127.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect11" type="TextureRect" parent="deck"]
@@ -352,7 +350,7 @@ offset_left = -56.0
 offset_top = -19.0
 offset_right = 40.0
 offset_bottom = 126.0
-texture = ExtResource("30_61o30")
+texture = ExtResource("31_ikwup")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="deck"]
@@ -365,12 +363,12 @@ text = "50"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Info" parent="." instance=ExtResource("6_lt2xq")]
+[node name="Info" parent="." instance=ExtResource("32_gqctx")]
 layout_mode = 1
 offset_top = -280.0
 offset_bottom = 232.0
 
-[node name="Info_tags" parent="Info" instance=ExtResource("7_lt2xq")]
+[node name="Info_tags" parent="Info" instance=ExtResource("33_ma2q0")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0
@@ -412,7 +410,7 @@ text = "Turno 1/5"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="card" parent="." instance=ExtResource("8_1p5nq")]
+[node name="card" parent="." instance=ExtResource("34_3d3fl")]
 layout_mode = 1
 offset_left = -993.667
 offset_top = -15.4446
@@ -616,7 +614,7 @@ offset_left = 954.507
 offset_top = 121.555
 offset_right = 994.507
 offset_bottom = 161.555
-texture = ExtResource("35_7o2ue")
+texture = ExtResource("35_o8k6w")
 
 [node name="TextureRect2" type="TextureRect" parent="Tutorial3"]
 texture_filter = 1
@@ -625,7 +623,7 @@ offset_left = 390.0
 offset_top = 329.355
 offset_right = 510.0
 offset_bottom = 475.355
-texture = ExtResource("36_72v1w")
+texture = ExtResource("36_78pat")
 expand_mode = 1
 stretch_mode = 4
 
@@ -635,7 +633,7 @@ offset_left = 602.575
 offset_top = 386.068
 offset_right = 642.575
 offset_bottom = 426.068
-texture = ExtResource("35_7o2ue")
+texture = ExtResource("35_o8k6w")
 
 [node name="ConfigButton" type="Button" parent="."]
 layout_mode = 1
@@ -652,18 +650,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("31_nnsnw")
+stream = ExtResource("37_nc3ic")
 autoplay = true
 bus = &"Music"
 
 [node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("34_7o2ue")
+stream = ExtResource("38_44kkh")
 bus = &"SFX"
 
 [node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("35_72v1w")
+stream = ExtResource("39_6sps1")
 bus = &"SFX"
 
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

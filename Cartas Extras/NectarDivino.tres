@@ -8,7 +8,7 @@ nome = "Néctar Divino"
 custo = "6"
 ingrediente = true
 is_processo = false
-desc = "+300 de Sabor. Adiciona +1 de mana nesse turno para cada *Ácido* no prato"
+desc = "+600 de Sabor."
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
 "parametro": "600"

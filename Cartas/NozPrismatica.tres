@@ -9,16 +9,16 @@ nome = "Noz Prismática"
 custo = "0"
 ingrediente = true
 is_processo = false
-desc = "-100 de Sabor. +2 na tag mais presente no prato"
+desc = "-100 de Sabor. +1 na tag mais presente no prato"
 on_martelo = ExtResource("1_cahfl")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
 "parametro": "-100"
 }, {
 "funcao": "mais_tag",
-"parametro": "2"
+"parametro": "1"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String](["Crocante"])
+tags = Array[String]([])
 metadata/_custom_type_script = "uid://bemxb877oehdb"

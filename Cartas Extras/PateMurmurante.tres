@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("2_eu2i3")
 nome = "Patê Murmurante"
-custo = "3"
+custo = "2"
 ingrediente = true
 is_processo = false
 desc = "'+30 sabor por tag Suave no prato"

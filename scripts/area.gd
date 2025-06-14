@@ -116,13 +116,13 @@ func _on_card_played(card: Control):
 #funcoes de botao, modificadas para as funcionalidades, não deletar
 func on_dentro_pressed() -> void:
 	if current_card:
-		control.descarte_turno = true
 		remove_child(current_card)
 		prato.add(current_card)
 		current_card = null
 	
 func on_lixo_pressed() -> void:
 	if current_card:
+		control.descarte_turno = true
 		remove_child(current_card)
 		current_card.queue_free()
 

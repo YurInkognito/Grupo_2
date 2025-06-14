@@ -47,12 +47,16 @@ var is_in_hand: bool = true
 var is_playable: bool = true
 var is_played: bool = false
 
+var original_scale
+@export var scale_factor = 1.5
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lista_tags = [tag1,tag2,tag3]
 	nome.text = nome_t
 	desc.text = desc_t
 	custo.text = custo_t
+	original_scale = scale
 
 func set_card(carta: CartaData) -> void:
 	lista_tags[0].texture = null
@@ -99,6 +103,21 @@ func _gui_input(event: InputEvent):
 			start_drag(event, false)
 		elif not event.pressed and is_dragging:
 			end_drag()
+
+func _on_mouse_entered():
+	if not is_dragging:
+		z_index = 10
+		scale = original_scale * scale_factor
+		# Centralizar a carta (ajuste fino pode ser necessário dependendo do seu ponto de ancoragem)
+		#position -= (scale - original_scale) * get_rect().size / 2
+
+func _on_mouse_exited():
+	if not is_dragging:
+		z_index = 0
+		scale = original_scale
+		# Centralizar de volta
+		#position += (scale * scale_factor - original_scale) * get_rect().size / (2 * scale_factor)
+
 
 func start_drag(event: InputEventMouseButton, from_hand: bool):
 	sfx_select_card.play()

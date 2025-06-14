@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=4 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="1_t2gs0"]
+[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/prato_tamplate.png" id="3_ur8ju"]
 
 [node name="TelaResultado" type="Control"]
 layout_mode = 3
@@ -137,8 +138,38 @@ autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 449.0
-offset_top = 599.0
-offset_right = 540.0
-offset_bottom = 636.0
+offset_left = 512.0
+offset_top = 669.0
+offset_right = 603.0
+offset_bottom = 706.0
 text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Prato" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.408854
+anchor_top = 0.0787037
+anchor_right = 0.563368
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Foto" type="TextureRect" parent="Prato"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 139.0
+texture = ExtResource("3_ur8ju")
+expand_mode = 1
+
+[node name="Nome" type="RichTextLabel" parent="Prato"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 154.0
+offset_right = 161.0
+offset_bottom = 247.0
+text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
+horizontal_alignment = 1

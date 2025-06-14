@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("3_npxv4")
 nome = "Cogumelo Murmurante"
-custo = "2"
+custo = "1"
 ingrediente = true
 is_processo = false
 desc = "+10 sabor por tag Suave no prato"

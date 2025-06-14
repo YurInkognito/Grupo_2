@@ -27,23 +27,26 @@ func _ready() -> void:
 	prato_value = $"/root/GlobalData".mult_final
 	cliente_value = $"/root/GlobalData".cliente_final
 	resultado_value = sabor_value * (prato_value + cliente_value)
-	var x: float = (resultado_value * 1.0 / objetivo * 1.0)
-	print(x)
-	if (x <= 0.75):
+	if (resultado_value <= 2000):
 		estrelas_value = 0
-	elif (x <= 1):
+	elif (resultado_value <= 4000):
 		estrelas_value = 1
-	elif (x <= 1.5):
+	elif (resultado_value <= 6000):
 		estrelas_value = 2
 	else:
 		estrelas_value = 3
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
-	if cliente_value == 3:
+	if cliente_value == 3 and estrelas_value == 3:
 		labels.append(secret)
 	
+	print(estrelas_value)
 	fala.text = $"/root/GlobalData".gera_fala(1,estrelas_value)
+	
+	$Prato/Nome.text = $"/root/GlobalData".nome_final
+	
 	show_anim()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -4,8 +4,11 @@ extends Control
 @onready var button: Button = $Button
 @onready var button_2: Button = $Button2
 @onready var button_3: Button = $Button3
+@onready var button_4: Button = $Button4
+@onready var button_5: Button = $Button5
 @onready var button_tutorial: Button = $Tutorial/Button
 @onready var button_tutorial2: Button = $Tutorial2/Button
+@onready var button_tutorial3: Button = $Tutorial3/Button
 
 @onready var mana_label: Label = $mana_label
 @onready var turno_label: Label = $turno_label
@@ -15,7 +18,7 @@ extends Control
 
 @export var lista_de_cartas: Array[CartaData]
 @export var deck = []
-@export var n_compras = 5
+@export var n_compras = 6
 
 @onready var hand_node: Control = $hand # Garanta que o nome do seu nó 'hand' esteja correto e seja do tipo 'hand'
 @onready var deck_node: Node2D = $deck # Crie um Position2D chamado 'DeckPosition' na sua cena para marcar a origem da animação
@@ -60,8 +63,11 @@ func _ready() -> void:
 	button.pressed.connect(on_end_turn_pressed)
 	button_2.pressed.connect(reset_game)
 	button_3.pressed.connect(end_game)
+	button_4.pressed.connect(reset_game)
+	button_5.pressed.connect(start_tutorial)
 	button_tutorial.pressed.connect(close_tutorial)
 	button_tutorial2.pressed.connect(close_tutorial2)
+	button_tutorial3.pressed.connect(close_tutorial3)
 	mana = max_mana
 	play_draw_sound()
 	# gerenciamento de cartas
@@ -77,12 +83,19 @@ func _process(delta: float) -> void:
 	turno_label.text = 'Turno ' + str(turno) + '/' + str(max_turno)
 	deck_label.text = str(deck.size())
 
+func start_tutorial():
+	$Tutorial.visible = true
+
 func close_tutorial():
 	$Tutorial.visible = false
 	$Tutorial2.visible = true
 
 func close_tutorial2():
 	$Tutorial2.visible = false
+	$Tutorial3.visible = true
+
+func close_tutorial3():
+	$Tutorial3.visible = false
 
 func on_draw_button_pressed(inicial: bool = true):
 	var card_data = null
@@ -134,6 +147,7 @@ func gastar_mana(custo: int):
 	mana = mana - custo
 
 func start_turn():
+	descarte_turno = false
 	play_draw_sound()
 	turno = turno + 1
 	mana = max_mana
@@ -146,10 +160,11 @@ func on_end_turn_pressed():
 	if turno >= max_turno:
 		end_game()
 	else:
-		descarte_turno = false
 		if !guarda:
 			on_discard_button_pressed()
-			await get_tree().create_timer(1).timeout 
+			while hand_node.get_child_count() > 0:
+				await get_tree().create_timer(0.1).timeout 
+			await get_tree().create_timer(0.2).timeout 
 		guarda = false
 		start_turn()
 
@@ -175,6 +190,9 @@ func reset_game():
 	descarte_turno = false
 	$Info/Info_tags.reset_tags()
 	$Info.set_pontos(0)
+	$"Area de areas/Area2".on_lixo_pressed()
+	$"Area de areas/Area".on_lixo_pressed()
+	$"Area de areas/Area3".on_lixo_pressed()
 	for i in range(prato_temp.get_child_count() - 1, -1, -1):
 		var child = prato_temp.get_child(i)
 		prato_temp.remove_child(child)
@@ -242,6 +260,7 @@ func gerar_nome():
 		nome = tipo_prato + ' ' + vibe + ' de ' + principal
 	else:
 		nome = tipo_prato + ' ' + 'vazio' + ' de ' + principal
+	$"/root/GlobalData".set_nome(nome)
 	return nome
 
 func compara_principal(pontos, nome):
@@ -325,11 +344,16 @@ func calculo_mult():
 	var frequencias = {}
 	var contagem_frequencias = {}
 	var maior_repeticao = 0
+	var menor_valor = 100
 	
 	for t in tags_prato:
 		if unicas.count(t) == 0:
 			unicas.append(t)
 		frequencias[t] = frequencias.get(t, 0) + 1
+	
+	for valor in frequencias.values():
+		if valor < menor_valor:
+			menor_valor = valor
 	
 	for freq in frequencias.values():
 		contagem_frequencias[freq] = contagem_frequencias.get(freq, 0) + 1
@@ -339,8 +363,8 @@ func calculo_mult():
 	match tipo_prato:
 		'Prato': $Info.set_mult(1); mult = 1
 		'Sopa': $Info.set_mult(tags_prato.count(primario)); mult = tags_prato.count(primario)
-		'Sanduiche': $Info.set_mult(unicas.size()); mult = unicas.size()
-		'Salada': $Info.set_mult(maior_repeticao); mult = 2 * maior_repeticao
+		'Sanduiche': $Info.set_mult(unicas.size() * menor_valor); mult = unicas.size() * menor_valor
+		'Salada': $Info.set_mult(3 * maior_repeticao); mult = 3 * maior_repeticao
 
 func jogar_carta(carta: CartaData):
 	print("Carta jogada:", carta.nome)
@@ -444,10 +468,13 @@ func add_por_mao(pontos: String, tag: String):
 		"todas": add_sabor(str(int(pontos) * hand_node.get_child_count()))
 		"Refrescante": add_sabor(str(int(pontos) * conta_cartas("Refrescante")))
 
-func add_sabor_descarte():
+func add_sabor_descarte(pontos: String):
 	if descarte_turno:
-		add_sabor("100")
+		add_sabor(pontos)
 
 func reset_sabor():
-	if sabor < 0:
-		sabor = 0
+	sabor = 0
+	sabor_continuo = 0
+	sabor_Suave = 0
+	sabor_Picante = 0
+	sabor_Umami = 0

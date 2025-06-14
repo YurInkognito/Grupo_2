@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhdb53ws7fnxt"]
+[gd_scene load_steps=12 format=3 uid="uid://dhdb53ws7fnxt"]
 
-[ext_resource type="Theme" uid="uid://df8vawwr24ekp" path="res://recursos/mainTheme.tres" id="1_6u4wf"]
 [ext_resource type="Script" uid="uid://dku8lmad88ej1" path="res://scripts/card.gd" id="2_ktuci"]
 [ext_resource type="AudioStream" uid="uid://jwxcmjkbfqy4" path="res://audio/SFX/SelecionarCarta_cut.wav" id="3_kg30u"]
 [ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/carta12.png" id="3_ktuci"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7png.png" id="9_54seb"]
 
 [node name="card" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 custom_minimum_size = Vector2(96, 145)
 anchors_preset = -1
@@ -22,7 +22,6 @@ anchor_bottom = 0.223765
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 140)
-theme = ExtResource("1_6u4wf")
 script = ExtResource("2_ktuci")
 nome_t = "sal"
 desc_t = "+ 40 sabor"
@@ -37,18 +36,20 @@ suave = ExtResource("9_54seb")
 metadata/_edit_use_anchors_ = true
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(48, 72.25)
+texture_filter = 1
+position = Vector2(48, 72.5)
 texture = ExtResource("3_ktuci")
 
 [node name="nome" type="Label" parent="."]
 layout_mode = 1
-offset_left = 18.0
-offset_top = 73.0
-offset_right = 85.0
-offset_bottom = 86.0
+offset_left = 8.0
+offset_top = 76.0
+offset_right = 332.0
+offset_bottom = 121.0
+scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
-text = "nome"
+theme_override_font_sizes/font_size = 32
+text = "Broto"
 horizontal_alignment = 1
 
 [node name="custo" type="Label" parent="."]
@@ -57,12 +58,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -51.0
-offset_right = -6.0
-offset_bottom = 23.0
+offset_left = -39.6666
+offset_top = 2.0
+offset_right = 5.33337
+offset_bottom = 47.0
 grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "2"
 horizontal_alignment = 2
 
@@ -137,3 +140,6 @@ offset_top = 93.0
 offset_right = 67.0
 offset_bottom = 133.0
 texture = ExtResource("3_we8pq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

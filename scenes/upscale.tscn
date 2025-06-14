@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0c8kxd2u3ycb"]
+
+[ext_resource type="PackedScene" uid="uid://dqvxp5khj1603" path="res://scenes/control.tscn" id="1_suk67"]
+
+[node name="Upscale" type="Node2D"]
+
+[node name="Control" parent="." instance=ExtResource("1_suk67")]
+offset_left = 618.591
+offset_top = 349.165
+offset_right = 618.591
+offset_bottom = 349.165

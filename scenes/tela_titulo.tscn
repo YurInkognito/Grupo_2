@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=4 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Texture2D" uid="uid://d0p64wdujl81u" path="res://sprites/IMG_1945.PNG" id="2_wys1u"]
+[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="3_b8sri"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bp1iq")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -79,6 +81,12 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 28
 text = "Sair"
+
+[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("3_b8sri")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
