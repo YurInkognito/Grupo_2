@@ -28,7 +28,8 @@ directories/dch_directory={
 "Chef": "res://Personagens/Chef/Chef.dch"
 }
 directories/dtl_directory={
-"timeline": "res://Timelines/timeline.dtl"
+"timeline": "res://Timelines/timeline.dtl",
+"timeline_aliane2": "res://Timelines/timeline_aliane2.dtl"
 }
 variables={
 "fim": "0"

@@ -1,21 +1,19 @@
 [background arg="res://Fundos/BG a la carte.png" fade="0.0"]
 [wait time="1.0"]
-join Chef center [animation="Slide In Up" wait="true"]
+join Chef right [animation="Fade In" wait="true"]
 Chef: Ok. Tá tudo no lugar. As mesas estão limpinhas, os talheres reluzentes, a ratoeira da despensa tá armada…
-Chef: O banheiro tá bonitinho também. Muito importante. Dá pra julgar bem a qualidade de um restaurante pelo quão bem mantido e confortável o banheiro é. Pelo menos é o que minha mãe dizia.
+Chef: O banheiro tá bonitinho também. Muito importante. Dá pra julgar bem a qualidade de um restaurante pelo quão bem mantido e confortável o banheiro é. Pelo menos é o que minha mãe dizia. 
 Chef: Putz. Ela chegou.
 Chef: Meu Deus ela é mais alta do que eu estava esperando... Se ela ficar muito irritada ela vai me arremessar pela janela?
 Chef: Ok, calma. Respira.
 Chef: É importante ter uma boa primeira impressão. Vamos lá.
-leave Chef [animation="Zoom Out" wait="true"]
 [wait time="1.0"]
-join Aliane left [animation="Fade In" length="2.0" wait="true" mirrored="true"]
+join Aliane left [animation="Fade In" wait="true"]
 Aliane: Olá.
-join Chef right [animation="Slide In Right" wait="true"]
 Chef: GOSTARIA DE VISITAR O BANHEIRO, MADAME????????????
 Aliane: ......Como disse?
 Chef: Eu disse "Boas vindas madame, como posso servi-la?"
-Chef: (EU VOU ENFIAR MINHA LÍNGUA ENORME NAQUELA RATOEIRA DEPOIS DESSA???)
+Chef: (EU VOU ENFIAR MINHA LÍNGUA ENORME NAQUELA RATOEIRA DEPOIS DESSA.)
 Aliane: Hm. Olá.
 Aliane: Me disseram que esse restaurante é digno o bastante para receber uma resenha da Elf's Digest.
 Aliane: Assumo que tenha recebido a carta da revista com os detalhes do nosso processo.
@@ -49,10 +47,11 @@ Aliane: Foi o que meu ex-marido disse, pelo menos.
 Aliane: E minha ex-esposa.
 Aliane: E a ex-amante com quem eu traí meu primeiro marido e que se tornou minha segunda esposa, até o dia que ela descobriu o meu caso com a mulher que iria se tornar minha terceira ex-esposa e pediu o divórcio.
 Aliane: …
-Aliane: Tá, eu vou engajar com o seu esqueminha, duende.
-Chef: (Uau. Ela é complicada.)
+Aliane: Tá, eu vou engajar com o seu esqueminha, anão.
+Chef: (Uau. Ela é… BEM complicada.)
 Chef: (Ela tem tantas bandeiras vermelhas que eu consigo imaginar umas 4 amigas minhas se apaixonando por ela.)
 label escolha
+[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
 - Que tipo de prato você gosta?
 	Chef: Que tipo de prato você gosta?
 	Aliane: Olha, eu sei que você criou toda essa historinha para desviar da minha política de não pedir diretamente por um prato.
@@ -65,7 +64,7 @@ label escolha
 	Chef: Quanto tempo você trabalha lá?
 	Aliane: Eu sou uma das fundadoras dela, na verdade.
 	Chef: AH… EU… NÃO SABIA…
-	Chef: (Eu não acerto UMA dentro com ela né?)
+	Chef: (Será que eu não vou acertar UMA dentro hoje?)
 	Aliane: Eu comando a seção de culinária desde o início, faz sentido que eu seja mais reconhecida por isso do que qualquer outra função que já cumpri por lá.
 	Aliane: Hoje em dia temos vários especialistas lidando com restaurantes, mas eu gosto de colocar a mão na massa vez ou outra.
 	Aliane: Em especial com estabelecimentos tão promissores.
@@ -89,7 +88,7 @@ label escolha
 	Aliane: Mas isso é o que dá definir as decisões executivas em votos. Elas sempre ficam contra mim.
 	Aliane: …Não ajuda muito que as duas são minhas ex-esposas.
 	Chef: Você fundou a revista com suas duas ex-esposas????
-	Aliane: Não seja ridículo. Eu não tinha envolvimento nenhum com elas na época
+	Aliane: Não seja ridículo. Eu não tinha envolvimento nenhum com elas na época.
 	Aliane: …
 	Aliane: Enfim, agora as duas são casadas.
 	Aliane: Se isso não pagasse tão bem eu teria largado isso a tanto tempo.
@@ -97,43 +96,4 @@ label escolha
 	Chef: (Isso tem camadas demais pra eu conseguir processar nesse momento de estresse.)
 	Aliane: Isso é normal para elfas lésbicas, se é que é isso que você tá se perguntando.
 	Chef: Eu literalmente não tenho escolha além de acreditar em você.
-	jump escolha
-- Perguntar se ela quer que o prato acompanhe pimenta
-	Chef: Se você quiser, o seu prato pode acompanhar uma garrafinha de pimenta para você poder adicionar à gosto!
-	Aliane: Bela tentativa de novo.
-	Chef: ?
-	Aliane: É como eu disse, eu quero sentir o que o restaurante tem de melhor e as habilidades do cozinheiro do estabelecimento.
-	Aliane: Se eu julgasse todo prato com base na quantidade de pimenta que EU adiciono, qualquer sorveteria de esquina teria uma nota mediana ou decente.
-	Chef: Sorveteri-
-	Chef: Você coloca pimenta no SORVETE?
-	Aliane: É a única forma que eu consigo tragar aquela coisa.
-	Aliane: Comida sem valor. Sem mérito. Sem gosto.
-	Chef: …
-	Chef: Então você não gosta de sorvete por ele normalmente não ser picante?
-	Aliane: Olha. Se tem uma coisa que a minha mãe me ensinou desde cedo, é que nada na vida tem valor se não tiver um pouco de sofrimento.
-	Aliane: Você precisa estar preparada para um mundo cruel. Um mundo que pode tirar proveito seu, te descartar e te destruir caso você tenha a audácia de reclamar.
-	Aliane: Por isso que você tem que estar preparado. Especialmente em momentos que uma pessoa normal estaria desprevenida.
-	Chef: A minha mãe conseguiu filtrar esse tipo de fraqueza me alimentando exclusivamente de comidas bastante apimentadas.
-	Chef: Desde quando, exatamente?
-	Aliane: Desde quando eu deixei de ser amamentada.
-	Aliane: E até mesmo naquela época ela virava um copinho de pimenta antes.
-	Chef: Antes?
-	Chef: …
-	Chef: ... Ah.
-	Chef: Ok acho que…
-	Chef: …
-	Chef: (Bom, acho que tá aí minha resposta. Comida picante.)
-	Chef: (BEM picante.)
-	Chef: (Acho que eu consigo lidar bem com esse paladar bruto. Mas achei meio triste isso.)
-	Chef: (Ela realmente só consegue comer algo se tiver num nível absurdamente alto de pimenta? Tudo tem que ser tão intenso assim?)
-	Chef: (Eu PODERIA fazer o que ela claramente quer, mas eu poderia me diferenciar um pouco e fazer algo que seja suave, tão suave que vai ser uma sensação completamente nova pra ela.)
-QUAL PRATO NOSSO COZINHEIRO VAI TENTAR FAZER?
-- 1 - COMIDA ULTRA PICANTE FÁCIL DE AGRADAR
-- 2 - COMIDA ULTRA SUAVE PARA SURPREENDER ELA
-Chef: Decidi!
-Aliane: ?
-Chef: Seu prato estará pronto em breve, senhora.
-Aliane: Tá… Até que enfim, em?
-set {fim} = "0"
-[wait time="1.0"]
-do GlobalData.jogar()
+	jump timeline_aliane2/escolha
