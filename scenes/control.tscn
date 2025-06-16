@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=46 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_61o30"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_po8yf"]
 [ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_7o2ue"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="11_72v1w"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas Adicionais/Cenoura Morto-Vivo.tres" id="11_72v1w"]
 [ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="12_qsysb"]
 [ext_resource type="Resource" uid="uid://wkg4ki85n752" path="res://Cartas/MandragoraReal.tres" id="13_hl4in"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="14_136wn"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
 [ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
+[ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="35_qsysb"]
 [ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/pao_tutorial.png" id="36_72v1w"]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
@@ -70,7 +71,7 @@ offset_bottom = -709.2
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtu10")
-lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("14_136wn"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn")])
+lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn")])
 mana = 4
 
 [node name="Bg" type="TextureRect" parent="."]
@@ -398,12 +399,30 @@ text = "5"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Dia" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.082
+anchor_right = 0.066
+anchor_bottom = 0.143
+offset_left = 0.600015
+offset_top = -0.0399933
+offset_right = 0.52002
+offset_bottom = 48.04
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Dia 2"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="turno_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00607639
-anchor_right = 0.135417
-anchor_bottom = 0.069445
+anchor_left = 0.00546875
+anchor_right = 0.00951093
+anchor_bottom = 0.0691358
 offset_right = 143.826
 offset_bottom = 42.2222
 grow_vertical = 0
@@ -418,6 +437,68 @@ offset_left = -993.667
 offset_top = -15.4446
 offset_right = -901.0
 offset_bottom = 120.605
+
+[node name="Cliente" type="Panel" parent="."]
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AlianeButolane-1" type="Sprite2D" parent="Cliente"]
+position = Vector2(634, 535.555)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("35_qsysb")
+
+[node name="Button" type="Button" parent="Cliente"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.869792
+anchor_top = 0.743827
+anchor_right = 0.980035
+anchor_bottom = 0.861111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Jogar!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Cliente"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -401.0
+offset_top = -273.0
+offset_right = 401.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label5" type="Label" parent="Cliente/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206741
+anchor_top = 2.62701
+anchor_right = 1.20674
+anchor_bottom = 2.89923
+offset_left = -165.806
+offset_top = -379.917
+offset_right = -165.806
+offset_bottom = -270.389
+theme_override_font_sizes/font_size = 25
+text = "Quero um prato:
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" type="Panel" parent="."]
 visible = false

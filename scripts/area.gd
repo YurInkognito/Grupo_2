@@ -83,27 +83,27 @@ func drop_processo(card: Control) -> bool:
 	print("processando")
 	print(card.card_data.nome)
 	if current_card and (int(card.custo_t) <= control.mana):
-		if current_card.card_data.on_faca and card.card_data.nome == "faca":
+		if current_card.card_data.on_faca and card.card_data.nome == "Cutelo":
 			print("cortado")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
-			on_processar_carta(current_card.card_data, "faca")
+			on_processar_carta(current_card.card_data, "Cutelo")
 			current_card.set_card(current_card.card_data.on_faca)
 			hand.update_cards()
 			return true
-		if current_card.card_data.on_fogo and card.card_data.nome == "fogo":
+		if current_card.card_data.on_fogo and card.card_data.nome == "Espirito de Fogo":
 			print("queimado")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
-			on_processar_carta(current_card.card_data, "fogo")
+			on_processar_carta(current_card.card_data, "Espirito de Fogo")
 			current_card.set_card(current_card.card_data.on_fogo)
 			hand.update_cards()
 			return true
-		if current_card.card_data.on_martelo and card.card_data.nome == "martelo":
+		if current_card.card_data.on_martelo and card.card_data.nome == "Martelo":
 			print("amassado")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
-			on_processar_carta(current_card.card_data, "martelo")
+			on_processar_carta(current_card.card_data, "Martelo")
 			current_card.set_card(current_card.card_data.on_martelo)
 			hand.update_cards()
 			return true                          
@@ -122,7 +122,7 @@ func on_dentro_pressed() -> void:
 	
 func on_lixo_pressed() -> void:
 	if current_card:
-		control.descarte_turno = true
+		control.descartado()
 		remove_child(current_card)
 		current_card.queue_free()
 

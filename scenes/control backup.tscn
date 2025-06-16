@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_1typb"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_a1wuh"]
 [ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_wuipj"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="11_oivgf"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas Adicionais/Cenoura Morto-Vivo.tres" id="11_oivgf"]
 [ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="12_xd1l2"]
 [ext_resource type="Resource" uid="uid://wkg4ki85n752" path="res://Cartas/MandragoraReal.tres" id="13_5o6md"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="14_1bipq"]

@@ -11,15 +11,16 @@ nome = "Foguito"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Quando processado, adicione uma carta fogo na mão"
+desc = "Adicione um \"Espirito do Fogo\" à sua mão"
 on_faca = ExtResource("1_bx73c")
 on_fogo = ExtResource("2_fhpd8")
 on_martelo = ExtResource("3_4jyl6")
-efeitos_ao_jogar = Array[Dictionary]([])
-efeitos_ao_processar = Array[Dictionary]([{
+efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "bota_na_mao",
-"parametro": "fogo"
+"parametro": "Espirito de Fogo"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Picante"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

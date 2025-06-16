@@ -1,5 +1,6 @@
 extends Control
 
+@onready var dia: Label = $Panel/Dia
 @onready var sabor: Label = $Panel/Sabor
 @onready var prato: Label = $Panel/Prato
 @onready var cliente: Label = $Panel/Cliente
@@ -16,25 +17,34 @@ extends Control
 @export var objetivo: int = 1200
 
 @onready var botao: Button = $Button
+@onready var continuar: Button = $Button2
 
 var labels: Array[Label]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Button2.visible = false
 	botao.pressed.connect(voltar)
+	continuar.pressed.connect(upgradar)
 	
+	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	sabor_value = $"/root/GlobalData".sabor_final
 	prato_value = $"/root/GlobalData".mult_final
 	cliente_value = $"/root/GlobalData".cliente_final
 	resultado_value = sabor_value * (prato_value + cliente_value)
-	if (resultado_value <= 2000):
+	var dia = $"/root/GlobalData".fase - 1
+	if (resultado_value <= 2000 + dia * 100):
 		estrelas_value = 0
-	elif (resultado_value <= 4000):
+	elif (resultado_value <= 4000 + dia * 100):
 		estrelas_value = 1
-	elif (resultado_value <= 6000):
+	elif (resultado_value <= 6000 + dia * 100):
 		estrelas_value = 2
 	else:
 		estrelas_value = 3
+	
+	if estrelas_value > 0:
+		$Button2.visible = true
+		$Panel3/Panel.recompensar(estrelas_value)
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
 	if cliente_value == 3 and estrelas_value == 3:
@@ -46,7 +56,6 @@ func _ready() -> void:
 	$Prato/Nome.text = $"/root/GlobalData".nome_final
 	
 	show_anim()
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,6 +73,9 @@ func _process(delta: float) -> void:
 func voltar():
 	reset_pontos()
 	get_tree().change_scene_to_file("res://scenes/tela_titulo.tscn")
+	
+func upgradar():
+	$Panel3.visible = true
 
 func reset_pontos():
 	var temp_array: Array[String] = []

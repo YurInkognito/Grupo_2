@@ -8,15 +8,16 @@ nome = "Martelete Compactado"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "-100 de sabor. Na mesa: Ao usar um martelo, ganhe uma carta martelo na mão."
+desc = "-100 de sabor. Na mesa:  No inicio do turno adicione um \"Martelo\" à sua mão."
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
 "parametro": "-100"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([{
-"funcao": "bota_na_mao",
+"funcao": "add_mao_por_turno",
 "parametro": "martelo"
 }])
 tags = Array[String](["Refrescante", "Refrescante"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

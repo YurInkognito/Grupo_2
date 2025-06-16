@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://f5lg7tp3167y"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_hi83q"]
+
+[resource]
+script = ExtResource("1_hi83q")
+nome = "Picles de Beholder"
+custo = "3"
+ingrediente = true
+is_processo = false
+desc = "Sempre que gastar mana compre uma carta."
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "gasta_compra",
+"parametro": null
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Acido", "Crocante"])
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

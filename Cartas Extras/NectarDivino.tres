@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_2pedt")
-nome = "Néctar Divino"
+nome = "Ambrosia Divina"
 custo = "6"
 ingrediente = true
 is_processo = false
@@ -16,4 +16,5 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Umami", "Umami", "Umami"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

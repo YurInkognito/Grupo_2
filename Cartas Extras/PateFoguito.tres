@@ -4,13 +4,17 @@
 
 [resource]
 script = ExtResource("2_hecp2")
-nome = "Patê de Foguito"
+nome = "Pasta de Foguito"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "\"Não passe a mão no olho!\""
-efeitos_ao_jogar = Array[Dictionary]([])
+desc = "+100 de sabor"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "100"
+}])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String](["Picante", "Picante"])
+tags = Array[String](["Picante"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

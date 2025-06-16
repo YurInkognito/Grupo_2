@@ -9,10 +9,13 @@ extends Control
 @onready var button_tutorial: Button = $Tutorial/Button
 @onready var button_tutorial2: Button = $Tutorial2/Button
 @onready var button_tutorial3: Button = $Tutorial3/Button
+@onready var button_cliente: Button = $Cliente/Button
 
+@onready var dia: Label = $Dia
 @onready var mana_label: Label = $mana_label
 @onready var turno_label: Label = $turno_label
 @onready var deck_label: Label = $deck/Label
+@onready var cliente_label: Label = $Cliente/Panel/Label5
 
 @export var caminho_pasta_cartas: String = "res://Cartas/"
 
@@ -35,21 +38,32 @@ extends Control
 @export var sabor: int = 0
 @export var sabor_continuo: int = 0
 @export var mult: int = 1
-@export var sal: float = 1
-@export var queijos: Array[int]
 @export var tags_prato: Array[String]
+@export var ingredientes_prato: Array[String]
 
 #efeitos
+@export var sal: float = 1
+@export var queijos: Array[int]
 @export var prox_double: Array[String] = []
 @export var prox_zero: Array[String] = []
 @export var sabor_Suave: int = 0
 @export var sabor_Picante: int = 0
 @export var sabor_Umami: int = 0
+@export var sabor_Unico: int = 0
+@export var sabor_Comum: int = 0
+@export var sabor_descarte: int = 0
 @export var sabor_Sopa: int = 0
 @export var sabor_Sanduiche: int = 0
 @export var sabor_Salada: int = 0
+@export var sabor_por_ingrediente: int = 0
+@export var adiciona_inicio: Array[String] = []
+
 @export var guarda: bool = false
 @export var descarte_turno = false
+@export var descarte_totais = 0
+@export var mult_prato = 1
+@export var tomate_ativo = false
+@export var picles = false
 
 #cena da config
 const CONFIG = preload("res://scenes/config.tscn")
@@ -59,7 +73,27 @@ const CONFIG = preload("res://scenes/config.tscn")
 
 
 func _ready() -> void:
-	$Tutorial.visible = true
+	if $"/root/GlobalData".fase != 1 and $"/root/GlobalData".fase != 5:
+		$Cliente.visible = true
+	var cliente = $"/root/GlobalData".cliente_temp
+	var texto_temp = cliente.nome
+	texto_temp = texto_temp + ": Quero "
+	match cliente.objetivo_1[0]:
+		"tag":
+			texto_temp = texto_temp + "um prato bastante " + cliente.objetivo_1[1] + " e "
+		"prato":
+			texto_temp = texto_temp + "um/uma " + cliente.objetivo_1[1] + " "
+		"ingrediente":
+			texto_temp = texto_temp + "um prato com " + cliente.objetivo_1[1] + " e "
+	match cliente.objetivo_2[0]:
+		"tag":
+			texto_temp = texto_temp + "um pouco " + cliente.objetivo_2[1]
+		"ingrediente":
+			texto_temp = texto_temp + "com " + cliente.objetivo_2[1]
+	cliente_label.text = texto_temp
+	lista_de_cartas = $"/root/GlobalData".lista_cartas
+	if $"/root/GlobalData".fase == 1:
+		$Tutorial.visible = true
 	button.pressed.connect(on_end_turn_pressed)
 	button_2.pressed.connect(reset_game)
 	button_3.pressed.connect(end_game)
@@ -68,6 +102,7 @@ func _ready() -> void:
 	button_tutorial.pressed.connect(close_tutorial)
 	button_tutorial2.pressed.connect(close_tutorial2)
 	button_tutorial3.pressed.connect(close_tutorial3)
+	button_cliente.pressed.connect(close_cliente)
 	mana = max_mana
 	play_draw_sound()
 	# gerenciamento de cartas
@@ -79,6 +114,7 @@ func _ready() -> void:
 	on_draw_button_pressed()
 
 func _process(delta: float) -> void:
+	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	mana_label.text = str(mana) + '/' + str(max_mana)
 	turno_label.text = 'Turno ' + str(turno) + '/' + str(max_turno)
 	deck_label.text = str(deck.size())
@@ -96,6 +132,9 @@ func close_tutorial2():
 
 func close_tutorial3():
 	$Tutorial3.visible = false
+
+func close_cliente():
+	$Cliente.visible = false
 
 func on_draw_button_pressed(inicial: bool = true):
 	var card_data = null
@@ -144,10 +183,15 @@ func on_discard_button_pressed():
 	hand_node.discard()
 
 func gastar_mana(custo: int):
+	if custo > 0 and picles:
+		compra()
 	mana = mana - custo
 
 func start_turn():
 	descarte_turno = false
+	tomate_ativo = false
+	for i in adiciona_inicio:
+		bota_na_mao(i)
 	play_draw_sound()
 	turno = turno + 1
 	mana = max_mana
@@ -176,6 +220,7 @@ func reset_game():
 	principal = 'nada'
 	principal_pontos = 0
 	tipo_prato =  "Prato"
+	ingredientes_prato = []
 	sabor = 0
 	sabor_continuo = 0
 	sal = 1
@@ -183,11 +228,15 @@ func reset_game():
 	tags_prato = []
 	prox_double = []
 	prox_zero = []
+	adiciona_inicio = []
 	sabor_Suave = 0
 	sabor_Picante = 0
 	sabor_Umami = 0
 	var prato_temp = $prato
+	descarte_totais = 0
 	descarte_turno = false
+	tomate_ativo = false
+	picles = false
 	$Info/Info_tags.reset_tags()
 	$Info.set_pontos(0)
 	$"Area de areas/Area2".on_lixo_pressed()
@@ -227,6 +276,7 @@ func gerar_deck():
 
 func encontrar_carta_data_por_nome(nome: String) -> CartaData:
 	for carta_data in lista_de_cartas:
+		print(carta_data.nome)
 		if carta_data.nome == nome:
 			return carta_data
 	printerr("CartaData com o nome '", nome, "' não encontrado.")
@@ -276,6 +326,12 @@ func conta_cartas(tag):
 			r += 1
 	return r
 
+func descartado():
+	descarte_turno = true
+	descarte_totais += 1
+	if tomate_ativo:
+		compra()
+
 func reseta_prox_zero():
 	prox_zero = []
 
@@ -313,16 +369,27 @@ func aplicar_efeitos_carta(carta: CartaData):
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
 	$"/root/GlobalData".set_mult(mult)
 	$"/root/GlobalData".set_tags(tags_prato)
-	$"/root/GlobalData".set_cliente(1)
+	$"/root/GlobalData".set_ingredientes(ingredientes_prato)
+	$"/root/GlobalData".set_cliente(2)
 	print(sabor)
 
 func pontuação_continua():
+	var unicas = []
+	var frequencias = {}
+	for t in tags_prato:
+		if unicas.count(t) == 0:
+			unicas.append(t)
+		frequencias[t] = frequencias.get(t, 0) + 1
 	sabor_continuo = 0
 	
 	#sabor de tags
 	sabor_continuo = sabor_continuo + sabor_Suave * tags_prato.count('Suave')
 	sabor_continuo = sabor_continuo + sabor_Picante * tags_prato.count('Picante')
 	sabor_continuo = sabor_continuo + sabor_Umami * tags_prato.count('Umami')
+	sabor_continuo = sabor_continuo + sabor_Unico * unicas.size()
+	sabor_continuo = sabor_continuo + sabor_descarte * descarte_totais
+	sabor_continuo = sabor_continuo + sabor_Comum * tags_prato.count(encontrar_mais_frequente(tags_prato))
+	sabor_continuo = sabor_continuo + sabor_por_ingrediente * ingredientes_prato.size()
 	
 	#sabor de prato
 	match tipo_prato:
@@ -334,9 +401,6 @@ func pontuação_continua():
 	print(queijos)
 	for q in queijos:
 		sabor_continuo = sabor_continuo + (q * queijos.size())
-	
-	#sal
-	sabor_continuo = sabor_continuo * sal
 
 func calculo_mult():
 	var primario = encontrar_mais_frequente(tags_prato)
@@ -361,7 +425,7 @@ func calculo_mult():
 			maior_repeticao = contagem_frequencias[freq]
 	
 	match tipo_prato:
-		'Prato': $Info.set_mult(1); mult = 1
+		'Prato': $Info.set_mult(mult_prato); mult = mult_prato
 		'Sopa': $Info.set_mult(tags_prato.count(primario)); mult = tags_prato.count(primario)
 		'Sanduiche': $Info.set_mult(unicas.size() * menor_valor); mult = unicas.size() * menor_valor
 		'Salada': $Info.set_mult(3 * maior_repeticao); mult = 3 * maior_repeticao
@@ -369,6 +433,7 @@ func calculo_mult():
 func jogar_carta(carta: CartaData):
 	print("Carta jogada:", carta.nome)
 	tags_prato.append_array(carta.tags)
+	ingredientes_prato.append(carta.nome)
 	aplicar_efeitos_carta(carta)
 	for i in prox_double:
 		if (carta.tags.count(i) > 0):
@@ -389,7 +454,6 @@ func play_draw_sound():
 
 #lista de acoes executaveis pelas cartas: -----------------------------------------------------------------------------------------------
 
-
 func mostrar_mensagem(mensagem: String):
 	print("Mensagem da Carta:", mensagem)
 
@@ -397,7 +461,7 @@ func add_sabor(pontos: String):
 	sabor = sabor + int(pontos) * sal
 
 func sal_mult(mult: String):
-	sal = sal * float(mult)
+	sal = sal + float(mult)
 
 func set_sanduiche():
 	tipo_prato = "Sanduiche"
@@ -409,19 +473,21 @@ func compra():
 	on_draw_button_pressed(false)
 
 func add_sabor_queijo(pontos: String):
-	queijos.append(int(pontos))
+	queijos.append(int(pontos) * sal)
 
 func add_sabor_tag(pontos: String, tag: String):
 	match tag:
-		"Suave": sabor_Suave = sabor_Suave + int(pontos)
-		"Picante": sabor_Picante = sabor_Picante + int(pontos)
-		"Umami": sabor_Umami = sabor_Umami + int(pontos)
+		"Suave": sabor_Suave = sabor_Suave + int(pontos) * sal
+		"Picante": sabor_Picante = sabor_Picante + int(pontos) * sal
+		"Umami": sabor_Umami = sabor_Umami + int(pontos) * sal
+		"Unica": sabor_Unico = sabor_Unico + int(pontos) * sal
+		"Comum": sabor_Comum = sabor_Comum + int(pontos) * sal
 
 func add_sabor_prato(pontos: String, prato: String):
 	match prato:
-		"Sopa": sabor_Sopa += int(pontos)
-		"Sanduiche": sabor_Sanduiche += int(pontos)
-		"Salada": sabor_Salada += int(pontos)
+		"Sopa": sabor_Sopa += int(pontos) * sal
+		"Sanduiche": sabor_Sanduiche += int(pontos) * sal
+		"Salada": sabor_Salada += int(pontos) * sal
 
 func prox_ingrediente_double(tag: String):
 	prox_double.append(tag)
@@ -451,8 +517,8 @@ func mais_tag(vezes: String):
 		tags_prato.append(encontrar_mais_frequente(tags_prato))
 		x += 1
 
-func gera_mana(tag: String):
-	mana = mana + tags_prato.count(tag)
+func gera_mana(pontos: String):
+	mana = mana + int(pontos)
 
 func guarda_mao():
 	guarda = true
@@ -471,6 +537,32 @@ func add_por_mao(pontos: String, tag: String):
 func add_sabor_descarte(pontos: String):
 	if descarte_turno:
 		add_sabor(pontos)
+
+func set_mult_prato(pontos: String):
+	mult_prato = int(pontos)
+
+func descarte_compra():
+	tomate_ativo = true
+
+func descarte_ponto(pontos: String):
+	sabor_descarte = sabor_descarte + int(pontos) * sal
+
+func descarta_direita():
+	hand_node.get_child(0).queue_free()
+	descartado()
+
+func gasta_compra():
+	picles = true
+
+func add_por_prato(pontos: String):
+	sabor_por_ingrediente = sabor_por_ingrediente + int(pontos) * sal
+
+func add_acido_primario(pontos: String):
+	if encontrar_mais_frequente(tags_prato) == "Acido":
+		add_sabor('200')
+
+func add_mao_por_turno(carta: String):
+	adiciona_inicio.append(carta)
 
 func reset_sabor():
 	sabor = 0

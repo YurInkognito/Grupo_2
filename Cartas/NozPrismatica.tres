@@ -21,4 +21,5 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String]([])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

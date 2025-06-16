@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://efx71mo80sxo"]
+
+[ext_resource type="Resource" uid="uid://bxstp7mf765wi" path="res://Cartas Extras/BifeDeMinotauro.tres" id="1_wxeyk"]
+[ext_resource type="Resource" uid="uid://bgwu2uvarsq07" path="res://Cartas Extras/CarneDeMinotauroAssada.tres" id="2_k3eqj"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_cuxwm"]
+
+[resource]
+script = ExtResource("3_cuxwm")
+nome = "Carne de Minotauro"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "-50 de Sabor"
+on_faca = ExtResource("1_wxeyk")
+on_fogo = ExtResource("2_k3eqj")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "-50"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Umami"])
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

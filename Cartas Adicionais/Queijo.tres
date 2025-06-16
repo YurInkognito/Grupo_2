@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://bevuamrh23hnd"]
+
+[ext_resource type="Resource" uid="uid://d33a6hjtj6qp1" path="res://Cartas Extras/FatiaQueijo.tres" id="1_b7t0w"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_t7nde"]
+[ext_resource type="Texture2D" uid="uid://dln8c73jwfdrb" path="res://sprites/CARTAS 21-05/carta8.png" id="3_c3aiy"]
+
+[resource]
+script = ExtResource("2_t7nde")
+nome = "Queijo de Tauren"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "+70 de Sabor se o prato é uma *Sopa*"
+on_faca = ExtResource("1_b7t0w")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor_prato",
+"parametro": ["70", "Sopa"]
+}, {
+"funcao": "add_sabor_queijo",
+"parametro": "0"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Suave"])
+sprite = ExtResource("3_c3aiy")
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

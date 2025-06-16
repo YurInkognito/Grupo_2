@@ -1,8 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=22 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="1_t2gs0"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/prato_tamplate.png" id="3_ur8ju"]
+[ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
+[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
+[ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas Adicionais/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
+[ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
+[ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
+[ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
+[ext_resource type="Resource" uid="uid://dc5bv8mvqsddo" path="res://Cartas Adicionais/Escama de Boitata.tres" id="11_hj10q"]
+[ext_resource type="Resource" uid="uid://gy204a0jbqel" path="res://Cartas Adicionais/MandragoraReal.tres" id="12_jxvgl"]
+[ext_resource type="Resource" uid="uid://dewmiwnj8ouoa" path="res://Cartas Adicionais/MentaEsfoladoura.tres" id="13_h1s8t"]
+[ext_resource type="Resource" uid="uid://cpncsap5r31xa" path="res://Cartas Adicionais/NozPrismatica.tres" id="14_jn4of"]
+[ext_resource type="Resource" uid="uid://cksh7kgq22o63" path="res://Cartas Adicionais/OvosDeAmbrosia.tres" id="15_w4qan"]
+[ext_resource type="Resource" uid="uid://f5lg7tp3167y" path="res://Cartas Adicionais/PiclesDeBeholder.tres" id="16_g0giy"]
+[ext_resource type="Resource" uid="uid://bevuamrh23hnd" path="res://Cartas Adicionais/Queijo.tres" id="17_boxiq"]
+[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas Adicionais/Repolho.tres" id="18_ol7y8"]
+[ext_resource type="Resource" uid="uid://c2e2t7cquk7a5" path="res://Cartas Adicionais/sal.tres" id="19_hwysf"]
+[ext_resource type="Resource" uid="uid://di1uo486cqo24" path="res://Cartas Adicionais/TomateVampirico.tres" id="20_wlslg"]
 
 [node name="TelaResultado" type="Control"]
 layout_mode = 3
@@ -22,6 +40,20 @@ texture = ExtResource("1_t2gs0")
 layout_mode = 0
 anchor_right = 0.484375
 anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Dia" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297491
+anchor_top = 0.0246918
+anchor_right = 0.704301
+anchor_bottom = 0.121914
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Dia 2"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Sabor" type="Label" parent="Panel"]
@@ -137,12 +169,28 @@ text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tan
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.3875
+anchor_right = -0.3875
 offset_left = 512.0
 offset_top = 669.0
 offset_right = 603.0
 offset_bottom = 706.0
 text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00078125
+anchor_right = -0.00078125
+offset_left = 512.0
+offset_top = 669.0
+offset_right = 603.0
+offset_bottom = 706.0
+text = "Cotinuar"
 metadata/_edit_use_anchors_ = true
 
 [node name="Prato" type="Panel" parent="."]
@@ -173,3 +221,58 @@ offset_right = 161.0
 offset_bottom = 247.0
 text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
 horizontal_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Panel" type="Panel" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_6c4ii")
+lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg")])
+
+[node name="Button" type="Button" parent="Panel3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -57.0
+offset_right = 40.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Pular"
+
+[node name="card" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
+layout_mode = 1
+anchor_left = 0.588889
+anchor_top = 0.224359
+anchor_right = 0.802222
+anchor_bottom = 0.689103
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="card2" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
+layout_mode = 1
+anchor_left = 0.213333
+anchor_top = 0.217949
+anchor_right = 0.426667
+anchor_bottom = 0.682692
+grow_horizontal = 1
+grow_vertical = 1

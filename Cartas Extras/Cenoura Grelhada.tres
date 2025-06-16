@@ -4,16 +4,17 @@
 
 [resource]
 script = ExtResource("2_s02wq")
-nome = "Cenoura Grelhada"
+nome = "Refogado Morto-Vivo"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "+100 de Sabor para cada carta com tag Refrescante na mão"
+desc = "+150 de Sabor para cada carta com tag Refrescante na mão"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_por_mao",
-"parametro": ["100", "Refrescante"]
+"parametro": ["150", "Refrescante"]
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Crocante", "Refrescante"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

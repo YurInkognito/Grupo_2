@@ -8,9 +8,13 @@ nome = "Martelete Assado"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "\"não consegui pensar em flavour text\""
-efeitos_ao_jogar = Array[Dictionary]([])
+desc = "+50 de sabor"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "50"
+}])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Refrescante", "Refrescante"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

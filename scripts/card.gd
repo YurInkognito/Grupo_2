@@ -94,6 +94,8 @@ func set_card(carta: CartaData) -> void:
 		lista_tags[c].visible = true
 		c += 1
 	tags.text = texto_tags
+	if is_played:
+		efeito_on_board()
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -120,16 +122,19 @@ func _on_mouse_exited():
 
 
 func start_drag(event: InputEventMouseButton, from_hand: bool):
-	sfx_select_card.play()
-	is_dragging = true
-	drag_offset = position - get_global_mouse_position()
-	# Efeitos visuais
-	z_index = 10
-	scale = Vector2(1.2, 1.2)
-	self.rotation = 0
-	if from_hand:
-		get_node("..").update_cards()
-	
+	if card_data.upgrade:
+		card_data.upgrade = false
+		get_node("..").select_card(card_data)
+	else:
+		sfx_select_card.play()
+		is_dragging = true
+		drag_offset = position - get_global_mouse_position()
+		# Efeitos visuais
+		z_index = 10
+		scale = Vector2(1.2, 1.2)
+		self.rotation = 0
+		if from_hand:
+			get_node("..").update_cards()
 
 func end_drag():
 	sfx_throw_card.play()
@@ -205,6 +210,29 @@ func _process(delta):
 		# Atualiza posição mantendo o offset do clique
 		position = get_global_mouse_position() + drag_offset
 
+func efeito_on_board():
+	print(card_data.nome)
+	for efeito in card_data.efeitos_on_board:
+		if efeito.has("funcao") && is_played && has_method(efeito["funcao"]):
+			var funcao_nome = efeito["funcao"]
+			var parametro = efeito.get("parametro") # get para lidar com parâmetros opcionais
+			if parametro is Array:
+				match parametro.size():
+					1:
+						call(funcao_nome, parametro[0])
+					2:
+						call(funcao_nome, parametro[0], parametro[1])
+					3:
+						call(funcao_nome, parametro[0], parametro[1], parametro[2])
+			elif parametro:
+				print(parametro)
+				call(funcao_nome, parametro)
+			else:
+				call(funcao_nome)
+		else:
+			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", card_data.nome, "'.")
+
+#função não utilizada no momento:
 func on_efeito_carta_on_board():
 	print("vi processo")
 	print(card_data.nome)
@@ -233,3 +261,6 @@ func on_efeito_carta_on_board():
 func bota_na_mao(carta: String):
 	print("botando na mao")
 	$"../../..".bota_na_mao(carta)
+
+func add_mao_por_turno(carta: String):
+	$"../../..".add_mao_por_turno(carta)

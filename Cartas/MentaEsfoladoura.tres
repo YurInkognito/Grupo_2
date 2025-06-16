@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://ch41gbki5uaj7"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_481hu"]
+
+[resource]
+script = ExtResource("2_481hu")
+nome = "Menta Esfoladoura"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Descarte a carta mais a direita da sua mão e recupere 2 de mana"
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "descarta_direita",
+"parametro": null
+}, {
+"funcao": "gera_mana",
+"parametro": "2"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Picante", "Refrescante"])
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

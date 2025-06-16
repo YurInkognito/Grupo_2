@@ -11,15 +11,16 @@ nome = "Couve Afiada"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Quando processada, adicione uma carta faca na mão"
+desc = "Adicione um \"Cutelo\" à sua mão"
 on_faca = ExtResource("1_362wo")
 on_fogo = ExtResource("2_pb6i5")
 on_martelo = ExtResource("3_g488v")
-efeitos_ao_jogar = Array[Dictionary]([])
-efeitos_ao_processar = Array[Dictionary]([{
+efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "bota_na_mao",
-"parametro": "faca"
+"parametro": "Cutelo"
 }])
+efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido"])
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

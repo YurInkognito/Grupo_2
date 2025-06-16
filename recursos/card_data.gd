@@ -14,3 +14,5 @@ extends Resource
 @export var efeitos_on_board: Array[Dictionary] = []
 @export var tags: Array[String]
 @export var sprite: Texture2D
+
+@export var upgrade: bool = false
