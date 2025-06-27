@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://cnfr6rao5a251"]
+
+[ext_resource type="Resource" uid="uid://cqfcw8m2jv4qt" path="res://Cartas processadas/Cenoura Grelhada.tres" id="1_nmast"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_8h115"]
+[ext_resource type="Texture2D" uid="uid://cu7625o6amsbo" path="res://sprites/CARTAS 21-05/carta30.png" id="3_buem4"]
+
+[resource]
+script = ExtResource("3_8h115")
+nome = "Cenoura Morto-Vivo"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "Decarte sua mão e compre uma nova."
+on_fogo = ExtResource("1_nmast")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "troca_mao",
+"parametro": ""
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Crocante", "Refrescante"])
+sprite = ExtResource("3_buem4")
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://5yp4p727e341"]
 
-[ext_resource type="Resource" uid="uid://nite8oikyplp" path="res://Cartas Extras/FoguitoPicado.tres" id="1_bx73c"]
-[ext_resource type="Resource" uid="uid://2p3fu0dfjjo8" path="res://Cartas Extras/FoguitoQueimado.tres" id="2_fhpd8"]
-[ext_resource type="Resource" uid="uid://ybi8h5xxtutq" path="res://Cartas Extras/PateFoguito.tres" id="3_4jyl6"]
+[ext_resource type="Resource" uid="uid://nite8oikyplp" path="res://Cartas processadas/FoguitoPicado.tres" id="1_bx73c"]
+[ext_resource type="Resource" uid="uid://2p3fu0dfjjo8" path="res://Cartas processadas/FoguitoQueimado.tres" id="2_fhpd8"]
+[ext_resource type="Resource" uid="uid://ybi8h5xxtutq" path="res://Cartas processadas/PateFoguito.tres" id="3_4jyl6"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_fhpd8"]
 
 [resource]

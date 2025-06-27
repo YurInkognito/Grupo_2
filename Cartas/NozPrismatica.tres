@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cx8jvvh2gjoqf"]
 
-[ext_resource type="Resource" uid="uid://djvl8li1yqngs" path="res://Cartas Extras/PoPrismatico.tres" id="1_cahfl"]
+[ext_resource type="Resource" uid="uid://djvl8li1yqngs" path="res://Cartas processadas/PoPrismatico.tres" id="1_cahfl"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_6luem"]
 
 [resource]

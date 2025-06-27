@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://c1bpkdfimmev3"]
 
-[ext_resource type="Resource" uid="uid://cl3u16phtir84" path="res://Cartas Extras/AmbrosiaDescascada.tres" id="1_gscot"]
+[ext_resource type="Resource" uid="uid://cl3u16phtir84" path="res://Cartas processadas/AmbrosiaDescascada.tres" id="1_gscot"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_g6dyr"]
 
 [resource]

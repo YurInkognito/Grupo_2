@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://byvnrm7j0a46f"]
 
-[ext_resource type="Resource" uid="uid://c7vg3vfvwaoyi" path="res://Cartas Extras/PicadinhoInfinito.tres" id="1_cjnds"]
+[ext_resource type="Resource" uid="uid://c7vg3vfvwaoyi" path="res://Cartas processadas/PicadinhoInfinito.tres" id="1_cjnds"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_kasnf"]
 
 [resource]

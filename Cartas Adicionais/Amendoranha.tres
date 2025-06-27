@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://dogshbarq7kre"]
+
+[ext_resource type="Resource" uid="uid://bnm6a05p1vy4s" path="res://Cartas processadas/Paçoca Suspeita.tres" id="1_ftnvw"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_epaas"]
+[ext_resource type="Texture2D" uid="uid://bpyka1xbyqt1i" path="res://sprites/CARTAS 21-05/carta23.png" id="3_0v6js"]
+
+[resource]
+script = ExtResource("2_epaas")
+nome = "Amendoranha"
+custo = "1"
+ingrediente = true
+is_processo = false
+desc = "Não descarta sua mão ao final deste turno"
+on_faca = ExtResource("1_ftnvw")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "guarda_mao",
+"parametro": ""
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Crocante"])
+sprite = ExtResource("3_0v6js")
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

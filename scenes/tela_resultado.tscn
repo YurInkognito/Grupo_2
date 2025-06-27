@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas Adicionais/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
 [ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
 [ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
 [ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://cksh7kgq22o63" path="res://Cartas Adicionais/OvosDeAmbrosia.tres" id="15_w4qan"]
 [ext_resource type="Resource" uid="uid://f5lg7tp3167y" path="res://Cartas Adicionais/PiclesDeBeholder.tres" id="16_g0giy"]
 [ext_resource type="Resource" uid="uid://bevuamrh23hnd" path="res://Cartas Adicionais/Queijo.tres" id="17_boxiq"]
-[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas Adicionais/Repolho.tres" id="18_ol7y8"]
+[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas/Repolho.tres" id="18_ol7y8"]
 [ext_resource type="Resource" uid="uid://c2e2t7cquk7a5" path="res://Cartas Adicionais/sal.tres" id="19_hwysf"]
 [ext_resource type="Resource" uid="uid://di1uo486cqo24" path="res://Cartas Adicionais/TomateVampirico.tres" id="20_wlslg"]
 

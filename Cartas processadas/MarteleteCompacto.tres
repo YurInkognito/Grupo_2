@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bnbvowpt16ckg"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_gu8ko"]
+[ext_resource type="Texture2D" uid="uid://b2g06w0lkvmx2" path="res://sprites/CARTAS 21-05/carta15.png" id="2_wq6hi"]
+
+[resource]
+script = ExtResource("2_gu8ko")
+nome = "Martelete Compactado"
+custo = "2"
+ingrediente = true
+is_processo = false
+desc = "-100 de sabor. Na mesa:  No inicio do turno adicione um \"Martelo\" à sua mão."
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "-100"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([{
+"funcao": "add_mao_por_turno",
+"parametro": "martelo"
+}])
+tags = Array[String](["Refrescante", "Refrescante"])
+sprite = ExtResource("2_wq6hi")
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

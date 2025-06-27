@@ -232,6 +232,8 @@ func reset_game():
 	sabor_Suave = 0
 	sabor_Picante = 0
 	sabor_Umami = 0
+	sabor_Comum = 0
+	sabor_Unico = 0
 	var prato_temp = $prato
 	descarte_totais = 0
 	descarte_turno = false
@@ -381,7 +383,9 @@ func pontuação_continua():
 			unicas.append(t)
 		frequencias[t] = frequencias.get(t, 0) + 1
 	sabor_continuo = 0
-	
+	print(encontrar_mais_frequente(tags_prato))
+	print(tags_prato.count(encontrar_mais_frequente(tags_prato)))
+	print(sabor_Comum)
 	#sabor de tags
 	sabor_continuo = sabor_continuo + sabor_Suave * tags_prato.count('Suave')
 	sabor_continuo = sabor_continuo + sabor_Picante * tags_prato.count('Picante')
@@ -476,12 +480,15 @@ func add_sabor_queijo(pontos: String):
 	queijos.append(int(pontos) * sal)
 
 func add_sabor_tag(pontos: String, tag: String):
+	print("add_sabor_tag" + tag)
 	match tag:
 		"Suave": sabor_Suave = sabor_Suave + int(pontos) * sal
 		"Picante": sabor_Picante = sabor_Picante + int(pontos) * sal
 		"Umami": sabor_Umami = sabor_Umami + int(pontos) * sal
 		"Unica": sabor_Unico = sabor_Unico + int(pontos) * sal
-		"Comum": sabor_Comum = sabor_Comum + int(pontos) * sal
+		"Comum": 
+			sabor_Comum = sabor_Comum + int(pontos) * sal
+			print("batatado")
 
 func add_sabor_prato(pontos: String, prato: String):
 	match prato:
@@ -557,7 +564,8 @@ func gasta_compra():
 func add_por_prato(pontos: String):
 	sabor_por_ingrediente = sabor_por_ingrediente + int(pontos) * sal
 
-func add_acido_primario(pontos: String):
+func add_mais_presente(pontos: String):
+	print(encontrar_mais_frequente(tags_prato))
 	if encontrar_mais_frequente(tags_prato) == "Acido":
 		add_sabor('200')
 
@@ -570,3 +578,5 @@ func reset_sabor():
 	sabor_Suave = 0
 	sabor_Picante = 0
 	sabor_Umami = 0
+	sabor_Comum = 0
+	sabor_Unico = 0

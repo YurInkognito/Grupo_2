@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://b2m5r8ci233b8"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=6 format=3 uid="uid://b2m5r8ci233b8"]
 
-[ext_resource type="Resource" uid="uid://d0c8vlnu5wuvv" path="res://Cartas Extras/FileMartelete.tres" id="1_2c0a8"]
-[ext_resource type="Resource" uid="uid://nwkyn6qqud4j" path="res://Cartas Extras/MarteleteAssado.tres" id="2_yb7fx"]
-[ext_resource type="Resource" uid="uid://bnbvowpt16ckg" path="res://Cartas Extras/MarteleteCompacto.tres" id="3_gx6u6"]
+[ext_resource type="Resource" uid="uid://d0c8vlnu5wuvv" path="res://Cartas processadas/FileMartelete.tres" id="1_2c0a8"]
+[ext_resource type="Resource" uid="uid://nwkyn6qqud4j" path="res://Cartas processadas/MarteleteAssado.tres" id="2_yb7fx"]
+[ext_resource type="Resource" uid="uid://bnbvowpt16ckg" path="res://Cartas processadas/MarteleteCompacto.tres" id="3_gx6u6"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_yb7fx"]
+[ext_resource type="Texture2D" uid="uid://bqmho70umcnw3" path="res://sprites/CARTAS 21-05/carta14.png" id="5_yb7fx"]
 
 [resource]
 script = ExtResource("3_yb7fx")
@@ -22,5 +23,6 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Refrescante"])
+sprite = ExtResource("5_yb7fx")
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

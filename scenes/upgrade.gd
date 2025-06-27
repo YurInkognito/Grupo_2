@@ -1,6 +1,6 @@
 extends Panel
-@export var pool_1: Array[String] = ["Algas Infinitas", "Noz Prismática", "Queijo de Tauren", "Repolho Carnívoro", "Carne de Minotauro"]
-@export var pool_2: Array[String] = ["Cenoura Morto-Viva", "Escama de Boitata", "Caneca de Undine", "Mandragora Real", "Broto de Névoa-Limão"]
+@export var pool_1: Array[String] = ["Algas Infinitas", "Noz Prismática", "Queijo de Tauren", "Amendoranha", "Carne de Minotauro"]
+@export var pool_2: Array[String] = ["Cubo de Maionese", "Escama de Boitata", "Caneca de Undine", "Mandragora Real", "Broto de Névoa-Limão"]
 @export var pool_3: Array[String] = ["Menta Esfoladoura", "Ovos de Ambrosia", "Sal", "Tomate Vampírico", "Picles de Beholder"]
 
 @export var lista_cartas: Array[CartaData]

@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://fbokkynfiwtx"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://dagpqbj838c4l"]
 
-[ext_resource type="Texture2D" uid="uid://l51k1rkg5nbk" path="res://sprites/CARTAS 21-05/carta11.png" id="2_hdtyh"]
-[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_vhjy1"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_enif7"]
+[ext_resource type="Texture2D" uid="uid://l51k1rkg5nbk" path="res://sprites/CARTAS 21-05/carta11.png" id="2_xo7lm"]
 
 [resource]
-script = ExtResource("2_vhjy1")
+script = ExtResource("1_enif7")
 nome = "Repolho Carnívoro"
 custo = "2"
 ingrediente = true
@@ -16,7 +16,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String](["Refrescante"])
-sprite = ExtResource("2_hdtyh")
+tags = Array[String](["Refrescante", "Refrescante"])
+sprite = ExtResource("2_xo7lm")
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

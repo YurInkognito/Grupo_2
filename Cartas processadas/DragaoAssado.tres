@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://b5ecfwdf2avb1"]
+
+[ext_resource type="Resource" uid="uid://ruwghi58qjew" path="res://Cartas processadas/BifeDragaoAssado.tres" id="1_703bh"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_c8cn3"]
+[ext_resource type="Texture2D" uid="uid://dbltd7ken17rb" path="res://sprites/CARTAS 21-05/carta26.png" id="3_iwypg"]
+
+[resource]
+script = ExtResource("1_c8cn3")
+nome = "Dragão Assado"
+custo = "3"
+ingrediente = true
+is_processo = false
+desc = "+ 100 Sabor"
+on_faca = ExtResource("1_703bh")
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "add_sabor",
+"parametro": "100"
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String](["Picante", "Picante", "Umami"])
+sprite = ExtResource("3_iwypg")
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

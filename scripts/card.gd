@@ -6,7 +6,7 @@ const SIZE = Vector2(100, 140)
 @onready var sfx_select_card: AudioStreamPlayer2D = $SFXSelectCard
 @onready var sfx_throw_card: AudioStreamPlayer2D = $SFXThrowCard
 
-
+@export var card_vazia: Texture2D
 
 @export var nome_t: String
 @export var desc_t: String
@@ -77,6 +77,9 @@ func set_card(carta: CartaData) -> void:
 	if carta.sprite:
 		nome.visible = false
 		sprite.texture = carta.sprite
+	else:
+		nome.visible = true
+		sprite.texture = card_vazia
 	var texto_tags = ''
 	var c = 0
 	if carta.is_processo:

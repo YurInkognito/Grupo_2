@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://gy204a0jbqel"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://gy204a0jbqel"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_7bkx8"]
+[ext_resource type="Texture2D" uid="uid://dga42hsxb6j6c" path="res://sprites/CARTAS 21-05/carta22.png" id="2_iretp"]
 
 [resource]
 script = ExtResource("1_7bkx8")
@@ -16,5 +17,6 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido"])
+sprite = ExtResource("2_iretp")
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

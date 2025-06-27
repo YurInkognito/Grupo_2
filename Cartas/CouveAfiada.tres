@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://d3qcwraht7lw6"]
 
-[ext_resource type="Resource" uid="uid://bhv1yqugtj2vd" path="res://Cartas Extras/Laminetas.tres" id="1_362wo"]
-[ext_resource type="Resource" uid="uid://cbb14lwlp20fn" path="res://Cartas Extras/Couve-Frita.tres" id="2_pb6i5"]
-[ext_resource type="Resource" uid="uid://cfvcsd0y84rhj" path="res://Cartas Extras/PastaCouve.tres" id="3_g488v"]
+[ext_resource type="Resource" uid="uid://bhv1yqugtj2vd" path="res://Cartas processadas/Laminetas.tres" id="1_362wo"]
+[ext_resource type="Resource" uid="uid://cbb14lwlp20fn" path="res://Cartas processadas/Couve-Frita.tres" id="2_pb6i5"]
+[ext_resource type="Resource" uid="uid://cfvcsd0y84rhj" path="res://Cartas processadas/PastaCouve.tres" id="3_g488v"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_pb6i5"]
 
 [resource]

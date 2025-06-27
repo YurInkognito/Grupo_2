@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://dttv4mvwr0ddf"]
 
-[ext_resource type="Resource" uid="uid://dsbbapn3q68i7" path="res://Cartas Extras/GeleiaDeSlime.tres" id="1_r3s45"]
+[ext_resource type="Resource" uid="uid://dsbbapn3q68i7" path="res://Cartas processadas/GeleiaDeSlime.tres" id="1_r3s45"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_wewdb"]
 [ext_resource type="Texture2D" uid="uid://cvmpqco2cursi" path="res://sprites/CARTAS 21-05/carta10.png" id="3_wewdb"]
 
@@ -23,4 +23,5 @@ efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido"])
 sprite = ExtResource("3_wewdb")
+upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -6,14 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="3_b8sri"]
 [ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="5_mopl6"]
 [ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_ywseg"]
+[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas/Repolho.tres" id="7_0nxg4"]
 [ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="7_koial"]
 [ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="8_oc6wf"]
 [ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="10_wfqyo"]
 [ext_resource type="Resource" uid="uid://bpturhuwta3pk" path="res://Cartas/Arroz.tres" id="12_0nxg4"]
 [ext_resource type="Resource" uid="uid://pq8u1hoapxwd" path="res://Cartas/BatataNormal.tres" id="13_04wef"]
-[ext_resource type="Resource" uid="uid://cd760bxg0h26d" path="res://Cartas/CuboMaionese.tres" id="14_mj6mt"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="14_0nxg4"]
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
-[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas/Amendoranha.tres" id="15_48afa"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="23_d3e21"]
@@ -28,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bp1iq")
-lista_cartas = Array[ExtResource("2_663uq")]([ExtResource("5_mopl6"), ExtResource("6_ywseg"), ExtResource("7_koial"), ExtResource("8_oc6wf"), ExtResource("15_48afa"), ExtResource("10_wfqyo"), ExtResource("14_sj1xo"), ExtResource("16_kiu78"), ExtResource("20_bdnts"), ExtResource("12_0nxg4"), ExtResource("13_04wef"), ExtResource("14_mj6mt"), ExtResource("25_dw1xu"), ExtResource("24_bx4ur"), ExtResource("23_d3e21")])
+lista_cartas = Array[ExtResource("2_663uq")]([ExtResource("5_mopl6"), ExtResource("6_ywseg"), ExtResource("7_koial"), ExtResource("8_oc6wf"), ExtResource("7_0nxg4"), ExtResource("10_wfqyo"), ExtResource("14_sj1xo"), ExtResource("16_kiu78"), ExtResource("20_bdnts"), ExtResource("12_0nxg4"), ExtResource("13_04wef"), ExtResource("14_0nxg4"), ExtResource("25_dw1xu"), ExtResource("24_bx4ur"), ExtResource("23_d3e21")])
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
