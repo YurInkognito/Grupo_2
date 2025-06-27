@@ -3,6 +3,8 @@ extends Control
 @export var lista_cartas: Array[CartaData]
 
 const CONFIG = preload("res://scenes/config.tscn")
+@onready var credits: Control = $Credits
+@onready var margin_container_content: MarginContainer = %MarginContainerContent
 
 func _ready() -> void:
 	$"/root/GlobalData".fase = 0
@@ -26,4 +28,5 @@ func _on_botao_config_pressed() -> void:
 
 
 func _on_botao_creditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/credits.tscn")
+	credits.visible = true
+	margin_container_content.visible = false

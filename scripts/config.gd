@@ -1,12 +1,15 @@
 extends Control
 
-@onready var sfx_slider: HSlider = $Panel/VBoxContainer/SFXSlider
-@onready var music_slider: HSlider = $Panel/VBoxContainer/MusicSlider
+@onready var sfx_slider: HSlider = $Panel/Volume/SFXSlider
+@onready var music_slider: HSlider = $Panel/Volume/MusicSlider
+@onready var volume: Control = $Panel/Volume
+@onready var pause_menu: Control = $Panel/PauseMenu
 
 var sfx_bus_id
 var music_bus_id
 func _ready() -> void:
 	pause_game()
+	volume.visible = false
 	sfx_bus_id = AudioServer.get_bus_index("SFX")
 	music_bus_id = AudioServer.get_bus_index("Music")
 	
@@ -34,3 +37,17 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 func _on_music_slider_value_changed(value: float) -> void:
 	var db = linear_to_db(value)
 	AudioServer.set_bus_volume_db(music_bus_id,db)
+
+
+func _on_button_volume_section_pressed() -> void:
+	volume.visible = true
+	pause_menu.visible = false
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_button_back_pause_pressed() -> void:
+	volume.visible = false
+	pause_menu.visible = true

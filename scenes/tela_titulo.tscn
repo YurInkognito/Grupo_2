@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=27 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_663uq"]
@@ -15,10 +15,18 @@
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="14_0nxg4"]
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
+[ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="19_jk8gn"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
+[ext_resource type="Texture2D" uid="uid://fbwes2y1323s" path="res://sprites/UI/Botão Configurações.PNG" id="20_kn1lp"]
+[ext_resource type="Texture2D" uid="uid://172074dxxvjb" path="res://sprites/UI/Botão Créditos.PNG" id="21_mq8vl"]
+[ext_resource type="Texture2D" uid="uid://e72epmfh7p03" path="res://sprites/UI/Botão Sair..PNG" id="22_jx0lc"]
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="23_d3e21"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="24_bx4ur"]
+[ext_resource type="Texture2D" uid="uid://cyjeigggfjcbl" path="res://sprites/UI/Botão Voltar (Menu Volume).PNG" id="24_kn1lp"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
+[ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_mq8vl"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
@@ -38,27 +46,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_wys1u")
 expand_mode = 1
 
 [node name="MarginContainerContent" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.633
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.633
 anchor_bottom = 0.5
-offset_left = 83.0
-offset_top = -79.0
-offset_right = 202.0
-offset_bottom = 96.0
+offset_left = -74.24
+offset_top = -155.0
+offset_right = 79.76
+offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="TextureRect" parent="MarginContainerContent"]
-layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainerContent"]
 layout_mode = 2
@@ -66,9 +71,7 @@ size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainerContent/HBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-layout_mode = 2
+theme_override_constants/separation = -5
 
 [node name="BotaoIniciar" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,27 +79,34 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 28
 text = "Pular Dia 1"
 
-[node name="BotaoCutscene" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+[node name="BotaoCutscene" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Jogar"
-script = ExtResource("1_bp1iq")
+texture_normal = ExtResource("19_jk8gn")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="BotaoConfig" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+[node name="BotaoConfig" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Configurações"
+texture_normal = ExtResource("20_kn1lp")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="BotaoCreditos" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+[node name="BotaoCreditos" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Créditos"
+texture_normal = ExtResource("21_mq8vl")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="BotaoSair" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+[node name="BotaoSair" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 28
-text = "Sair"
+texture_normal = ExtResource("22_jx0lc")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
@@ -104,8 +114,190 @@ stream = ExtResource("3_b8sri")
 autoplay = true
 bus = &"Music"
 
+[node name="Credits" type="Control" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_right = 1277.0
+offset_bottom = 718.0
+script = ExtResource("25_mq8vl")
+
+[node name="ButtonBack" type="TextureButton" parent="Credits"]
+process_mode = 3
+z_index = 260
+layout_mode = 0
+offset_left = 479.0
+offset_top = 523.0
+offset_right = 595.0
+offset_bottom = 587.0
+texture_normal = ExtResource("24_kn1lp")
+texture_pressed = SubResource("ImageTexture_mq8vl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Arte" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 532.0
+offset_top = 366.0
+offset_right = 662.0
+offset_bottom = 524.0
+
+[node name="Titulo" type="Label" parent="Credits/Arte"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Arte"
+
+[node name="Eden Cecília" type="Label" parent="Credits/Arte"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Eden Cecília"
+
+[node name="Theo" type="Label" parent="Credits/Arte"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Théo Gomes"
+
+[node name="Joao" type="Label" parent="Credits/Arte"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "João Gabriel"
+
+[node name="Toynara" type="Label" parent="Credits/Arte"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Taynara Santana"
+
+[node name="Programacao" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 714.0
+offset_top = 366.0
+offset_right = 856.0
+offset_bottom = 524.0
+
+[node name="Titulo" type="Label" parent="Credits/Programacao"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Programação"
+
+[node name="Leonardo" type="Label" parent="Credits/Programacao"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Leonardo Renauld"
+
+[node name="Pedro" type="Label" parent="Credits/Programacao"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Pedro Parucker"
+
+[node name="Label5" type="Label" parent="Credits/Programacao"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Yuri Barbosa"
+
+[node name="Label6" type="Label" parent="Credits/Programacao"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Rafael Lima"
+
+[node name="Roteiro" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 533.0
+offset_top = 278.0
+offset_right = 713.0
+offset_bottom = 355.0
+
+[node name="Titulo" type="Label" parent="Credits/Roteiro"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Roteiro"
+
+[node name="Julia" type="Label" parent="Credits/Roteiro"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Júlia Fernando 
+Cândido"
+
+[node name="Producao" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 705.0
+offset_top = 278.0
+offset_right = 885.0
+offset_bottom = 355.0
+
+[node name="Titulo" type="Label" parent="Credits/Producao"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Produção"
+
+[node name="Julia" type="Label" parent="Credits/Producao"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Amelia Handel"
+
+[node name="GameDeisgn" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 930.0
+offset_top = 366.0
+offset_right = 1112.0
+offset_bottom = 497.0
+
+[node name="Titulo" type="Label" parent="Credits/GameDeisgn"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Game Design"
+
+[node name="Michel" type="Label" parent="Credits/GameDeisgn"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Michel Monteiro Schorr"
+
+[node name="Davi" type="Label" parent="Credits/GameDeisgn"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Davi Vital "
+
+[node name="Label5" type="Label" parent="Credits/GameDeisgn"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Leonardo Renauld"
+
+[node name="Musica" type="VBoxContainer" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 930.0
+offset_top = 278.0
+offset_right = 1048.0
+offset_bottom = 355.0
+
+[node name="Titulo" type="Label" parent="Credits/Musica"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Música e Sons"
+
+[node name="Leonardo" type="Label" parent="Credits/Musica"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+text = "Rafael Miranda"
+
+[node name="Label" type="Label" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 682.0
+offset_top = 173.0
+offset_right = 917.0
+offset_bottom = 247.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 54
+text = "GRUPO 2"
+
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoConfig" to="." method="_on_botao_config_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
 [connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="Credits/ButtonBack" to="Credits" method="_on_button_back_pressed"]
