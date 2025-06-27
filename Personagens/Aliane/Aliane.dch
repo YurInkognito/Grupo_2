@@ -13,7 +13,7 @@
 &"display_name": "Aliane Butolane",
 &"mirror": false,
 &"nicknames": ["Aliane"],
-&"offset": Vector2(0, 500),
+&"offset": Vector2(0, 600),
 &"portraits": {
 "Aliane_Butolane-1": {
 "export_overrides": {

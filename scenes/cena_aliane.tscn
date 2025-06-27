@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://chhg3u07w8pcd"]
+[gd_scene load_steps=3 format=3 uid="uid://chhg3u07w8pcd"]
 
-[ext_resource type="Script" uid="uid://cm7u3t0j02tsr" path="res://scripts/dialogos.gd" id="1_qoniw"]
+[ext_resource type="Script" uid="uid://0hxl4sapludd" path="res://scripts/cutsceneAliane.gd" id="1_c2u6d"]
+[ext_resource type="Script" uid="uid://cdp3hven76vem" path="res://scenes/botao_skip.gd" id="2_dsy0b"]
 
-[node name="Cena_Aliane" type="Node2D"]
-script = ExtResource("1_qoniw")
+[node name="Cena_Aliane" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Aliane" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c2u6d")
+
+[node name="BotaoSkip" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BotaoSkip"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BotaoSkip/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BotaoSkip/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BotaoSkip/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BotaoSkip" type="Button" parent="BotaoSkip/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pular"
+script = ExtResource("2_dsy0b")
+
+[connection signal="pressed" from="BotaoSkip/MarginContainer/HBoxContainer/VBoxContainer/BotaoSkip" to="BotaoSkip/MarginContainer/HBoxContainer/VBoxContainer/BotaoSkip" method="_on_pressed"]
