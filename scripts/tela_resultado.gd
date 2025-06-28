@@ -23,7 +23,7 @@ var labels: Array[Label]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Button2.visible = false
+	continuar.visible = false
 	botao.pressed.connect(voltar)
 	continuar.pressed.connect(upgradar)
 	
@@ -43,7 +43,7 @@ func _ready() -> void:
 		estrelas_value = 3
 	
 	if estrelas_value > 0:
-		$Button2.visible = true
+		continuar.visible = true
 		$Panel3/Panel.recompensar(estrelas_value)
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]

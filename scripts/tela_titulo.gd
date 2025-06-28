@@ -5,6 +5,7 @@ extends Control
 const CONFIG = preload("res://scenes/config.tscn")
 @onready var credits: Control = $Credits
 @onready var margin_container_content: MarginContainer = %MarginContainerContent
+@onready var texture_rect_3: TextureRect = $TextureRect3
 
 func _ready() -> void:
 	$"/root/GlobalData".fase = 0
@@ -24,9 +25,10 @@ func _on_botao_sair_pressed() -> void:
 
 func _on_botao_config_pressed() -> void:
 	var config_instance = CONFIG.instantiate()
-	add_child(config_instance)
+	config_instance.position = Vector2(0, 0)
+	$".".add_child(config_instance)
 
 
 func _on_botao_creditos_pressed() -> void:
 	credits.visible = true
-	margin_container_content.visible = false
+	texture_rect_3.visible = false

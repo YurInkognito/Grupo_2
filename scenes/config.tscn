@@ -157,11 +157,16 @@ stretch_mode = 5
 
 [node name="TextureButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
-layout_mode = 0
-offset_left = 196.0
-offset_top = 189.0
-offset_right = 470.0
-offset_bottom = 258.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.025
+anchor_top = -4.6
+anchor_right = 23.916
+anchor_bottom = 13.448
+offset_left = 517.0
+offset_top = 373.0
+offset_right = -486.64
+offset_bottom = -279.92
 texture_normal = ExtResource("10_waftc")
 ignore_texture_size = true
 stretch_mode = 5
@@ -183,4 +188,5 @@ stretch_mode = 5
 [connection signal="pressed" from="Panel/Volume/Resume" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/UnpauseButton" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/ButtonVolumeSection" to="." method="_on_button_volume_section_pressed"]
+[connection signal="pressed" from="Panel/PauseMenu/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]

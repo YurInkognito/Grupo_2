@@ -180,12 +180,14 @@ text = "Name"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 60.0
-offset_right = 691.0
-offset_bottom = 134.0
+offset_left = 347.657
+offset_top = 38.3975
+offset_right = 790.657
+offset_bottom = 189.398
 theme_override_font_sizes/font_size = 54
-text = "GRUPO 2"
+text = "GDP
+Equipe À la Carte"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0

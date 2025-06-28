@@ -51,3 +51,8 @@ func _on_quit_button_pressed() -> void:
 func _on_button_back_pause_pressed() -> void:
 	volume.visible = false
 	pause_menu.visible = true
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().get_nodes_in_group("control")[0].start_tutorial()
+	_on_button_back_pressed()

@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c4gpag4vkfek8"]
+
+[ext_resource type="Texture2D" uid="uid://dvx6ve2vstch1" path="res://sprites/UI/Moldura Menu Pause-1.png.png" id="1_4cvne"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl1ow"]
+texture = ExtResource("1_4cvne")
+texture_margin_left = 176.485
+texture_margin_top = 136.187
+texture_margin_right = 176.163
+texture_margin_bottom = 142.746
+axis_stretch_vertical = 1
+region_rect = Rect2(117, 2, 247, 266)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_yl1ow")

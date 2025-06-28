@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=28 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_663uq"]
-[ext_resource type="Texture2D" uid="uid://d0p64wdujl81u" path="res://sprites/IMG_1945.PNG" id="2_wys1u"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="3_b8sri"]
 [ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="5_mopl6"]
 [ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_ywseg"]
@@ -15,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="14_0nxg4"]
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
+[ext_resource type="Texture2D" uid="uid://d3bvflpc5iwpe" path="res://sprites/menu.jpg" id="18_jx0lc"]
 [ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="19_jk8gn"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
 [ext_resource type="Texture2D" uid="uid://fbwes2y1323s" path="res://sprites/UI/Botão Configurações.PNG" id="20_kn1lp"]
@@ -25,16 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://cyjeigggfjcbl" path="res://sprites/UI/Botão Voltar (Menu Volume).PNG" id="24_kn1lp"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
+[ext_resource type="Texture2D" uid="uid://dqectvtm11hba" path="res://sprites/logo a la carte.png" id="26_jx0lc"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_mq8vl"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_bp1iq")
 lista_cartas = Array[ExtResource("2_663uq")]([ExtResource("5_mopl6"), ExtResource("6_ywseg"), ExtResource("7_koial"), ExtResource("8_oc6wf"), ExtResource("7_0nxg4"), ExtResource("10_wfqyo"), ExtResource("14_sj1xo"), ExtResource("16_kiu78"), ExtResource("20_bdnts"), ExtResource("12_0nxg4"), ExtResource("13_04wef"), ExtResource("14_0nxg4"), ExtResource("25_dw1xu"), ExtResource("24_bx4ur"), ExtResource("23_d3e21")])
 metadata/_edit_use_anchors_ = true
@@ -44,11 +41,83 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_wys1u")
+texture = ExtResource("18_jx0lc")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("18_jx0lc")
 expand_mode = 1
+
+[node name="BotaoCutscene" type="TextureButton" parent="TextureRect3"]
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+offset_left = 479.0
+offset_top = 497.0
+offset_right = 639.0
+offset_bottom = 584.0
+texture_normal = ExtResource("19_jk8gn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoConfig" type="TextureButton" parent="TextureRect3"]
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+offset_left = 649.0
+offset_top = 497.0
+offset_right = 809.0
+offset_bottom = 584.0
+texture_normal = ExtResource("20_kn1lp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoCreditos" type="TextureButton" parent="TextureRect3"]
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+offset_left = 818.0
+offset_top = 497.0
+offset_right = 978.0
+offset_bottom = 584.0
+texture_normal = ExtResource("21_mq8vl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoSair" type="TextureButton" parent="TextureRect3"]
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+offset_left = 987.0
+offset_top = 497.0
+offset_right = 1146.06
+offset_bottom = 584.0
+size_flags_vertical = 0
+texture_normal = ExtResource("22_jx0lc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoIniciar" type="Button" parent="TextureRect3"]
+layout_mode = 2
+offset_left = 747.0
+offset_top = 125.0
+offset_right = 881.0
+offset_bottom = 172.0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "Beta Test
+"
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect3"]
+layout_mode = 2
+offset_left = 533.0
+offset_top = 173.0
+offset_right = 2453.0
+offset_bottom = 1253.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("26_jx0lc")
 
 [node name="MarginContainerContent" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -73,41 +142,6 @@ size_flags_horizontal = 4
 layout_mode = 2
 theme_override_constants/separation = -5
 
-[node name="BotaoIniciar" type="Button" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 28
-text = "Pular Dia 1"
-
-[node name="BotaoCutscene" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 87)
-layout_mode = 2
-texture_normal = ExtResource("19_jk8gn")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="BotaoConfig" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 87)
-layout_mode = 2
-texture_normal = ExtResource("20_kn1lp")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="BotaoCreditos" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 87)
-layout_mode = 2
-texture_normal = ExtResource("21_mq8vl")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="BotaoSair" type="TextureButton" parent="MarginContainerContent/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 87)
-layout_mode = 2
-size_flags_vertical = 0
-texture_normal = ExtResource("22_jx0lc")
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("3_b8sri")
@@ -117,6 +151,7 @@ bus = &"Music"
 [node name="Credits" type="Control" parent="."]
 process_mode = 3
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 1277.0
 offset_bottom = 718.0
@@ -287,17 +322,30 @@ text = "Rafael Miranda"
 [node name="Label" type="Label" parent="Credits"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 682.0
+offset_left = 705.0
 offset_top = 173.0
-offset_right = 917.0
+offset_right = 940.0
 offset_bottom = 247.0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 54
-text = "GRUPO 2"
+text = "GDP"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
-[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoConfig" to="." method="_on_botao_config_pressed"]
-[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
-[connection signal="pressed" from="MarginContainerContent/HBoxContainer/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[node name="Label2" type="Label" parent="Credits"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 595.0
+offset_top = 235.0
+offset_right = 1053.0
+offset_bottom = 309.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "Equipe A La Carte"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TextureRect3/BotaoCutscene" to="." method="_on_botao_cutscene_pressed"]
+[connection signal="pressed" from="TextureRect3/BotaoConfig" to="." method="_on_botao_config_pressed"]
+[connection signal="pressed" from="TextureRect3/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
+[connection signal="pressed" from="TextureRect3/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="TextureRect3/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="Credits/ButtonBack" to="Credits" method="_on_button_back_pressed"]

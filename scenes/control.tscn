@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=54 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_sxeuk"]
 [ext_resource type="PackedScene" uid="uid://mviei1r1rh42" path="res://scenes/info_tags.tscn" id="7_lt2xq"]
 [ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="7_nnsnw"]
-[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="8_1p5nq"]
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="8_61o30"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="9_po8yf"]
 [ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="10_7o2ue"]
@@ -33,13 +32,22 @@
 [ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
 [ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
+[ext_resource type="Texture2D" uid="uid://dr6wpx2xfmwlw" path="res://sprites/UI/Entregar Prato (Idle).PNG" id="29_hl4in"]
+[ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="29_xbjxg"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/carta13.png" id="30_61o30"]
+[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
+[ext_resource type="Texture2D" uid="uid://dos72pii1mx3y" path="res://sprites/UI/Botão Passar Turno Pressionado.PNG" id="30_qmj53"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
+[ext_resource type="Texture2D" uid="uid://dr4xo8ep4utgb" path="res://sprites/UI/Entregar Prato (Pressionado).PNG" id="32_5nmap"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
 [ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
-[ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="35_qsysb"]
 [ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/pao_tutorial.png" id="36_72v1w"]
+[ext_resource type="LabelSettings" uid="uid://clukglr7dcfu3" path="res://recursos/magic_text.tres" id="37_qmj53"]
+[ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
+[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/Aliane Butolane icon.png" id="42_wi3jo"]
+[ext_resource type="Texture2D" uid="uid://0a7lpge3sqcq" path="res://sprites/UI/Botão Pause.PNG" id="43_qmj53"]
+[ext_resource type="Texture2D" uid="uid://c37j75megpkvy" path="res://sprites/New Piskel-1.png.png" id="47_5nmap"]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -62,7 +70,7 @@ point_count = 3
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tjwpk"]
 size = Vector2(10, 10)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" groups=["control"]]
 layout_mode = 3
 anchor_right = 1.992
 anchor_bottom = 1.985
@@ -85,6 +93,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("24_sxeuk")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = -387.876
+offset_right = 428.0
+offset_bottom = -259.876
+scale = Vector2(5, 5)
+texture = ExtResource("47_5nmap")
 
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
@@ -161,19 +178,32 @@ script = ExtResource("1_62e2m")
 hand_curve = SubResource("Curve_62e2m")
 rotation_curve = SubResource("Curve_qtu10")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.905084
-anchor_top = 0.763507
-anchor_right = 0.982499
-anchor_bottom = 0.768137
-offset_right = 4.90967
-offset_bottom = 50.6666
+anchor_left = 0.760834
+anchor_top = 0.515278
+anchor_right = 0.873188
+anchor_bottom = 0.627014
+offset_left = 13.64
+offset_top = 33.0578
+offset_right = 4681.83
+offset_bottom = 2661.61
 grow_vertical = 0
-text = "Terminar Turno"
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+scale = Vector2(0.028, 0.028)
+texture_normal = ExtResource("29_xbjxg")
+texture_pressed = ExtResource("30_qmj53")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 453.102
+offset_top = 855.935
+offset_right = 669.102
+offset_bottom = 897.935
+scale = Vector2(18, 18)
+theme_override_font_sizes/font_size = 1
+text = "Próximo Turno"
+label_settings = ExtResource("30_jo16n")
 
 [node name="Button2" type="Button" parent="."]
 visible = false
@@ -189,26 +219,32 @@ grow_horizontal = 0
 text = "RESET"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.882031
-anchor_top = 0.0541667
-anchor_right = 0.891103
-anchor_bottom = 0.105916
-offset_right = 91.3885
-offset_bottom = 26.7407
+anchor_left = 4.51446
+anchor_top = 0.0220029
+anchor_right = 4.52353
+anchor_bottom = 0.0737522
+offset_left = -4705.0
+offset_right = 91.3887
+offset_bottom = 2671.74
 grow_horizontal = 0
-text = "ENTREGAR!"
+scale = Vector2(0.045, 0.045)
+toggle_mode = true
+texture_normal = ExtResource("32_5nmap")
+texture_pressed = ExtResource("29_hl4in")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.075
-anchor_top = 0.941667
-anchor_right = 0.135037
-anchor_bottom = 0.955521
+anchor_left = 0.929833
+anchor_top = 0.92967
+anchor_right = 0.98987
+anchor_bottom = 0.943524
 offset_top = -2.0
 offset_right = 5.15278
 offset_bottom = 30.0247
@@ -220,12 +256,13 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Button5" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0109375
-anchor_top = 0.938889
-anchor_right = 0.0709744
-anchor_bottom = 0.952915
+anchor_left = 0.847222
+anchor_top = 0.926892
+anchor_right = 0.907259
+anchor_bottom = 0.940918
 offset_right = 5.15279
 offset_bottom = 31.9013
 grow_vertical = 0
@@ -384,28 +421,39 @@ offset_right = 0.0
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.205588, 0.541115, 1, 0.784314)
+layout_mode = 0
+offset_left = 174.767
+offset_top = 586.332
+offset_right = 4974.77
+offset_bottom = 3287.33
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("29_hl4in")
+
 [node name="mana_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.921007
-anchor_top = 0.689815
-anchor_right = 0.955729
-anchor_bottom = 0.75926
+anchor_left = 0.169853
+anchor_top = 0.833671
+anchor_right = 0.204531
+anchor_bottom = 0.844474
 offset_right = 16.6112
 offset_bottom = 42.2221
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "5"
+text = "5/3"
+label_settings = ExtResource("37_qmj53")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Dia" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.005
-anchor_top = 0.082
-anchor_right = 0.066
-anchor_bottom = 0.143
+anchor_left = 0.0104687
+anchor_top = 5.55463e-05
+anchor_right = 0.0730312
+anchor_bottom = 0.0610556
 offset_left = 0.600015
 offset_top = -0.0399933
 offset_right = 0.52002
@@ -414,20 +462,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Dia 2"
+label_settings = ExtResource("37_qmj53")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="turno_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00546875
-anchor_right = 0.00951093
-anchor_bottom = 0.0691358
+anchor_left = 0.776959
+anchor_top = 0.543021
+anchor_right = 0.781001
+anchor_bottom = 0.612157
 offset_right = 143.826
 offset_bottom = 42.2222
 grow_vertical = 0
+scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 32
 text = "Turno 1/5"
+label_settings = ExtResource("30_jo16n")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -441,11 +493,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="AlianeButolane-1" type="Sprite2D" parent="Cliente"]
-position = Vector2(634, 535.555)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("35_qsysb")
 
 [node name="Button" type="Button" parent="Cliente"]
 modulate = Color(1, 1, 0, 1)
@@ -471,27 +518,37 @@ anchor_bottom = 1.0
 offset_left = -401.0
 offset_top = -273.0
 offset_right = 401.0
-offset_bottom = -128.0
+offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("41_gst0j")
 
 [node name="Label5" type="Label" parent="Cliente/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.206741
-anchor_top = 2.62701
-anchor_right = 1.20674
-anchor_bottom = 2.89923
-offset_left = -165.806
-offset_top = -379.917
-offset_right = -165.806
-offset_bottom = -270.389
+anchor_left = 0.447321
+anchor_top = 2.28272
+anchor_right = 1.17301
+anchor_bottom = 2.28539
+offset_left = -170.661
+offset_top = -371.132
+offset_right = -170.661
+offset_bottom = -261.604
 theme_override_font_sizes/font_size = 25
 text = "Quero um prato:
 "
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Cliente"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 404.058
+offset_right = 1840.0
+offset_bottom = 1621.06
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("42_wi3jo")
 
 [node name="Tutorial" type="Panel" parent="."]
 visible = false
@@ -531,13 +588,14 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Tutorial"]
-layout_mode = 0
-anchor_left = 0.172743
-anchor_top = 0.804012
-anchor_right = 0.828993
-anchor_bottom = 0.975309
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217509
+anchor_top = 0.776389
+anchor_right = 0.829227
+anchor_bottom = 2.14444
 theme_override_font_sizes/font_size = 25
-text = "Esse são seus ingredientes, eles serão descartados ao final do turno. Voce tem 3 de mana por turno, mostrado a direita, ao lado do seu deck."
+text = "Esse são seus ingredientes, eles serão descartados ao final do turno. Voce tem 3 de mana por turno, mostrado à esquerda"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -551,7 +609,7 @@ anchor_right = 0.722222
 anchor_bottom = 0.748457
 offset_bottom = -38.0
 theme_override_font_sizes/font_size = 25
-text = "Aqui é a sua mesa e area de trabalho, arraste ingredientes para cá antes de colocar no seu prato. Tente usar cartas de processo neles. Alguns podem ser processados mais de uma vez."
+text = "Aqui é a sua area de trabalho, arraste ingredientes para cá antes de colocar no seu prato. Tente arrastar cartas de processo sobre eles. Alguns podem ser processados mais de uma vez."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -572,13 +630,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Label7" type="Label" parent="Tutorial"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00607639
-anchor_top = 0.351852
-anchor_right = 0.178819
-anchor_bottom = 0.841049
+anchor_left = 0.0109375
+anchor_top = 0.257716
+anchor_right = 0.18368
+anchor_bottom = 0.834105
 theme_override_font_sizes/font_size = 25
 text = "Olhe aqui como está ficando o seu prato.
-Suas tags e pontuação são mostradas aqui."
+Suas tags e pontuação são mostradas aqui.
+Tente seguir o pedido do cliente para ganhar mais pontos no final do dia"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -621,9 +680,11 @@ text = "O prato que voce vai servir afeta o seu multiplicador em vermelho. Exist
 
 Sanduiche: Use uma fatia de pão para fazer um sanduiche, ele fica mais gostoso para cada tag diferente que seu prato possui.
 
-Sopa: Use liquidos para fazer uma sopa, ela fica mais gostosa quando você tem uma tag com pontos muito altos.
+Sopa: Use liquidos para fazer uma sopa, ela fica mais gostosa quando você tem muitas tags repetidas no seu prato
 
-Salada: Tenha 4 tags refrescantes no seu prato para fazer uma salada, ela fica mais gostosa quando se tem um grande conjunto de tags com o mesmo valor."
+Salada: Tenha 4 tags refrescantes no seu prato para fazer uma salada, ela fica mais gostosa quando se tem um grande conjunto de tags com o mesmo valor.
+
+Atenção: Depois que o prato é escolhido ele não pode ser mudado!"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -714,14 +775,17 @@ texture = ExtResource("35_7o2ue")
 [node name="ConfigButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0109375
-anchor_top = 0.880556
-anchor_right = 0.0131619
-anchor_bottom = 0.884156
+anchor_left = -0.003125
+anchor_top = 0.918559
+anchor_right = 3.75222
+anchor_bottom = 4.62633
 offset_right = 79.1528
 offset_bottom = 39.4073
+scale = Vector2(0.02, 0.02)
 theme_override_font_sizes/font_size = 24
 text = "Config"
+icon = ExtResource("43_qmj53")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
@@ -739,14 +803,5 @@ bus = &"SFX"
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
 bus = &"SFX"
-
-[node name="card2" parent="." instance=ExtResource("8_1p5nq")]
-layout_mode = 1
-offset_left = -502.408
-offset_top = 24.3471
-offset_right = -502.408
-offset_bottom = 24.3471
-grow_horizontal = 1
-grow_vertical = 1
 
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

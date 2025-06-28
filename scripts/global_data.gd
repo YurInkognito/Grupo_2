@@ -36,7 +36,7 @@ func set_mult(pontos: int):
 func set_cliente(fase: int):
 	match fase:
 		1: cliente_final = critico_1_nota()
-		5: cliente_final = critico_2_nota()
+		#5: cliente_final = critico_2_nota()
 		_: cliente_final = cliente_nota(cliente_temp)
 
 func set_tags(tags):
@@ -57,9 +57,9 @@ func proxima_fase():
 	match fase:
 		1:
 			get_tree().change_scene_to_file("res://scenes/cena_aliane.tscn")
-		5:
+		#5:
 			#leva pra cutscene 2
-			get_tree().change_scene_to_file("res://scenes/control.tscn")
+		#	get_tree().change_scene_to_file("res://scenes/control.tscn")
 		_:
 			gera_cliente()
 			get_tree().change_scene_to_file("res://scenes/control.tscn")
@@ -92,17 +92,20 @@ func gera_cliente():
 				0: cliente.objetivo_1 = ["prato", "Sanduiche"]
 				1: cliente.objetivo_1 = ["prato", "Salada"]
 				2: cliente.objetivo_1 = ["prato", "Sopa"]
-	match obj_2:
-		0: 
-			match rng.randi_range(0, 5):
-				0: cliente.objetivo_2 = ["tag", "Acido"]
-				1: cliente.objetivo_2 = ["tag", "Crocante"]
-				2: cliente.objetivo_2 = ["tag", "Picante"]
-				3: cliente.objetivo_2 = ["tag", "Suave"]
-				4: cliente.objetivo_2 = ["tag", "Refrescante"]
-				5: cliente.objetivo_2 = ["tag", "Umami"]
-		1:
-			cliente.objetivo_2 = ["ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size() - 7)].nome]
+	cliente.objetivo_2 = cliente.objetivo_1
+	while cliente.objetivo_2 == cliente.objetivo_1:
+		obj_2 = rng.randi_range(0, 1)
+		match obj_2:
+			0: 
+				match rng.randi_range(0, 5):
+					0: cliente.objetivo_2 = ["tag", "Acido"]
+					1: cliente.objetivo_2 = ["tag", "Crocante"]
+					2: cliente.objetivo_2 = ["tag", "Picante"]
+					3: cliente.objetivo_2 = ["tag", "Suave"]
+					4: cliente.objetivo_2 = ["tag", "Refrescante"]
+					5: cliente.objetivo_2 = ["tag", "Umami"]
+			1:
+				cliente.objetivo_2 = ["ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size() - 7)].nome]
 	print(cliente)
 	cliente_temp = cliente
 	

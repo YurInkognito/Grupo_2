@@ -1,15 +1,15 @@
 # Control.gd
 extends Control
 
-@onready var button: Button = $Button
-@onready var button_2: Button = $Button2
-@onready var button_3: Button = $Button3
-@onready var button_4: Button = $Button4
-@onready var button_5: Button = $Button5
-@onready var button_tutorial: Button = $Tutorial/Button
-@onready var button_tutorial2: Button = $Tutorial2/Button
-@onready var button_tutorial3: Button = $Tutorial3/Button
-@onready var button_cliente: Button = $Cliente/Button
+@onready var button = $Button
+@onready var button_2 = $Button2
+@onready var button_3 = $Button3
+@onready var button_4 = $Button4
+@onready var button_5 = $Button5
+@onready var button_tutorial = $Tutorial/Button
+@onready var button_tutorial2 = $Tutorial2/Button
+@onready var button_tutorial3 = $Tutorial3/Button
+@onready var button_cliente = $Cliente/Button
 
 @onready var dia: Label = $Dia
 @onready var mana_label: Label = $mana_label
@@ -77,19 +77,22 @@ func _ready() -> void:
 		$Cliente.visible = true
 	var cliente = $"/root/GlobalData".cliente_temp
 	var texto_temp = cliente.nome
-	texto_temp = texto_temp + ": Quero "
+	texto_temp = texto_temp + ": Hoje adoraria "
 	match cliente.objetivo_1[0]:
 		"tag":
 			texto_temp = texto_temp + "um prato bastante " + cliente.objetivo_1[1] + " e "
 		"prato":
-			texto_temp = texto_temp + "um/uma " + cliente.objetivo_1[1] + " "
+			if cliente.objetivo_1[1] == "Sanduiche": 
+				texto_temp = texto_temp + "um " + cliente.objetivo_1[1] + ", "
+			else:
+				texto_temp = texto_temp + "uma " + cliente.objetivo_1[1] + " "
 		"ingrediente":
-			texto_temp = texto_temp + "um prato com " + cliente.objetivo_1[1] + " e "
+			texto_temp = texto_temp + "uma receita com " + cliente.objetivo_1[1] + " e "
 	match cliente.objetivo_2[0]:
 		"tag":
-			texto_temp = texto_temp + "um pouco " + cliente.objetivo_2[1]
+			texto_temp = texto_temp + "também gostaria de algo um pouco " + cliente.objetivo_2[1]
 		"ingrediente":
-			texto_temp = texto_temp + "com " + cliente.objetivo_2[1]
+			texto_temp = texto_temp + "se conseguir adicione um pouco de " + cliente.objetivo_2[1] + " à receita"
 	cliente_label.text = texto_temp
 	lista_de_cartas = $"/root/GlobalData".lista_cartas
 	if $"/root/GlobalData".fase == 1:
