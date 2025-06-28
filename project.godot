@@ -14,6 +14,7 @@ config/name="alacarte"
 config/version="0.3.1"
 run/main_scene="uid://lu5ys2u8fw60"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://dqectvtm11hba"
 config/icon="res://recursos/icon.svg"
 
 [autoload]

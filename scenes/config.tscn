@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://wcyiwsewyu3t"]
 
 [ext_resource type="Script" uid="uid://pkmrthqkxlpm" path="res://scripts/config.gd" id="1_duhc1"]
-[ext_resource type="Texture2D" uid="uid://dec410kgkxurh" path="res://sprites/UI/Moldura Menu Pause.PNG" id="2_14yi8"]
+[ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="2_vbxg0"]
 [ext_resource type="Texture2D" uid="uid://yigc0kf1he4p" path="res://sprites/UI/Símbolo Volume Efeitos.PNG" id="3_fu4ru"]
 [ext_resource type="Texture2D" uid="uid://3qomsgxwn6hw" path="res://sprites/UI/Barra Volume.PNG" id="4_iptxn"]
 [ext_resource type="Texture2D" uid="uid://67j4fh8h511m" path="res://sprites/UI/Símbolo Volume Música.PNG" id="4_o4f72"]
@@ -37,20 +37,19 @@ grow_vertical = 2
 script = ExtResource("1_duhc1")
 metadata/_edit_vertical_guides_ = [1082.0]
 
-[node name="Panel" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 184.0
-offset_right = 984.0
+offset_right = 651.0
 offset_bottom = 562.0
-texture = ExtResource("2_14yi8")
-expand_mode = 1
-stretch_mode = 5
+theme = ExtResource("2_vbxg0")
 
 [node name="Volume" type="Control" parent="Panel"]
 visible = false
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -168.0
+offset_right = -128.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Volume"]
@@ -136,9 +135,9 @@ offset_bottom = 40.0
 [node name="UnpauseButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
 layout_mode = 0
-offset_left = 196.0
+offset_left = 28.0
 offset_top = 52.0
-offset_right = 470.0
+offset_right = 302.0
 offset_bottom = 121.0
 texture_normal = ExtResource("8_vbxg0")
 ignore_texture_size = true
@@ -147,9 +146,9 @@ stretch_mode = 5
 [node name="ButtonVolumeSection" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
 layout_mode = 0
-offset_left = 196.0
+offset_left = 28.0
 offset_top = 121.0
-offset_right = 470.0
+offset_right = 302.0
 offset_bottom = 190.0
 texture_normal = ExtResource("9_d33r4")
 ignore_texture_size = true
@@ -163,9 +162,9 @@ anchor_left = -8.025
 anchor_top = -4.6
 anchor_right = 23.916
 anchor_bottom = 13.448
-offset_left = 517.0
+offset_left = 349.0
 offset_top = 373.0
-offset_right = -486.64
+offset_right = -654.64
 offset_bottom = -279.92
 texture_normal = ExtResource("10_waftc")
 ignore_texture_size = true
@@ -174,9 +173,9 @@ stretch_mode = 5
 [node name="QuitButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
 layout_mode = 0
-offset_left = 196.0
+offset_left = 28.0
 offset_top = 259.0
-offset_right = 470.0
+offset_right = 302.0
 offset_bottom = 328.0
 texture_normal = ExtResource("11_d0nbx")
 ignore_texture_size = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=53 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -33,10 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
 [ext_resource type="Texture2D" uid="uid://dr6wpx2xfmwlw" path="res://sprites/UI/Entregar Prato (Idle).PNG" id="29_hl4in"]
-[ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="29_xbjxg"]
+[ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="30_5nmap"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/carta13.png" id="30_61o30"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
-[ext_resource type="Texture2D" uid="uid://dos72pii1mx3y" path="res://sprites/UI/Botão Passar Turno Pressionado.PNG" id="30_qmj53"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
 [ext_resource type="Texture2D" uid="uid://dr4xo8ep4utgb" path="res://sprites/UI/Entregar Prato (Pressionado).PNG" id="32_5nmap"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
@@ -95,6 +94,7 @@ texture = ExtResource("24_sxeuk")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 300.0
 offset_top = -387.876
@@ -185,22 +185,22 @@ anchor_left = 0.760834
 anchor_top = 0.515278
 anchor_right = 0.873188
 anchor_bottom = 0.627014
-offset_left = 13.64
-offset_top = 33.0578
-offset_right = 4681.83
-offset_bottom = 2661.61
+offset_left = 14.1325
+offset_top = 32.9999
+offset_right = 350.319
+offset_bottom = 222.55
 grow_vertical = 0
-scale = Vector2(0.028, 0.028)
-texture_normal = ExtResource("29_xbjxg")
-texture_pressed = ExtResource("30_qmj53")
+scale = Vector2(0.28, 0.28)
+texture_normal = ExtResource("30_5nmap")
+texture_pressed = ExtResource("30_5nmap")
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
-offset_left = 453.102
-offset_top = 855.935
-offset_right = 669.102
-offset_bottom = 897.935
-scale = Vector2(18, 18)
+offset_left = 41.0445
+offset_top = 92.6502
+offset_right = 257.045
+offset_bottom = 134.65
+scale = Vector2(1.8, 1.8)
 theme_override_font_sizes/font_size = 1
 text = "Próximo Turno"
 label_settings = ExtResource("30_jo16n")
@@ -288,6 +288,7 @@ hand_curve = SubResource("Curve_kbped")
 rotation_curve = SubResource("Curve_fj5cn")
 
 [node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
