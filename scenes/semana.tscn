@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce31bsvwp05t8"]
+
+[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="1_34t7l"]
+[ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
+[ext_resource type="Texture2D" uid="uid://cl2g4ffadvj0v" path="res://sprites/temporarios/calendario_temp-1.png.png" id="2_vorlf"]
+[ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
+[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="4_ekvoy"]
+[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="6_noqa7"]
+[ext_resource type="Texture2D" uid="uid://j7jneo73ebrw" path="res://sprites/temporarios/jeff_chibi.png" id="7_ekvoy"]
+
+[node name="semana" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vorlf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="BgALaCarte" type="Sprite2D" parent="."]
+position = Vector2(661.605, 542.869)
+texture = ExtResource("1_34t7l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vorlf")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 102.0
+offset_right = 254.0
+offset_bottom = 592.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0283
+offset_top = -0.272537
+offset_right = 135.028
+offset_bottom = 110.727
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Dia 1
+"
+
+[node name="rosto" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0283
+offset_top = 194.913
+offset_right = 134.028
+offset_bottom = 248.913
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "5000$"
+
+[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("6_noqa7")
+autoplay = true
+bus = &"Music"
+
+[node name="JeffChibi" type="Sprite2D" parent="."]
+position = Vector2(165, 490)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_ekvoy")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

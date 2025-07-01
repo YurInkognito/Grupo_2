@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c37j75megpkvy"
-path="res://.godot/imported/New Piskel-1.png.png-669689c59be7316bbdddc31b858acb6c.ctex"
+uid="uid://cm1scxx7tmgcx"
+path="res://.godot/imported/Aliane Butolane icon.png-d24e28fe509ea05bbe48f01aa30db5a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-669689c59be7316bbdddc31b858acb6c.ctex"]
+source_file="res://sprites/temporarios/Aliane Butolane icon.png"
+dest_files=["res://.godot/imported/Aliane Butolane icon.png-d24e28fe509ea05bbe48f01aa30db5a6.ctex"]
 
 [params]
 

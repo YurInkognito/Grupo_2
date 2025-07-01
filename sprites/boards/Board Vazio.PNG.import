@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqectvtm11hba"
-path="res://.godot/imported/logo a la carte.png-cc50451d76e6031b8d15b9d4103e0103.ctex"
+uid="uid://bd44qr5f8otes"
+path="res://.godot/imported/Board Vazio.PNG-cdf6180c027389aab86f685f8f103469.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/logo a la carte.png"
-dest_files=["res://.godot/imported/logo a la carte.png-cc50451d76e6031b8d15b9d4103e0103.ctex"]
+source_file="res://sprites/boards/Board Vazio.PNG"
+dest_files=["res://.godot/imported/Board Vazio.PNG-cdf6180c027389aab86f685f8f103469.ctex"]
 
 [params]
 

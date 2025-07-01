@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm1scxx7tmgcx"
-path="res://.godot/imported/Aliane Butolane icon.png-2de66254f49f4a1585cc6b70cb5f01b4.ctex"
+uid="uid://d0p64wdujl81u"
+path="res://.godot/imported/IMG_1945.PNG-a79481e140ce7cc6854f18a8f1a81a2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Aliane Butolane icon.png"
-dest_files=["res://.godot/imported/Aliane Butolane icon.png-2de66254f49f4a1585cc6b70cb5f01b4.ctex"]
+source_file="res://sprites/temporarios/IMG_1945.PNG"
+dest_files=["res://.godot/imported/IMG_1945.PNG-a79481e140ce7cc6854f18a8f1a81a2e.ctex"]
 
 [params]
 

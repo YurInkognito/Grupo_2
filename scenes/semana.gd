@@ -1,0 +1,29 @@
+extends Control
+
+@onready var timer = $Timer
+@onready var jeff = $JeffChibi
+@onready var fase = 0
+
+func _ready() -> void:
+	var fase = GlobalData.fase
+	jeff.position.x = (165 + 180 * (fase - 2))
+	
+	var tween = create_tween()
+
+	tween.tween_property(jeff, "position", position + Vector2(jeff.position.x + 180, jeff.position.y), 1.0)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+
+func proxima_fase():
+	match fase:
+		1:
+			Transição.change_scene("res://scenes/cena_aliane.tscn")
+		#5:
+			#leva pra cutscene 2
+		#	get_tree().change_scene_to_file("res://scenes/control.tscn")
+		_:
+			Transição.change_scene("res://scenes/control.tscn")
+
+
+func _on_timer_timeout() -> void:
+	proxima_fase()

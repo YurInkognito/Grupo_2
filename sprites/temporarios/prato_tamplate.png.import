@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3bvflpc5iwpe"
-path="res://.godot/imported/menu.jpg-99b2edc993b8b377db47c73e4e79c2d4.ctex"
+uid="uid://d31y13arivlnm"
+path="res://.godot/imported/prato_tamplate.png-6c6fba0d3de590bfdeeb0dd36c8ac9cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu.jpg"
-dest_files=["res://.godot/imported/menu.jpg-99b2edc993b8b377db47c73e4e79c2d4.ctex"]
+source_file="res://sprites/temporarios/prato_tamplate.png"
+dest_files=["res://.godot/imported/prato_tamplate.png-6c6fba0d3de590bfdeeb0dd36c8ac9cc.ctex"]
 
 [params]
 

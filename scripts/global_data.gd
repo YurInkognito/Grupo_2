@@ -54,15 +54,8 @@ func remover_processos(lista_de_cartas: Array[CartaData]) -> Array[CartaData]:
 	
 func proxima_fase():
 	fase += 1
-	match fase:
-		1:
-			get_tree().change_scene_to_file("res://scenes/cena_aliane.tscn")
-		#5:
-			#leva pra cutscene 2
-		#	get_tree().change_scene_to_file("res://scenes/control.tscn")
-		_:
-			gera_cliente()
-			get_tree().change_scene_to_file("res://scenes/control.tscn")
+	gera_cliente()
+	Transição.change_scene("res://scenes/semana.tscn")
 
 func gera_cliente():
 	var cliente: Dictionary = {
@@ -244,6 +237,3 @@ func cliente_nota(cliente):
 				pontos += 1
 	
 	return pontos
-
-func jogar():
-	get_tree().change_scene_to_file("res://scenes/control.tscn")

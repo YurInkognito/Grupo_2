@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://x7x12d0x8njs"]
 
 [ext_resource type="Script" uid="uid://m3r74d0i8nba" path="res://scripts/info.gd" id="1_6cmwp"]
-[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/prato_tamplate.png" id="2_1t52y"]
+[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="2_1t52y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1t52y"]
 font_color = Color(0, 0, 0, 1)

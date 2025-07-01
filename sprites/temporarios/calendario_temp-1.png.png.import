@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpdqytyf1h64s"
-path="res://.godot/imported/carta12.png-9828967b242b6008f2c077503f50cefe.ctex"
+uid="uid://cl2g4ffadvj0v"
+path="res://.godot/imported/calendario_temp-1.png.png-382f7e762a55f462c2ca921633903950.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/carta12.png"
-dest_files=["res://.godot/imported/carta12.png-9828967b242b6008f2c077503f50cefe.ctex"]
+source_file="res://sprites/temporarios/calendario_temp-1.png.png"
+dest_files=["res://.godot/imported/calendario_temp-1.png.png-382f7e762a55f462c2ca921633903950.ctex"]
 
 [params]
 

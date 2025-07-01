@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://bcuo6beixvs7e"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bcuo6beixvs7e"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_h1h04"]
+[ext_resource type="Texture2D" uid="uid://di2aypvcenufc" path="res://sprites/CARTAS 21-05/carta33.png" id="2_jg1nr"]
 
 [resource]
 script = ExtResource("1_h1h04")
@@ -19,5 +20,6 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String]([])
+sprite = ExtResource("2_jg1nr")
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

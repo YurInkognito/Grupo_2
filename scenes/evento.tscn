@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5ptcm6lktil"]
+
+[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="1_3hjvl"]
+[ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="2_rdlqr"]
+[ext_resource type="LabelSettings" uid="uid://82yxw7hugk00" path="res://recursos/magic_text_eventos.tres" id="3_qb6tr"]
+[ext_resource type="Texture2D" uid="uid://dryri2w84n3gj" path="res://sprites/evento 1.png" id="4_qb6tr"]
+[ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="4_rdlqr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3hjvl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1036.0
+offset_bottom = 1080.0
+theme = ExtResource("2_rdlqr")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 687.8
+offset_right = 995.0
+offset_bottom = 1014.8
+text = "Uma carroça que levava vegetais ao o porto \"tombou\" em frente a seu estabelecimento! Agora você pode \"adotar\" um dos pobres vegetais perdidos na rua."
+label_settings = ExtResource("3_qb6tr")
+autowrap_mode = 3
+
+[node name="Evento1" type="Sprite2D" parent="Panel"]
+position = Vector2(505.553, 275.014)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_qb6tr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1134.66
+offset_top = 267.014
+offset_right = 1773.66
+offset_bottom = 372.014
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 50
+text = "Adotar um Repolho Vivo"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1134.66
+offset_top = 416.162
+offset_right = 1780.66
+offset_bottom = 521.162
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 50
+text = "Adotar uma Cenoura Morto-Viva"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1134.66
+offset_top = 554.431
+offset_right = 1773.66
+offset_bottom = 659.431
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 50
+text = "Adotar uma Mandragora Real"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1134.66
+offset_top = 705.34
+offset_right = 1773.66
+offset_bottom = 810.34
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 50
+text = "Adotar é errado!"

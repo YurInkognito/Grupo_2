@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="14_0nxg4"]
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
-[ext_resource type="Texture2D" uid="uid://d3bvflpc5iwpe" path="res://sprites/menu.jpg" id="18_jx0lc"]
+[ext_resource type="Texture2D" uid="uid://d3bvflpc5iwpe" path="res://sprites/temporarios/menu.jpg" id="18_jx0lc"]
 [ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="19_jk8gn"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
 [ext_resource type="Texture2D" uid="uid://fbwes2y1323s" path="res://sprites/UI/Botão Configurações.PNG" id="20_kn1lp"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cyjeigggfjcbl" path="res://sprites/UI/Botão Voltar (Menu Volume).PNG" id="24_kn1lp"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
-[ext_resource type="Texture2D" uid="uid://dqectvtm11hba" path="res://sprites/logo a la carte.png" id="26_jx0lc"]
+[ext_resource type="Texture2D" uid="uid://dqectvtm11hba" path="res://sprites/temporarios/logo a la carte.png" id="26_jx0lc"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_mq8vl"]
 

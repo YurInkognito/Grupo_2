@@ -1,18 +1,19 @@
-[gd_scene load_steps=44 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=45 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
-[ext_resource type="Texture2D" uid="uid://5nxj32f351j6" path="res://Personagens/Aliane/Assets/Portraits/Aliane_Butolane-1.png" id="1_t2gs0"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="2_mjhyp"]
-[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/prato_tamplate.png" id="3_ur8ju"]
+[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="3_dv6s2"]
+[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
 [ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
+[ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
 [ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
-[ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/carta12.png" id="7_jn4of"]
+[ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/temporarios/carta12.png" id="7_jn4of"]
 [ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
 [ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
 [ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
@@ -72,12 +73,13 @@ texture = ExtResource("2_mjhyp")
 
 [node name="AlianeButolane-1" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 620.0
-offset_top = 57.0
-offset_right = 3300.0
-offset_bottom = 4757.0
+offset_left = 767.0
+offset_top = 250.0
+offset_right = 2467.0
+offset_bottom = 1467.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_t2gs0")
+texture = ExtResource("3_dv6s2")
+stretch_mode = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -194,10 +196,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.555556
-anchor_top = 0.733025
-anchor_right = 0.952257
-anchor_bottom = 0.953704
+anchor_left = 0.539844
+anchor_top = 0.695833
+anchor_right = 0.936719
+anchor_bottom = 0.9625
 theme = ExtResource("4_hj10q")
 metadata/_edit_use_anchors_ = true
 
@@ -228,11 +230,12 @@ anchor_right = 3.34766
 anchor_bottom = 3.6875
 offset_left = 512.0
 offset_top = 644.0
-offset_right = 603.0
-offset_bottom = 681.0
-scale = Vector2(0.03, 0.03)
-text = "Menu"
-icon = ExtResource("5_jxvgl")
+offset_right = -3762.0
+offset_bottom = -1750.0
+scale = Vector2(0.3, 0.3)
+text = "
+"
+icon = ExtResource("5_drhht")
 flat = true
 
 [node name="Label" type="Label" parent="."]
@@ -249,25 +252,24 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0335938
 anchor_top = -0.023611
-anchor_right = 3.70781
-anchor_bottom = 3.6875
+anchor_right = 0.276563
+anchor_bottom = 0.311111
 offset_left = 490.0
 offset_top = 644.0
 offset_right = 581.0
 offset_bottom = 681.0
-scale = Vector2(0.03, 0.03)
-text = "Cotinuar"
-icon = ExtResource("5_jxvgl")
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("5_drhht")
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Button2"]
 layout_mode = 0
-offset_left = 700.0
-offset_top = 566.666
-offset_right = 818.0
-offset_bottom = 608.666
-scale = Vector2(30, 30)
+offset_left = 70.0001
+offset_top = 63.3333
+offset_right = 188.0
+offset_bottom = 105.333
+scale = Vector2(3, 3)
 text = "Avançar"
 label_settings = ExtResource("6_h1s8t")
 
@@ -339,23 +341,23 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -69.0
-offset_top = -96.0
-offset_right = 4784.0
-offset_bottom = 2613.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.03, 0.03)
+scale = Vector2(0.032, 0.032)
 text = "Pular"
 icon = ExtResource("5_jxvgl")
 flat = true
 
 [node name="Label" type="Label" parent="Panel3/Panel"]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 233.0
-offset_right = 267.0
-offset_bottom = 320.0
+offset_left = 184.0
+offset_top = 238.0
+offset_right = 277.0
+offset_bottom = 273.0
 text = "Pular"
 label_settings = ExtResource("6_h1s8t")
 

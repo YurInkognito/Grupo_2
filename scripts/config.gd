@@ -23,7 +23,8 @@ func _on_button_back_pressed() -> void:
 		self.queue_free()
 
 func pause_game():
-	get_parent().get_tree().paused = true
+	pass
+	#get_parent().get_tree().paused = true
 
 func unpause_game():
 	get_parent().get_tree().paused = false
@@ -45,7 +46,8 @@ func _on_button_volume_section_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	#get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/tela_titulo.tscn")
 
 
 func _on_button_back_pause_pressed() -> void:

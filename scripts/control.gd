@@ -10,6 +10,7 @@ extends Control
 @onready var button_tutorial2 = $Tutorial2/Button
 @onready var button_tutorial3 = $Tutorial3/Button
 @onready var button_cliente = $Cliente/Button
+@onready var cooldown_timer = $Button/Timer
 
 @onready var dia: Label = $Dia
 @onready var mana_label: Label = $mana_label
@@ -22,6 +23,7 @@ extends Control
 @export var lista_de_cartas: Array[CartaData]
 @export var deck = []
 @export var n_compras = 6
+var em_cooldown: bool = false
 
 @onready var hand_node: Control = $hand # Garanta que o nome do seu nó 'hand' esteja correto e seja do tipo 'hand'
 @onready var deck_node: Node2D = $deck # Crie um Position2D chamado 'DeckPosition' na sua cena para marcar a origem da animação
@@ -32,6 +34,7 @@ extends Control
 @export var max_mana: int = 3
 @export var turno: int = 1
 @export var max_turno: int = 5
+@export var cool_down_end_turn = 1
 
 #pontuação
 @export var tipo_prato: String = "Prato"
@@ -70,10 +73,14 @@ const CONFIG = preload("res://scenes/config.tscn")
 #sons
 @onready var sfx_new_hand: AudioStreamPlayer2D = $SFXNewHand
 @onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $SFXNewHandAlternate
+@onready var sfx_bell: AudioStreamPlayer2D = $SFXBell
 
 
 func _ready() -> void:
-	if $"/root/GlobalData".fase != 1 and $"/root/GlobalData".fase != 5:
+	$Button/AnimationPlayer.play("idle")
+	print($"/root/GlobalData".fase)
+	#if $"/root/GlobalData".fase != 1 and $"/root/GlobalData".fase != 5:
+	if $"/root/GlobalData".fase != 1:
 		$Cliente.visible = true
 	var cliente = $"/root/GlobalData".cliente_temp
 	var texto_temp = cliente.nome
@@ -106,6 +113,7 @@ func _ready() -> void:
 	button_tutorial2.pressed.connect(close_tutorial2)
 	button_tutorial3.pressed.connect(close_tutorial3)
 	button_cliente.pressed.connect(close_cliente)
+	cooldown_timer.timeout.connect(_on_timer_timeout)
 	mana = max_mana
 	play_draw_sound()
 	# gerenciamento de cartas
@@ -139,6 +147,9 @@ func close_tutorial3():
 func close_cliente():
 	$Cliente.visible = false
 
+func sem_mana():
+	if mana == 0:
+		$Button/AnimationPlayer.play("pisca")
 func on_draw_button_pressed(inicial: bool = true):
 	var card_data = null
 	var quant = 1
@@ -189,10 +200,12 @@ func gastar_mana(custo: int):
 	if custo > 0 and picles:
 		compra()
 	mana = mana - custo
+	sem_mana()
 
 func start_turn():
 	descarte_turno = false
 	tomate_ativo = false
+	$Button/AnimationPlayer.play("idle")
 	for i in adiciona_inicio:
 		bota_na_mao(i)
 	play_draw_sound()
@@ -201,19 +214,29 @@ func start_turn():
 	on_draw_button_pressed()
 
 func end_game():
+	sfx_bell.play()
+	await $prato.send_cards()
+	
 	get_tree().change_scene_to_file("res://scenes/tela_resultado.tscn")
 
+func _on_timer_timeout() -> void:
+	em_cooldown = false
+
+
 func on_end_turn_pressed():
-	if turno >= max_turno:
-		end_game()
-	else:
-		if !guarda:
-			on_discard_button_pressed()
-			while hand_node.get_child_count() > 0:
-				await get_tree().create_timer(0.1).timeout 
-			await get_tree().create_timer(0.2).timeout 
-		guarda = false
-		start_turn()
+	if not em_cooldown:
+		em_cooldown = true
+		cooldown_timer.start()
+		if turno >= max_turno:
+			end_game()
+		else:
+			if !guarda:
+				on_discard_button_pressed()
+				while hand_node.get_child_count() > 0:
+					await get_tree().create_timer(0.1).timeout 
+				await get_tree().create_timer(0.2).timeout 
+			guarda = false
+			start_turn()
 
 func reset_game():
 	#resetando todos os valores do jogo
@@ -227,7 +250,7 @@ func reset_game():
 	sabor = 0
 	sabor_continuo = 0
 	sal = 1
-	queijos = []
+	#queijos = []
 	tags_prato = []
 	prox_double = []
 	prox_zero = []
@@ -405,6 +428,7 @@ func pontuação_continua():
 		"Salada": sabor_continuo = sabor_continuo + sabor_Salada
 	
 	#queijos
+	print("queijos: ")
 	print(queijos)
 	for q in queijos:
 		sabor_continuo = sabor_continuo + (q * queijos.size())
@@ -480,7 +504,9 @@ func compra():
 	on_draw_button_pressed(false)
 
 func add_sabor_queijo(pontos: String):
-	queijos.append(int(pontos) * sal)
+	print("queijei: " + str(int(pontos) * sal))
+	queijos.append(int(int(pontos) * sal))
+	print(queijos)
 
 func add_sabor_tag(pontos: String, tag: String):
 	print("add_sabor_tag" + tag)

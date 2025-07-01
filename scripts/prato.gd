@@ -49,7 +49,15 @@ func update_cards() -> void:
 			#rot_multiplier = 0.0
 		
 		var final_x: float = offset + card.SIZE.x * i + final_x_sep * i
-		#var final_y: float = y_min + y_max * y_multiplier
+		var final_y: float = 100
 		
-		card_i.position = Vector2(final_x, 0)
+		card_i.position = Vector2(final_x, final_y)
 		#card_i.rotation_degrees = max_rotatio_degrees * rot_multiplier
+	
+func send_cards() -> void:
+	var cards = get_child_count()
+	for i in cards:
+		var card_i = get_child(i)
+		print(card_i)
+		var tween = create_tween()
+		await tween.tween_property(card_i, "position", card_i.position - Vector2(0, 500), 0.2).finished

@@ -21,6 +21,7 @@ config/icon="res://recursos/icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GlobalData="*res://scripts/global_data.gd"
+"Transição"="*res://scenes/transição.tscn"
 
 [dialogic]
 
@@ -102,4 +103,16 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-2d/snap/snap_2d_transforms_to_pixel=true
+textures/vram_compression/import_etc2_astc=true
+textures/lossless_compression/force_png=true
+environment/ssao/quality=0
+environment/ssil/quality=0
+environment/glow/upscale_mode=0
+environment/screen_space_reflection/roughness_quality=0
+2d/screen_space_roughness_limiter/enabled=true
+2d/screen_space_reflection/roughness_quality=0
+2d/glow/upscale_mode=0
+2d/ssil/quality=0
+2d/ssao/quality=0
+2d/lossless_compression/force_png=true
+2d/convert_text_resources_to_binary=true

@@ -4,6 +4,10 @@ extends ColorRect
 @onready var prato: ColorRect = $"../../prato"
 @onready var hand: ColorRect = $"../../hand"
 @onready var control: Control = $"../.."
+@onready var som_fogo = $fogo
+@onready var som_martelo= $martelo
+@onready var som_faca = $faca
+@onready var anim = $AnimatedSprite2D
 
 @onready var dentro: Button = $Button
 @onready var lixo: Button = $Button2
@@ -11,6 +15,7 @@ extends ColorRect
 signal processado()
 
 func _ready() -> void:
+	anim.play("idle")
 	dentro.pressed.connect(on_dentro_pressed)
 	lixo.pressed.connect(on_lixo_pressed)
 
@@ -85,6 +90,8 @@ func drop_processo(card: Control) -> bool:
 	if current_card and (int(card.custo_t) <= control.mana):
 		if current_card.card_data.on_faca and card.card_data.nome == "Cutelo":
 			print("cortado")
+			som_faca.play()
+			anim.play("faca")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
 			on_processar_carta(current_card.card_data, "Cutelo")
@@ -93,6 +100,8 @@ func drop_processo(card: Control) -> bool:
 			return true
 		if current_card.card_data.on_fogo and card.card_data.nome == "Espirito de Fogo":
 			print("queimado")
+			som_fogo.play()
+			anim.play("fogo")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
 			on_processar_carta(current_card.card_data, "Espirito de Fogo")
@@ -101,6 +110,8 @@ func drop_processo(card: Control) -> bool:
 			return true
 		if current_card.card_data.on_martelo and card.card_data.nome == "Martelo":
 			print("amassado")
+			som_martelo.play()
+			anim.play("martelo")
 			control.gastar_mana(int(card.custo_t))
 			emit_signal("processado")
 			on_processar_carta(current_card.card_data, "Martelo")
@@ -124,6 +135,8 @@ func on_lixo_pressed() -> void:
 	if current_card:
 		control.descartado()
 		remove_child(current_card)
+		$"../../Decartes/AnimationPlayer".play("abrir_boca")
+		$"../../Decartes/AnimationPlayer".play("fechar_boca")
 		current_card.queue_free()
 
 #funcoes on processo

@@ -2,7 +2,7 @@ class_name card
 extends Panel
 
 const SIZE = Vector2(100, 140)
-#Sons
+
 @onready var sfx_select_card: AudioStreamPlayer2D = $SFXSelectCard
 @onready var sfx_throw_card: AudioStreamPlayer2D = $SFXThrowCard
 
@@ -24,6 +24,7 @@ const SIZE = Vector2(100, 140)
 
 @onready var control: ColorRect = $"../../ColorRect"
 @onready var prato: ColorRect = $"../../prato"
+@onready var hand_node = $".." # Referência ao nó 'hand'
 
 @onready var nome: Label = $nome
 @onready var desc: RichTextLabel = $desc
@@ -47,16 +48,19 @@ var is_in_hand: bool = true
 var is_playable: bool = true
 var is_played: bool = false
 
-var original_scale
-@export var scale_factor = 1.5
+var is_waiting = false
 
-# Called when the node enters the scene tree for the first time.
+var original_scale
+@export var scale_factor = 2
+
 func _ready() -> void:
 	lista_tags = [tag1,tag2,tag3]
 	nome.text = nome_t
 	desc.text = desc_t
 	custo.text = custo_t
 	original_scale = scale
+	# Definir mouse_filter para Pass para que o pai (hand) processe os eventos
+	mouse_filter = MOUSE_FILTER_PASS
 
 func set_card(carta: CartaData) -> void:
 	lista_tags[0].texture = null
@@ -103,37 +107,57 @@ func set_card(carta: CartaData) -> void:
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and is_in_hand and is_playable:
+			# Atualiza a flag global de drag no hand_node
+			hand_node.is_dragging_global = true
 			start_drag(event, true)
 		elif event.pressed and is_played:
+			hand_node.is_dragging_global = true
 			start_drag(event, false)
 		elif not event.pressed and is_dragging:
 			end_drag()
+			# Atualiza a flag global de drag no hand_node
+			hand_node.is_dragging_global = false
+			# Simula um evento de mouse motion no hand_node para reavaliar o hover
+			# Isso garante que o hand_node atualize o hover imediatamente após o drag
+			hand_node._input(InputEventMouseMotion.new())
 
 func _on_mouse_entered():
-	if not is_dragging:
+	if not card_data.upgrade:
+		if hand_node.is_dragging_global:
+			print("entrei com hover")
+			is_waiting = true
+		if not is_in_hand and not hand_node.is_dragging_global and not is_waiting:
+			z_index = 10
+			scale = original_scale * scale_factor
+	else:
 		z_index = 10
 		scale = original_scale * scale_factor
-		# Centralizar a carta (ajuste fino pode ser necessário dependendo do seu ponto de ancoragem)
-		#position -= (scale - original_scale) * get_rect().size / 2
 
 func _on_mouse_exited():
-	if not is_dragging:
+	if not card_data.upgrade:
+		print("sai" + nome_t)
+		is_waiting = false
+		if not is_in_hand and not hand_node.is_dragging_global:
+			z_index = 0
+			scale = original_scale
+	else:
 		z_index = 0
 		scale = original_scale
-		# Centralizar de volta
-		#position += (scale * scale_factor - original_scale) * get_rect().size / (2 * scale_factor)
-
 
 func start_drag(event: InputEventMouseButton, from_hand: bool):
 	if card_data.upgrade:
+		print("test")
 		card_data.upgrade = false
 		get_node("..").select_card(card_data)
 	else:
 		sfx_select_card.play()
 		is_dragging = true
 		drag_offset = position - get_global_mouse_position()
+		
 		# Efeitos visuais
-		z_index = 10
+		# z_index e scale agora são controlados pelo hand_node quando a carta não está em drag
+		# Quando a carta está sendo arrastada, ela deve estar acima de tudo
+		z_index = 100 # Um Z-index bem alto para garantir que a carta arrastada esteja no topo
 		scale = Vector2(1.2, 1.2)
 		self.rotation = 0
 		if from_hand:
@@ -141,9 +165,7 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 
 func end_drag():
 	sfx_throw_card.play()
-	print("enddrag card")
 	if is_played:
-		print('played')
 		var drop_area = get_drop_area(false)
 		if drop_area:
 			if drop_area.prato:
@@ -155,10 +177,7 @@ func end_drag():
 		else:
 			is_dragging = false
 			position = Vector2(0.0, 0.0)
-			
 	else:
-		print('teste')
-		# Verifica se foi solta em uma área válida
 		var drop_area = get_drop_area(true)
 		if drop_area and drop_area.can_accept_card(self) and !card_data.is_processo:
 			is_dragging = false
@@ -166,20 +185,19 @@ func end_drag():
 			play_card(drop_area)
 		elif card_data.is_processo and drop_area and drop_area.drop_processo(self):
 			is_dragging = false
+			
 			queue_free()
 		else:
 			is_dragging = false
 			return_to_hand()
 	
-	# Restaura efeitos visuais
+	# Restaura z_index e scale para que o hand_node possa controlá-los novamente
 	z_index = 0
-	scale = Vector2(1.0, 1.0)
+	scale = original_scale
 
 func get_drop_area(from_hand: bool) -> Control:
-	# Obtém a posição do mouse
 	var mouse_pos = get_global_mouse_position()
 	
-	# Verifica todas as áreas de jogo
 	var play_areas = get_tree().get_nodes_in_group("area_final")
 	if from_hand:
 		play_areas = get_tree().get_nodes_in_group("area")
@@ -189,36 +207,24 @@ func get_drop_area(from_hand: bool) -> Control:
 	return null
 
 func play_card(play_area: Control):
-	print("card playing")
 	is_in_hand = false
 	is_playable = false
 	play_area.drop_card(self)
-	#get_parent().remove_child(self)
-	#play_area.add_child(self)
-	#position = Vector2.ZERO
-	#rotation_degrees = 0
 	
 	emit_signal("card_played", self)
 
 func return_to_hand():
-	# Animação de retorno à mão
-	#var tween = create_tween()
-	#tween.tween_property(self, "position", original_position, 0.3)\
-		#.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-	#tween.parallel().tween_property(self, "size", original_size, 0.3)
 	get_node("..").update_cards()
 
 func _process(delta):
 	if is_dragging:
-		# Atualiza posição mantendo o offset do clique
 		position = get_global_mouse_position() + drag_offset
 
 func efeito_on_board():
-	print(card_data.nome)
 	for efeito in card_data.efeitos_on_board:
 		if efeito.has("funcao") && is_played && has_method(efeito["funcao"]):
 			var funcao_nome = efeito["funcao"]
-			var parametro = efeito.get("parametro") # get para lidar com parâmetros opcionais
+			var parametro = efeito.get("parametro")
 			if parametro is Array:
 				match parametro.size():
 					1:
@@ -228,21 +234,17 @@ func efeito_on_board():
 					3:
 						call(funcao_nome, parametro[0], parametro[1], parametro[2])
 			elif parametro:
-				print(parametro)
 				call(funcao_nome, parametro)
 			else:
 				call(funcao_nome)
 		else:
 			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", card_data.nome, "'.")
 
-#função não utilizada no momento:
 func on_efeito_carta_on_board():
-	print("vi processo")
-	print(card_data.nome)
 	for efeito in card_data.efeitos_on_board:
 		if efeito.has("funcao") && is_played && has_method(efeito["funcao"]):
 			var funcao_nome = efeito["funcao"]
-			var parametro = efeito.get("parametro") # get para lidar com parâmetros opcionais
+			var parametro = efeito.get("parametro")
 			if parametro is Array:
 				match parametro.size():
 					1:
@@ -252,17 +254,13 @@ func on_efeito_carta_on_board():
 					3:
 						call(funcao_nome, parametro[0], parametro[1], parametro[2])
 			elif parametro:
-				print(parametro)
 				call(funcao_nome, parametro)
 			else:
 				call(funcao_nome)
 		else:
 			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", card_data.nome, "'.")
-
-#funcoes on board
 
 func bota_na_mao(carta: String):
-	print("botando na mao")
 	$"../../..".bota_na_mao(carta)
 
 func add_mao_por_turno(carta: String):

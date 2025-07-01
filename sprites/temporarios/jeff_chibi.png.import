@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csffftjvirrke"
-path="res://.godot/imported/carta13.png-a5b10b11371b3c2af147be00e55da346.ctex"
+uid="uid://j7jneo73ebrw"
+path="res://.godot/imported/jeff_chibi.png-f1a54a8feb8bcc3cc67f7a5b9ee0ff5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/carta13.png"
-dest_files=["res://.godot/imported/carta13.png-a5b10b11371b3c2af147be00e55da346.ctex"]
+source_file="res://sprites/temporarios/jeff_chibi.png"
+dest_files=["res://.godot/imported/jeff_chibi.png-f1a54a8feb8bcc3cc67f7a5b9ee0ff5a.ctex"]
 
 [params]
 

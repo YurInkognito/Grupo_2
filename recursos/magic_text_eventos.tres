@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://82yxw7hugk00"]
+
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="1_10pra"]
+
+[resource]
+font = ExtResource("1_10pra")
+font_size = 70
+outline_size = 5
+outline_color = Color(0.431848, 0.0316418, 0.567057, 1)

@@ -1,9 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6gka6rawpuf5"]
+[gd_scene load_steps=16 format=3 uid="uid://b6gka6rawpuf5"]
 
 [ext_resource type="Script" uid="uid://dqjqx5rciawal" path="res://scripts/area.gd" id="1_bb12l"]
+[ext_resource type="AudioStream" uid="uid://dcqif0ysyn6xi" path="res://audio/SFX/FRITURA.wav" id="2_5jt5u"]
+[ext_resource type="AudioStream" uid="uid://yr4vkt3hynxm" path="res://audio/SFX/Martelo .wav" id="3_t8tu6"]
+[ext_resource type="AudioStream" uid="uid://c2vnivg27me6" path="res://audio/SFX/CORTE SFX.wav" id="4_mphia"]
+[ext_resource type="Texture2D" uid="uid://cxnoisx7qwhyk" path="res://sprites/temporarios/animacoes processos.png" id="5_t8tu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mphia"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(0, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abe4w"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(200, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx6cp"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(400, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luect"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(0, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueojj"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(200, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4i6t"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(400, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pxb4"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyr7o"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwuss"]
+atlas = ExtResource("5_t8tu6")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ii6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mphia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abe4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx6cp")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"faca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luect")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueojj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4i6t")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"fogo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pxb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwuss")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"martelo",
+"speed": 5.0
+}]
 
 [node name="Area" type="ColorRect" groups=["area"]]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
 offset_right = 96.0
 offset_bottom = 145.0
 script = ExtResource("1_bb12l")
@@ -40,3 +145,18 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 9
 text = "Lixo"
+
+[node name="fogo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5jt5u")
+
+[node name="martelo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t8tu6")
+
+[node name="faca" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mphia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(42, 74)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5ii6m")
+animation = &"idle"

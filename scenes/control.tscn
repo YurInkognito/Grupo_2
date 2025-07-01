@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=62 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -30,23 +30,25 @@
 [ext_resource type="Resource" uid="uid://boh5b6sv0wrwx" path="res://Cartas/sal.tres" id="22_p1ehl"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
 [ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
-[ext_resource type="Texture2D" uid="uid://c532jl30dve32" path="res://sprites/board-esboço.jpg" id="24_sxeuk"]
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
-[ext_resource type="Texture2D" uid="uid://dr6wpx2xfmwlw" path="res://sprites/UI/Entregar Prato (Idle).PNG" id="29_hl4in"]
+[ext_resource type="Texture2D" uid="uid://cwvotfty7m037" path="res://sprites/boards/Board Vazio 1280x720 (1).PNG" id="26_qmj53"]
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="30_5nmap"]
-[ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/carta13.png" id="30_61o30"]
+[ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
-[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="31_nnsnw"]
-[ext_resource type="Texture2D" uid="uid://dr4xo8ep4utgb" path="res://sprites/UI/Entregar Prato (Pressionado).PNG" id="32_5nmap"]
+[ext_resource type="Texture2D" uid="uid://daeqn7fjfgl66" path="res://sprites/UI_final/Entregar Prato Idle (2).PNG" id="31_qmj53"]
+[ext_resource type="Texture2D" uid="uid://dclfixn3nrny3" path="res://sprites/temporarios/decartes 0.1.png" id="33_5nmap"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
 [ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
-[ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/pao_tutorial.png" id="36_72v1w"]
+[ext_resource type="Texture2D" uid="uid://dc4slhvl2bp2l" path="res://sprites/temporarios/decartes 0.2.png" id="35_gst0j"]
+[ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/temporarios/pao_tutorial.png" id="36_72v1w"]
 [ext_resource type="LabelSettings" uid="uid://clukglr7dcfu3" path="res://recursos/magic_text.tres" id="37_qmj53"]
+[ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="40_wi3jo"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
-[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/Aliane Butolane icon.png" id="42_wi3jo"]
-[ext_resource type="Texture2D" uid="uid://0a7lpge3sqcq" path="res://sprites/UI/Botão Pause.PNG" id="43_qmj53"]
-[ext_resource type="Texture2D" uid="uid://c37j75megpkvy" path="res://sprites/New Piskel-1.png.png" id="47_5nmap"]
+[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="42_wi3jo"]
+[ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
+[ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
+[ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -57,6 +59,59 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Animation" id="Animation_r5dke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ps1h"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gst0j"]
+resource_name = "pisca"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ps1h"]
+_data = {
+&"RESET": SubResource("Animation_r5dke"),
+&"idle": SubResource("Animation_8ps1h"),
+&"pisca": SubResource("Animation_gst0j")
+}
+
 [sub_resource type="Curve" id="Curve_kbped"]
 _data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
 point_count = 3
@@ -66,8 +121,57 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, -1), -6.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tjwpk"]
-size = Vector2(10, 10)
+[sub_resource type="Animation" id="Animation_p1ehl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("33_5nmap")]
+}
+
+[sub_resource type="Animation" id="Animation_wi3jo"]
+resource_name = "abrir_boca"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_gst0j")]
+}
+
+[sub_resource type="Animation" id="Animation_3vrtg"]
+resource_name = "fechar_boca"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("35_gst0j"), ExtResource("33_5nmap")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5dke"]
+_data = {
+&"RESET": SubResource("Animation_p1ehl"),
+&"abrir_boca": SubResource("Animation_wi3jo"),
+&"fechar_boca": SubResource("Animation_3vrtg")
+}
 
 [node name="Control" type="Control" groups=["control"]]
 layout_mode = 3
@@ -90,18 +194,28 @@ offset_right = -3.03357
 offset_bottom = -2.0304
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_sxeuk")
+texture = ExtResource("26_qmj53")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="hand" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
 texture_filter = 1
-layout_mode = 0
-offset_left = 300.0
-offset_top = -387.876
-offset_right = 428.0
-offset_bottom = -259.876
-scale = Vector2(5, 5)
-texture = ExtResource("47_5nmap")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.152778
+anchor_top = 0.783951
+anchor_right = 0.847222
+anchor_bottom = 1.0
+offset_left = 91.444
+offset_top = -0.444702
+offset_right = -119.444
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.164706)
+script = ExtResource("1_62e2m")
+hand_curve = SubResource("Curve_62e2m")
+rotation_curve = SubResource("Curve_qtu10")
 
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
@@ -122,9 +236,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Area" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0555559
+anchor_left = -0.0822327
 anchor_top = 0.00714286
-anchor_right = 0.136444
+anchor_right = 0.109767
 anchor_bottom = 1.04286
 offset_left = 0.777954
 offset_right = 0.777954
@@ -134,9 +248,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.396
+anchor_left = 0.37497
 anchor_top = 0.00714286
-anchor_right = 0.588
+anchor_right = 0.56697
 anchor_bottom = 1.04286
 offset_right = 0.0
 offset_bottom = 0.0
@@ -147,9 +261,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Area3" parent="Area de areas" instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.879324
+anchor_left = 0.880282
 anchor_top = 0.00714286
-anchor_right = 1.07132
+anchor_right = 1.07228
 anchor_bottom = 1.04286
 offset_left = -23.0
 offset_right = -23.0
@@ -158,39 +272,20 @@ grow_horizontal = 0
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="hand" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-z_index = 2
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.152778
-anchor_top = 0.783951
-anchor_right = 0.847222
-anchor_bottom = 1.0
-offset_left = 121.444
-offset_top = -0.444702
-offset_right = -89.4441
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(1, 1, 1, 0.164706)
-script = ExtResource("1_62e2m")
-hand_curve = SubResource("Curve_62e2m")
-rotation_curve = SubResource("Curve_qtu10")
-
 [node name="Button" type="TextureButton" parent="."]
+self_modulate = Color(1, 1, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.760834
 anchor_top = 0.515278
 anchor_right = 0.873188
 anchor_bottom = 0.627014
-offset_left = 14.1325
-offset_top = 32.9999
-offset_right = 350.319
-offset_bottom = 222.55
+offset_left = 27.9166
+offset_top = 23.6436
+offset_right = 364.103
+offset_bottom = 213.194
 grow_vertical = 0
-scale = Vector2(0.28, 0.28)
+scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("30_5nmap")
 texture_pressed = ExtResource("30_5nmap")
 
@@ -204,6 +299,15 @@ scale = Vector2(1.8, 1.8)
 theme_override_font_sizes/font_size = 1
 text = "Próximo Turno"
 label_settings = ExtResource("30_jo16n")
+
+[node name="Timer" type="Timer" parent="Button"]
+wait_time = 2.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ps1h")
+}
 
 [node name="Button2" type="Button" parent="."]
 visible = false
@@ -223,18 +327,18 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 4.51446
-anchor_top = 0.0220029
-anchor_right = 4.52353
-anchor_bottom = 0.0737522
-offset_left = -4705.0
-offset_right = 91.3887
-offset_bottom = 2671.74
+anchor_left = 0.881
+anchor_top = 0.028
+anchor_right = 0.964
+anchor_bottom = 0.178
+offset_left = 0.319946
+offset_top = -4.16
+offset_right = 0.0799561
+offset_bottom = -0.159988
 grow_horizontal = 0
-scale = Vector2(0.045, 0.045)
 toggle_mode = true
-texture_normal = ExtResource("32_5nmap")
-texture_pressed = ExtResource("29_hl4in")
+texture_normal = ExtResource("31_qmj53")
+texture_pressed = ExtResource("31_qmj53")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]
@@ -278,9 +382,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -377.0
-offset_right = 359.0
-offset_bottom = 140.0
+offset_left = -417.0
+offset_top = -84.0
+offset_right = 401.0
+offset_bottom = 168.0
 grow_horizontal = 2
 color = Color(1, 1, 1, 0.164706)
 script = ExtResource("5_kbped")
@@ -295,13 +400,21 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -98.5
-offset_bottom = 98.5
+offset_left = -195.556
+offset_top = -265.0
+offset_right = 48.4442
+offset_bottom = 153.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_tjwpk")
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+texture = ExtResource("33_5nmap")
 script = ExtResource("6_lpubu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decartes"]
+libraries = {
+&"": SubResource("AnimationLibrary_r5dke")
+}
 
 [node name="deck" type="Node2D" parent="."]
 position = Vector2(1061, 485)
@@ -422,23 +535,13 @@ offset_right = 0.0
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.205588, 0.541115, 1, 0.784314)
-layout_mode = 0
-offset_left = 174.767
-offset_top = 586.332
-offset_right = 4974.77
-offset_bottom = 3287.33
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("29_hl4in")
-
 [node name="mana_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.169853
-anchor_top = 0.833671
-anchor_right = 0.204531
-anchor_bottom = 0.844474
+anchor_left = 0.14159
+anchor_top = 0.848302
+anchor_right = 0.176268
+anchor_bottom = 0.848302
 offset_right = 16.6112
 offset_bottom = 42.2221
 grow_vertical = 0
@@ -452,15 +555,16 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0104687
-anchor_top = 5.55463e-05
+anchor_top = 0.940645
 anchor_right = 0.0730312
-anchor_bottom = 0.0610556
+anchor_bottom = 0.940645
 offset_left = 0.600015
 offset_top = -0.0399933
 offset_right = 0.52002
 offset_bottom = 48.04
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("40_wi3jo")
 theme_override_font_sizes/font_size = 32
 text = "Dia 2"
 label_settings = ExtResource("37_qmj53")
@@ -470,10 +574,10 @@ metadata/_edit_use_anchors_ = true
 [node name="turno_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.776959
-anchor_top = 0.543021
-anchor_right = 0.781001
-anchor_bottom = 0.612157
+anchor_left = 0.7803
+anchor_top = 0.520954
+anchor_right = 0.785124
+anchor_bottom = 0.520954
 offset_right = 143.826
 offset_bottom = 42.2222
 grow_vertical = 0
@@ -776,22 +880,22 @@ texture = ExtResource("35_7o2ue")
 [node name="ConfigButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.003125
-anchor_top = 0.918559
-anchor_right = 3.75222
-anchor_bottom = 4.62633
+anchor_left = 0.00546875
+anchor_top = 0.0102306
+anchor_right = -0.00636938
+anchor_bottom = 0.0527204
 offset_right = 79.1528
 offset_bottom = 39.4073
-scale = Vector2(0.02, 0.02)
 theme_override_font_sizes/font_size = 24
-text = "Config"
-icon = ExtResource("43_qmj53")
+text = "
+"
+icon = ExtResource("43_5nmap")
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("31_nnsnw")
+stream = ExtResource("44_qmj53")
 autoplay = true
 bus = &"Music"
 
@@ -800,9 +904,15 @@ position = Vector2(582, 288)
 stream = ExtResource("34_7o2ue")
 bus = &"SFX"
 
+[node name="SFXBell" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("46_5nmap")
+bus = &"SFX"
+
 [node name="SFXNewHandAlternate" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
 bus = &"SFX"
 
+[connection signal="timeout" from="Button/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
