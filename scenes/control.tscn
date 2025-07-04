@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=64 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -32,6 +32,8 @@
 [ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
 [ext_resource type="Texture2D" uid="uid://cwvotfty7m037" path="res://sprites/boards/Board Vazio 1280x720 (1).PNG" id="26_qmj53"]
+[ext_resource type="Texture2D" uid="uid://uglw51xqadxe" path="res://sprites/CURSOR2.png" id="28_3vrtg"]
+[ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="30_5nmap"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
@@ -49,6 +51,58 @@
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
 [ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
 [ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
+
+[sub_resource type="Animation" id="Animation_p1ehl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("33_5nmap")]
+}
+
+[sub_resource type="Animation" id="Animation_wi3jo"]
+resource_name = "abrir_boca"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_gst0j")]
+}
+
+[sub_resource type="Animation" id="Animation_3vrtg"]
+resource_name = "fechar_boca"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("33_5nmap")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5dke"]
+_data = {
+&"RESET": SubResource("Animation_p1ehl"),
+&"abrir_boca": SubResource("Animation_wi3jo"),
+&"fechar_boca": SubResource("Animation_3vrtg")
+}
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -121,58 +175,6 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, -1), -6.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Animation" id="Animation_p1ehl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("33_5nmap")]
-}
-
-[sub_resource type="Animation" id="Animation_wi3jo"]
-resource_name = "abrir_boca"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("35_gst0j")]
-}
-
-[sub_resource type="Animation" id="Animation_3vrtg"]
-resource_name = "fechar_boca"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("35_gst0j"), ExtResource("33_5nmap")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5dke"]
-_data = {
-&"RESET": SubResource("Animation_p1ehl"),
-&"abrir_boca": SubResource("Animation_wi3jo"),
-&"fechar_boca": SubResource("Animation_3vrtg")
-}
-
 [node name="Control" type="Control" groups=["control"]]
 layout_mode = 3
 anchor_right = 1.992
@@ -197,6 +199,29 @@ grow_vertical = 2
 texture = ExtResource("26_qmj53")
 metadata/_edit_use_anchors_ = true
 
+[node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -195.556
+offset_top = -265.0
+offset_right = 48.4442
+offset_bottom = 153.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("33_5nmap")
+script = ExtResource("6_lpubu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decartes"]
+libraries = {
+&"": SubResource("AnimationLibrary_r5dke")
+}
+
 [node name="hand" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 2
@@ -216,6 +241,8 @@ color = Color(1, 1, 1, 0.164706)
 script = ExtResource("1_62e2m")
 hand_curve = SubResource("Curve_62e2m")
 rotation_curve = SubResource("Curve_qtu10")
+drag_cursor_texture = ExtResource("28_3vrtg")
+normal_cursor_texture = ExtResource("29_r5dke")
 
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
@@ -391,30 +418,6 @@ color = Color(1, 1, 1, 0.164706)
 script = ExtResource("5_kbped")
 hand_curve = SubResource("Curve_kbped")
 rotation_curve = SubResource("Curve_fj5cn")
-
-[node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -195.556
-offset_top = -265.0
-offset_right = 48.4442
-offset_bottom = 153.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-mouse_filter = 2
-texture = ExtResource("33_5nmap")
-script = ExtResource("6_lpubu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Decartes"]
-libraries = {
-&"": SubResource("AnimationLibrary_r5dke")
-}
 
 [node name="deck" type="Node2D" parent="."]
 position = Vector2(1061, 485)
@@ -648,11 +651,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Cliente"]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 404.058
-offset_right = 1840.0
-offset_bottom = 1621.06
-scale = Vector2(0.2, 0.2)
+offset_left = 251.926
+offset_top = 479.909
+offset_right = 1951.93
+offset_bottom = 1696.91
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("42_wi3jo")
 
 [node name="Tutorial" type="Panel" parent="."]
@@ -881,11 +884,11 @@ texture = ExtResource("35_7o2ue")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00546875
-anchor_top = 0.0102306
-anchor_right = -0.00636938
-anchor_bottom = 0.0527204
-offset_right = 79.1528
-offset_bottom = 39.4073
+anchor_top = 0.00687683
+anchor_right = 0.0551619
+anchor_bottom = 0.10393
+offset_right = 0.392799
+offset_bottom = 0.121689
 theme_override_font_sizes/font_size = 24
 text = "
 "
@@ -914,5 +917,7 @@ position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
 bus = &"SFX"
 
+[connection signal="mouse_entered" from="Decartes" to="Decartes" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Decartes" to="Decartes" method="_on_mouse_exited"]
 [connection signal="timeout" from="Button/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

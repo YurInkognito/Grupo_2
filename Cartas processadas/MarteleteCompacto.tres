@@ -17,7 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([{
 "funcao": "add_mao_por_turno",
-"parametro": "martelo"
+"parametro": "Martelo"
 }])
 tags = Array[String](["Refrescante", "Refrescante"])
 sprite = ExtResource("2_wq6hi")

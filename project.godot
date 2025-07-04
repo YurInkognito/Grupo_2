@@ -66,6 +66,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="uid://ddxuwj8730dc8"
 
 [editor_plugins]
 

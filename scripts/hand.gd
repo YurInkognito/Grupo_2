@@ -19,8 +19,13 @@ signal card_drawn(card_node: Node2D)
 
 @export var card_max = 7
 
+@export var drag_cursor_texture: Texture2D 
+@export var normal_cursor_texture: Texture2D 
+
 var hovered_card: Control = null
 @export var is_dragging_global: bool = false
+
+@export var current_dragged_card: Control = null
 
 var last_dragged_card: Control = null # Armazena a última carta que foi arrastada
 var ignore_hover_until_mouse_leaves: bool = false # Flag para ignorar hover até o mouse sair
@@ -84,7 +89,12 @@ func _input(event: InputEvent) -> void:
 			
 		get_viewport().set_input_as_handled()
 
+func on_drag_started_globally(card_node):
+	current_dragged_card = card_node
+	Input.set_custom_mouse_cursor(drag_cursor_texture, Input.CURSOR_ARROW)
+
 func on_drag_ended_globally(dragged_card: Control):
+	Input.set_custom_mouse_cursor(normal_cursor_texture, Input.CURSOR_ARROW)
 	# Esta função é chamada pela carta arrastada quando o drag termina.
 	# Se a carta voltou para a mão e o mouse ainda está sobre ela, 
 	# ativamos a flag para ignorar o hover.

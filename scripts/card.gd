@@ -46,7 +46,7 @@ var drag_offset: Vector2
 var is_dragging: bool = false
 var is_in_hand: bool = true
 var is_playable: bool = true
-var is_played: bool = false
+@export var is_played: bool = false
 
 var is_waiting = false
 
@@ -150,6 +150,7 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 		card_data.upgrade = false
 		get_node("..").select_card(card_data)
 	else:
+		hand_node.on_drag_started_globally(self)
 		sfx_select_card.play()
 		is_dragging = true
 		drag_offset = position - get_global_mouse_position()
@@ -164,6 +165,7 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 			get_node("..").update_cards()
 
 func end_drag():
+	hand_node.on_drag_ended_globally(self)
 	sfx_throw_card.play()
 	if is_played:
 		var drop_area = get_drop_area(false)
