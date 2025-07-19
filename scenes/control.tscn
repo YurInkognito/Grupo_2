@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=80 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -31,7 +31,8 @@
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="23_3vrtg"]
 [ext_resource type="Resource" uid="uid://diieay8wxcocp" path="res://Cartas/Caneca de Undine.tres" id="24_nnsnw"]
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
-[ext_resource type="Texture2D" uid="uid://cwvotfty7m037" path="res://sprites/boards/Board Vazio 1280x720 (1).PNG" id="26_qmj53"]
+[ext_resource type="Texture2D" uid="uid://drapne5lje3p2" path="res://sprites/temporarios/Board Completo (Sem Botões) 1280x720 (2) .PNG" id="26_3vrtg"]
+[ext_resource type="Resource" uid="uid://bu04lxno7pmbo" path="res://Cartas processadas/PaoCortadoTorrado.tres" id="26_8ps1h"]
 [ext_resource type="Texture2D" uid="uid://uglw51xqadxe" path="res://sprites/CURSOR2.png" id="28_3vrtg"]
 [ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="30_5nmap"]
@@ -51,6 +52,30 @@
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
 [ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
 [ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
+[ext_resource type="PackedScene" uid="uid://dejejran66wel" path="res://scenes/reliquias.tscn" id="52_r5dke"]
+[ext_resource type="Resource" uid="uid://tiycc0j5uu81" path="res://Reliquias/Bandana.tres" id="54_i5ix0"]
+[ext_resource type="Resource" uid="uid://b1sd4ommbymkg" path="res://Reliquias/CuteloEncantado.tres" id="55_1l3m6"]
+[ext_resource type="Resource" uid="uid://bsh83clyr1iu0" path="res://Reliquias/DeckDeMuitasCoisas.tres" id="56_3kxc3"]
+[ext_resource type="Resource" uid="uid://btdfcgy0drk6v" path="res://Reliquias/Energetico.tres" id="57_nk3x5"]
+[ext_resource type="Resource" uid="uid://cmgml8yuty4ji" path="res://Reliquias/FogoEncantado.tres" id="58_cjlmj"]
+[ext_resource type="Resource" uid="uid://caihcnwqrqusm" path="res://Reliquias/MarteloEncantado.tres" id="59_ks8g6"]
+[ext_resource type="Resource" uid="uid://cjdbrso2rk247" path="res://Reliquias/MiseEnPlace.tres" id="60_d77h8"]
+[ext_resource type="Resource" uid="uid://1x3ikiwjmag3" path="res://Reliquias/PaginaPerdida.tres" id="61_t8bik"]
+[ext_resource type="Resource" uid="uid://ccy6n2uivg8f5" path="res://Reliquias/panelaDeVo.tres" id="62_eu32t"]
+[ext_resource type="Resource" uid="uid://r1rhw6ci5l83" path="res://Reliquias/PocaoDeMana.tres" id="63_r4raw"]
+[ext_resource type="Resource" uid="uid://bxcaax5tvsml7" path="res://Reliquias/SaladaMelhor.tres" id="64_ydhfh"]
+[ext_resource type="Resource" uid="uid://d048t54gwle5o" path="res://Reliquias/SanduicheMelhor.tres" id="65_so1j7"]
+[ext_resource type="Resource" uid="uid://ctxdelj7gbcsb" path="res://Reliquias/SopaMelhor.tres" id="66_cjaay"]
+[ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="67_r7wpw"]
+
+[sub_resource type="Curve" id="Curve_62e2m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_qtu10"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_p1ehl"]
 length = 0.001
@@ -103,15 +128,6 @@ _data = {
 &"abrir_boca": SubResource("Animation_wi3jo"),
 &"fechar_boca": SubResource("Animation_3vrtg")
 }
-
-[sub_resource type="Curve" id="Curve_62e2m"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_qtu10"]
-_limits = [-1.0, 1.0, 0.0, 1.0]
-_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="Animation" id="Animation_r5dke"]
 length = 0.001
@@ -184,7 +200,7 @@ offset_bottom = -709.2
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtu10")
-lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn")])
+lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("26_8ps1h")])
 mana = 4
 
 [node name="Bg" type="TextureRect" parent="."]
@@ -196,31 +212,8 @@ offset_right = -3.03357
 offset_bottom = -2.0304
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_qmj53")
+texture = ExtResource("26_3vrtg")
 metadata/_edit_use_anchors_ = true
-
-[node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -195.556
-offset_top = -265.0
-offset_right = 48.4442
-offset_bottom = 153.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("33_5nmap")
-script = ExtResource("6_lpubu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Decartes"]
-libraries = {
-&"": SubResource("AnimationLibrary_r5dke")
-}
 
 [node name="hand" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -260,7 +253,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="Area" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area" parent="Area de areas" groups=["area_final"] instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0822327
@@ -272,7 +265,7 @@ offset_right = 0.777954
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area2" parent="Area de areas" groups=["area_final"] instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.37497
@@ -285,7 +278,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area3" parent="Area de areas" instance=ExtResource("2_ee4bf")]
+[node name="Area3" parent="Area de areas" groups=["area_final"] instance=ExtResource("2_ee4bf")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.880282
@@ -298,6 +291,29 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Decartes" type="TextureRect" parent="." groups=["area_final"]]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -195.556
+offset_top = -265.0
+offset_right = 48.4442
+offset_bottom = 153.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("33_5nmap")
+script = ExtResource("6_lpubu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decartes"]
+libraries = {
+&"": SubResource("AnimationLibrary_r5dke")
+}
 
 [node name="Button" type="TextureButton" parent="."]
 self_modulate = Color(1, 1, 0, 1)
@@ -522,8 +538,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Info" parent="." instance=ExtResource("6_lt2xq")]
 layout_mode = 1
-offset_top = -280.0
-offset_bottom = 232.0
+offset_left = 12.5
+offset_top = -265.0
+offset_right = 166.5
+offset_bottom = 247.0
 
 [node name="Info_tags" parent="Info" instance=ExtResource("7_lt2xq")]
 layout_mode = 1
@@ -557,10 +575,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Dia" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0104687
-anchor_top = 0.940645
-anchor_right = 0.0730312
-anchor_bottom = 0.940645
+anchor_left = 0.0275235
+anchor_top = 0.155423
+anchor_right = 0.0924298
+anchor_bottom = 0.155423
 offset_left = 0.600015
 offset_top = -0.0399933
 offset_right = 0.52002
@@ -631,7 +649,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("41_gst0j")
 
-[node name="Label5" type="Label" parent="Cliente/Panel"]
+[node name="Label5" type="RichTextLabel" parent="Cliente/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.447321
@@ -642,11 +660,12 @@ offset_left = -170.661
 offset_top = -371.132
 offset_right = -170.661
 offset_bottom = -261.604
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "Quero um prato:
 "
-horizontal_alignment = 1
 autowrap_mode = 2
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Cliente"]
@@ -883,10 +902,10 @@ texture = ExtResource("35_7o2ue")
 [node name="ConfigButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00546875
-anchor_top = 0.00687683
-anchor_right = 0.0551619
-anchor_bottom = 0.10393
+anchor_left = 0.0109375
+anchor_top = 0.886816
+anchor_right = 0.0606306
+anchor_bottom = 0.983869
 offset_right = 0.392799
 offset_bottom = 0.121689
 theme_override_font_sizes/font_size = 24
@@ -916,6 +935,36 @@ bus = &"SFX"
 position = Vector2(582, 288)
 stream = ExtResource("35_72v1w")
 bus = &"SFX"
+
+[node name="button_abrir_cliente" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1155.66
+offset_top = 621.0
+offset_right = 2863.66
+offset_bottom = 1846.0
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("42_wi3jo")
+flat = true
+
+[node name="Reliquias" parent="." instance=ExtResource("52_r5dke")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 203.0
+offset_bottom = 40.0
+lista_reliquias = Array[ExtResource("2_rk4e5")]([ExtResource("54_i5ix0"), ExtResource("55_1l3m6"), ExtResource("56_3kxc3"), ExtResource("57_nk3x5"), ExtResource("58_cjlmj"), ExtResource("59_ks8g6"), ExtResource("60_d77h8"), ExtResource("61_t8bik"), ExtResource("62_eu32t"), ExtResource("63_r4raw"), ExtResource("64_ydhfh"), ExtResource("65_so1j7"), ExtResource("66_cjaay"), ExtResource("67_r7wpw")])
+
+[node name="Hover" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Decartes" to="Decartes" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Decartes" to="Decartes" method="_on_mouse_exited"]

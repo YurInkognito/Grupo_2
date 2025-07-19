@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://mviei1r1rh42"]
 
 [ext_resource type="Script" uid="uid://h6w0s7frphxg" path="res://scripts/info_tags.gd" id="1_382fk"]
-[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5png.png" id="2_72x41"]
-[ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4png.png" id="3_xu8xu"]
-[ext_resource type="Texture2D" uid="uid://l83ax324vd63" path="res://sprites/TAGS/TAG6png.png" id="4_ska5v"]
+[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5.png" id="2_72x41"]
+[ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4.png" id="3_xu8xu"]
+[ext_resource type="Texture2D" uid="uid://l83ax324vd63" path="res://sprites/TAGS/TAG6.png" id="4_ska5v"]
 [ext_resource type="Texture2D" uid="uid://c0w5yrxnwobpp" path="res://sprites/TAGS/TAG3.png" id="5_luc0m"]
-[ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7png.png" id="6_vi3t8"]
+[ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7.png" id="6_vi3t8"]
 [ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="7_hs2g3"]
 
 [node name="Info_tags" type="Panel"]

@@ -14,9 +14,8 @@ extends Node
 @export var nome_final: String = ""
 @export var cliente_temp: Dictionary = {
 "nome": "",
-"objetivo_1": ['',''],
-"objetivo_2": ['',''],
-"dificuldade": ""
+"objetivos": [],
+"dificuldade": 1
 }
 
 func set_cartas(cartas):
@@ -60,59 +59,83 @@ func proxima_fase():
 func gera_cliente():
 	var cliente: Dictionary = {
 	"nome": "",
-	"objetivo_1": ['',''],
-	"objetivo_2": ['',''],
-	"dificuldade": ""
+	"objetivos": [["setup","nada"]],
+	"dificuldade": 1
 }
+	if fase > 7:
+		cliente.dificuldade = 2
 	var nomes = ["Fogaço", "Erick Jacão", "Hyena Rizo", "Claude Trollgros", "Bela Gill"]
 	var rng = RandomNumberGenerator.new()
-	var obj_1 = rng.randi_range(0, 2)
-	var obj_2 = rng.randi_range(0, 1)
+	var obj_n = []
+	var obj_1 = rng.randi_range(0, 5)
+	var obj_2 = rng.randi_range(0, 4)
+	if obj_2 == obj_1:
+		obj_2 = 5
+	obj_n.append(obj_1)
+	obj_n.append(obj_2)
 	cliente.nome = nomes[rng.randi_range(0, nomes.size() - 1)]
-	match obj_1:
-		0: 
-			match rng.randi_range(0, 5):
-				0: cliente.objetivo_1 = ["tag", "Acido"]
-				1: cliente.objetivo_1 = ["tag", "Crocante"]
-				2: cliente.objetivo_1 = ["tag", "Picante"]
-				3: cliente.objetivo_1 = ["tag", "Suave"]
-				4: cliente.objetivo_1 = ["tag", "Refrescante"]
-				5: cliente.objetivo_1 = ["tag", "Umami"]
-		1:
-			cliente.objetivo_1 = ["ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size())].nome]
-		2:
-			match rng.randi_range(0, 2):
-				0: cliente.objetivo_1 = ["prato", "Sanduiche"]
-				1: cliente.objetivo_1 = ["prato", "Salada"]
-				2: cliente.objetivo_1 = ["prato", "Sopa"]
-	cliente.objetivo_2 = cliente.objetivo_1
-	while cliente.objetivo_2 == cliente.objetivo_1:
-		obj_2 = rng.randi_range(0, 1)
-		match obj_2:
+	#for i in range(cliente.dificuldade):
+	for i in range(2):
+		match obj_n[i]:
 			0: 
-				match rng.randi_range(0, 5):
-					0: cliente.objetivo_2 = ["tag", "Acido"]
-					1: cliente.objetivo_2 = ["tag", "Crocante"]
-					2: cliente.objetivo_2 = ["tag", "Picante"]
-					3: cliente.objetivo_2 = ["tag", "Suave"]
-					4: cliente.objetivo_2 = ["tag", "Refrescante"]
-					5: cliente.objetivo_2 = ["tag", "Umami"]
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					match rng.randi_range(0, 5):
+						0: obj_temp = ["+tag", "Acido"]
+						1: obj_temp = ["+tag", "Crocante"]
+						2: obj_temp = ["+tag", "Picante"]
+						3: obj_temp = ["+tag", "Suave"]
+						4: obj_temp = ["+tag", "Refrescante"]
+						5: obj_temp = ["+tag", "Umami"]
+				cliente.objetivos.append(obj_temp)
 			1:
-				cliente.objetivo_2 = ["ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size() - 7)].nome]
-	print(cliente)
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					match rng.randi_range(0, 5):
+						0: obj_temp = ["-tag", "Acido"]
+						1: obj_temp = ["-tag", "Crocante"]
+						2: obj_temp = ["-tag", "Picante"]
+						3: obj_temp = ["-tag", "Suave"]
+						4: obj_temp = ["-tag", "Refrescante"]
+						5: obj_temp = ["-tag", "Umami"]
+				cliente.objetivos.append(obj_temp)
+			2:
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					obj_temp = ["+ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size() - 1)].nome]
+				cliente.objetivos.append(obj_temp)
+			3:
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					obj_temp = ["-ingrediente", lista_ingredientes[rng.randi_range(0, lista_ingredientes.size() - 1)].nome]
+				cliente.objetivos.append(obj_temp)
+			4:
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					match rng.randi_range(0, 2):
+						0: obj_temp = ["+prato", "Sanduiche"]
+						1: obj_temp = ["+prato", "Salada"]
+						2: obj_temp = ["+prato", "Sopa"]
+				cliente.objetivos.append(obj_temp)
+			5:
+				var obj_temp = cliente.objetivos[cliente.objetivos.size() - 1]
+				while obj_temp[1] == cliente.objetivos[cliente.objetivos.size() - 1][1]:
+					match rng.randi_range(0, 2):
+						0: obj_temp = ["-prato", "Sanduiche"]
+						1: obj_temp = ["-prato", "Salada"]
+						2: obj_temp = ["-prato", "Sopa"]
+				cliente.objetivos.append(obj_temp)
+	cliente.objetivos.pop_front()
+	print("cliente: " + str(cliente))
 	cliente_temp = cliente
-	
+
 func gera_fala(fase, nota):
 	print(cliente_final, nota)
 	match fase:
 		1:
 			match cliente_final:
 				0: 
-					match nota:
-						0: return "Horrivel... Horrivel, Horrivel!"
-						1: return "Você tinha um trabalho anão..."
-						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "Devo admitir que é um bom prato, fraco, mas um bom prato"
+					return "Eu achei que tinha deixado claro que tipo de prato eu queria..."
 				1:
 					match nota:
 						0: return "Jogar um pouco de pimenta em terra não torna ela um prato picante..."
@@ -212,28 +235,28 @@ func critico_2_nota():
 func cliente_nota(cliente):
 	var pontos = 0
 	print(cliente)
-	match cliente.objetivo_1[0]:
-		"tag":
-			var tag = tags_final.count(cliente.objetivo_1[1])
-			print(tags_final.count(cliente.objetivo_1[1]))
-			if tag > 5:
-				pontos += 2
-		"ingrediente":
-			if ingredientes_final.count(cliente.objetivo_1[1]):
-				pontos += 2
-		"prato":
-			if nome_final.contains(cliente.objetivo_1[1]):
-				pontos += 2
-	
-	match cliente.objetivo_2[0]:
-		"tag":
-			var tag = tags_final.count(cliente.objetivo_2[1])
-			print(tags_final.count(cliente.objetivo_2[1]))
-			if tag > 3:
-				pontos += 1
-		"ingrediente":
-			print(ingredientes_final.count(cliente.objetivo_2[1]))
-			if ingredientes_final.count(cliente.objetivo_2[1]):
-				pontos += 1
-	
+	for i in cliente.objetivos:
+		match i[0]:
+			"+tag":
+				var tag = tags_final.count(i[1])
+				print(tags_final.count(i[1]))
+				if tag >= 3:
+					pontos += 1
+			"+ingrediente":
+				if ingredientes_final.count(i[1]):
+					pontos += 1
+			"+prato":
+				if nome_final.contains(i[1]):
+					pontos += 1
+			"-tag":
+				var tag = tags_final.count(i[1])
+				print(tags_final.count(i[1]))
+				if tag < 3:
+					pontos += 1
+			"-ingrediente":
+				if ingredientes_final.count(i[1]) == 0:
+					pontos += 1
+			"-prato":
+				if not nome_final.contains(i[1]):
+					pontos += 1
 	return pontos

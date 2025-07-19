@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("2_qqwnu")
 nome = "Picles de Beholder"
-custo = "3"
+custo = "2"
 ingrediente = true
 is_processo = false
 desc = "Sempre que gastar mana compre uma carta."

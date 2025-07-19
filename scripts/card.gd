@@ -22,7 +22,7 @@ const SIZE = Vector2(100, 140)
 @export var picante: Texture2D
 @export var suave: Texture2D
 
-@onready var control: ColorRect = $"../../ColorRect"
+@onready var hover_layer: Panel = $"../../Hover"
 @onready var prato: ColorRect = $"../../prato"
 @onready var hand_node = $".." # Referência ao nó 'hand'
 
@@ -46,12 +46,19 @@ var drag_offset: Vector2
 var is_dragging: bool = false
 var is_in_hand: bool = true
 var is_playable: bool = true
+var is_hover: bool = false
+var tem_mana: bool = false
 @export var is_played: bool = false
 
 var is_waiting = false
 
 var original_scale
 @export var scale_factor = 2
+var hover_element
+
+@export var float_amplitude_y: float = 5.0
+@export var float_duration: float = 1.5
+@export var float_amplitude_x: float = 3.0
 
 func _ready() -> void:
 	lista_tags = [tag1,tag2,tag3]
@@ -59,20 +66,46 @@ func _ready() -> void:
 	desc.text = desc_t
 	custo.text = custo_t
 	original_scale = scale
-	# Definir mouse_filter para Pass para que o pai (hand) processe os eventos
-	mouse_filter = MOUSE_FILTER_PASS
 
-func set_card(carta: CartaData) -> void:
+func substituir_palavras_por_tags(texto_original: String) -> String:
+	var substituicoes: Dictionary = {
+		"Acido": "[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
+		"Crocante": "[img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
+		"Picante": "[img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
+		"Refrescante": "[img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
+		"Suave": "[img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
+		"Umami": "[img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]",
+		
+		# Versões em minúsculo
+		"acido": "[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
+		"crocante": "[img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
+		"picante": "[img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
+		"refrescante": "[img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
+		"suave": "[img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
+		"umami": "[img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]"
+	}
+
+	var texto_modificado = texto_original
+	for palavra in substituicoes:
+		# A função 'replace' substitui todas as ocorrências da palavra.
+		texto_modificado = texto_modificado.replace(palavra, substituicoes[palavra])
+		
+	return texto_modificado
+	
+func set_card(carta: CartaData, zerado = false) -> void:
 	lista_tags[0].texture = null
 	lista_tags[1].texture = null
 	lista_tags[2].texture = null
 	nome.text = carta.nome
-	desc.text = carta.desc
+	desc.text = substituir_palavras_por_tags(carta.desc)
 	custo.text = carta.custo
 	nome_t = carta.nome
-	desc_t = carta.desc
+	desc_t = substituir_palavras_por_tags(carta.desc)
 	custo_t = carta.custo
 	ingrediente_t = carta.ingrediente
+	if zerado:
+		custo.text = "0"
+		custo_t = "0"
 	card_data = carta
 	if carta.on_faca or carta.on_fogo or carta.on_martelo:
 		processavel.visible = true
@@ -107,7 +140,6 @@ func set_card(carta: CartaData) -> void:
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and is_in_hand and is_playable:
-			# Atualiza a flag global de drag no hand_node
 			hand_node.is_dragging_global = true
 			start_drag(event, true)
 		elif event.pressed and is_played:
@@ -115,34 +147,57 @@ func _gui_input(event: InputEvent):
 			start_drag(event, false)
 		elif not event.pressed and is_dragging:
 			end_drag()
-			# Atualiza a flag global de drag no hand_node
 			hand_node.is_dragging_global = false
-			# Simula um evento de mouse motion no hand_node para reavaliar o hover
-			# Isso garante que o hand_node atualize o hover imediatamente após o drag
-			hand_node._input(InputEventMouseMotion.new())
+			mouse_filter = Control.MOUSE_FILTER_IGNORE
+			mouse_filter = Control.MOUSE_FILTER_PASS
 
+func start_floating(element_to_float) -> void:
+	var original_y: float = element_to_float.position.y
+	var original_x: float = element_to_float.position.x # Posição X original
+	
+	var float_tween = element_to_float.create_tween()
+	float_tween.set_loops()
+	
+	float_tween.tween_property(element_to_float, "position:y", original_y - float_amplitude_y, float_duration / 2.0)\
+		.set_ease(Tween.EASE_IN_OUT)\
+		.set_trans(Tween.TRANS_SINE)
+	float_tween.tween_property(element_to_float, "position:y", original_y, float_duration / 2.0)\
+		.set_ease(Tween.EASE_IN_OUT)\
+		.set_trans(Tween.TRANS_SINE)
+	#float_tween.tween_property(element_to_float, "position:x", original_x + float_amplitude_x, float_duration / 2.0)\
+		#.set_delay(float_duration / 4.0)\
+		#.set_ease(Tween.EASE_IN_OUT)\
+		#.set_trans(Tween.TRANS_SINE)
+	#float_tween.tween_property(element_to_float, "position:x", original_x - float_amplitude_x, float_duration / 2.0)\
+		#.set_ease(Tween.EASE_IN_OUT)\
+		#.set_trans(Tween.TRANS_SINE)
+	#float_tween.tween_property(element_to_float, "position:x", original_x, float_duration / 2.0)\
+		#.set_ease(Tween.EASE_IN_OUT)\
+		#.set_trans(Tween.TRANS_SINE)
+	#
+	float_tween.finished.connect(element_to_float.queue_free.bind())
+
+func stop_floating(element_to_delete) -> void:
+	pass
+	
 func _on_mouse_entered():
-	if not card_data.upgrade:
-		if hand_node.is_dragging_global:
-			print("entrei com hover")
-			is_waiting = true
-		if not is_in_hand and not hand_node.is_dragging_global and not is_waiting:
-			z_index = 10
-			scale = original_scale * scale_factor
-	else:
-		z_index = 10
-		scale = original_scale * scale_factor
+	print("tentando hover")
+	if hand_node.is_dragging_global == false:
+		print("consegui hover")
+		$SFXThrowCard.play()
+		hover_element = duplicate()
+		if is_played:
+			hover_element.is_hover = true
+		hover_layer.add_child(hover_element)
+		hover_element.global_position = global_position
+		hover_element.scale = scale * 2
+		start_floating(hover_element)
+		hover_element.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_mouse_exited():
-	if not card_data.upgrade:
-		print("sai" + nome_t)
-		is_waiting = false
-		if not is_in_hand and not hand_node.is_dragging_global:
-			z_index = 0
-			scale = original_scale
-	else:
-		z_index = 0
-		scale = original_scale
+	if hover_element: 
+		stop_floating(hover_element)
+		hover_element.queue_free()
 
 func start_drag(event: InputEventMouseButton, from_hand: bool):
 	if card_data.upgrade:
@@ -150,19 +205,21 @@ func start_drag(event: InputEventMouseButton, from_hand: bool):
 		card_data.upgrade = false
 		get_node("..").select_card(card_data)
 	else:
-		hand_node.on_drag_started_globally(self)
-		sfx_select_card.play()
-		is_dragging = true
-		drag_offset = position - get_global_mouse_position()
-		
-		# Efeitos visuais
-		# z_index e scale agora são controlados pelo hand_node quando a carta não está em drag
-		# Quando a carta está sendo arrastada, ela deve estar acima de tudo
-		z_index = 100 # Um Z-index bem alto para garantir que a carta arrastada esteja no topo
-		scale = Vector2(1.2, 1.2)
-		self.rotation = 0
-		if from_hand:
-			get_node("..").update_cards()
+		if tem_mana or is_played:
+			if hover_element: hover_element.queue_free()
+			hand_node.on_drag_started_globally(self)
+			sfx_select_card.play()
+			is_dragging = true
+			drag_offset = position - get_global_mouse_position()
+			z_index = 100 # Um Z-index bem alto para garantir que a carta arrastada esteja no topo
+			scale = Vector2(1.2, 1.2)
+			self.rotation = 0
+			if from_hand:
+				get_node("..").update_cards()
+		else:
+			if hover_element: hover_element.queue_free()
+			hand_node.is_dragging_global = false
+			_on_mouse_entered()
 
 func end_drag():
 	hand_node.on_drag_ended_globally(self)
@@ -170,12 +227,23 @@ func end_drag():
 	if is_played:
 		var drop_area = get_drop_area(false)
 		if drop_area:
-			if drop_area.prato:
+			if drop_area.prato_check:
 				is_dragging = false
 				is_played = false
 				get_parent().on_dentro_pressed()
-			else:
+			elif drop_area.lixo_check:
 				get_parent().on_lixo_pressed()
+			else:
+				print("mover")
+				if drop_area.can_accept_card(self):
+					print("mover 2")
+					get_parent().carta_movida()
+					is_dragging = false
+					play_card(drop_area, true)
+				else:
+					print("trocar")
+					is_dragging = false
+					get_parent().trocar_carta(drop_area)
 		else:
 			is_dragging = false
 			position = Vector2(0.0, 0.0)
@@ -208,10 +276,10 @@ func get_drop_area(from_hand: bool) -> Control:
 			return area
 	return null
 
-func play_card(play_area: Control):
+func play_card(play_area: Control, move = false):
 	is_in_hand = false
 	is_playable = false
-	play_area.drop_card(self)
+	play_area.drop_card(self, move)
 	
 	emit_signal("card_played", self)
 
@@ -219,6 +287,12 @@ func return_to_hand():
 	get_node("..").update_cards()
 
 func _process(delta):
+	if not is_hover and is_in_hand and card_data and get_node("../..") and int(custo_t) <= get_node("../..").mana:
+		tem_mana = true
+		$aura.visible = true
+	else:
+		tem_mana = false
+		$aura.visible = false
 	if is_dragging:
 		position = get_global_mouse_position() + drag_offset
 

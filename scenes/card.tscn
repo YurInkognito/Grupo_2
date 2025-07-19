@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="4_4wvaf"]
 [ext_resource type="AudioStream" uid="uid://rgbjt78ah5ht" path="res://audio/SFX/JogarCarta_cut.wav" id="4_sy11y"]
 [ext_resource type="Texture2D" uid="uid://c0w5yrxnwobpp" path="res://sprites/TAGS/TAG3.png" id="5_u8dfr"]
-[ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4png.png" id="6_hpf3o"]
-[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5png.png" id="7_42b55"]
-[ext_resource type="Texture2D" uid="uid://l83ax324vd63" path="res://sprites/TAGS/TAG6png.png" id="8_xjciw"]
-[ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7png.png" id="9_54seb"]
+[ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4.png" id="6_hpf3o"]
+[ext_resource type="Texture2D" uid="uid://dmpgwa6pe3jqr" path="res://sprites/TAGS/TAG5.png" id="7_42b55"]
+[ext_resource type="Texture2D" uid="uid://l83ax324vd63" path="res://sprites/TAGS/TAG6.png" id="8_xjciw"]
+[ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7.png" id="9_54seb"]
 [ext_resource type="Texture2D" uid="uid://corbdlr1l1g5k" path="res://sprites/temporarios/mana0.png" id="10_hpf3o"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="11_hpf3o"]
 
@@ -29,9 +29,9 @@ pivot_offset = Vector2(50, 140)
 mouse_filter = 1
 script = ExtResource("2_ktuci")
 card_vazia = ExtResource("3_ktuci")
-nome_t = "sal"
-desc_t = "+ 40 sabor"
-custo_t = "1"
+nome_t = "missing card"
+desc_t = "missing card"
+custo_t = "0"
 processo = ExtResource("3_we8pq")
 umami = ExtResource("4_4wvaf")
 refrescante = ExtResource("5_u8dfr")
@@ -40,6 +40,14 @@ acido = ExtResource("7_42b55")
 picante = ExtResource("8_xjciw")
 suave = ExtResource("9_54seb")
 metadata/_edit_use_anchors_ = true
+
+[node name="aura" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.419608, 0.133333, 1, 0.905882)
+texture_filter = 1
+position = Vector2(48, 72.5)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("3_ktuci")
 
 [node name="Bg" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -57,6 +65,7 @@ offset_left = 35.8599
 offset_top = 130.483
 offset_right = 60.8599
 offset_bottom = 155.483
+mouse_filter = 2
 texture = ExtResource("3_we8pq")
 
 [node name="nome" type="Label" parent="."]
@@ -73,23 +82,17 @@ horizontal_alignment = 1
 
 [node name="custo" type="Label" parent="."]
 texture_filter = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 76.0873
-offset_top = 5.13307
-offset_right = 25.0873
-offset_bottom = -65.867
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.25, 0.25)
+layout_mode = 0
+offset_left = 76.9569
+offset_top = 4.91389
+offset_right = 1126.96
+offset_bottom = 1784.91
+scale = Vector2(0.01, 0.01)
 theme = ExtResource("11_hpf3o")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 2000
 text = "2"
 horizontal_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="tags" type="Label" parent="."]
 visible = false
@@ -106,17 +109,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="desc" type="RichTextLabel" parent="."]
 texture_filter = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.641761
-anchor_right = 0.832917
-anchor_bottom = 0.904828
+layout_mode = 0
 offset_left = 8.0
-offset_top = -0.0553741
-offset_right = 243.04
-offset_bottom = 144.8
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 93.0
+offset_right = 328.0
+offset_bottom = 283.0
 scale = Vector2(0.25, 0.25)
 mouse_filter = 2
 theme = ExtResource("11_hpf3o")

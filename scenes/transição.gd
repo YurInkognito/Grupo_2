@@ -12,8 +12,10 @@ func _ready():
 
 func change_scene(path: String):
 	target_scene_path = path
+	$ColorRect.mouse_filter = Control.MOUSE_FILTER_STOP
 	animation_player.play("fade_out") # Inicia o fade para preto
 	await animation_player.animation_finished # Espera o fade_out terminar
 	get_tree().change_scene_to_file(target_scene_path) # Muda a cena
 	animation_player.play("fade_in") # Inicia o fade para transparente na nova cena
-	# Opcional: await animation_player.animation_finished se precisar de lógica após o fade_in
+	await animation_player.animation_finished
+	$ColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE

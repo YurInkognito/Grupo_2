@@ -1,6 +1,7 @@
 extends TextureRect
 
-@export var prato = false
+@export var prato_check = false
+@export var lixo_check = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var hand_node = $"../hand"
@@ -8,6 +9,7 @@ extends TextureRect
 var aberto = false
 
 func _on_mouse_entered() -> void:
+	print("pensando")
 	if hand_node and hand_node.is_dragging_global and hand_node.current_dragged_card.is_played:
 		aberto = true
 		print("Carta em drag sobre o decartes!")

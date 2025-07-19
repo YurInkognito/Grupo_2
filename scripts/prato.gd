@@ -13,7 +13,9 @@ const CARD = preload("res://scenes/card.tscn")
 @export var y_max = 15
 
 @export var card_max = 20
-@export var prato = true
+
+@export var prato_check = true
+@export var lixo_check = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

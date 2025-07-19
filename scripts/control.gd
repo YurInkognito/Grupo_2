@@ -6,6 +6,7 @@ extends Control
 @onready var button_3 = $Button3
 @onready var button_4 = $Button4
 @onready var button_5 = $Button5
+@onready var button_abrir_cliente = $button_abrir_cliente
 @onready var button_tutorial = $Tutorial/Button
 @onready var button_tutorial2 = $Tutorial2/Button
 @onready var button_tutorial3 = $Tutorial3/Button
@@ -16,7 +17,7 @@ extends Control
 @onready var mana_label: Label = $mana_label
 @onready var turno_label: Label = $turno_label
 @onready var deck_label: Label = $deck/Label
-@onready var cliente_label: Label = $Cliente/Panel/Label5
+@onready var cliente_label: RichTextLabel = $Cliente/Panel/Label5
 
 @export var caminho_pasta_cartas: String = "res://Cartas/"
 
@@ -65,8 +66,20 @@ var em_cooldown: bool = false
 @export var descarte_turno = false
 @export var descarte_totais = 0
 @export var mult_prato = 1
-@export var tomate_ativo = false
-@export var picles = false
+@export var tomate = 0
+@export var picles = 0
+
+#efeitos reliquias
+@export var mult_extra = 0
+@export var faca_encantada = false
+@export var fogo_encantado = false
+@export var martelo_encantado = false
+@export var sushi_ativo = false
+@export var super_salada = false
+@export var super_sanduiche = false
+@export var super_sopa = false
+@export var miseEnPlace = false
+@export var mana_extra = false
 
 #cena da config
 const CONFIG = preload("res://scenes/config.tscn")
@@ -74,7 +87,6 @@ const CONFIG = preload("res://scenes/config.tscn")
 @onready var sfx_new_hand: AudioStreamPlayer2D = $SFXNewHand
 @onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $SFXNewHandAlternate
 @onready var sfx_bell: AudioStreamPlayer2D = $SFXBell
-
 
 func _ready() -> void:
 	$Button/AnimationPlayer.play("idle")
@@ -84,23 +96,34 @@ func _ready() -> void:
 		$Cliente.visible = true
 	var cliente = $"/root/GlobalData".cliente_temp
 	var texto_temp = cliente.nome
-	texto_temp = texto_temp + ": Hoje adoraria "
-	match cliente.objetivo_1[0]:
-		"tag":
-			texto_temp = texto_temp + "um prato bastante " + cliente.objetivo_1[1] + " e "
-		"prato":
-			if cliente.objetivo_1[1] == "Sanduiche": 
-				texto_temp = texto_temp + "um " + cliente.objetivo_1[1] + ", "
-			else:
-				texto_temp = texto_temp + "uma " + cliente.objetivo_1[1] + " "
-		"ingrediente":
-			texto_temp = texto_temp + "uma receita com " + cliente.objetivo_1[1] + " e "
-	match cliente.objetivo_2[0]:
-		"tag":
-			texto_temp = texto_temp + "também gostaria de algo um pouco " + cliente.objetivo_2[1]
-		"ingrediente":
-			texto_temp = texto_temp + "se conseguir adicione um pouco de " + cliente.objetivo_2[1] + " à receita"
-	cliente_label.text = texto_temp
+	#texto_temp = texto_temp + ": Hoje adoraria "
+	var c = 0
+	for obj in cliente.objetivos:
+		match c:
+			0: texto_temp = texto_temp + ": "
+			1: texto_temp = texto_temp + "e "
+			2: texto_temp = texto_temp + ""
+		match obj[0]:
+			"+tag":
+				texto_temp = texto_temp + "Adoro um prato bem " + obj[1] + " "
+			"+prato":
+				if obj[1] == "Sanduiche": 
+					texto_temp = texto_temp + "Hoje queria comer um " + obj[1] + " "
+				else:
+					texto_temp = texto_temp + "Hoje queria comer uma " + obj[1] + " "
+			"+ingrediente":
+				texto_temp = texto_temp + obj[1] + " é meu ingrediente favorito, quero pelo menos um no prato "
+			"-tag":
+				texto_temp = texto_temp + "Não gosto de comida " + obj[1] + ", se colocar bote bem pouco "
+			"-prato":
+				if obj[1] == "Sanduiche": 
+					texto_temp = texto_temp + "Não gosto de " + obj[1] + "s, preferia outra coisa "
+				else:
+					texto_temp = texto_temp + "Não gosto de " + obj[1] + "s, preferia outra coisa "
+			"-ingrediente":
+				texto_temp = texto_temp + "Sou alérgico à " + obj[1] + ", não bote no prato por favor "
+		c += 1
+	cliente_label.text = substituir_palavras_por_tags(texto_temp)
 	lista_de_cartas = $"/root/GlobalData".lista_cartas
 	if $"/root/GlobalData".fase == 1:
 		$Tutorial.visible = true
@@ -109,11 +132,17 @@ func _ready() -> void:
 	button_3.pressed.connect(end_game)
 	button_4.pressed.connect(reset_game)
 	button_5.pressed.connect(start_tutorial)
+	button_abrir_cliente.pressed.connect(abrir_cliente)
 	button_tutorial.pressed.connect(close_tutorial)
 	button_tutorial2.pressed.connect(close_tutorial2)
 	button_tutorial3.pressed.connect(close_tutorial3)
 	button_cliente.pressed.connect(close_cliente)
 	cooldown_timer.timeout.connect(_on_timer_timeout)
+	$Reliquias.efeitos()
+	if super_sanduiche:
+		bota_na_mao("Pão Tostado", true)
+	for i in adiciona_inicio:
+		bota_na_mao(i)
 	mana = max_mana
 	play_draw_sound()
 	# gerenciamento de cartas
@@ -123,6 +152,11 @@ func _ready() -> void:
 	for carta in novo_deck:
 		print("- " + carta.nome)
 	on_draw_button_pressed()
+	if mana_extra:
+		mana+= 2
+	if miseEnPlace:
+		compra()
+		compra()
 
 func _process(delta: float) -> void:
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
@@ -130,6 +164,31 @@ func _process(delta: float) -> void:
 	turno_label.text = 'Turno ' + str(turno) + '/' + str(max_turno)
 	deck_label.text = str(deck.size())
 
+func substituir_palavras_por_tags(texto_original: String) -> String:
+	var substituicoes: Dictionary = {
+		"Acido": "Acido[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
+		"Crocante": "Crocante[img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
+		"Picante": "Picante[img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
+		"Refrescante": "Refrescante[img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
+		"Suave": "Suave[img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
+		"Umami": "Suculento[img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]",
+		
+		# Versões em minúsculo
+		"acido": "[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
+		"crocante": "[img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
+		"picante": "[img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
+		"refrescante": "[img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
+		"suave": "[img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
+		"umami": "[img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]"
+	}
+
+	var texto_modificado = texto_original
+	for palavra in substituicoes:
+		# A função 'replace' substitui todas as ocorrências da palavra.
+		texto_modificado = texto_modificado.replace(palavra, substituicoes[palavra])
+		
+	return texto_modificado
+	
 func start_tutorial():
 	$Tutorial.visible = true
 
@@ -144,12 +203,16 @@ func close_tutorial2():
 func close_tutorial3():
 	$Tutorial3.visible = false
 
+func abrir_cliente():
+	$Cliente.visible = true
+
 func close_cliente():
 	$Cliente.visible = false
 
 func sem_mana():
 	if mana == 0:
 		$Button/AnimationPlayer.play("pisca")
+
 func on_draw_button_pressed(inicial: bool = true):
 	var card_data = null
 	var quant = 1
@@ -197,14 +260,14 @@ func on_discard_button_pressed():
 	hand_node.discard()
 
 func gastar_mana(custo: int):
-	if custo > 0 and picles:
-		compra()
+	if custo > 0:
+		for i in range(picles):
+			compra()
 	mana = mana - custo
 	sem_mana()
 
 func start_turn():
 	descarte_turno = false
-	tomate_ativo = false
 	$Button/AnimationPlayer.play("idle")
 	for i in adiciona_inicio:
 		bota_na_mao(i)
@@ -263,8 +326,8 @@ func reset_game():
 	var prato_temp = $prato
 	descarte_totais = 0
 	descarte_turno = false
-	tomate_ativo = false
-	picles = false
+	tomate = 0
+	picles = 0
 	$Info/Info_tags.reset_tags()
 	$Info.set_pontos(0)
 	$"Area de areas/Area2".on_lixo_pressed()
@@ -333,6 +396,7 @@ func encontrar_mais_frequente(array: Array) -> Variant:
 
 func gerar_nome():
 	var vibe = encontrar_mais_frequente(tags_prato)
+	if vibe == "Umami": vibe = "Suculento"
 	var nome = ''
 	if vibe:
 		nome = tipo_prato + ' ' + vibe + ' de ' + principal
@@ -357,7 +421,7 @@ func conta_cartas(tag):
 func descartado():
 	descarte_turno = true
 	descarte_totais += 1
-	if tomate_ativo:
+	for i in range(tomate):
 		compra()
 
 func reseta_prox_zero():
@@ -456,10 +520,19 @@ func calculo_mult():
 			maior_repeticao = contagem_frequencias[freq]
 	
 	match tipo_prato:
-		'Prato': $Info.set_mult(mult_prato); mult = mult_prato
-		'Sopa': $Info.set_mult(tags_prato.count(primario)); mult = tags_prato.count(primario)
-		'Sanduiche': $Info.set_mult(unicas.size() * menor_valor); mult = unicas.size() * menor_valor
-		'Salada': $Info.set_mult(3 * maior_repeticao); mult = 3 * maior_repeticao
+		'Prato': $Info.set_mult(mult_prato + mult_extra); mult = mult_prato + mult_extra
+		'Sopa': 
+			if super_sopa:
+				$Info.set_mult(tags_prato.count(primario) * 2 + mult_extra); mult = tags_prato.count(primario) * 2 + mult_extra
+			else:
+				$Info.set_mult(tags_prato.count(primario) + mult_extra); mult = tags_prato.count(primario) + mult_extra
+		'Sanduiche': 
+			$Info.set_mult(unicas.size() * menor_valor + mult_extra); mult = unicas.size() * menor_valor + mult_extra
+		'Salada': 
+			if super_salada:
+				$Info.set_mult(3 * maior_repeticao + mult_extra); mult = 3 * maior_repeticao + mult_extra
+			else:
+				$Info.set_mult(2 * maior_repeticao + mult_extra); mult = 2 * maior_repeticao + mult_extra
 
 func jogar_carta(carta: CartaData):
 	print("Carta jogada:", carta.nome)
@@ -495,10 +568,12 @@ func sal_mult(mult: String):
 	sal = sal + float(mult)
 
 func set_sanduiche():
-	tipo_prato = "Sanduiche"
+	if tipo_prato == "Prato":
+		tipo_prato = "Sanduiche"
 	
 func set_sopa():
-	tipo_prato = "Sopa"
+	if tipo_prato == "Prato":
+		tipo_prato = "Sopa"
 
 func compra():
 	on_draw_button_pressed(false)
@@ -528,13 +603,13 @@ func add_sabor_prato(pontos: String, prato: String):
 func prox_ingrediente_double(tag: String):
 	prox_double.append(tag)
 
-func bota_na_mao(carta: String):
+func bota_na_mao(carta: String, zerado = false):
 	var new_card_scene = preload("res://scenes/card.tscn")
 	var new_card_instance = new_card_scene.instantiate()
 	hand_node.add_child(new_card_instance) # Adiciona a carta na 'hand' imediatamente
 
 	# Define os dados da carta
-	new_card_instance.set_card(encontrar_carta_data_por_nome(carta))
+	new_card_instance.set_card(encontrar_carta_data_por_nome(carta), zerado)
 	hand_node.update_cards()
 
 func compra_custo_0():
@@ -578,7 +653,7 @@ func set_mult_prato(pontos: String):
 	mult_prato = int(pontos)
 
 func descarte_compra():
-	tomate_ativo = true
+	tomate += 1
 
 func descarte_ponto(pontos: String):
 	sabor_descarte = sabor_descarte + int(pontos) * sal
@@ -588,7 +663,7 @@ func descarta_direita():
 	descartado()
 
 func gasta_compra():
-	picles = true
+	picles += 1
 
 func add_por_prato(pontos: String):
 	sabor_por_ingrediente = sabor_por_ingrediente + int(pontos) * sal
@@ -609,3 +684,54 @@ func reset_sabor():
 	sabor_Umami = 0
 	sabor_Comum = 0
 	sabor_Unico = 0
+
+
+# efeitos de reliquias ###############################################################################
+
+func mais_mana_turno():
+	max_mana += 1
+
+func mais_draw_turno():
+	n_compras += 1
+
+func mais_mana_primeiro():
+	mana_extra = true
+
+func mais_draw_primeiro():
+	miseEnPlace = true
+
+func mais_turno():
+	max_turno += 1
+	n_compras -= 1
+
+func add_mult_extra():
+	mult_extra += 1
+
+func add_faca_encantada():
+	adiciona_inicio.append("Cutelo")
+
+func add_fogo_encantado():
+	adiciona_inicio.append("Espirito de Fogo")
+	
+func add_martelo_encantado():
+	adiciona_inicio.append("Martelo")
+
+func add_sushi_ativo():
+	sushi_ativo = true
+
+func add_super_salada():
+	super_salada = true
+
+func add_super_sanduiche():
+	super_sanduiche = true
+
+func add_super_sopa():
+	super_sopa = true
+
+func add_tag_rand():
+	var tags_possiveis: Array[String] = ["Acido", "Crocante", "Picante", "Refrescante", "Suave", "Umami"] 
+	var rand_tags = []
+	for i in 3:
+		var escolhida = tags_possiveis.pick_random()
+		rand_tags.append(escolhida)
+	tags_prato.append_array(rand_tags)

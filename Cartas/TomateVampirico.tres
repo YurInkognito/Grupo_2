@@ -10,7 +10,7 @@ nome = "Tomate Vampírico"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Durante este turno quando descartar uma carta compre uma carta ."
+desc = "Sempre que descartar uma carta compre uma carta ."
 on_martelo = ExtResource("1_bajnp")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "descarte_compra",

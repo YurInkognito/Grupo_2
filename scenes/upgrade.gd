@@ -15,6 +15,8 @@ var is_dragging_global = true
 
 @onready var pular: Button = $Button
 
+@export var mana = 0 #só pra corrigir um bug
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lista_cartas = $"/root/GlobalData".lista_cartas
@@ -30,6 +32,9 @@ func skip():
 
 func select_card(card_data):
 	$"/root/GlobalData".lista_cartas.append(card_data)
+	upgrade_1.card_data.upgrade = false
+	upgrade_2.card_data.upgrade = false
+	upgrade_3.card_data.upgrade = false
 	$"..".visible = false
 	$"/root/GlobalData".proxima_fase()
 

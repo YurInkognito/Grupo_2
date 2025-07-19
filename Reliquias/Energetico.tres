@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://btdfcgy0drk6v"]
+
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_1gnbr"]
+
+[resource]
+script = ExtResource("1_1gnbr")
+nome = "Panela de Vó"
+custo = ""
+ingrediente = false
+is_processo = false
+desc = ""
+efeitos_ao_jogar = Array[Dictionary]([{
+"funcao": "mais_turno",
+"parametro": ""
+}])
+efeitos_ao_processar = Array[Dictionary]([])
+efeitos_on_board = Array[Dictionary]([])
+tags = Array[String]([])
+upgrade = false
+metadata/_custom_type_script = "uid://bemxb877oehdb"

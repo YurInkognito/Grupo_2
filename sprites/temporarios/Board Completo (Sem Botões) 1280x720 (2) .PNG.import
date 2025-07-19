@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds6idyxh2cyql"
-path="res://.godot/imported/TAG4png.png-217f2bb311884f4b778ffecaf71ac18e.ctex"
+uid="uid://drapne5lje3p2"
+path="res://.godot/imported/Board Completo (Sem Botões) 1280x720 (2) .PNG-3d0507dfa861c2c798420dcf5094ee5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TAGS/TAG4png.png"
-dest_files=["res://.godot/imported/TAG4png.png-217f2bb311884f4b778ffecaf71ac18e.ctex"]
+source_file="res://sprites/temporarios/Board Completo (Sem Botões) 1280x720 (2) .PNG"
+dest_files=["res://.godot/imported/Board Completo (Sem Botões) 1280x720 (2) .PNG-3d0507dfa861c2c798420dcf5094ee5f.ctex"]
 
 [params]
 

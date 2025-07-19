@@ -21,6 +21,8 @@ extends Control
 
 var labels: Array[Label]
 
+const BASE_CRESCIMENTO = 1.2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	continuar.visible = false
@@ -31,13 +33,13 @@ func _ready() -> void:
 	sabor_value = $"/root/GlobalData".sabor_final
 	prato_value = $"/root/GlobalData".mult_final
 	cliente_value = $"/root/GlobalData".cliente_final
-	resultado_value = sabor_value * (prato_value + cliente_value)
+	resultado_value = sabor_value * prato_value * cliente_value
 	var dia = $"/root/GlobalData".fase - 1
-	if (resultado_value <= 2000 + dia * 100):
+	if (resultado_value <= calcular_pontuacao_requerida(dia, 3000)):
 		estrelas_value = 0
-	elif (resultado_value <= 4000 + dia * 100):
+	elif (resultado_value <= calcular_pontuacao_requerida(dia, 5000)):
 		estrelas_value = 1
-	elif (resultado_value <= 6000 + dia * 100):
+	elif (resultado_value <= calcular_pontuacao_requerida(dia, 6000)):
 		estrelas_value = 2
 	else:
 		estrelas_value = 3
@@ -69,6 +71,10 @@ func _process(delta: float) -> void:
 		1: estrelas.text = '*'
 		2: estrelas.text = '* *'
 		3: estrelas.text = '* * *'
+
+func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
+	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
+	return int(round(pontuacao_bruta / 100.0) * 100.0)
 
 func voltar():
 	reset_pontos()

@@ -12,6 +12,9 @@ extends ColorRect
 @onready var dentro: Button = $Button
 @onready var lixo: Button = $Button2
 
+@export var prato_check = false
+@export var lixo_check = false
+
 signal processado()
 
 func _ready() -> void:
@@ -23,45 +26,62 @@ func conectar_carta(card):
 	processado.connect(card.on_efeito_carta_on_board)
 
 func can_accept_card(card: Control) -> bool:
-	print("recebi")
 	if current_card != null:
 		return false
 	return true
 
-func drop_card(card: Control):
-	print("recebi 2")
-	var mana_cheat = false
-	print(control.prox_zero)
-	for i in control.prox_zero:
-		print(card.card_data.tags)
-		if (card.card_data.tags.count(i) > 0):
-			mana_cheat = true
-			print("mana cheated")
-	if can_accept_card(card) and ((int(card.custo_t) <= control.mana) or mana_cheat):
-		print(int(card.custo_t))
-		if mana_cheat:
-			control.reseta_prox_zero()
-		else:
-			control.gastar_mana(int(card.custo_t))
-		current_card = card
-		card.get_parent().remove_child(card)
-		add_child(card)
-		$"../Area".conectar_carta(card)
-		$"../Area2".conectar_carta(card)
-		$"../Area3".conectar_carta(card)
-		print("Sinal 'processado' conectado ao card:", card.name)
-		# Centraliza a carta na área
-		card.position = Vector2.ZERO
-		card.rotation = 0
-		card.size = size * 0.9
-		hand.update_cards()
+func drop_card(card: Control, move = false):
+	if move:
+		if can_accept_card(card):
+			current_card = card
+			#card.get_parent().remove_child(card)
+			add_child(card)
+			$"../Area".conectar_carta(card)
+			$"../Area2".conectar_carta(card)
+			$"../Area3".conectar_carta(card)
+			# Centraliza a carta na área
+			card.position = Vector2.ZERO
+			card.rotation = 0
+			card.size = size * 0.9
+			hand.update_cards()
 
-		# Conecta sinais se necessário
-		if card.has_signal("card_played"):
-			card.card_played.connect(_on_card_played)
-		
-		return true
-	return false
+			# Conecta sinais se necessário
+			if card.has_signal("card_played"):
+				card.card_played.connect(_on_card_played)
+			
+			return true
+		return false
+	else:
+		var mana_cheat = false
+		print(control.prox_zero)
+		for i in control.prox_zero:
+			print(card.card_data.tags)
+			if (card.card_data.tags.count(i) > 0):
+				mana_cheat = true
+		if can_accept_card(card) and ((int(card.custo_t) <= control.mana) or mana_cheat):
+			print(int(card.custo_t))
+			if mana_cheat:
+				control.reseta_prox_zero()
+			else:
+				control.gastar_mana(int(card.custo_t))
+			current_card = card
+			card.get_parent().remove_child(card)
+			add_child(card)
+			$"../Area".conectar_carta(card)
+			$"../Area2".conectar_carta(card)
+			$"../Area3".conectar_carta(card)
+			# Centraliza a carta na área
+			card.position = Vector2.ZERO
+			card.rotation = 0
+			card.size = size * 0.9
+			hand.update_cards()
+
+			# Conecta sinais se necessário
+			if card.has_signal("card_played"):
+				card.card_played.connect(_on_card_played)
+			
+			return true
+		return false
 
 func on_processar_carta(carta: CartaData, processo: String):
 	for efeito in carta.efeitos_ao_processar:
@@ -138,6 +158,23 @@ func on_lixo_pressed() -> void:
 		$"../../Decartes/AnimationPlayer".play("abrir_boca")
 		$"../../Decartes/AnimationPlayer".play("fechar_boca")
 		current_card.queue_free()
+
+func carta_movida() -> void:
+	if current_card:
+		remove_child(current_card)
+		current_card = null
+
+func trocar_carta(area) -> void:
+	if current_card:
+		var temp = current_card
+		var temp_externo = area.current_card
+		print(temp,temp_externo)
+		remove_child(current_card)
+		current_card = null
+		area.remove_child(area.current_card)
+		area.current_card = null
+		drop_card(temp_externo, true)
+		area.drop_card(temp, true)
 
 #funcoes on processo
 
