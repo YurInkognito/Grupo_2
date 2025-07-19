@@ -136,6 +136,9 @@ func set_card(carta: CartaData, zerado = false) -> void:
 	tags.text = texto_tags
 	if is_played:
 		efeito_on_board()
+	if carta.upgrade:
+		is_in_hand = false
+		is_played = true
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
