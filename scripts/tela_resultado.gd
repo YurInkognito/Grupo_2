@@ -74,6 +74,7 @@ func _process(delta: float) -> void:
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
+	print(int(round(pontuacao_bruta / 100.0) * 100.0))
 	return int(round(pontuacao_bruta / 100.0) * 100.0)
 
 func voltar():

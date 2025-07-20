@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpn2hnkh416i0"
-path="res://.godot/imported/pesadeloCozinha.png-232f4f10659636aef5800912ae33efd3.ctex"
+path="res://.godot/imported/pesadeloCozinha.png-e0d093cf540723bbf82274a683b9e3a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fundos/pesadeloCozinha.png"
-dest_files=["res://.godot/imported/pesadeloCozinha.png-232f4f10659636aef5800912ae33efd3.ctex"]
+source_file="res://sprites/Fundos/pesadeloCozinha.png"
+dest_files=["res://.godot/imported/pesadeloCozinha.png-e0d093cf540723bbf82274a683b9e3a7.ctex"]
 
 [params]
 

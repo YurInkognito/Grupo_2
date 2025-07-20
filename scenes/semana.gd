@@ -6,11 +6,11 @@ extends Control
 
 func _ready() -> void:
 	var fase = GlobalData.fase
-	jeff.position.x = (165 + 180 * (fase - 2))
+	jeff.position.x = (260 + 135 * (fase - 2))
 	
 	var tween = create_tween()
 
-	tween.tween_property(jeff, "position", position + Vector2(jeff.position.x + 180, jeff.position.y), 1.0)
+	tween.tween_property(jeff, "position", position + Vector2(jeff.position.x + 135, jeff.position.y), 1.0)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 

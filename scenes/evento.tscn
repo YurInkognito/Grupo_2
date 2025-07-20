@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5ptcm6lktil"]
 
-[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="1_3hjvl"]
+[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="1_3hjvl"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="2_rdlqr"]
 [ext_resource type="LabelSettings" uid="uid://82yxw7hugk00" path="res://recursos/magic_text_eventos.tres" id="3_qb6tr"]
 [ext_resource type="Texture2D" uid="uid://dryri2w84n3gj" path="res://sprites/evento 1.png" id="4_qb6tr"]
