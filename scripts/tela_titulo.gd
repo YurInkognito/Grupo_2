@@ -17,7 +17,8 @@ func _on_botao_iniciar_pressed() -> void:
 	
 func _on_botao_cutscene_pressed() -> void:
 	$"/root/GlobalData".set_cartas(lista_cartas)
-	$"/root/GlobalData".proxima_fase()
+	Transição.change_scene("res://scenes/cena_aliane.tscn")
+	#$"/root/GlobalData".proxima_fase()
 	
 func _on_botao_sair_pressed() -> void:
 	get_tree().quit()

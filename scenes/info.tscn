@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://x7x12d0x8njs"]
+[gd_scene load_steps=5 format=3 uid="uid://x7x12d0x8njs"]
 
 [ext_resource type="Script" uid="uid://m3r74d0i8nba" path="res://scripts/info.gd" id="1_6cmwp"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="2_1t52y"]
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="3_kin2u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1t52y"]
 font_color = Color(0, 0, 0, 1)
@@ -51,7 +52,10 @@ offset_top = 162.0
 offset_right = 48.0
 offset_bottom = 237.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("3_kin2u")
+theme_override_font_sizes/font_size = 24
 text = "Nome do prato kkkk kkkkkkkk"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -69,6 +73,8 @@ offset_right = 48.0
 offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(1.8771e-06, 0, 0.579079, 1)
+theme_override_fonts/normal_font = ExtResource("3_kin2u")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "1000"

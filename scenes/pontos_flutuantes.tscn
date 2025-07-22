@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo63na05c30t"]
+
+[ext_resource type="Script" uid="uid://dimus0iao6bow" path="res://pontos_flutuantes.gd" id="1_ewxw1"]
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="1_ouq61"]
+
+[node name="Pontos_flutuantes" type="Label"]
+theme_override_colors/font_color = Color(0, 0, 0.580392, 1)
+theme_override_fonts/font = ExtResource("1_ouq61")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("1_ewxw1")

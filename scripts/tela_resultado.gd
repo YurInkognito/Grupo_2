@@ -49,11 +49,12 @@ func _ready() -> void:
 		$Panel3/Panel.recompensar(estrelas_value)
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
-	if cliente_value == 3 and estrelas_value == 3:
+	if cliente_value == 2 and estrelas_value == 3:
 		labels.append(secret)
+		
 	
 	print(estrelas_value)
-	fala.text = $"/root/GlobalData".gera_fala(1,estrelas_value)
+	fala.text = $"/root/GlobalData".gera_fala(estrelas_value)
 	
 	$Prato/Nome.text = $"/root/GlobalData".nome_final
 	

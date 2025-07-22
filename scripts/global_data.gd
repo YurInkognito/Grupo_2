@@ -129,8 +129,8 @@ func gera_cliente():
 	print("cliente: " + str(cliente))
 	cliente_temp = cliente
 
-func gera_fala(fase, nota):
-	print(cliente_final, nota)
+func gera_fala(nota):
+	print("resumo: " + str(fase) + " " + str(cliente_final) + " " + str(nota))
 	match fase:
 		1:
 			match cliente_final:
@@ -138,30 +138,21 @@ func gera_fala(fase, nota):
 					return "Eu achei que tinha deixado claro que tipo de prato eu queria..."
 				1:
 					match nota:
-						0: return "Jogar um pouco de pimenta em terra não torna ela um prato picante..."
-						1: return "Bom, com certeza já comi pratos piores. Já comi melhores, também."
-						2: return "A picancia está agradavel, infelizmente."
-						3: return "Bom trabalho. Talvez um pouco mais de pimenta na próxima."
-				2:
-					match nota:
 						0: return "Da póxima vez me traga só a garrafa de pimenta no prato."
 						1: return "A pimenta está no ponto, me ajudou a engolir."
 						2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
-						3: return "Já consigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
-				3:
+						3: return "Já consigo imaginar a capa da próxima Elf's Digest! (cutscene do ending)"
+				2:
 					match nota:
 						0: return "Horrivel... Horrivel, Horrivel!"
 						1: return "Você tinha um trabalho anão..."
 						2: return "Melhor do que eu esperava, mas eu não esperava muito."
 						3: return "O que foi isso? Estava bom? Eu... Eu gostei? (cutscene do secret ending)"
+
 		5:
 			match cliente_final:
 				0: 
-					match nota:
-						0: return "Horrivel... Horrivel, Horrivel!"
-						1: return "Você tinha um trabalho anão..."
-						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "Devo admitir que é um bom prato, fraco, mas um bom prato"
+					return "Horrivel... Horrivel, Horrivel!"
 				1:
 					match nota:
 						0: return "Jogar um pouco de pimenta em terra não torna ela um prato picante..."
@@ -174,38 +165,22 @@ func gera_fala(fase, nota):
 						1: return "A pimenta está no ponto, me ajudou a engolir."
 						2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
 						3: return "Já consigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
-				3:
-					match nota:
-						0: return "Horrivel... Horrivel, Horrivel!"
-						1: return "Você tinha um trabalho anão..."
-						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "O que foi isso? Estava bom? Eu... Eu gostei? (cutscene do secret ending)"
 		_:
 			match cliente_final:
 				0: 
-					match nota:
-						0: return "Horrivel... Horrivel, Horrivel!"
-						1: return "Você tinha um trabalho anão..."
-						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "Devo admitir que é um bom prato, fraco, mas um bom prato"
+					return "É... Acho que você me deu o pedido errado..."
 				1:
 					match nota:
-						0: return "Jogar um pouco de pimenta em terra não torna ela um prato picante..."
-						1: return "Bom, com certeza já comi pratos piores. Já comi melhores, também."
-						2: return "A picancia está agradavel, infelizmente."
-						3: return "Bom trabalho. Talvez um pouco mais de pimenta na próxima."
+						0: return "Estava esperando algo mais gostoso..."
+						1: return "Acho que houve uma confusão no meu pedido, mas não estava ruim."
+						2: return "Estava bom mas na próxima vez gostaria de algo do jeito que eu pedi"
+						3: return "Não foi exatamente o que eu pedi mas estava delicioso! Acho que o chefe sabe o que faz."
 				2:
 					match nota:
-						0: return "Da póxima vez me traga só a garrafa de pimenta no prato."
-						1: return "A pimenta está no ponto, me ajudou a engolir."
-						2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
-						3: return "Já consigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
-				3:
-					match nota:
-						0: return "Horrivel... Horrivel, Horrivel!"
-						1: return "Você tinha um trabalho anão..."
-						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "O que foi isso? Estava bom? Eu... Eu gostei? (cutscene do secret ending)"
+						0: return "Obrigado pelo prato mas não gostei muito..."
+						1: return "Ótimo atendimento obrigado pelo prato."
+						2: return " Estava tudo muito bom! Espero voltar logo."
+						3: return "Meus cumprimentos ao chefe! Tudo estava perfeito!"
 
 
 func critico_1_nota():

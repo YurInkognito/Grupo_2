@@ -84,4 +84,4 @@ label escolha
 	Chef: Seu prato estará pronto em breve, senhora.
 	Aliane: Tá… Até que enfim, em?
 	[wait time="1.0"]
-	do GlobalData.jogar()
+	do GlobalData.proxima_fase()

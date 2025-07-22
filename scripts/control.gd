@@ -13,6 +13,8 @@ extends Control
 @onready var button_cliente = $Cliente/Button
 @onready var cooldown_timer = $Button/Timer
 
+@export var numero_flutuante: PackedScene
+
 @onready var dia: Label = $Dia
 @onready var mana_label: Label = $mana_label
 @onready var turno_label: Label = $turno_label
@@ -22,6 +24,7 @@ extends Control
 @export var caminho_pasta_cartas: String = "res://Cartas/"
 
 @export var lista_de_cartas: Array[CartaData]
+@export var lista_de_cartas_tutorial: Array[CartaData]
 @export var deck = []
 @export var n_compras = 6
 var em_cooldown: bool = false
@@ -123,6 +126,8 @@ func _ready() -> void:
 			"-ingrediente":
 				texto_temp = texto_temp + "Sou alérgico à " + obj[1] + ", não bote no prato por favor "
 		c += 1
+	if $"/root/GlobalData".fase == 1:
+		texto_temp = "Aliane Butolane: Acho que ja te falei o bastante."
 	cliente_label.text = substituir_palavras_por_tags(texto_temp)
 	lista_de_cartas = $"/root/GlobalData".lista_cartas
 	if $"/root/GlobalData".fase == 1:
@@ -190,7 +195,23 @@ func substituir_palavras_por_tags(texto_original: String) -> String:
 	return texto_modificado
 	
 func start_tutorial():
-	$Tutorial.visible = true
+	#$Tutorial.visible = true
+	deck.clear()
+	var cartas_para_adicionar = []
+
+	# Adiciona as cópias de cada carta à lista temporária
+	for carta in lista_de_cartas_tutorial:
+		for _i in range(2): # numero de cartas repetidas por deck
+			cartas_para_adicionar.append(carta)
+
+	for i in range(cartas_para_adicionar.size() - 1, 0, -1):
+		var j = randi_range(0, i)
+		var temp = cartas_para_adicionar[i]
+		cartas_para_adicionar[i] = cartas_para_adicionar[j]
+		cartas_para_adicionar[j] = temp
+
+	# O deck final é a lista randomizada
+	deck = cartas_para_adicionar
 
 func close_tutorial():
 	$Tutorial.visible = false
@@ -427,8 +448,22 @@ func descartado():
 func reseta_prox_zero():
 	prox_zero = []
 
+func mostrar_numero_flutuante(valor: int, pos_inicial: Vector2, pos_final: Vector2, cor: Color = Color.WHITE):
+	if not is_instance_valid(numero_flutuante):
+		printerr("Cena do número flutuante não está configurada!")
+		return
+
+	var numero_instanciado = numero_flutuante.instantiate() as Label
+	if numero_instanciado:
+		numero_instanciado.configurar(valor, pos_inicial, pos_final)
+		numero_instanciado.cor_texto = cor # Define a cor do texto
+		add_child(numero_instanciado)
+		numero_instanciado.iniciar_animacao()
+	else:
+		printerr("Falha ao instanciar o número flutuante.")
+
 func aplicar_efeitos_carta(carta: CartaData):
-	var sabor_aux = sabor
+	var sabor_aux = sabor + sabor_continuo
 	for efeito in carta.efeitos_ao_jogar:
 		if efeito.has("funcao") && has_method(efeito["funcao"]):
 			var funcao_nome = efeito["funcao"]
@@ -446,8 +481,8 @@ func aplicar_efeitos_carta(carta: CartaData):
 				call(funcao_nome, parametro)
 			else:
 				call(funcao_nome)
-			if ((sabor - sabor_aux) >= principal_pontos):
-				principal_pontos = sabor - sabor_aux
+			if ((sabor + sabor_continuo - sabor_aux) >= principal_pontos):
+				principal_pontos = sabor + sabor_continuo - sabor_aux
 				principal = carta.nome
 		else:
 			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", carta.nome, "'.")
@@ -457,6 +492,8 @@ func aplicar_efeitos_carta(carta: CartaData):
 	calculo_mult()
 	$Info/Info_tags.atualiza_tag()
 	print(mult)
+	mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,356))
+	await get_tree().create_timer(0.6).timeout
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
 	$"/root/GlobalData".set_mult(mult)
@@ -476,6 +513,7 @@ func pontuação_continua():
 	print(encontrar_mais_frequente(tags_prato))
 	print(tags_prato.count(encontrar_mais_frequente(tags_prato)))
 	print(sabor_Comum)
+	print("sabor_suave = " + str(sabor_Suave))
 	#sabor de tags
 	sabor_continuo = sabor_continuo + sabor_Suave * tags_prato.count('Suave')
 	sabor_continuo = sabor_continuo + sabor_Picante * tags_prato.count('Picante')
