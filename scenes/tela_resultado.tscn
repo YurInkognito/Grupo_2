@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
-[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="2_mjhyp"]
+[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
 [ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="3_dv6s2"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
 [ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]

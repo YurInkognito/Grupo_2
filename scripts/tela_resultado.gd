@@ -60,6 +60,14 @@ func _ready() -> void:
 	
 	show_anim()
 
+func skip():
+	if $"/root/GlobalData".fase == 1:
+		if $"/root/GlobalData".estrelas == 3:
+			if $"/root/GlobalData".cliente_value == 2:
+				$"/root/GlobalData".Transição.change_scene('cena_aliane_picante')
+			else:
+				$"/root/GlobalData".Transição.change_scene('cena_aliane_suave')
+	$"/root/GlobalData".proximafase()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -75,6 +83,7 @@ func _process(delta: float) -> void:
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
+	print(int(round(pontuacao_bruta / 100.0) * 100.0))
 	return int(round(pontuacao_bruta / 100.0) * 100.0)
 
 func voltar():
@@ -83,6 +92,12 @@ func voltar():
 	
 func upgradar():
 	$Panel3.visible = true
+	if $"/root/GlobalData".fase == 1:
+		if $"/root/GlobalData".estrelas == 3:
+			if $"/root/GlobalData".cliente_value == 2:
+				$"/root/GlobalData".Transição.change_scene('cena_aliane_picante')
+			else:
+				$"/root/GlobalData".Transição.change_scene('cena_aliane_suave')
 
 func reset_pontos():
 	var temp_array: Array[String] = []

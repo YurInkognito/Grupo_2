@@ -76,9 +76,6 @@ label escolha
 	Chef: (Acho que eu consigo lidar bem com esse paladar bruto. Mas achei meio triste isso.)
 	Chef: (Ela realmente só consegue comer algo se tiver num nível absurdamente alto de pimenta? Tudo tem que ser tão intenso assim?)
 	Chef: (Eu PODERIA fazer o que ela claramente quer, mas eu poderia me diferenciar um pouco e fazer algo que seja suave, tão suave que vai ser uma sensação completamente nova pra ela.)
-	[wait time="0.5"]
-	- 1 - COMIDA ULTRA PICANTE FÁCIL DE AGRADAR
-	- 2 - COMIDA ULTRA SUAVE PARA SURPREENDER ELA
 	Chef: Decidi!
 	Aliane: ?
 	Chef: Seu prato estará pronto em breve, senhora.

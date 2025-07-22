@@ -1,0 +1,22 @@
+[background arg="res://sprites/Fundos/BG a la carte.png" fade="0.0"]
+join Aliane left [animation="Fade In" length="0.0"]
+join Chef right [animation="Fade In" length="0.0"]
+Aliane: Ufa.
+Aliane: Do jeitinho que eu gosto.
+Aliane: Não chega no nível da minha mãe, mas com certeza tem seu valor.
+Aliane: Você garantiu uma nota boa para seu estabelecimento, anão.
+Chef: Muito obrigado! Volte sempre!
+Aliane: Sim sim, claro.
+leave Aliane [animation="Slide Out Right" length="1.5"]
+[wait time="1.0"]
+Chef: (Nossa. Quanta pimenta tinha naquele prato.)
+Chef: (Eu nem consegui experimentar, toda vez que a minha língua ficava a menos de 10 centímetros dele ela já dava uma queimada.)
+Chef: (Fico surpresa que as paredes do estômago dela não derreteram depois dela ter devorado aquilo.)
+Chef: (Bom, posso não ter sido o grande inovador que eu talvez gostaria, mas pelo menos garanti uma nota boa numa publicação de bom alcance.)
+Chef: (Então… Missão cumprida, eu acho?)
+Chef: (É. Isso mesmo. Hora de relaxar.)
+Chef: (Com certeza o público vai dar uma aumentada, então é melhor eu aproveitar essa calmaria.)
+leave Chef [animation="Fade Out"]
+[wait time="1.0"]
+do GlobalData.proxima_fase()
+[end_timeline]

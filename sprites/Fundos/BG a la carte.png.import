@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ujl3ln4kb8bo"
-path="res://.godot/imported/dark_darker_yet_darker.png-fcf73b6ca23d3088e9e592490f27cea2.ctex"
+uid="uid://3f1txdsmh36g"
+path="res://.godot/imported/BG a la carte.png-f45e542cf94223a7c7d9a9ba41ff5cca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fundos/dark_darker_yet_darker.png"
-dest_files=["res://.godot/imported/dark_darker_yet_darker.png-fcf73b6ca23d3088e9e592490f27cea2.ctex"]
+source_file="res://sprites/Fundos/BG a la carte.png"
+dest_files=["res://.godot/imported/BG a la carte.png-f45e542cf94223a7c7d9a9ba41ff5cca.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[background arg="res://Fundos/BG a la carte.png" fade="0.0"]
+[background arg="res://sprites/Fundos/BG a la carte.png" fade="0.0"]
 [wait time="1.0"]
 join Chef right [animation="Fade In" wait="true"]
 Chef: Ok. Tá tudo no lugar. As mesas estão limpinhas, os talheres reluzentes, a ratoeira da despensa tá armada…

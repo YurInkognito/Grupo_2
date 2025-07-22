@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=9 format=3 uid="uid://ce31bsvwp05t8"]
 
-[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://Fundos/BG a la carte.png" id="1_34t7l"]
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
-[ext_resource type="Texture2D" uid="uid://cl2g4ffadvj0v" path="res://sprites/temporarios/calendario_temp-1.png.png" id="2_vorlf"]
+[ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://sm6n6v8t1va2" path="res://sprites/Calendario/IMG_2383.PNG" id="3_ekvoy"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
 [ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="4_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://b3svafr7vtu8b" path="res://sprites/Calendario/IMG_2384.PNG" id="6_c2q0q"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="6_noqa7"]
 [ext_resource type="Texture2D" uid="uid://j7jneo73ebrw" path="res://sprites/temporarios/jeff_chibi.png" id="7_ekvoy"]
 
@@ -20,35 +21,29 @@ autostart = true
 
 [node name="BgALaCarte" type="Sprite2D" parent="."]
 position = Vector2(661.605, 542.869)
-texture = ExtResource("1_34t7l")
+texture = ExtResource("2_ekvoy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("6_noqa7")
+autoplay = true
+bus = &"Music"
+
+[node name="Calendario1" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_vorlf")
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_ekvoy")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Painel 1" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 100.0
-offset_top = 102.0
-offset_right = 254.0
-offset_bottom = 592.0
+offset_left = 166.0
+offset_top = 132.0
+offset_right = 320.0
+offset_bottom = 622.0
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 11.0283
-offset_top = -0.272537
-offset_right = 135.028
-offset_bottom = 110.727
-theme = ExtResource("3_noqa7")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "Dia 1
-"
-
-[node name="rosto" type="TextureRect" parent="Panel"]
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 1"]
 layout_mode = 0
 offset_left = -15.904
 offset_top = 73.213
@@ -57,26 +52,526 @@ offset_bottom = 1290.21
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_ekvoy")
 
-[node name="Label2" type="Label" parent="Panel"]
+[node name="Requisito" type="Label" parent="Calendario1/Painel 1"]
 layout_mode = 0
-offset_left = 11.0283
-offset_top = 194.913
-offset_right = 134.028
-offset_bottom = 248.913
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
 theme = ExtResource("3_noqa7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "5000$"
+text = "$2500"
 
-[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(582, 288)
-stream = ExtResource("6_noqa7")
-autoplay = true
-bus = &"Music"
+[node name="Resultado1" type="Label" parent="Calendario1/Painel 1"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 2" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 132.0
+offset_right = 458.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 2"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario1/Painel 2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 140.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$3000"
+
+[node name="Resultado2" type="Label" parent="Calendario1/Painel 2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 3" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 442.0
+offset_top = 132.0
+offset_right = 596.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 3"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario1/Painel 3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$3600"
+
+[node name="Resultado3" type="Label" parent="Calendario1/Painel 3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 4" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 580.0
+offset_top = 132.0
+offset_right = 734.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 4"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Painel 5" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 718.0
+offset_top = 132.0
+offset_right = 872.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 5"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario1/Painel 5"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$5200"
+
+[node name="Resultado5" type="Label" parent="Calendario1/Painel 5"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 6" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 856.0
+offset_top = 132.0
+offset_right = 1010.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 6"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario1/Painel 6"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$6200"
+
+[node name="Resultado6" type="Label" parent="Calendario1/Painel 6"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 7" type="Panel" parent="Calendario1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 994.0
+offset_top = 132.0
+offset_right = 1148.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario1/Painel 7"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario1/Painel 7"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 493.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$7500
+"
+
+[node name="Resultado7" type="Label" parent="Calendario1/Painel 7"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Calendario2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_c2q0q")
+
+[node name="Painel 8" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 166.0
+offset_top = 132.0
+offset_right = 320.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 8"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Painel 8"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 140.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$9000"
+
+[node name="Resultado8" type="Label" parent="Calendario2/Painel 8"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Panel 9" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 132.0
+offset_right = 458.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Panel 9"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Panel 9"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 162.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$10700"
+
+[node name="Resultado9" type="Label" parent="Calendario2/Panel 9"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 10" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 442.0
+offset_top = 132.0
+offset_right = 596.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 10"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Painel 10"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 159.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$12900"
+
+[node name="Resultado10" type="Label" parent="Calendario2/Painel 10"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 11" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 580.0
+offset_top = 132.0
+offset_right = 734.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 11"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Painel 12" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 718.0
+offset_top = 132.0
+offset_right = 872.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 12"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Painel 12"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$18600"
+
+[node name="Resultado12" type="Label" parent="Calendario2/Painel 12"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 13" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 856.0
+offset_top = 132.0
+offset_right = 1010.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 13"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Painel 13"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 137.0
+offset_bottom = 445.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$22300"
+
+[node name="Resultado13" type="Label" parent="Calendario2/Painel 13"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
+
+[node name="Painel 14" type="Panel" parent="Calendario2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 994.0
+offset_top = 132.0
+offset_right = 1148.0
+offset_bottom = 622.0
+
+[node name="rosto" type="TextureRect" parent="Calendario2/Painel 14"]
+layout_mode = 0
+offset_left = -15.904
+offset_top = 73.213
+offset_right = 1684.1
+offset_bottom = 1290.21
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ekvoy")
+
+[node name="Requisito" type="Label" parent="Calendario2/Painel 14"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 400.0
+offset_right = 140.0
+offset_bottom = 493.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$26700
+"
+
+[node name="Resultado14" type="Label" parent="Calendario2/Painel 14"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 364.0
+offset_right = 137.0
+offset_bottom = 409.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "$"
 
 [node name="JeffChibi" type="Sprite2D" parent="."]
-position = Vector2(165, 490)
-scale = Vector2(0.3, 0.3)
+position = Vector2(260, 171)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_ekvoy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
