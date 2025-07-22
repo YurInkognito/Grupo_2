@@ -23,10 +23,16 @@ autostart = true
 position = Vector2(661.605, 542.869)
 texture = ExtResource("2_ekvoy")
 
+[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 288)
+stream = ExtResource("6_noqa7")
+autoplay = true
+bus = &"Music"
+
 [node name="Calendario1" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1280.0
+offset_bottom = 720.0
 texture = ExtResource("3_ekvoy")
 
 [node name="Painel 1" type="Panel" parent="Calendario1"]
@@ -58,7 +64,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$2500"
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 1"]
+[node name="Resultado1" type="Label" parent="Calendario1/Painel 1"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -71,6 +78,7 @@ text = "$"
 
 [node name="Painel 2" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 304.0
 offset_top = 132.0
 offset_right = 458.0
@@ -97,7 +105,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$3000"
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 2"]
+[node name="Resultado2" type="Label" parent="Calendario1/Painel 2"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -110,6 +119,7 @@ text = "$"
 
 [node name="Painel 3" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 442.0
 offset_top = 132.0
 offset_right = 596.0
@@ -136,7 +146,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$3600"
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 3"]
+[node name="Resultado3" type="Label" parent="Calendario1/Painel 3"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -149,6 +160,7 @@ text = "$"
 
 [node name="Painel 4" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 580.0
 offset_top = 132.0
 offset_right = 734.0
@@ -165,6 +177,7 @@ texture = ExtResource("4_ekvoy")
 
 [node name="Painel 5" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 718.0
 offset_top = 132.0
 offset_right = 872.0
@@ -191,7 +204,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$5200"
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 5"]
+[node name="Resultado5" type="Label" parent="Calendario1/Painel 5"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -204,6 +218,7 @@ text = "$"
 
 [node name="Painel 6" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 856.0
 offset_top = 132.0
 offset_right = 1010.0
@@ -230,7 +245,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$6200"
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 6"]
+[node name="Resultado6" type="Label" parent="Calendario1/Painel 6"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -243,6 +259,7 @@ text = "$"
 
 [node name="Painel 7" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 994.0
 offset_top = 132.0
 offset_right = 1148.0
@@ -270,7 +287,8 @@ theme_override_font_sizes/font_size = 50
 text = "$7500
 "
 
-[node name="Resultado" type="Label" parent="Calendario1/Painel 7"]
+[node name="Resultado7" type="Label" parent="Calendario1/Painel 7"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -282,7 +300,7 @@ theme_override_font_sizes/font_size = 50
 text = "$"
 
 [node name="Calendario2" type="TextureRect" parent="."]
-visible = false
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("6_c2q0q")
@@ -316,7 +334,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$9000"
 
-[node name="Resultado" type="Label" parent="Calendario2/Painel 8"]
+[node name="Resultado8" type="Label" parent="Calendario2/Painel 8"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -329,6 +348,7 @@ text = "$"
 
 [node name="Panel 9" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 304.0
 offset_top = 132.0
 offset_right = 458.0
@@ -355,7 +375,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$10700"
 
-[node name="Resultado" type="Label" parent="Calendario2/Panel 9"]
+[node name="Resultado9" type="Label" parent="Calendario2/Panel 9"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -368,6 +389,7 @@ text = "$"
 
 [node name="Painel 10" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 442.0
 offset_top = 132.0
 offset_right = 596.0
@@ -394,7 +416,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$12900"
 
-[node name="Resultado" type="Label" parent="Calendario2/Painel 10"]
+[node name="Resultado10" type="Label" parent="Calendario2/Painel 10"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -407,6 +430,7 @@ text = "$"
 
 [node name="Painel 11" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 580.0
 offset_top = 132.0
 offset_right = 734.0
@@ -423,6 +447,7 @@ texture = ExtResource("4_ekvoy")
 
 [node name="Painel 12" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 718.0
 offset_top = 132.0
 offset_right = 872.0
@@ -449,7 +474,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$18600"
 
-[node name="Resultado" type="Label" parent="Calendario2/Painel 12"]
+[node name="Resultado12" type="Label" parent="Calendario2/Painel 12"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -462,6 +488,7 @@ text = "$"
 
 [node name="Painel 13" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 856.0
 offset_top = 132.0
 offset_right = 1010.0
@@ -488,7 +515,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$22300"
 
-[node name="Resultado" type="Label" parent="Calendario2/Painel 13"]
+[node name="Resultado13" type="Label" parent="Calendario2/Painel 13"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -501,6 +529,7 @@ text = "$"
 
 [node name="Painel 14" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 994.0
 offset_top = 132.0
 offset_right = 1148.0
@@ -528,7 +557,8 @@ theme_override_font_sizes/font_size = 50
 text = "$26700
 "
 
-[node name="Resultado" type="Label" parent="Calendario2/Painel 14"]
+[node name="Resultado14" type="Label" parent="Calendario2/Painel 14"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 364.0
 offset_right = 137.0
@@ -538,12 +568,6 @@ theme = ExtResource("3_noqa7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$"
-
-[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(582, 288)
-stream = ExtResource("6_noqa7")
-autoplay = true
-bus = &"Music"
 
 [node name="JeffChibi" type="Sprite2D" parent="."]
 position = Vector2(260, 171)
