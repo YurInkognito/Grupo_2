@@ -4,6 +4,7 @@ extends Control
 @onready var music_slider: HSlider = $Panel/Volume/MusicSlider
 @onready var volume: Control = $Panel/Volume
 @onready var pause_menu: Control = $Panel/PauseMenu
+@onready var tutorial_button: TextureButton = $Panel/PauseMenu/TutorialButton
 
 var sfx_bus_id
 var music_bus_id
@@ -18,6 +19,11 @@ func _ready() -> void:
 	
 	sfx_slider.value = sfx_bus_value
 	music_slider.value = music_bus_value
+	var current_parent = get_tree().get_current_scene()
+	if current_parent.name == "TelaTitulo":
+		tutorial_button.visible = false 
+	else:
+		tutorial_button.visible = true
 func _on_button_back_pressed() -> void:
 		unpause_game()
 		self.queue_free()

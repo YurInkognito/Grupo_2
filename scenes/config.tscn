@@ -1,95 +1,105 @@
-[gd_scene load_steps=15 format=3 uid="uid://wcyiwsewyu3t"]
+[gd_scene load_steps=21 format=3 uid="uid://wcyiwsewyu3t"]
 
 [ext_resource type="Script" uid="uid://pkmrthqkxlpm" path="res://scripts/config.gd" id="1_duhc1"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="2_vbxg0"]
-[ext_resource type="Texture2D" uid="uid://yigc0kf1he4p" path="res://sprites/UI/Símbolo Volume Efeitos.PNG" id="3_fu4ru"]
-[ext_resource type="Texture2D" uid="uid://3qomsgxwn6hw" path="res://sprites/UI/Barra Volume.PNG" id="4_iptxn"]
-[ext_resource type="Texture2D" uid="uid://67j4fh8h511m" path="res://sprites/UI/Símbolo Volume Música.PNG" id="4_o4f72"]
-[ext_resource type="Texture2D" uid="uid://cyjeigggfjcbl" path="res://sprites/UI/Botão Voltar (Menu Volume).PNG" id="6_y6n8j"]
-[ext_resource type="Texture2D" uid="uid://den6r7caeeklo" path="res://sprites/UI/Botão Play_Resumir (Menu Volume).PNG" id="7_1dbib"]
-[ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="8_vbxg0"]
-[ext_resource type="Texture2D" uid="uid://c04dcqfxardbp" path="res://sprites/UI/Botão Config Volume.PNG" id="9_d33r4"]
-[ext_resource type="Texture2D" uid="uid://bik2dmejlepbs" path="res://sprites/UI/Botão Controles.PNG" id="10_waftc"]
-[ext_resource type="Texture2D" uid="uid://e72epmfh7p03" path="res://sprites/UI/Botão Sair..PNG" id="11_d0nbx"]
+[ext_resource type="Texture2D" uid="uid://dec410kgkxurh" path="res://sprites/UI/Moldura Menu Pause.PNG" id="3_d33r4"]
+[ext_resource type="Texture2D" uid="uid://bsgw85lnmcg8o" path="res://sprites/UI_final/Símbolo Volume Efeitos (2).PNG" id="4_adnl8"]
+[ext_resource type="Texture2D" uid="uid://tnbedeml4dqh" path="res://sprites/UI_final/Símbolo Volume Música (2).PNG" id="5_237ju"]
+[ext_resource type="Texture2D" uid="uid://b1e8jlho0b4r4" path="res://sprites/UI_final/Barra Volume(2).PNG" id="6_7eihp"]
+[ext_resource type="Texture2D" uid="uid://dacfqj4x350lj" path="res://sprites/UI_final/Botão Definir Volume (2).PNG" id="7_56tr2"]
+[ext_resource type="Texture2D" uid="uid://bpd48d6semkj2" path="res://sprites/UI_final/Botão Voltar Idle (Menu Volume) (2).PNG" id="8_7eihp"]
+[ext_resource type="Texture2D" uid="uid://bvotoo0fa5tl1" path="res://sprites/UI_final/Botão Voltar Pressionado (Menu Volume) (2).PNG" id="9_56tr2"]
+[ext_resource type="Texture2D" uid="uid://blifj1rd0qrgx" path="res://sprites/UI_final/Botão Play Idle (2).PNG" id="10_52cnm"]
+[ext_resource type="Texture2D" uid="uid://cploi5sdahkyj" path="res://sprites/UI_final/Botão Play_Resumir Idle (Menu Volume)(2).PNG" id="10_ymxxy"]
+[ext_resource type="Texture2D" uid="uid://h4tcvqrbfoju" path="res://sprites/UI_final/Botão Play_Resumir Pressionado (Menu Volume)(2).PNG" id="11_maho1"]
+[ext_resource type="Texture2D" uid="uid://dbjix53kvispe" path="res://sprites/UI_final/Botão Play Pressionado (2).PNG" id="11_ymxxy"]
+[ext_resource type="Texture2D" uid="uid://bbkwtr6j75k7x" path="res://sprites/UI_final/Botão Config Volume Idle (2).PNG" id="12_maho1"]
+[ext_resource type="Texture2D" uid="uid://c1kxacqtw1gwo" path="res://sprites/UI_final/Botão Config Volume Pressionado (2).PNG" id="13_c8gwa"]
+[ext_resource type="Texture2D" uid="uid://chrx7xvslej18" path="res://sprites/UI_final/Botão Controles Idle (2).PNG" id="14_0fe3r"]
+[ext_resource type="Texture2D" uid="uid://cq5p7y53kb4s0" path="res://sprites/UI_final/Botão Controle Pressionado (2).PNG" id="15_nelfi"]
+[ext_resource type="Texture2D" uid="uid://nu0rko1qnimd" path="res://sprites/UI_final/Botão Sair Idle (2).PNG" id="16_5mnfd"]
+[ext_resource type="Texture2D" uid="uid://b1e4jv2qipmdb" path="res://sprites/UI_final/Botão Sair Pressionado (2).PNG" id="17_slwkf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o4f72"]
-texture = ExtResource("4_iptxn")
-expand_margin_top = 20.0
-region_rect = Rect2(193, 1269, 4429, 217)
-
-[sub_resource type="ImageTexture" id="ImageTexture_o4f72"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_gapwa"]
+texture = ExtResource("6_7eihp")
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 246, 12)
 
 [node name="Config" type="Control"]
 process_mode = 3
 z_index = 14
 layout_mode = 3
-anchor_right = 0.101
-anchor_bottom = 0.097
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 1.0
 offset_top = -2.0
-offset_right = -0.279999
-offset_bottom = 0.159996
+offset_right = -1151.0
+offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_duhc1")
 metadata/_edit_vertical_guides_ = [1082.0]
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.2908
-anchor_top = -0.889096
-anchor_right = -0.282796
-anchor_bottom = 0.0829044
-offset_left = 647.024
-offset_top = 221.984
-offset_right = 848.0
-offset_bottom = 530.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 609.0
+offset_top = 203.0
+offset_right = 609.0
+offset_bottom = 203.0
 theme = ExtResource("2_vbxg0")
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -282.0
+offset_top = -67.0
+offset_right = 322.0
+offset_bottom = 363.0
+texture = ExtResource("3_d33r4")
+expand_mode = 1
 
 [node name="Volume" type="Control" parent="Panel"]
 visible = false
 anchors_preset = 0
-offset_left = -168.0
-offset_right = -128.0
-offset_bottom = 40.0
+offset_left = -306.0
+offset_top = -49.0
+offset_right = 246.0
+offset_bottom = 51.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Volume"]
 custom_minimum_size = Vector2(0, 69)
 layout_mode = 2
 offset_left = 196.0
-offset_top = 48.0
+offset_top = 38.0
 offset_right = 470.0
-offset_bottom = 117.0
-texture = ExtResource("3_fu4ru")
-expand_mode = 1
-stretch_mode = 5
+offset_bottom = 107.0
+texture = ExtResource("4_adnl8")
+stretch_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="Panel/Volume"]
 custom_minimum_size = Vector2(0, 69)
 layout_mode = 2
-offset_left = 196.0
-offset_top = 142.0
-offset_right = 470.0
-offset_bottom = 211.0
-texture = ExtResource("4_o4f72")
+offset_left = 202.0
+offset_top = 143.0
+offset_right = 476.0
+offset_bottom = 212.0
+texture = ExtResource("5_237ju")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="SFXSlider" type="HSlider" parent="Panel/Volume"]
 layout_mode = 2
 offset_left = 218.0
-offset_top = 130.0
+offset_top = 105.0
 offset_right = 434.0
-offset_bottom = 146.0
+offset_bottom = 137.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-theme_override_constants/grabber_offset = -10
+theme_override_icons/grabber = ExtResource("7_56tr2")
+theme_override_icons/grabber_highlight = ExtResource("7_56tr2")
+theme_override_icons/grabber_disabled = ExtResource("7_56tr2")
+theme_override_icons/tick = ExtResource("7_56tr2")
 theme_override_styles/slider = SubResource("StyleBoxTexture_o4f72")
 max_value = 1.0
 step = 0.1
@@ -98,13 +108,15 @@ value = 1.0
 [node name="MusicSlider" type="HSlider" parent="Panel/Volume"]
 layout_mode = 2
 offset_left = 218.0
-offset_top = 227.0
+offset_top = 222.0
 offset_right = 434.0
-offset_bottom = 243.0
+offset_bottom = 254.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-theme_override_constants/grabber_offset = -10
-theme_override_icons/grabber = SubResource("ImageTexture_o4f72")
+theme_override_icons/grabber = ExtResource("7_56tr2")
+theme_override_icons/grabber_highlight = ExtResource("7_56tr2")
+theme_override_icons/grabber_disabled = ExtResource("7_56tr2")
+theme_override_icons/tick = ExtResource("7_56tr2")
 theme_override_styles/slider = SubResource("StyleBoxTexture_o4f72")
 max_value = 1.0
 step = 0.1
@@ -114,11 +126,11 @@ value = 1.0
 z_index = 12
 layout_mode = 2
 offset_left = 355.0
-offset_top = 257.0
+offset_top = 282.0
 offset_right = 443.0
-offset_bottom = 312.0
-texture_normal = ExtResource("6_y6n8j")
-texture_pressed = SubResource("ViewportTexture_gapwa")
+offset_bottom = 337.0
+texture_normal = ExtResource("8_7eihp")
+texture_pressed = ExtResource("9_56tr2")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -126,72 +138,51 @@ stretch_mode = 4
 z_index = 12
 layout_mode = 2
 offset_left = 218.0
-offset_top = 257.0
+offset_top = 282.0
 offset_right = 306.0
-offset_bottom = 312.0
-texture_normal = ExtResource("7_1dbib")
-texture_pressed = SubResource("ViewportTexture_gapwa")
+offset_bottom = 337.0
+texture_normal = ExtResource("10_ymxxy")
+texture_pressed = ExtResource("11_maho1")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="PauseMenu" type="Control" parent="Panel"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
+[node name="PauseMenu" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = -51.0
+offset_right = 90.68
+offset_bottom = 288.0
 
 [node name="UnpauseButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
-layout_mode = 0
-offset_left = 28.0
-offset_top = 52.0
-offset_right = 302.0
-offset_bottom = 121.0
-texture_normal = ExtResource("8_vbxg0")
+layout_mode = 2
+texture_normal = ExtResource("10_52cnm")
+texture_pressed = ExtResource("11_ymxxy")
 ignore_texture_size = true
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+stretch_mode = 3
 
 [node name="ButtonVolumeSection" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
-layout_mode = 0
-offset_left = 28.0
-offset_top = 121.0
-offset_right = 302.0
-offset_bottom = 190.0
-texture_normal = ExtResource("9_d33r4")
+layout_mode = 2
+texture_normal = ExtResource("12_maho1")
+texture_pressed = ExtResource("13_c8gwa")
 ignore_texture_size = true
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+stretch_mode = 3
 
-[node name="TextureButton" type="TextureButton" parent="Panel/PauseMenu"]
+[node name="TutorialButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -8.025
-anchor_top = -4.6
-anchor_right = 23.916
-anchor_bottom = 13.448
-offset_left = 349.0
-offset_top = 373.0
-offset_right = -654.64
-offset_bottom = -279.92
-texture_normal = ExtResource("10_waftc")
+layout_mode = 2
+texture_normal = ExtResource("14_0fe3r")
+texture_pressed = ExtResource("15_nelfi")
 ignore_texture_size = true
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+stretch_mode = 3
 
 [node name="QuitButton" type="TextureButton" parent="Panel/PauseMenu"]
 custom_minimum_size = Vector2(0, 69)
-layout_mode = 0
-offset_left = 28.0
-offset_top = 259.0
-offset_right = 302.0
-offset_bottom = 328.0
-texture_normal = ExtResource("11_d0nbx")
+layout_mode = 2
+texture_normal = ExtResource("16_5mnfd")
+texture_pressed = ExtResource("17_slwkf")
 ignore_texture_size = true
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+stretch_mode = 3
 
 [connection signal="value_changed" from="Panel/Volume/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Panel/Volume/MusicSlider" to="." method="_on_music_slider_value_changed"]
@@ -199,5 +190,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Panel/Volume/Resume" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/UnpauseButton" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/ButtonVolumeSection" to="." method="_on_button_volume_section_pressed"]
-[connection signal="pressed" from="Panel/PauseMenu/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Panel/PauseMenu/TutorialButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Panel/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]

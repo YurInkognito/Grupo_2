@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=83 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://dc4slhvl2bp2l" path="res://sprites/temporarios/decartes 0.2.png" id="35_gst0j"]
 [ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/temporarios/pao_tutorial.png" id="36_72v1w"]
 [ext_resource type="LabelSettings" uid="uid://clukglr7dcfu3" path="res://recursos/magic_text.tres" id="37_qmj53"]
+[ext_resource type="Texture2D" uid="uid://dr5err8fqn1rd" path="res://sprites/UI_final/Entregar Prato (Pressionado) (2).PNG" id="39_ks8g6"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="40_wi3jo"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="41_cjlmj"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
@@ -384,7 +385,7 @@ offset_bottom = -0.159988
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = ExtResource("31_qmj53")
-texture_pressed = ExtResource("31_qmj53")
+texture_pressed = ExtResource("39_ks8g6")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]

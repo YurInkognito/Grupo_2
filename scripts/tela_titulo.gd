@@ -26,7 +26,7 @@ func _on_botao_sair_pressed() -> void:
 
 func _on_botao_config_pressed() -> void:
 	var config_instance = CONFIG.instantiate()
-	config_instance.position = Vector2(0, 0)
+	config_instance.position = Vector2(180, 40)
 	$".".add_child(config_instance)
 
 
