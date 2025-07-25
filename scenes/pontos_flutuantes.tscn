@@ -6,5 +6,5 @@
 [node name="Pontos_flutuantes" type="Label"]
 theme_override_colors/font_color = Color(0, 0, 0.580392, 1)
 theme_override_fonts/font = ExtResource("1_ouq61")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 script = ExtResource("1_ewxw1")

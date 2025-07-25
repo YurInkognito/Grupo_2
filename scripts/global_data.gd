@@ -32,7 +32,8 @@ func set_nome(nome: String):
 func set_mult(pontos: int):
 	mult_final = pontos
 
-func set_cliente(fase: int):
+func set_cliente():
+	print("setando cliente agora")
 	match fase:
 		1: cliente_final = critico_1_nota()
 		#5: cliente_final = critico_2_nota()
@@ -186,19 +187,21 @@ func gera_fala(nota):
 func critico_1_nota():
 	var suave = tags_final.count("Suave")
 	var picante = tags_final.count("Picante")
-	
+	print("tags picante e suave")
+	print(picante)
+	print(suave)
 	if suave > picante + 3:
-		return 3
+		return 2
 	if picante < 4:
 		return 0
-	if picante < 6:
-		return 1
-	return 2
+	return 1
 
 func critico_2_nota():
 	var suave = tags_final.count("Suave")
 	var picante = tags_final.count("Picante")
-	
+	print("tags picante e suave")
+	print(picante)
+	print(suave)
 	if suave > picante + 3:
 		return 3
 	if picante < 4:

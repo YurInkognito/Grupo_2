@@ -28,7 +28,7 @@ noise = SubResource("FastNoiseLite_xjciw")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54seb"]
 shader = ExtResource("10_xjciw")
 shader_parameter/n = SubResource("NoiseTexture2D_54seb")
-shader_parameter/intensity = 2.0
+shader_parameter/intensity = 1.4
 shader_parameter/speed = -1.0
 
 [node name="card" type="Panel"]
@@ -59,8 +59,7 @@ suave = ExtResource("9_54seb")
 metadata/_edit_use_anchors_ = true
 
 [node name="aura" type="Sprite2D" parent="."]
-visible = false
-self_modulate = Color(1, 0.00963289, 0.773347, 1)
+self_modulate = Color(1, 1, 0.192157, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_54seb")
 position = Vector2(48, 72.5)

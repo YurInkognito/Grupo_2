@@ -499,7 +499,7 @@ func aplicar_efeitos_carta(carta: CartaData):
 	$"/root/GlobalData".set_mult(mult)
 	$"/root/GlobalData".set_tags(tags_prato)
 	$"/root/GlobalData".set_ingredientes(ingredientes_prato)
-	$"/root/GlobalData".set_cliente(2)
+	$"/root/GlobalData".set_cliente()
 	print(sabor)
 
 func pontuação_continua():

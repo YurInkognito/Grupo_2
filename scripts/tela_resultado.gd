@@ -13,7 +13,7 @@ extends Control
 @export var prato_value: int
 @export var cliente_value: int
 @export var resultado_value: int
-@export var estrelas_value: int
+@export var estrelas_value: int = 0
 @export var objetivo: int = 1200
 
 @onready var botao: Button = $Button
@@ -53,7 +53,7 @@ func _ready() -> void:
 		labels.append(secret)
 		
 	
-	print(estrelas_value)
+	print("estrelas " + str(estrelas_value))
 	fala.text = $"/root/GlobalData".gera_fala(estrelas_value)
 	
 	$Prato/Nome.text = $"/root/GlobalData".nome_final
@@ -93,18 +93,18 @@ func voltar():
 func upgradar():
 	$Panel3.visible = true
 	if $"/root/GlobalData".fase == 1:
-		if $"/root/GlobalData".estrelas == 3:
-			if $"/root/GlobalData".cliente_value == 2:
-				$"/root/GlobalData".Transição.change_scene('cena_aliane_picante')
+		if estrelas_value == 3:
+			if cliente_value == 2:
+				Transição.change_scene('cena_aliane_picante')
 			else:
-				$"/root/GlobalData".Transição.change_scene('cena_aliane_suave')
+				Transição.change_scene('cena_aliane_suave')
 
 func reset_pontos():
 	var temp_array: Array[String] = []
 	$"/root/GlobalData".set_sabor(0)
 	$"/root/GlobalData".set_mult(0)
 	$"/root/GlobalData".set_tags(temp_array)
-	$"/root/GlobalData".set_cliente(0)
+	$"/root/GlobalData".set_cliente()
 
 func show_anim():
 	var delay = 0.5
