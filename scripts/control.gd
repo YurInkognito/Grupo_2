@@ -195,7 +195,7 @@ func substituir_palavras_por_tags(texto_original: String) -> String:
 	return texto_modificado
 	
 func start_tutorial():
-	#$Tutorial.visible = true
+	$Tutorial.visible = true
 	deck.clear()
 	var cartas_para_adicionar = []
 
@@ -585,6 +585,7 @@ func jogar_carta(carta: CartaData):
 
 func _on_config_button_pressed() -> void:
 	var config_instance = CONFIG.instantiate()
+	config_instance.position = Vector2(0,-50)
 	add_child(config_instance)
 
 func play_draw_sound():

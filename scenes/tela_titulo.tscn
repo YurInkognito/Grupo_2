@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=32 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_663uq"]
@@ -15,19 +15,22 @@
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
 [ext_resource type="Texture2D" uid="uid://d3bvflpc5iwpe" path="res://sprites/temporarios/menu.jpg" id="18_jx0lc"]
-[ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="19_jk8gn"]
+[ext_resource type="Texture2D" uid="uid://blifj1rd0qrgx" path="res://sprites/UI_final/Botão Play Idle (2).PNG" id="19_mopl6"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
-[ext_resource type="Texture2D" uid="uid://fbwes2y1323s" path="res://sprites/UI/Botão Configurações.PNG" id="20_kn1lp"]
-[ext_resource type="Texture2D" uid="uid://172074dxxvjb" path="res://sprites/UI/Botão Créditos.PNG" id="21_mq8vl"]
-[ext_resource type="Texture2D" uid="uid://e72epmfh7p03" path="res://sprites/UI/Botão Sair..PNG" id="22_jx0lc"]
+[ext_resource type="Texture2D" uid="uid://dbjix53kvispe" path="res://sprites/UI_final/Botão Play Pressionado (2).PNG" id="20_ywseg"]
+[ext_resource type="Texture2D" uid="uid://dh88rafsyqw2i" path="res://sprites/UI_final/Botão Configurações Idle (2).PNG" id="21_koial"]
+[ext_resource type="Texture2D" uid="uid://0iw2t27qrc70" path="res://sprites/UI_final/Botão Configurações Pressionado (2).PNG" id="22_oc6wf"]
 [ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="23_d3e21"]
+[ext_resource type="Texture2D" uid="uid://byvlddq7rlp4y" path="res://sprites/UI_final/Botão Créditos Idle (2).PNG" id="23_xpbcw"]
 [ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="24_bx4ur"]
-[ext_resource type="Texture2D" uid="uid://cyjeigggfjcbl" path="res://sprites/UI/Botão Voltar (Menu Volume).PNG" id="24_kn1lp"]
+[ext_resource type="Texture2D" uid="uid://b1fxwpknyw6r7" path="res://sprites/UI_final/Botão Créditos Pressionado (2).PNG" id="24_wfqyo"]
+[ext_resource type="Texture2D" uid="uid://nu0rko1qnimd" path="res://sprites/UI_final/Botão Sair Idle (2).PNG" id="25_4l6sa"]
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
+[ext_resource type="Texture2D" uid="uid://b1e4jv2qipmdb" path="res://sprites/UI_final/Botão Sair Pressionado (2).PNG" id="26_agj7q"]
 [ext_resource type="Texture2D" uid="uid://dqectvtm11hba" path="res://sprites/temporarios/logo a la carte.png" id="26_jx0lc"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_mq8vl"]
+[ext_resource type="Texture2D" uid="uid://bpd48d6semkj2" path="res://sprites/UI_final/Botão Voltar Idle (Menu Volume) (2).PNG" id="30_ywseg"]
+[ext_resource type="Texture2D" uid="uid://bvotoo0fa5tl1" path="res://sprites/UI_final/Botão Voltar Pressionado (Menu Volume) (2).PNG" id="31_koial"]
 
 [node name="TelaTitulo" type="Control"]
 layout_mode = 3
@@ -61,7 +64,8 @@ offset_left = 479.0
 offset_top = 497.0
 offset_right = 639.0
 offset_bottom = 584.0
-texture_normal = ExtResource("19_jk8gn")
+texture_normal = ExtResource("19_mopl6")
+texture_pressed = ExtResource("20_ywseg")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -72,7 +76,8 @@ offset_left = 649.0
 offset_top = 497.0
 offset_right = 809.0
 offset_bottom = 584.0
-texture_normal = ExtResource("20_kn1lp")
+texture_normal = ExtResource("21_koial")
+texture_pressed = ExtResource("22_oc6wf")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -83,7 +88,8 @@ offset_left = 818.0
 offset_top = 497.0
 offset_right = 978.0
 offset_bottom = 584.0
-texture_normal = ExtResource("21_mq8vl")
+texture_normal = ExtResource("23_xpbcw")
+texture_pressed = ExtResource("24_wfqyo")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -95,7 +101,8 @@ offset_top = 497.0
 offset_right = 1146.06
 offset_bottom = 584.0
 size_flags_vertical = 0
-texture_normal = ExtResource("22_jx0lc")
+texture_normal = ExtResource("25_4l6sa")
+texture_pressed = ExtResource("26_agj7q")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -165,8 +172,8 @@ offset_left = 479.0
 offset_top = 523.0
 offset_right = 595.0
 offset_bottom = 587.0
-texture_normal = ExtResource("24_kn1lp")
-texture_pressed = SubResource("ImageTexture_mq8vl")
+texture_normal = ExtResource("30_ywseg")
+texture_pressed = ExtResource("31_koial")
 ignore_texture_size = true
 stretch_mode = 4
 
