@@ -747,11 +747,15 @@ text = "$"
 visible = false
 position = Vector2(640, 360)
 sprite_frames = SubResource("SpriteFrames_uqp7a")
+frame = 3
+frame_progress = 1.0
 
 [node name="AnimDia2" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(640, 360)
 sprite_frames = SubResource("SpriteFrames_poiwq")
+frame = 3
+frame_progress = 1.0
 
 [node name="AnimDia3" type="AnimatedSprite2D" parent="."]
 visible = false
