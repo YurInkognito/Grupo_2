@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=44 format=3 uid="uid://ce31bsvwp05t8"]
 
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
 [ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
@@ -8,6 +8,174 @@
 [ext_resource type="Texture2D" uid="uid://b3svafr7vtu8b" path="res://sprites/Calendario/IMG_2384.PNG" id="6_c2q0q"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="6_noqa7"]
 [ext_resource type="Texture2D" uid="uid://j7jneo73ebrw" path="res://sprites/temporarios/jeff_chibi.png" id="7_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://buaerrun1khx" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 1.PNG" id="8_0rl75"]
+[ext_resource type="Texture2D" uid="uid://tedy4p10blnc" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 2.PNG" id="9_f30qw"]
+[ext_resource type="Texture2D" uid="uid://cqrpok8by52dv" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 3.PNG" id="10_d4qsk"]
+[ext_resource type="Texture2D" uid="uid://bnpjed3o6m3k0" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 4.PNG" id="11_ga1kc"]
+[ext_resource type="Texture2D" uid="uid://c3h2rlvq8jsqg" path="res://sprites/Calendario/dia 2/Segundo Slot Frame 1.PNG" id="12_8nsqs"]
+[ext_resource type="Texture2D" uid="uid://be12shtxd1srj" path="res://sprites/Calendario/dia 2/Segundo Slot Frame 2.PNG" id="13_dr0qa"]
+[ext_resource type="Texture2D" uid="uid://bqewkcv72g3bu" path="res://sprites/Calendario/dia 2/Segundo Slot Frame 3.PNG" id="14_7gsga"]
+[ext_resource type="Texture2D" uid="uid://cqonyxgg07ofg" path="res://sprites/Calendario/dia 2/Segundo Slot Frame 4.PNG" id="15_dl547"]
+[ext_resource type="Texture2D" uid="uid://dfxcil4kg47hn" path="res://sprites/Calendario/dia 3/Terceiro Slot Frame 1.PNG" id="16_ir730"]
+[ext_resource type="Texture2D" uid="uid://dt7glidrdn0xi" path="res://sprites/Calendario/dia 3/Terceiro Slot Frame 2.PNG" id="17_yqmeb"]
+[ext_resource type="Texture2D" uid="uid://cojrvjvs3qb" path="res://sprites/Calendario/dia 3/Terceiro Slot Frame 3.PNG" id="18_4ccdi"]
+[ext_resource type="Texture2D" uid="uid://0vqguji4r6pf" path="res://sprites/Calendario/dia 3/Terceiro Slot Frame 4.PNG" id="19_o8ncv"]
+[ext_resource type="Texture2D" uid="uid://wo0yldcbv14t" path="res://sprites/Calendario/dia 4/Quarto Slot Frame 1.PNG" id="20_cx3rl"]
+[ext_resource type="Texture2D" uid="uid://2pmxcqm4i7b5" path="res://sprites/Calendario/dia 4/Quarto Slot Frame 2.PNG" id="21_utely"]
+[ext_resource type="Texture2D" uid="uid://b4jstbxkepwy6" path="res://sprites/Calendario/dia 4/Quarto Slot Frame 3.PNG" id="22_kwx87"]
+[ext_resource type="Texture2D" uid="uid://j26jvps471t2" path="res://sprites/Calendario/dia 4/Quarto Slot Frame 4.PNG" id="23_oid0c"]
+[ext_resource type="Texture2D" uid="uid://3fsbibnl01j2" path="res://sprites/Calendario/dia 5/Quinto Slot Frame 1.PNG" id="24_fsyx4"]
+[ext_resource type="Texture2D" uid="uid://6f525gj5y5xq" path="res://sprites/Calendario/dia 5/Quinto Slot Frame 2.PNG" id="25_txdbm"]
+[ext_resource type="Texture2D" uid="uid://dp4phu56hnysb" path="res://sprites/Calendario/dia 5/Quinto Slot Frame 3.PNG" id="26_0ja5d"]
+[ext_resource type="Texture2D" uid="uid://4dyhenyjp4v5" path="res://sprites/Calendario/dia 5/Quinto Slot Frame 4.PNG" id="27_j6bpp"]
+[ext_resource type="Texture2D" uid="uid://bnd66ygl7rb5b" path="res://sprites/Calendario/dia 6/Sexto Slot Frame 1.PNG" id="28_qc1sn"]
+[ext_resource type="Texture2D" uid="uid://dg7pncmpatgsd" path="res://sprites/Calendario/dia 6/Sexto Slot Frame 2.PNG" id="29_ud4n3"]
+[ext_resource type="Texture2D" uid="uid://tex2e63sjsuy" path="res://sprites/Calendario/dia 6/Sexto Slot Frame 3.PNG" id="30_ultsk"]
+[ext_resource type="Texture2D" uid="uid://dh5cmd7ppryb4" path="res://sprites/Calendario/dia 6/Sexto Slot Frame 4.PNG" id="31_h8s4y"]
+[ext_resource type="Texture2D" uid="uid://ceglypgjl7cjx" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 1.PNG" id="32_ch6nf"]
+[ext_resource type="Texture2D" uid="uid://c1egpji06vihs" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 2.PNG" id="33_fr4hq"]
+[ext_resource type="Texture2D" uid="uid://dui81ctxbysfv" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 3.PNG" id="34_mcsmo"]
+[ext_resource type="Texture2D" uid="uid://dgd4iocmqwnih" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 4.PNG" id="35_2h1w5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqp7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0rl75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f30qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d4qsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ga1kc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poiwq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8nsqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dr0qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7gsga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dl547")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hegfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ir730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yqmeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4ccdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o8ncv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwyxw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_cx3rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_utely")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kwx87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_oid0c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyntx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_fsyx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_txdbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0ja5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_j6bpp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdk01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_qc1sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ud4n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ultsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_h8s4y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x042t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ch6nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_fr4hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mcsmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2h1w5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="semana" type="Control"]
 layout_mode = 3
@@ -20,7 +188,7 @@ one_shot = true
 autostart = true
 
 [node name="BgALaCarte" type="Sprite2D" parent="."]
-position = Vector2(650, 548)
+position = Vector2(579, 484)
 texture = ExtResource("2_ekvoy")
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
@@ -569,6 +737,41 @@ theme = ExtResource("3_noqa7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$"
+
+[node name="AnimDia1" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_uqp7a")
+
+[node name="AnimDia2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_poiwq")
+
+[node name="AnimDia3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_hegfl")
+
+[node name="AnimDia4" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_uwyxw")
+
+[node name="AnimDia5" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_yyntx")
+
+[node name="AnimDia6" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_sdk01")
+
+[node name="AnimDia7" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_x042t")
 
 [node name="JeffChibi" type="Sprite2D" parent="."]
 position = Vector2(260, 171)
