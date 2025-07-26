@@ -32,8 +32,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline": "res://Timelines/timeline.dtl",
 "timeline_aliane2": "res://Timelines/timeline_aliane2.dtl",
-"timeline_aliane_final": "res://Timelines/timeline_aliane_final_picante.dtl",
-"timeline_aliane_final_suave": "res://sprites/Fundos/timeline_aliane_final_suave.dtl"
+"timeline_aliane_final_picante": "res://Timelines/timeline_aliane_final_picante.dtl",
+"timeline_aliane_final_suave": "res://sprites/Fundos/timeline_aliane_final_suave.dtl",
+"timeline_aliane_suave": "res://Timelines/timeline_aliane_suave.dtl"
 }
 variables={
 "fim": "0"

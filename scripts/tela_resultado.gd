@@ -68,12 +68,11 @@ func _ready() -> void:
 
 func skip():
 	if $"/root/GlobalData".fase == 1:
-		if $"/root/GlobalData".estrelas == 3:
-			if $"/root/GlobalData".cliente_value == 2:
-				$"/root/GlobalData".Transição.change_scene('cena_aliane_picante')
+		if estrelas_value == 3:
+			if cliente_value == 2:
+				Transição.change_scene("res://scens/cena_aliane_picante.tscn")
 			else:
-				$"/root/GlobalData".Transição.change_scene('cena_aliane_suave')
-	$"/root/GlobalData".proximafase()
+				Transição.change_scene("res://scens/cena_aliane_suave.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -98,12 +97,7 @@ func voltar():
 	
 func upgradar():
 	$Panel3.visible = true
-	if $"/root/GlobalData".fase == 1:
-		if estrelas_value == 3:
-			if cliente_value == 2:
-				Transição.change_scene('cena_aliane_picante')
-			else:
-				Transição.change_scene('cena_aliane_suave')
+	skip()
 
 func reset_pontos():
 	var temp_array: Array[String] = []
