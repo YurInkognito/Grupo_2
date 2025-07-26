@@ -358,17 +358,17 @@ libraries = {
 }
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.921441
-anchor_top = 0.695679
-anchor_right = 0.950049
-anchor_bottom = 0.785374
+anchor_left = 0.869792
+anchor_top = 0.0277778
+anchor_right = 0.985243
+anchor_bottom = 0.117284
 offset_right = 49.3818
 offset_bottom = 27.4198
 grow_horizontal = 0
-text = "Livro
-"
+text = "RESET"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="TextureButton" parent="."]
@@ -546,17 +546,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Info" parent="." instance=ExtResource("6_lt2xq")]
 layout_mode = 1
 offset_left = 12.5
-offset_top = -278.0
+offset_top = -265.0
 offset_right = 166.5
-offset_bottom = 234.0
+offset_bottom = 247.0
 
 [node name="Info_tags" parent="Info" instance=ExtResource("7_lt2xq")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0194805
-anchor_top = 0.580078
-anchor_right = 0.88961
-anchor_bottom = 0.964844
+anchor_left = 0.0
+anchor_top = 0.550781
+anchor_right = 0.909091
+anchor_bottom = 0.935547
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
@@ -583,9 +583,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0275235
-anchor_top = 0.142923
+anchor_top = 0.155423
 anchor_right = 0.0924298
-anchor_bottom = 0.142923
+anchor_bottom = 0.155423
 offset_left = 0.600015
 offset_top = -0.0399933
 offset_right = 0.52002
@@ -954,6 +954,7 @@ icon = ExtResource("42_wi3jo")
 flat = true
 
 [node name="Reliquias" parent="." instance=ExtResource("52_r5dke")]
+visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -961,10 +962,8 @@ offset_right = 203.0
 offset_bottom = 40.0
 lista_reliquias = Array[ExtResource("2_rk4e5")]([ExtResource("54_i5ix0"), ExtResource("55_1l3m6"), ExtResource("56_3kxc3"), ExtResource("57_nk3x5"), ExtResource("58_cjlmj"), ExtResource("59_ks8g6"), ExtResource("60_d77h8"), ExtResource("61_t8bik"), ExtResource("62_eu32t"), ExtResource("63_r4raw"), ExtResource("64_ydhfh"), ExtResource("65_so1j7"), ExtResource("66_cjaay"), ExtResource("67_r7wpw")])
 
-[node name="Glossario" parent="." instance=ExtResource("71_d77h8")]
+[node name="Hover" type="Panel" parent="."]
 visible = false
-
-[node name="Hover" type="Panel" parent="." groups=["Hover"]]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -974,6 +973,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Glossario" parent="." instance=ExtResource("71_d77h8")]
 
 [connection signal="mouse_entered" from="Decartes" to="Decartes" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Decartes" to="Decartes" method="_on_mouse_exited"]

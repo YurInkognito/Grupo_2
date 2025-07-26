@@ -1,10 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dejejran66wel"]
+[gd_scene load_steps=4 format=3 uid="uid://dejejran66wel"]
 
 [ext_resource type="Script" uid="uid://uafscynkuf4i" path="res://scripts/reliquias.gd" id="1_l4qpp"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_v314v"]
+[ext_resource type="Resource" uid="uid://b1sd4ommbymkg" path="res://Reliquias/CuteloEncantado.tres" id="3_7tft5"]
 
 [node name="Reliquias" type="Panel"]
+self_modulate = Color(1, 1, 1, 0.25098)
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 209.0
 offset_bottom = 46.0
 script = ExtResource("1_l4qpp")
+reliquias = Array[ExtResource("2_v314v")]([ExtResource("3_7tft5"), ExtResource("3_7tft5")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 203.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2

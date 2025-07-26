@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c62vwy8tbmuu"]
+
+[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="1_1ue5r"]
+[ext_resource type="Script" uid="uid://cr6fo7yn3ajnr" path="res://scenes/prato_glossario.gd" id="1_ud7kt"]
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="2_ud7kt"]
+[ext_resource type="Texture2D" uid="uid://corbdlr1l1g5k" path="res://sprites/temporarios/mana0.png" id="2_x50mx"]
+
+[node name="Prato_glossario" type="Panel"]
+self_modulate = Color(1, 1, 1, 0.0666667)
+custom_minimum_size = Vector2(340, 70)
+offset_right = 270.0
+offset_bottom = 70.0
+script = ExtResource("1_ud7kt")
+prato_sopa = ExtResource("2_x50mx")
+prato_sanduiche = ExtResource("1_1ue5r")
+prato_salada = ExtResource("1_1ue5r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 5.84555
+offset_top = 6.0
+offset_right = 478.846
+offset_bottom = 415.0
+grow_vertical = 2
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_1ue5r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 6.0
+offset_right = 633.0
+offset_bottom = 93.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ud7kt")
+theme_override_font_sizes/font_size = 48
+text = "Salada Suculenta de carne de drao"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 40.8
+offset_right = 400.0
+offset_bottom = 82.8
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0.623529, 0.184314, 1)
+theme_override_fonts/font = ExtResource("2_ud7kt")
+theme_override_font_sizes/font_size = 48
+text = "$12000"

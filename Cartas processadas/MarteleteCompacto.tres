@@ -21,5 +21,6 @@ efeitos_on_board = Array[Dictionary]([{
 }])
 tags = Array[String](["Refrescante", "Refrescante"])
 sprite = ExtResource("2_wq6hi")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -50,6 +50,8 @@ var is_hover: bool = false
 var tem_mana: bool = false
 @export var is_played: bool = false
 
+var visual = false
+
 var is_waiting = false
 
 var original_scale
@@ -61,6 +63,7 @@ var hover_element
 @export var float_amplitude_x: float = 3.0
 
 func _ready() -> void:
+	print("teste")
 	lista_tags = [tag1,tag2,tag3]
 	nome.text = nome_t
 	desc.text = desc_t
@@ -141,18 +144,19 @@ func set_card(carta: CartaData, zerado = false) -> void:
 		is_played = true
 
 func _gui_input(event: InputEvent):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and is_in_hand and is_playable:
-			hand_node.is_dragging_global = true
-			start_drag(event, true)
-		elif event.pressed and is_played:
-			hand_node.is_dragging_global = true
-			start_drag(event, false)
-		elif not event.pressed and is_dragging:
-			end_drag()
-			hand_node.is_dragging_global = false
-			mouse_filter = Control.MOUSE_FILTER_IGNORE
-			mouse_filter = Control.MOUSE_FILTER_PASS
+	if not visual:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and is_in_hand and is_playable:
+				hand_node.is_dragging_global = true
+				start_drag(event, true)
+			elif event.pressed and is_played:
+				hand_node.is_dragging_global = true
+				start_drag(event, false)
+			elif not event.pressed and is_dragging:
+				end_drag()
+				hand_node.is_dragging_global = false
+				mouse_filter = Control.MOUSE_FILTER_IGNORE
+				mouse_filter = Control.MOUSE_FILTER_PASS
 
 func start_floating(element_to_float) -> void:
 	var original_y: float = element_to_float.position.y
@@ -185,7 +189,18 @@ func stop_floating(element_to_delete) -> void:
 	
 func _on_mouse_entered():
 	print("tentando hover")
-	if hand_node.is_dragging_global == false:
+	if visual == true:
+		print("consegui hover visual")
+		$SFXThrowCard.play()
+		hover_element = duplicate()
+		if is_played:
+			hover_element.is_hover = true
+		get_tree().get_nodes_in_group("Hover")[0].add_child(hover_element)
+		hover_element.global_position = global_position
+		hover_element.scale = scale * 2
+		start_floating(hover_element)
+		hover_element.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	elif hand_node.is_dragging_global == false:
 		print("consegui hover")
 		$SFXThrowCard.play()
 		hover_element = duplicate()
@@ -290,7 +305,7 @@ func return_to_hand():
 	get_node("..").update_cards()
 
 func _process(delta):
-	if not is_hover and is_in_hand and card_data and get_node("../..") and int(custo_t) <= get_node("../..").mana:
+	if not is_hover and !visual and is_in_hand and card_data and get_node("../..") and int(custo_t) <= get_node("../..").mana:
 		tem_mana = true
 		$aura.visible = true
 	else:

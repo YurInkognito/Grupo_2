@@ -8,6 +8,7 @@ extends Control
 @onready var estrelas: Label = $Panel/Estrelas
 @onready var fala: Label = $Panel2/Fala
 @onready var secret: Label = $Panel/Secret
+@onready var foto: TextureRect = $Prato/Foto
 
 @export var sabor_value: int
 @export var prato_value: int
@@ -28,7 +29,7 @@ func _ready() -> void:
 	continuar.visible = false
 	botao.pressed.connect(voltar)
 	continuar.pressed.connect(upgradar)
-	
+	foto.texture = $"/root/GlobalData".foto_final
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	sabor_value = $"/root/GlobalData".sabor_final
 	prato_value = $"/root/GlobalData".mult_final
@@ -58,6 +59,11 @@ func _ready() -> void:
 	
 	$Prato/Nome.text = $"/root/GlobalData".nome_final
 	
+	var prato_salvo = {
+		nome = $"/root/GlobalData".nome_final,
+		sabor = sabor_value
+	}
+	$"/root/GlobalData".lista_pratos.append(prato_salvo)
 	show_anim()
 
 func skip():

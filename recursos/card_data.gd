@@ -15,4 +15,5 @@ extends Resource
 @export var tags: Array[String]
 @export var sprite: Texture2D
 
+@export var visual: bool = false
 @export var upgrade: bool = false

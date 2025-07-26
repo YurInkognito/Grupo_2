@@ -4,6 +4,8 @@ extends Node
 @export var lista_cartas: Array[CartaData]
 @export var lista_ingredientes: Array[CartaData] = []
 @export var fase: int = 0
+@export var lista_pratos = []
+@export var lista_reliquias: Array[CartaData]
 
 #durante o jogo
 @export var sabor_final: int = 0
@@ -12,6 +14,7 @@ extends Node
 @export var tags_final: Array[String] =[]
 @export var ingredientes_final: Array[String] =[]
 @export var nome_final: String = ""
+@export var foto_final: Texture2D
 @export var cliente_temp: Dictionary = {
 "nome": "",
 "objetivos": [],

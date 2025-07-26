@@ -24,5 +24,6 @@ efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Refrescante"])
 sprite = ExtResource("5_yb7fx")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

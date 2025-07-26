@@ -130,10 +130,11 @@ func _ready() -> void:
 		texto_temp = "Aliane Butolane: Acho que ja te falei o bastante."
 	cliente_label.text = substituir_palavras_por_tags(texto_temp)
 	lista_de_cartas = $"/root/GlobalData".lista_cartas
+	
 	if $"/root/GlobalData".fase == 1:
 		$Tutorial.visible = true
 	button.pressed.connect(on_end_turn_pressed)
-	button_2.pressed.connect(reset_game)
+	button_2.pressed.connect(abrir_glossario)
 	button_3.pressed.connect(end_game)
 	button_4.pressed.connect(reset_game)
 	button_5.pressed.connect(start_tutorial)
@@ -162,6 +163,7 @@ func _ready() -> void:
 	if miseEnPlace:
 		compra()
 		compra()
+	$Glossario.set_deck()
 
 func _process(delta: float) -> void:
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
@@ -171,12 +173,12 @@ func _process(delta: float) -> void:
 
 func substituir_palavras_por_tags(texto_original: String) -> String:
 	var substituicoes: Dictionary = {
-		"Acido": "Acido[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
-		"Crocante": "Crocante[img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
-		"Picante": "Picante[img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
-		"Refrescante": "Refrescante[img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
-		"Suave": "Suave[img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
-		"Umami": "Suculento[img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]",
+		"Acido": "Acido [img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
+		"Crocante": "Crocante [img width=40 height=40]res://sprites/TAGS/TAG4.png[/img]",
+		"Picante": "Picante [img width=40 height=40]res://sprites/TAGS/TAG6.png[/img]",
+		"Refrescante": "Refrescante [img width=40 height=40]res://sprites/TAGS/TAG3.png[/img]",
+		"Suave": "Suave [img width=40 height=40]res://sprites/TAGS/TAG7.png[/img]",
+		"Umami": "Suculento [img width=40 height=40]res://sprites/TAGS/TAG2.png[/img]",
 		
 		# Versões em minúsculo
 		"acido": "[img width=40 height=40]res://sprites/TAGS/TAG5.png[/img]",
@@ -193,7 +195,10 @@ func substituir_palavras_por_tags(texto_original: String) -> String:
 		texto_modificado = texto_modificado.replace(palavra, substituicoes[palavra])
 		
 	return texto_modificado
-	
+
+func abrir_glossario():
+	$Glossario.visible = true
+
 func start_tutorial():
 	$Tutorial.visible = true
 	deck.clear()
@@ -243,6 +248,7 @@ func on_draw_button_pressed(inicial: bool = true):
 	for i in range(quant):
 		if not deck.is_empty():
 			card_data = deck.pop_front()
+			card_data.upgrade = false
 			var new_card_scene = preload("res://scenes/card.tscn")
 			new_card_instance = new_card_scene.instantiate()
 			hand_node.add_child(new_card_instance) # Adiciona a carta na 'hand' imediatamente
@@ -492,7 +498,7 @@ func aplicar_efeitos_carta(carta: CartaData):
 	calculo_mult()
 	$Info/Info_tags.atualiza_tag()
 	print(mult)
-	mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,356))
+	mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,340))
 	await get_tree().create_timer(0.6).timeout
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
