@@ -34,6 +34,7 @@ func qual_semana():
 		calendario1.visible = true
 		calendario2.visible = false
 	else:
+		jeff.position.x = 260
 		calendario1.visible = false
 		calendario2.visible = true
 	

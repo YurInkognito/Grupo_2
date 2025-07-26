@@ -1,0 +1,82 @@
+[background arg="res://sprites/Fundos/BG a la carte.png" fade="0.0"]
+join Aliane left [animation="Fade In" length="0.0"]
+join Chef right [animation="Fade In" length="0.0"]
+Aliane: …
+Aliane: …
+Aliane: …
+Chef: (Essa tensão vai me cortar no meio se ninguém não falar nada.)
+Chef: Alg-
+Aliane: Esse prato.
+Chef: Sim?
+Aliane: …
+Aliane: Não está picante.
+Aliane: Pelo contrário, ele está…
+Aliane: Suave.
+Aliane: Bastante suave.
+Aliane: Suave…
+Chef: Bom, eu pensei que talvez fazer algo que você não estava esperando seria interessante.
+Aliane: Eu espero que você não aplique essa mesma lógica para todo cliente normal que chega aqui e pede um copo de água
+Chef: Bom, se o cliente PEDIU uma coisa específica eu tenho que respeitar isso.
+Chef: Mas você chegou aqui me dizendo que só come pratos ultra picantes, fez sentido para mim te introduzir a algo bom que não coloque sua língua em chamas.
+Aliane: …
+Aliane: Porque você soa exatamente igual a minha ex-esposa?
+Chef: …
+Chef: Qual dela-
+Aliane: Todo esse papo doce, suave… Tentando me convencer de que comida não picante tem valor…
+Chef: Eu vivo vendo isso em restaurantes medíocres, e nas pessoas mais medíocres que eu já tive o desprazer de ter amado.
+Chef: Não é como se eu quisesse ser assim, sabe? Eu só não aprendi a desenvolver o gosto por algo que não seja tão intenso.
+Chef: …
+Chef: Não é como se eu tivesse uma boa relação com a minha mãe, tá?
+Chef: (EU NÃO TENHO CERTEZA DO QUE ESTÁ ACONTECENDO AGORA.)
+Chef: (ISSO É UMA EPIFANIA? ELA TÁ SE ABRINDO SOBRE A MÃE DELA PRA MIM?)
+Chef: (ELA PRECISA DE TERAPIA??)
+Chef: …A comida estava boa?
+Aliane: Estava. Muito boa.
+Chef: Pois então!
+Chef: Uma comida boa não precisa ser necessariamente só de um tipo.
+Chef: Tem várias sensações que um prato pode te trazer. Pratos picantes te dão nostalgia de sua casa, não é?
+Aliane: Sim.
+Aliane: E ainda assim, eu permiti que a minha mãe definisse todo o meu gosto culinário.
+Aliane: Francamente, nem tudo que ela fazia era bom, independente do quão picante era.
+Aliane: E eu estou começando a desconfiar que alguns daqueles pratos NÃO foram feitos para serem picantes?
+Aliane: É por isso que quando eu pedi para ela fazer um leite com chocolate quando eu era criança eu detestei tanto?
+Chef: …
+Chef: Eu imagino que sim.
+Aliane: Eu estou furiosa.
+Aliane: Sua comida me deixou furiosa, anão.
+Chef: (gulp!)
+Aliane: E como você disse, alguns pratos podem trazer sentimentos diferentes, não é?
+Aliane: Pois bem. Seu prato foi tão suave que me fez perceber que eu não conheço a calmaria desse mundo.
+Aliane: E isso me deixou frustrada. Furiosa. Eu odeio essa sensação. Eu odeio o quão mente fechada eu fui dentro do meu próprio ramo.
+Aliane: Essa fúria foi boa. Foi construtiva. Eu agradeço por isso, anão.
+Chef: …
+Chef: Uhh…
+Aliane: Eu gostei do prato, portanto minha nota será boa.
+Aliane: Não se preocupe, eu fui tomada pela emoção. Eu deixei minha vida ser ditada indiretamente por outra pessoa por tempo o bastante.
+Aliane: Você sabia que os únicos livros que eu era permitida a ler eram biografias sobre boas pessoas que tiveram fins cruéis e trágicos?
+Aliane: E que até hoje eu nunca li um livro bobo de fadas e anões que toda criança da minha idade lia?
+Chef: Ah, você tá falando de “Bolbo e Lydia”, né?
+Chef: O autor dessa série conhecia meus pais. Ele desenvolveu boa parte do “Truckle Tactics” enquanto jogava truco com eles, inclusive.
+Chef: Ele vende bem, mas “Bolbo e Lydia” sempre foi um queridinho meu.
+Aliane: Quer saber?
+Aliane: Hoje eu aprendi que pratos que não acendem minha língua em chamas podem ser bons, e quando chegar em casa eu vou experimentar um livro que não me faça ficar deprimida com a crueldade que pessoas boas podem chegar ao seu fim.
+Aliane: Experimentando coisas novas. Isso aí.
+Aliane: Obrigada.
+Chef: Eu não fiz muita coisa?
+Aliane: Será que não, anão? Será?
+Chef: …
+Chef: Não?
+Aliane: Aceite o elogio.
+Aliane: Você é literalmente a única pessoa que me contrariou que não vai ser completamente massacrada por uma resenha crítica de minha autoria.
+Chef: S-sim senhora! Obrigado pelo elogio, senhora!
+Aliane: E se prepare. Seu público vai aumentar bastante. Seu restaurante vai ficar badalado.
+Chef: …Obrigado.
+leave Aliane [animation="Slide Out Right" length="1.5"]
+[wait time="1.0"]
+Chef: (Poxa, verdade né?)
+Chef: (Agora meu restaurante vai ser notório na região…)
+Chef: (Eu preciso descansar por agora. Aproveitar a calmaria.)
+leave Chef [animation="Fade Out"]
+[wait time="1.0"]
+do GlobalData.proxima_fase()
+[end_timeline]

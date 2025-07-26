@@ -20,7 +20,7 @@ one_shot = true
 autostart = true
 
 [node name="BgALaCarte" type="Sprite2D" parent="."]
-position = Vector2(661.605, 542.869)
+position = Vector2(650, 548)
 texture = ExtResource("2_ekvoy")
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
@@ -300,6 +300,7 @@ theme_override_font_sizes/font_size = 50
 text = "$"
 
 [node name="Calendario2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
