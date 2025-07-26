@@ -54,7 +54,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poiwq"]
@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hegfl"]
@@ -94,7 +94,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uwyxw"]
@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyntx"]
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sdk01"]
@@ -154,7 +154,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x042t"]
@@ -174,7 +174,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="semana" type="Control"]
@@ -187,8 +187,13 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="timer_anim" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [node name="BgALaCarte" type="Sprite2D" parent="."]
-position = Vector2(579, 484)
+position = Vector2(583, 472)
 texture = ExtResource("2_ekvoy")
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]

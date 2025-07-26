@@ -70,9 +70,9 @@ func skip():
 	if $"/root/GlobalData".fase == 1:
 		if estrelas_value == 3:
 			if cliente_value == 2:
-				Transição.change_scene("res://scens/cena_aliane_picante.tscn")
+				Transição.change_scene("res://scene/cena_aliane_picante.tscn")
 			else:
-				Transição.change_scene("res://scens/cena_aliane_suave.tscn")
+				Transição.change_scene("res://scene/cena_aliane_suave.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
