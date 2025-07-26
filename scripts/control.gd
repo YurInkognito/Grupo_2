@@ -17,6 +17,7 @@ extends Control
 
 @onready var dia: Label = $Dia
 @onready var mana_label: Label = $mana_label
+@onready var max_mana_label: Label = $max_mana_label
 @onready var turno_label: Label = $turno_label
 @onready var deck_label: Label = $deck/Label
 @onready var cliente_label: RichTextLabel = $Cliente/Panel/Label5
@@ -167,7 +168,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
-	mana_label.text = str(mana) + '/' + str(max_mana)
+	mana_label.text = str(mana)
+	max_mana_label.text = str(max_mana)
 	turno_label.text = 'Turno ' + str(turno) + '/' + str(max_turno)
 	deck_label.text = str(deck.size())
 
@@ -237,6 +239,9 @@ func close_cliente():
 
 func sem_mana():
 	if mana == 0:
+		$Button/AnimatedSprite2D.visible = true
+		$Button/AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("default")
 		$Button/AnimationPlayer.play("pisca")
 
 func on_draw_button_pressed(inicial: bool = true):
@@ -295,6 +300,7 @@ func gastar_mana(custo: int):
 
 func start_turn():
 	descarte_turno = false
+	$Button/AnimatedSprite2D.visible = false
 	$Button/AnimationPlayer.play("idle")
 	for i in adiciona_inicio:
 		bota_na_mao(i)
@@ -498,7 +504,7 @@ func aplicar_efeitos_carta(carta: CartaData):
 	calculo_mult()
 	$Info/Info_tags.atualiza_tag()
 	print(mult)
-	mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,340))
+	if sabor + sabor_continuo - sabor_aux > 0 : mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,340))
 	await get_tree().create_timer(0.6).timeout
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)

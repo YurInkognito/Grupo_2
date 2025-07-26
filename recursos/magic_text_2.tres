@@ -4,6 +4,7 @@
 
 [resource]
 font = ExtResource("1_bt6a1")
-font_size = 38
-outline_size = 5
-outline_color = Color(0.431848, 0.0316418, 0.567057, 1)
+font_size = 32
+font_color = Color(1, 0.847059, 0.690196, 1)
+outline_color = Color(0.431373, 0.0313726, 0.568627, 1)
+shadow_color = Color(0.278431, 0.054902, 0, 1)

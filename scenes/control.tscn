@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=113 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -35,27 +35,42 @@
 [ext_resource type="Texture2D" uid="uid://drapne5lje3p2" path="res://sprites/temporarios/Board Completo (Sem Botões) 1280x720 (2) .PNG" id="26_3vrtg"]
 [ext_resource type="Resource" uid="uid://bu04lxno7pmbo" path="res://Cartas processadas/PaoCortadoTorrado.tres" id="26_8ps1h"]
 [ext_resource type="Texture2D" uid="uid://uglw51xqadxe" path="res://sprites/CURSOR2.png" id="28_3vrtg"]
+[ext_resource type="Texture2D" uid="uid://764rtg2s7mxe" path="res://sprites/UI_final/animação board/Frame Choque 1.PNG" id="29_85vv2"]
 [ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
-[ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="30_5nmap"]
+[ext_resource type="Texture2D" uid="uid://kenf4t4ia6g4" path="res://sprites/UI_final/animação board/Frame Choque 2.PNG" id="30_5q3y1"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
+[ext_resource type="Texture2D" uid="uid://d17qgtgr2f474" path="res://sprites/UI_final/animação board/Frame Choque 3.PNG" id="31_3tdig"]
 [ext_resource type="Texture2D" uid="uid://daeqn7fjfgl66" path="res://sprites/UI_final/Entregar Prato Idle (2).PNG" id="31_qmj53"]
+[ext_resource type="Texture2D" uid="uid://dws5j8fc8b7v0" path="res://sprites/UI_final/animação board/Frame Choque 4.PNG" id="32_oewny"]
+[ext_resource type="Texture2D" uid="uid://d4idlub8ts8p6" path="res://sprites/UI_final/animação board/Frame Choque 5.PNG" id="33_8eo7p"]
 [ext_resource type="Texture2D" uid="uid://cuvvyfe4hpbh0" path="res://sprites/UI_final/Descartes Ide.PNG" id="33_d77h8"]
+[ext_resource type="Texture2D" uid="uid://b0pc3twrfitg4" path="res://sprites/UI_final/animação board/Frame Choque 6.PNG" id="34_6x2da"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
 [ext_resource type="AudioStream" uid="uid://ih0l5fpqj7ch" path="res://audio/SFX/Baralho 2.wav" id="35_72v1w"]
+[ext_resource type="Texture2D" uid="uid://cbeomkxqq05r2" path="res://sprites/UI_final/animação board/Frame Choque 7.PNG" id="35_fmeww"]
 [ext_resource type="Texture2D" uid="uid://ds43d8kwxalo8" path="res://sprites/UI_final/Descartes Nhac.PNG" id="35_t8bik"]
 [ext_resource type="Texture2D" uid="uid://ccs6eebblfqpw" path="res://sprites/temporarios/pao_tutorial.png" id="36_72v1w"]
-[ext_resource type="LabelSettings" uid="uid://clukglr7dcfu3" path="res://recursos/magic_text.tres" id="37_qmj53"]
 [ext_resource type="Texture2D" uid="uid://dr5err8fqn1rd" path="res://sprites/UI_final/Entregar Prato (Pressionado) (2).PNG" id="39_ks8g6"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="41_cjlmj"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
 [ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="42_wi3jo"]
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
+[ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="43_enb33"]
+[ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="44_5a0yq"]
 [ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
+[ext_resource type="Texture2D" uid="uid://ynq37xcq55nx" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 1.PNG" id="45_b4vnr"]
 [ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
+[ext_resource type="Texture2D" uid="uid://cdxrugawfthw6" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 2.PNG" id="46_kag07"]
+[ext_resource type="Texture2D" uid="uid://gu2r2tac1rgm" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 3.PNG" id="47_cs3ys"]
+[ext_resource type="Texture2D" uid="uid://crxyassvor5yr" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 4.PNG" id="48_lmvqu"]
+[ext_resource type="Texture2D" uid="uid://5qq3shfntglo" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 5.PNG" id="49_4u7im"]
 [ext_resource type="Texture2D" uid="uid://w6ky12dbq660" path="res://sprites/image-7.png.png" id="49_ps33n"]
+[ext_resource type="Texture2D" uid="uid://dkbsopv05yxod" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 6.PNG" id="50_yddfj"]
+[ext_resource type="Texture2D" uid="uid://6y8yilajcmrw" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 7.PNG" id="51_2bn8p"]
 [ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="51_sjp0i"]
+[ext_resource type="Texture2D" uid="uid://hwgntcfajwhi" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 8.PNG" id="52_13jsj"]
 [ext_resource type="Texture2D" uid="uid://c0w5yrxnwobpp" path="res://sprites/TAGS/TAG3.png" id="52_q22g7"]
 [ext_resource type="PackedScene" uid="uid://dejejran66wel" path="res://scenes/reliquias.tscn" id="52_r5dke"]
 [ext_resource type="Texture2D" uid="uid://ds6idyxh2cyql" path="res://sprites/TAGS/TAG4.png" id="53_8ympj"]
@@ -78,6 +93,35 @@
 [ext_resource type="Resource" uid="uid://ctxdelj7gbcsb" path="res://Reliquias/SopaMelhor.tres" id="66_cjaay"]
 [ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="67_r7wpw"]
 [ext_resource type="PackedScene" uid="uid://clnfe12n3cgpe" path="res://scenes/glossario.tscn" id="71_d77h8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01kdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_85vv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5q3y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3tdig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_oewny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8eo7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6x2da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_fmeww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="Curve" id="Curve_62e2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -139,6 +183,38 @@ _data = {
 &"abrir_boca": SubResource("Animation_wi3jo"),
 &"fechar_boca": SubResource("Animation_3vrtg")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vl321"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_b4vnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_kag07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_cs3ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_lmvqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4u7im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_yddfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_2bn8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_13jsj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="Animation" id="Animation_r5dke"]
 length = 0.001
@@ -202,6 +278,27 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, -6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, -1), -6.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="LabelSettings" id="LabelSettings_enb33"]
+font = ExtResource("41_cjlmj")
+font_size = 28
+font_color = Color(0.317647, 0.109804, 0.0392157, 1)
+shadow_color = Color(0.541176, 0.286275, 0.129412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ljmp"]
+font = ExtResource("41_cjlmj")
+font_size = 32
+font_color = Color(0.0235294, 0.101961, 0.447059, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5a0yq"]
+font = ExtResource("41_cjlmj")
+font_size = 32
+font_color = Color(0.0235294, 0.101961, 0.447059, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4vnr"]
+font = ExtResource("41_cjlmj")
+font_size = 32
+font_color = Color(0.0235294, 0.101961, 0.447059, 1)
+
 [sub_resource type="Theme" id="Theme_5q3y1"]
 default_font = ExtResource("41_cjlmj")
 default_font_size = 50
@@ -230,6 +327,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("26_3vrtg")
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_01kdt")
+frame_progress = 0.826259
 
 [node name="hand" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -346,22 +448,28 @@ anchor_left = 0.760834
 anchor_top = 0.515278
 anchor_right = 0.873188
 anchor_bottom = 0.627014
-offset_left = 27.9166
-offset_top = 23.6436
-offset_right = 364.103
-offset_bottom = 213.194
+offset_left = 34.1325
+offset_top = 36.7827
+offset_right = 0.319336
+offset_bottom = -5.66718
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
-texture_normal = ExtResource("30_5nmap")
-texture_pressed = ExtResource("30_5nmap")
+texture_normal = ExtResource("43_enb33")
+texture_pressed = ExtResource("44_5a0yq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button"]
+visible = false
+position = Vector2(55, 19)
+sprite_frames = SubResource("SpriteFrames_vl321")
+frame = 7
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
-offset_left = 41.0445
-offset_top = 92.6502
-offset_right = 257.045
-offset_bottom = 134.65
-scale = Vector2(1.8, 1.8)
+offset_left = 9.45917
+offset_top = 11.2189
+offset_right = 230.459
+offset_bottom = 53.2187
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 1
 text = "Próximo Turno"
 label_settings = ExtResource("30_jo16n")
@@ -554,10 +662,11 @@ offset_left = -100.459
 offset_top = 52.9337
 offset_right = -60.4592
 offset_bottom = 94.9337
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.317647, 0.109804, 0.0392157, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
 theme_override_font_sizes/font_size = 30
 text = "50"
+label_settings = SubResource("LabelSettings_enb33")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -584,26 +693,59 @@ metadata/_edit_use_anchors_ = true
 [node name="mana_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.14159
-anchor_top = 0.848302
-anchor_right = 0.176268
-anchor_bottom = 0.848302
+anchor_left = 0.121997
+anchor_top = 0.831921
+anchor_right = 0.156675
+anchor_bottom = 0.835779
+offset_right = 16.6112
+offset_bottom = 42.2221
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 32
+text = "5"
+label_settings = SubResource("LabelSettings_0ljmp")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mana_label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141418
+anchor_top = 0.8625
+anchor_right = 0.176096
+anchor_bottom = 0.8625
 offset_right = 16.6112
 offset_bottom = 42.2221
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "5/3"
-label_settings = ExtResource("37_qmj53")
+text = "/"
+label_settings = SubResource("LabelSettings_5a0yq")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="max_mana_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149327
+anchor_top = 0.87372
+anchor_right = 0.184005
+anchor_bottom = 0.87372
+offset_right = 16.6112
+offset_bottom = 42.2221
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "3"
+label_settings = SubResource("LabelSettings_b4vnr")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="turno_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7803
-anchor_top = 0.520954
-anchor_right = 0.785124
-anchor_bottom = 0.520954
+anchor_left = 0.780221
+anchor_top = 0.520833
+anchor_right = 0.785045
+anchor_bottom = 0.520833
 offset_right = 143.826
 offset_bottom = 42.2222
 grow_vertical = 0

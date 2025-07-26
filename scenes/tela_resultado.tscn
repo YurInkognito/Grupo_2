@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=49 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
 [ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
+[ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
 [ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/temporarios/carta12.png" id="7_jn4of"]
 [ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
@@ -43,11 +45,24 @@
 [ext_resource type="Resource" uid="uid://cd760bxg0h26d" path="res://Cartas Adicionais/CuboMaionese.tres" id="39_jb74u"]
 [ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas Adicionais/Amendoranha.tres" id="40_jsasa"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
+font = ExtResource("5_kwymj")
+font_size = 128
+font_color = Color(0.980392, 0.996078, 0.521569, 1)
+shadow_size = 2
+shadow_color = Color(0.8, 0.407843, 0.239216, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_w4qan"]
-font_size = 200
+font_size = 150
 font_color = Color(0.836007, 0.836006, 7.70092e-07, 1)
 outline_size = 10
 outline_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2mhk"]
+font = ExtResource("5_kwymj")
+font_size = 32
+font_color = Color(0.980392, 0.996078, 0.521569, 1)
+shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0giy"]
 font_color = Color(0, 0, 0, 1)
@@ -94,13 +109,16 @@ self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.297491
-anchor_top = 0.0330251
+anchor_top = 0.0483029
 anchor_right = 0.704301
-anchor_bottom = 0.130247
+anchor_bottom = 0.145525
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 45
+theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
 text = "Dia 2"
+label_settings = ExtResource("6_nc1gs")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -108,14 +126,16 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.297491
-anchor_top = 0.130247
-anchor_right = 0.704301
-anchor_bottom = 0.227469
+anchor_left = 0.284767
+anchor_top = 0.145525
+anchor_right = 0.717025
+anchor_bottom = 0.242747
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
 text = "Sabor: 430"
+label_settings = ExtResource("6_nc1gs")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -124,13 +144,15 @@ self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.297491
-anchor_top = 0.227469
+anchor_top = 0.242747
 anchor_right = 0.704301
-anchor_bottom = 0.324691
+anchor_bottom = 0.339969
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
 text = "Prato: x4"
+label_settings = ExtResource("6_nc1gs")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -138,14 +160,16 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.297491
-anchor_top = 0.324691
-anchor_right = 0.704301
-anchor_bottom = 0.421913
+anchor_left = 0.271864
+anchor_top = 0.339969
+anchor_right = 0.729928
+anchor_bottom = 0.437191
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
 text = "Cliente: x2"
+label_settings = ExtResource("6_nc1gs")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -153,14 +177,16 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.270609
-anchor_top = 0.459877
-anchor_right = 0.732975
-anchor_bottom = 0.635802
+anchor_left = 0.250179
+anchor_top = 0.46821
+anchor_right = 0.753405
+anchor_bottom = 0.644135
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 83
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 128
 text = "$ 2580"
+label_settings = SubResource("LabelSettings_r06dc")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -171,13 +197,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -217.0
-offset_top = -273.0
-offset_right = 217.0
+offset_left = -226.5
+offset_top = -331.0
+offset_right = 226.5
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 200
-text = "* * *"
+theme_override_font_sizes/font_size = 100
+text = "★ ★ ★"
 label_settings = SubResource("LabelSettings_w4qan")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -216,15 +243,16 @@ anchor_left = 0.0459519
 anchor_top = 0.19
 anchor_right = 0.95186
 anchor_bottom = 0.81
-offset_left = 12.6667
-offset_top = -9.18888
-offset_right = 11.6672
-offset_bottom = 12.3
+offset_left = 14.6564
+offset_top = -6.48004
+offset_right = -9.54495
+offset_bottom = 5.47983
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 20
-text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
+text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe "
+label_settings = SubResource("LabelSettings_s2mhk")
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
@@ -247,10 +275,10 @@ flat = true
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 0
-offset_left = 70.0
-offset_top = 650.0
-offset_right = 141.0
-offset_bottom = 692.0
+offset_left = 75.506
+offset_top = 653.112
+offset_right = 146.506
+offset_bottom = 695.112
 text = "Menu"
 label_settings = ExtResource("6_h1s8t")
 
@@ -273,10 +301,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="Button2"]
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 0
-offset_left = 70.0001
-offset_top = 76.6667
-offset_right = 194.0
-offset_bottom = 118.666
+offset_left = 99.9998
+offset_top = 87.0402
+offset_right = 224.0
+offset_bottom = 129.04
 scale = Vector2(3, 3)
 text = "Avançar"
 label_settings = ExtResource("6_h1s8t")

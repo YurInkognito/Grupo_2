@@ -2,7 +2,7 @@ extends Control
 
 @onready var timer = $Timer
 @onready var jeff = $JeffChibi
-@onready var fase = 0
+@onready var fase = 3
 
 @onready var calendario1 : TextureRect = $"Calendario1"
 @onready var calendario2 : TextureRect = $"Calendario2"
@@ -30,7 +30,7 @@ extends Control
 @onready var animdia7 : AnimatedSprite2D = $AnimDia7
 
 func _ready() -> void:
-	var fase = GlobalData.fase
+	#var fase = GlobalData.fase
 	jeff.position.x = (260 + 135 * (fase - 2))
 	
 	var tween = create_tween()
