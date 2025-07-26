@@ -157,6 +157,7 @@ func on_lixo_pressed() -> void:
 		remove_child(current_card)
 		$"../../Decartes/AnimationPlayer".play("abrir_boca")
 		$"../../Decartes/AnimationPlayer".play("fechar_boca")
+		$"../../SFXDecartes".play()
 		current_card.queue_free()
 
 func carta_movida() -> void:

@@ -1,10 +1,10 @@
-extends TextureRect
+extends ColorRect
 
 @export var prato_check = false
 @export var lixo_check = true
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 
-@onready var hand_node = $"../hand"
+@onready var hand_node = $"../../hand"
 
 var aberto = false
 

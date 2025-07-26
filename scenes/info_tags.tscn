@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="7_hs2g3"]
 
 [node name="Info_tags" type="Panel"]
-self_modulate = Color(1, 1, 1, 0.117647)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

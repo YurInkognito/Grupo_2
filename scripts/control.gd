@@ -220,7 +220,7 @@ func start_tutorial():
 
 func close_tutorial():
 	$Tutorial.visible = false
-	$Tutorial2.visible = true
+	#$Tutorial2.visible = true
 
 func close_tutorial2():
 	$Tutorial2.visible = false

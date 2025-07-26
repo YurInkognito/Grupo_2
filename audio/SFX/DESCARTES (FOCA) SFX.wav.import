@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cajqy2xm0ch3j"
+path="res://.godot/imported/DESCARTES (FOCA) SFX.wav-4d054595a1a99dbe1b0758adabb7277b.sample"
+
+[deps]
+
+source_file="res://audio/SFX/DESCARTES (FOCA) SFX.wav"
+dest_files=["res://.godot/imported/DESCARTES (FOCA) SFX.wav-4d054595a1a99dbe1b0758adabb7277b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
