@@ -870,7 +870,7 @@ anchor_right = 0.7625
 anchor_bottom = 1.47639
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_5q3y1")
-theme_override_colors/font_color = Color(0.0504278, 0.1906, 0.149137, 1)
+theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 text = "1° Coloque seus ingredientes no centro da mesa.
 
 2° Voce pode melhorar seus ingredientes        usando as cartas azuis de instrumentos.
@@ -895,7 +895,7 @@ anchor_right = 1.07969
 anchor_bottom = 1.46667
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_5q3y1")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 text = "Para aumentar seu 
 multiplicador de sabor faça pratos mais complexos e fique de olho nas caracterisitcas do seu prato (                                     ).
 
@@ -946,9 +946,9 @@ offset_left = 985.072
 offset_top = 68.7908
 offset_right = 1041.07
 offset_bottom = 130.791
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 64
 text = "X
 "
 flat = true
