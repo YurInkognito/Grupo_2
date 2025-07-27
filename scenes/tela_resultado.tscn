@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
 [ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="3_dv6s2"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
-[ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
@@ -68,6 +67,110 @@ shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 font_color = Color(0, 0, 0, 1)
 outline_size = 2
 outline_color = Color(0.580218, 0.572119, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_drhht"]
+script/source = "extends Panel
+
+var is_dragging_global = true
+
+@export var pool_1: Array[String] = [\"Algas Infinitas\", \"Noz Prismática\", \"Queijo de Tauren\", \"Amendoranha\",\"Cogumelo Murmurante\",\"Arroz\",\"Pão\",\"Leite de Meteoro\",\"Slime\",\"Foguito\",\"Peixe-Martelete\",\"Couve Afiada\"]
+@export var pool_2: Array[String] = [\"Cubo de Maionese\", \"Escama de Boitata\", \"Caneca de Undine\", \"Mandragora Real\", \"Carne de Minotauro\", \"Batata \\\"Normal\\\"\",\"Carne de Dragão\",\"Cenoura Morto-Vivo\",\"Repolho Carnívoro\"]
+@export var pool_3: Array[String] = [\"Menta Esfoladoura\", \"Ovo de Basilisco\", \"Sal\", \"Tomate Vampírico\", \"Picles de Beholder\", \"Broto de Névoa-Limão\",\"Cutelo\",\"Espirito de Fogo\",\"Martelo\"]
+
+@export var lista_cartas: Array[CartaData]
+@export var lista_cartas_upgrade: Array[CartaData]
+
+@onready var upgrade_1: card = $card
+@onready var upgrade_2: card = $card2
+@onready var upgrade_3: card = $card3
+
+@onready var pular: Button = $Button
+
+@export var mana = 0 #só pra corrigir um bug
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	lista_cartas = $\"/root/GlobalData\".lista_cartas
+	pular.pressed.connect(skip)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func select_card(card_data):
+	$\"/root/GlobalData\".lista_cartas.append(card_data)
+	upgrade_1.card_data.upgrade = false
+	upgrade_2.card_data.upgrade = false
+	upgrade_3.card_data.upgrade = false
+	$\"..\".visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func encontrar_carta_data_por_nome(nome: String) -> CartaData:
+	print(lista_cartas_upgrade)
+	for carta_data in lista_cartas_upgrade:
+		if carta_data.nome == nome:
+			print(carta_data.nome)
+			var data_alterada = carta_data
+			data_alterada.upgrade = true
+			return data_alterada
+	printerr(\"CartaData com o nome '\", nome, \"' não encontrado.\")
+	return null
+
+func recompensar(estrelas):
+	var rng = RandomNumberGenerator.new()
+	var r1 = ''
+	var r2 = ''
+	var r3 = ''
+	match estrelas:
+		0: pass
+		1:
+			var index_1 = rng.randi_range(0, pool_1.size() - 1)
+			var index_2 = rng.randi_range(0, pool_1.size() - 1)
+			var index_3 = rng.randi_range(0, pool_1.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool_1.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool_1.size() - 1)
+			r1 = pool_1[index_1]
+			r2 = pool_1[index_2]
+			r3 = pool_1[index_3]
+		2:
+			var pool = pool_1 + pool_2 + pool_2
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1 = pool[index_1]
+			r2 = pool[index_2]
+			r3 = pool[index_3]
+		3:
+			var pool = pool_1 + pool_2 + pool_2 + pool_3 + pool_3 + pool_3
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1 = pool[index_1]
+			r2 = pool[index_2]
+			r3 = pool[index_3]
+	print(r1,r2)
+	upgrade_1.set_card(encontrar_carta_data_por_nome(r1))
+	upgrade_2.set_card(encontrar_carta_data_por_nome(r2))
+	upgrade_3.set_card(encontrar_carta_data_por_nome(r3))
+
+func skip():
+	if GlobalData.fase == 1:
+		if $\"/root/GlobalData\".estrelas_value == 3:
+			if $\"/root/GlobalData\".cliente_value == 2:
+				Transição.change_scene(\"res://scenes/cena_aliane_suave.tscn\")
+			else:
+					Transição.change_scene(\"res://scenes/cena_aliane_picante.tscn\")
+"
 
 [node name="TelaResultado" type="Control"]
 layout_mode = 3
@@ -368,7 +471,7 @@ offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_hj10q")
-script = ExtResource("4_6c4ii")
+script = SubResource("GDScript_drhht")
 lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg"), ExtResource("26_emjtu"), ExtResource("27_jb74u"), ExtResource("28_jsasa"), ExtResource("29_dv6s2"), ExtResource("30_drhht"), ExtResource("7_7ag0k"), ExtResource("31_kwymj"), ExtResource("32_nc1gs"), ExtResource("33_r06dc"), ExtResource("34_s2mhk"), ExtResource("18_ol7y8"), ExtResource("35_5x135"), ExtResource("36_4lnjb"), ExtResource("37_0e7i2"), ExtResource("38_1ajnj"), ExtResource("39_jb74u"), ExtResource("40_jsasa")])
 
 [node name="Button" type="Button" parent="Panel3/Panel"]

@@ -66,14 +66,6 @@ func _ready() -> void:
 	$"/root/GlobalData".lista_pratos.append(prato_salvo)
 	show_anim()
 
-func skip():
-	if $"/root/GlobalData".fase == 1:
-		if estrelas_value == 3:
-			if cliente_value == 2:
-				Transição.change_scene("res://scene/cena_aliane_picante.tscn")
-			else:
-				Transição.change_scene("res://scene/cena_aliane_suave.tscn")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	sabor.text = "Sabor: +" + str(sabor_value)
@@ -88,7 +80,6 @@ func _process(delta: float) -> void:
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
-	print(int(round(pontuacao_bruta / 100.0) * 100.0))
 	return int(round(pontuacao_bruta / 100.0) * 100.0)
 
 func voltar():
@@ -97,7 +88,6 @@ func voltar():
 	
 func upgradar():
 	$Panel3.visible = true
-	skip()
 
 func reset_pontos():
 	var temp_array: Array[String] = []
@@ -130,4 +120,3 @@ func show_anim():
 		tween.tween_property(label, "visible", true, 0.0).from(false).set_delay(delay * (i + 1))
 		tween.tween_property(label, "scale", Vector2(1.0, 1.0), tempo_animacao).set_delay(delay * (i + 1))
 		tween.tween_property(label, "position", Vector2(posicao_original.x + deslocamento_x, posicao_original.y), tempo_animacao).set_delay(delay * (i + 1))
-		

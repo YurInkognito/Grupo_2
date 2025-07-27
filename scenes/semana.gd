@@ -30,6 +30,20 @@ extends Control
 @onready var animdia6 : AnimatedSprite2D = $AnimDia6
 @onready var animdia7 : AnimatedSprite2D = $AnimDia7
 
+@onready var rosto : TextureRect = $rosto
+@onready var rosto2 : TextureRect = $rosto2
+@onready var rosto3 : TextureRect = $rosto3
+@onready var rosto4 : TextureRect = $rosto4
+@onready var rosto5 : TextureRect = $rosto5
+@onready var rosto6 : TextureRect = $rosto6
+
+@onready var aliane = load("res://sprites/portraits/borda icone aliane.png")
+@onready var jaccao = load("res://sprites/portraits/borda icone erick jaccão.png")
+@onready var fogaco = load("res://sprites/portraits/borda icone fogaço.png")
+@onready var ghorkon = load("res://sprites/portraits/borda icone ghorkon.png")
+@onready var hiena = load("res://sprites/portraits/borda icone hiena rizzo.png")
+@onready var bruxa = load("res://sprites/portraits/borda icone Bruxa Braga.png")
+
 func _ready() -> void:
 	var fase = GlobalData.fase
 	
@@ -45,6 +59,7 @@ func _ready() -> void:
 	tween.set_trans(Tween.TRANS_QUAD)
 	
 	print("fase atual: " + str(fase))
+	alterar_cliente()
 	$"/root/GlobalData".set_pontuacao_fases()
 	pontuacao_mostrar()
 	qual_semana()
@@ -61,7 +76,7 @@ func proxima_fase():
 			Transição.change_scene("res://scenes/control.tscn")
 
 func qual_semana():
-	if fase <= 7 :
+	if GlobalData.fase <= 7 :
 		calendario1.visible = true
 		calendario2.visible = false
 	else:
@@ -156,3 +171,128 @@ func anim_passou_dia():
 		animdia5.visible = false
 		animdia6.visible = false
 		animdia7.visible = false
+		
+func alterar_cliente():
+	if GlobalData.fase == 1:
+		rosto.texture = aliane
+		rosto.visible = true
+	
+	match GlobalData.fase:
+		2:
+			rosto.visible = true
+			rosto2.texture = qual_cliente()
+			rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			rosto2.visible = true
+		3:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.texture = qual_cliente()
+			rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			rosto3.visible = true
+		5:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.texture = qual_cliente()
+			rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			rosto4.visible = true
+		6:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.visible = true
+			rosto5.texture = qual_cliente()
+			rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			rosto5.visible = true
+		7:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3. visible = true
+			rosto4.visible = true
+			rosto5.visible = true
+			rosto6.texture = qual_cliente()
+			rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			rosto6.visible = true
+		8:
+			rosto2.visible = false
+			rosto3.visible = false
+			rosto4.visible = false
+			rosto5.visible = false
+			rosto6.visible = false
+			rosto.texture = qual_cliente()
+			rosto.position.x = rosto.position.x - ajustar_pos()[0]
+			rosto.position.y = rosto.position.y - ajustar_pos()[1]
+			rosto.visible = true
+		9:
+			rosto.visible = true
+			rosto2.texture = qual_cliente()
+			rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			rosto2.visible = true
+		10:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.texture = qual_cliente()
+			rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			rosto3.visible = true
+		12:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.texture = qual_cliente()
+			rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			rosto4.visible = true
+		13:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.visible = true
+			rosto5.texture = qual_cliente()
+			rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			rosto5.visible = true
+		14:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3. visible = true
+			rosto4.visible = true
+			rosto5.visible = true
+			rosto6.texture = qual_cliente()
+			rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			rosto6.visible = true
+			
+func qual_cliente():
+	match GlobalData.cliente_temp["nome"]:
+		"Fogaço":
+			return fogaco
+		"Erick Jacão":
+			return jaccao
+		"Hyena Rizo":
+			return hiena
+		"Claude Trollgros":
+			return ghorkon
+		"Bela Gill":
+			return bruxa
+		_:
+			return aliane
+			
+func ajustar_pos():
+	match qual_cliente():
+		fogaco:
+			return [4,5]
+		jaccao:
+			return [4,5]
+		bruxa:
+			return [8,11]
+		ghorkon:
+			return [0,10]
+		hiena:
+			return [3,11]

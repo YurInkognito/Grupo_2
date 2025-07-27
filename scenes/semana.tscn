@@ -1,10 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=45 format=3 uid="uid://ce31bsvwp05t8"]
 
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
 [ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
 [ext_resource type="Texture2D" uid="uid://sm6n6v8t1va2" path="res://sprites/Calendario/IMG_2383.PNG" id="3_ekvoy"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
-[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="4_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="5_7gsga"]
 [ext_resource type="Texture2D" uid="uid://b3svafr7vtu8b" path="res://sprites/Calendario/IMG_2384.PNG" id="6_c2q0q"]
 [ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="6_noqa7"]
 [ext_resource type="Texture2D" uid="uid://buaerrun1khx" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 1.PNG" id="8_0rl75"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dui81ctxbysfv" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 3.PNG" id="34_mcsmo"]
 [ext_resource type="Texture2D" uid="uid://dgd4iocmqwnih" path="res://sprites/Calendario/dia 7/Sétimo Slot Frame 4.PNG" id="35_2h1w5"]
 [ext_resource type="Texture2D" uid="uid://dfw70utogmwn4" path="res://sprites/portraits/Icon jeff.png" id="36_0rl75"]
+[ext_resource type="Texture2D" uid="uid://dxclnma5s5nhm" path="res://sprites/portraits/borda icone hiena rizzo.png" id="41_4ccdi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqp7a"]
 animations = [{
@@ -203,7 +204,6 @@ autoplay = true
 bus = &"Music"
 
 [node name="Calendario1" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -216,15 +216,6 @@ offset_left = 166.0
 offset_top = 132.0
 offset_right = 320.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 1"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario1/Painel 1"]
 layout_mode = 0
@@ -258,15 +249,6 @@ offset_top = 132.0
 offset_right = 458.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 2"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario1/Painel 2"]
 layout_mode = 0
 offset_left = 21.0
@@ -298,15 +280,6 @@ offset_left = 442.0
 offset_top = 132.0
 offset_right = 596.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 3"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario1/Painel 3"]
 layout_mode = 0
@@ -340,15 +313,6 @@ offset_top = 132.0
 offset_right = 734.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 4"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Painel 5" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -356,15 +320,6 @@ offset_left = 718.0
 offset_top = 132.0
 offset_right = 872.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 5"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario1/Painel 5"]
 layout_mode = 0
@@ -398,15 +353,6 @@ offset_top = 132.0
 offset_right = 1010.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 6"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario1/Painel 6"]
 layout_mode = 0
 offset_left = 21.0
@@ -439,15 +385,6 @@ offset_top = 132.0
 offset_right = 1148.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario1/Painel 7"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario1/Painel 7"]
 layout_mode = 0
 offset_left = 21.0
@@ -474,6 +411,7 @@ theme_override_font_sizes/font_size = 50
 text = "$0"
 
 [node name="Calendario2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -486,15 +424,6 @@ offset_left = 166.0
 offset_top = 132.0
 offset_right = 320.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 8"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario2/Painel 8"]
 layout_mode = 0
@@ -528,15 +457,6 @@ offset_top = 132.0
 offset_right = 458.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 9"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario2/Painel 9"]
 layout_mode = 0
 offset_left = 21.0
@@ -568,15 +488,6 @@ offset_left = 442.0
 offset_top = 132.0
 offset_right = 596.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 10"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario2/Painel 10"]
 layout_mode = 0
@@ -610,15 +521,6 @@ offset_top = 132.0
 offset_right = 734.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 11"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Painel 12" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -626,15 +528,6 @@ offset_left = 718.0
 offset_top = 132.0
 offset_right = 872.0
 offset_bottom = 622.0
-
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 12"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
 
 [node name="Requisito" type="Label" parent="Calendario2/Painel 12"]
 layout_mode = 0
@@ -668,15 +561,6 @@ offset_top = 132.0
 offset_right = 1010.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 13"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario2/Painel 13"]
 layout_mode = 0
 offset_left = 21.0
@@ -709,15 +593,6 @@ offset_top = 132.0
 offset_right = 1148.0
 offset_bottom = 622.0
 
-[node name="rosto" type="TextureRect" parent="Calendario2/Painel 14"]
-layout_mode = 0
-offset_left = -15.904
-offset_top = 73.213
-offset_right = 1684.1
-offset_bottom = 1290.21
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ekvoy")
-
 [node name="Requisito" type="Label" parent="Calendario2/Painel 14"]
 layout_mode = 0
 offset_left = 21.0
@@ -742,6 +617,76 @@ theme = ExtResource("3_noqa7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "$0"
+
+[node name="rosto" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 166.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="rosto2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 304.0
+offset_top = 192.0
+offset_right = 970.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("41_4ccdi")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="rosto3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 442.0
+offset_top = 192.0
+offset_right = 1108.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="rosto4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 718.0
+offset_top = 192.0
+offset_right = 1384.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="rosto5" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 856.0
+offset_top = 192.0
+offset_right = 1522.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="rosto6" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 994.0
+offset_top = 192.0
+offset_right = 1660.0
+offset_bottom = 904.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
 
 [node name="AnimDia1" type="AnimatedSprite2D" parent="."]
 visible = false

@@ -22,7 +22,6 @@ func _ready() -> void:
 	lista_cartas = $"/root/GlobalData".lista_cartas
 	pular.pressed.connect(skip)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
