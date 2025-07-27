@@ -20,6 +20,7 @@ extends Node
 "objetivos": [],
 "dificuldade": 1
 }
+@export var pontuacao_fases = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 func set_cartas(cartas):
 	lista_cartas = cartas
@@ -241,3 +242,7 @@ func cliente_nota(cliente):
 				if not nome_final.contains(i[1]):
 					pontos += 1
 	return pontos
+
+func set_pontuacao_fases():
+	var pontuacao = sabor_final * mult_final * cliente_final
+	pontuacao_fases[fase]=pontuacao

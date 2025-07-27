@@ -4,7 +4,6 @@ extends Control
 @onready var timer_anim = $timer_anim
 @onready var jeff = $JeffChibi
 @onready var fase = 0
-#@onready var pontuacao = $"/root/GlobalData".sabor_final * $"/root/GlobalData".mult_final
 
 @onready var calendario1 : TextureRect = $"Calendario1"
 @onready var calendario2 : TextureRect = $"Calendario2"
@@ -45,8 +44,9 @@ func _ready() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 	
-	print("a fase atual é:" + str(fase))
-	pontuacao_do_dia()
+	print("fase atual: " + str(fase))
+	$"/root/GlobalData".set_pontuacao_fases()
+	pontuacao_mostrar()
 	qual_semana()
 	anim_passou_dia()
 
@@ -67,49 +67,37 @@ func qual_semana():
 		calendario1.visible = false
 		calendario2.visible = true
 	
-func pontuacao_do_dia():
-	if fase == 1:
-		resultado1.text = "$1" #+ str(pontuacao)
-	if fase == 2:
-		resultado2.text = "$2" #+ str(pontuacao)
-	if fase == 3:
-		resultado3.text = "$3" #+ str(pontuacao)
-	if fase == 5:
-		resultado5.text = "$5" #+ str(pontuacao)
-	if fase == 6:
-		resultado6.text = "$6" #+ str(pontuacao)
-	if fase == 7:
-		resultado7.text = "$7" #+ str(pontuacao)
-	if fase == 8:
-		resultado8.text = "$8" #+ str(pontuacao)
-	if fase == 9:
-		resultado9.text = "$9" #+ str(pontuacao)
-	if fase == 10:
-		resultado10.text = "$10" #+ str(pontuacao)
-	if fase == 12:
-		resultado12.text = "$11" #+ str(pontuacao)
-	if fase == 13:
-		resultado13.text = "$12" #+ str(pontuacao)
-	if fase == 14:
-		resultado14.text = "$13" #+ str(pontuacao)
-		
+func pontuacao_mostrar():
+	resultado1.text = "$" + str($"/root/GlobalData".pontuacao_fases[2])
+	resultado2.text = "$" + str($"/root/GlobalData".pontuacao_fases[3])
+	resultado3.text = "$" + str($"/root/GlobalData".pontuacao_fases[4])
+	resultado5.text = "$" + str($"/root/GlobalData".pontuacao_fases[5])
+	resultado6.text = "$" + str($"/root/GlobalData".pontuacao_fases[6])
+	resultado7.text = "$" + str($"/root/GlobalData".pontuacao_fases[7])
+	resultado8.text = "$" + str($"/root/GlobalData".pontuacao_fases[8])
+	resultado9.text = "$" + str($"/root/GlobalData".pontuacao_fases[9])
+	resultado10.text = "$" + str($"/root/GlobalData".pontuacao_fases[10])
+	resultado12.text = "$" + str($"/root/GlobalData".pontuacao_fases[11])
+	resultado13.text = "$" + str($"/root/GlobalData".pontuacao_fases[12])
+	resultado14.text = "$" + str($"/root/GlobalData".pontuacao_fases[13])
+	
 func _on_timer_timeout() -> void:
 	proxima_fase()
 
 func anim_passou_dia():
-	if fase == 2 or fase == 9:
+	if GlobalData.fase == 2 or GlobalData.fase == 9:
 		await timer_anim.timeout
 		animdia1.visible = true
 		animdia1.play("default")
 
-	elif fase == 3 or fase == 10:
+	elif GlobalData.fase == 3 or GlobalData.fase == 10:
 		animdia1.visible = true
 		animdia1.frame = 3
 		await timer_anim.timeout
 		animdia2.visible = true
 		animdia2.play("default")
 
-	elif fase == 4 or fase == 11:
+	elif GlobalData.fase == 4 or GlobalData.fase == 11:
 		animdia1.visible = true
 		animdia1.frame = 3
 		animdia2.visible = true
@@ -118,7 +106,7 @@ func anim_passou_dia():
 		animdia3.visible = true
 		animdia3.play("default")
 
-	elif fase == 5 or fase == 12:
+	elif GlobalData.fase == 5 or GlobalData.fase == 12:
 		animdia1.visible = true
 		animdia1.frame = 3
 		animdia2.visible = true
@@ -129,7 +117,7 @@ func anim_passou_dia():
 		animdia4.visible = true
 		animdia4.play("default")
 
-	elif fase == 6 or fase == 13:
+	elif GlobalData.fase == 6 or GlobalData.fase == 13:
 		animdia1.visible = true
 		animdia1.frame = 3
 		animdia2.visible = true
@@ -142,7 +130,7 @@ func anim_passou_dia():
 		animdia5.visible = true
 		animdia5.play("default")
 
-	elif fase == 14:
+	elif GlobalData.fase == 14:
 		animdia1.visible = true
 		animdia1.frame = 3
 		animdia2.visible = true
