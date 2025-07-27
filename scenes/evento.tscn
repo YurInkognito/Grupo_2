@@ -1,80 +1,237 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5ptcm6lktil"]
+[gd_scene load_steps=9 format=3 uid="uid://c5ptcm6lktil"]
 
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="1_3hjvl"]
+[ext_resource type="Script" uid="uid://d170tcgcuc44o" path="res://scripts/evento.gd" id="1_vnore"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="2_rdlqr"]
 [ext_resource type="LabelSettings" uid="uid://82yxw7hugk00" path="res://recursos/magic_text_eventos.tres" id="3_qb6tr"]
 [ext_resource type="Texture2D" uid="uid://dryri2w84n3gj" path="res://sprites/evento 1.png" id="4_qb6tr"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="4_rdlqr"]
+[ext_resource type="Texture2D" uid="uid://b8kmen0jsmlu3" path="res://sprites/evento 2.png" id="7_27efs"]
+[ext_resource type="Texture2D" uid="uid://teyd3t532h87" path="res://sprites/evento 3.png" id="8_o0ycd"]
 
-[node name="Control" type="Control"]
+[node name="Evento" type="Control"]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_vnore")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1279.0
+offset_bottom = 719.0
+texture = ExtResource("1_3hjvl")
+expand_mode = 1
+
+[node name="Evento1" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="Evento1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_3hjvl")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1036.0
-offset_bottom = 1080.0
+offset_top = -3.0
+offset_right = 640.0
+offset_bottom = 717.0
 theme = ExtResource("2_rdlqr")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Evento1/Panel"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 687.8
-offset_right = 995.0
-offset_bottom = 1014.8
+offset_left = 37.0
+offset_top = 489.0
+offset_right = 604.0
+offset_bottom = 702.0
 text = "Uma carroça que levava vegetais ao o porto \"tombou\" em frente a seu estabelecimento! Agora você pode \"adotar\" um dos pobres vegetais perdidos na rua."
 label_settings = ExtResource("3_qb6tr")
 autowrap_mode = 3
 
-[node name="Evento1" type="Sprite2D" parent="Panel"]
-position = Vector2(505.553, 275.014)
-scale = Vector2(0.7, 0.7)
+[node name="Evento1" type="Sprite2D" parent="Evento1/Panel"]
+position = Vector2(337, 197)
+scale = Vector2(0.440926, 0.440926)
 texture = ExtResource("4_qb6tr")
 
-[node name="Button" type="Button" parent="."]
+[node name="AdotarRepolho" type="Button" parent="Evento1"]
 layout_mode = 0
-offset_left = 1134.66
-offset_top = 267.014
-offset_right = 1773.66
-offset_bottom = 372.014
+offset_left = 702.0
+offset_top = 102.0
+offset_right = 1226.0
+offset_bottom = 201.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 32
 text = "Adotar um Repolho Vivo"
 
-[node name="Button2" type="Button" parent="."]
+[node name="AdotarCenoura" type="Button" parent="Evento1"]
 layout_mode = 0
-offset_left = 1134.66
-offset_top = 416.162
-offset_right = 1780.66
-offset_bottom = 521.162
+offset_left = 702.0
+offset_top = 248.0
+offset_right = 1226.0
+offset_bottom = 347.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 50
-text = "Adotar uma Cenoura Morto-Viva"
+theme_override_font_sizes/font_size = 32
+text = "Adotar uma Cenoura Morta-Viva"
 
-[node name="Button3" type="Button" parent="."]
+[node name="AdotarMandragora" type="Button" parent="Evento1"]
 layout_mode = 0
-offset_left = 1134.66
-offset_top = 554.431
-offset_right = 1773.66
-offset_bottom = 659.431
+offset_left = 702.0
+offset_top = 392.0
+offset_right = 1226.0
+offset_bottom = 491.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 32
 text = "Adotar uma Mandragora Real"
 
-[node name="Button4" type="Button" parent="."]
+[node name="AdotarNinguem" type="Button" parent="Evento1"]
 layout_mode = 0
-offset_left = 1134.66
-offset_top = 705.34
-offset_right = 1773.66
-offset_bottom = 810.34
+offset_left = 702.0
+offset_top = 540.0
+offset_right = 1226.0
+offset_bottom = 639.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 32
 text = "Adotar é errado!"
+
+[node name="Evento2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Evento2"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 640.0
+offset_bottom = 717.0
+theme = ExtResource("2_rdlqr")
+
+[node name="Label" type="Label" parent="Evento2/Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 549.0
+offset_right = 604.0
+offset_bottom = 690.0
+text = "É Aniversario do Decartes! Dê uma comida pra ele de presente! (Remove uma carta do seu deck)"
+label_settings = ExtResource("3_qb6tr")
+autowrap_mode = 3
+
+[node name="Evento1" type="Sprite2D" parent="Evento2/Panel"]
+position = Vector2(281, 264)
+scale = Vector2(0.459435, 0.459435)
+texture = ExtResource("7_27efs")
+
+[node name="RemoverCarta1" type="Button" parent="Evento2"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 102.0
+offset_right = 1226.0
+offset_bottom = 201.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Carta 1"
+
+[node name="RemoverCarta2" type="Button" parent="Evento2"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 248.0
+offset_right = 1226.0
+offset_bottom = 347.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Carta 2"
+
+[node name="RemoverCarta3" type="Button" parent="Evento2"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 392.0
+offset_right = 1226.0
+offset_bottom = 491.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Carta 3"
+
+[node name="RemoverCarta4" type="Button" parent="Evento2"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 540.0
+offset_right = 1226.0
+offset_bottom = 639.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Carta 4"
+
+[node name="Evento3" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Evento3"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 640.0
+offset_bottom = 717.0
+theme = ExtResource("2_rdlqr")
+
+[node name="Label" type="Label" parent="Evento3/Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 556.0
+offset_right = 604.0
+offset_bottom = 710.0
+text = "Você  encontra um buraco na parede, com uma masmorra dentro. O que você faz?"
+label_settings = ExtResource("3_qb6tr")
+autowrap_mode = 3
+
+[node name="Evento1" type="Sprite2D" parent="Evento3/Panel"]
+position = Vector2(299, 288)
+scale = Vector2(0.435085, 0.419626)
+texture = ExtResource("8_o0ycd")
+
+[node name="ExplorarCuidadoButton" type="Button" parent="Evento3"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 102.0
+offset_right = 1226.0
+offset_bottom = 201.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Explorar com cuidado"
+
+[node name="ExplorarCorrendoButton" type="Button" parent="Evento3"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 248.0
+offset_right = 1226.0
+offset_bottom = 347.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Explorar correndo"
+
+[node name="ContratrarAlguemButton" type="Button" parent="Evento3"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 392.0
+offset_right = 1226.0
+offset_bottom = 491.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Contratar alguém pro serviço"
+
+[node name="NaoFazerNadaButton" type="Button" parent="Evento3"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 540.0
+offset_right = 1226.0
+offset_bottom = 639.0
+theme = ExtResource("4_rdlqr")
+theme_override_font_sizes/font_size = 32
+text = "Não fazer nada"
+
+[connection signal="pressed" from="Evento1/AdotarRepolho" to="." method="_on_adotar_repolho_pressed"]
+[connection signal="pressed" from="Evento1/AdotarCenoura" to="." method="_on_adotar_cenoura_pressed"]
+[connection signal="pressed" from="Evento1/AdotarMandragora" to="." method="_on_adotar_mandragora_pressed"]
+[connection signal="pressed" from="Evento1/AdotarNinguem" to="." method="_on_adotar_ninguem_pressed"]
+[connection signal="pressed" from="Evento2/RemoverCarta1" to="." method="_on_remover_carta_1_pressed"]
+[connection signal="pressed" from="Evento2/RemoverCarta2" to="." method="_on_remover_carta_2_pressed"]
+[connection signal="pressed" from="Evento2/RemoverCarta3" to="." method="_on_remover_carta_3_pressed"]
+[connection signal="pressed" from="Evento2/RemoverCarta4" to="." method="_on_remover_carta_4_pressed"]

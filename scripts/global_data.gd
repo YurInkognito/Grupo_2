@@ -56,7 +56,7 @@ func remover_processos(lista_de_cartas: Array[CartaData]) -> Array[CartaData]:
 	return lista_de_cartas
 	
 func proxima_fase():
-	fase += 1
+	fase = 4
 	gera_cliente()
 	Transição.change_scene("res://scenes/semana.tscn")
 

@@ -32,7 +32,7 @@ extends Control
 @onready var animdia7 : AnimatedSprite2D = $AnimDia7
 
 func _ready() -> void:
-	var fase = GlobalData.fase
+	fase = GlobalData.fase
 	
 	var fase_pos = fase
 	if fase >= 8:
@@ -54,9 +54,8 @@ func proxima_fase():
 	match fase:
 		1:
 			Transição.change_scene("res://scenes/cena_aliane.tscn")
-		#5:
-			#leva pra cutscene 2
-		#	get_tree().change_scene_to_file("res://scenes/control.tscn")
+		4:
+			Transição.change_scene("res://scenes/evento.tscn")
 		_:
 			Transição.change_scene("res://scenes/control.tscn")
 
