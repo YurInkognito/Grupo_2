@@ -1,12 +1,14 @@
-[gd_scene load_steps=45 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=47 format=3 uid="uid://ce31bsvwp05t8"]
 
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
 [ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
 [ext_resource type="Texture2D" uid="uid://sm6n6v8t1va2" path="res://sprites/Calendario/IMG_2383.PNG" id="3_ekvoy"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
+[ext_resource type="AudioStream" uid="uid://dnlrjnkup7rr2" path="res://audio/calendario/CHECK (Calendario) SFX .wav" id="4_d4qsk"]
+[ext_resource type="AudioStream" uid="uid://555i5mu8halg" path="res://audio/calendario/Vinheta Calendário ALaCarte.wav" id="4_ga1kc"]
 [ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="5_7gsga"]
+[ext_resource type="AudioStream" uid="uid://bjxaui4twbdit" path="res://audio/calendario/V2 - Vinheta Calendário ALaCarte.wav" id="5_8nsqs"]
 [ext_resource type="Texture2D" uid="uid://b3svafr7vtu8b" path="res://sprites/Calendario/IMG_2384.PNG" id="6_c2q0q"]
-[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="6_noqa7"]
 [ext_resource type="Texture2D" uid="uid://buaerrun1khx" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 1.PNG" id="8_0rl75"]
 [ext_resource type="Texture2D" uid="uid://tedy4p10blnc" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 2.PNG" id="9_f30qw"]
 [ext_resource type="Texture2D" uid="uid://cqrpok8by52dv" path="res://sprites/Calendario/dia 1/Primeiro Slot Frame 3.PNG" id="10_d4qsk"]
@@ -184,7 +186,7 @@ anchors_preset = 0
 script = ExtResource("1_vorlf")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 
@@ -197,11 +199,14 @@ autostart = true
 position = Vector2(583, 472)
 texture = ExtResource("2_ekvoy")
 
-[node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(582, 288)
-stream = ExtResource("6_noqa7")
-autoplay = true
-bus = &"Music"
+[node name="check" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d4qsk")
+
+[node name="vinh_cal1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ga1kc")
+
+[node name="vinh_cal2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8nsqs")
 
 [node name="Calendario1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -312,6 +317,18 @@ offset_left = 580.0
 offset_top = 132.0
 offset_right = 734.0
 offset_bottom = 622.0
+
+[node name="Resultado1" type="Label" parent="Calendario1/Painel 4"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 112.0
+offset_right = 85.0
+offset_bottom = 157.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "?"
 
 [node name="Painel 5" type="Panel" parent="Calendario1"]
 self_modulate = Color(1, 1, 1, 0)
@@ -520,6 +537,18 @@ offset_left = 580.0
 offset_top = 132.0
 offset_right = 734.0
 offset_bottom = 622.0
+
+[node name="Resultado1" type="Label" parent="Calendario2/Painel 11"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 112.0
+offset_right = 85.0
+offset_bottom = 157.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("3_noqa7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "?"
 
 [node name="Painel 12" type="Panel" parent="Calendario2"]
 self_modulate = Color(1, 1, 1, 0)

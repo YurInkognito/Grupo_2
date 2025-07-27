@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=53 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
@@ -43,6 +43,10 @@
 [ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="38_1ajnj"]
 [ext_resource type="Resource" uid="uid://cd760bxg0h26d" path="res://Cartas Adicionais/CuboMaionese.tres" id="39_jb74u"]
 [ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas Adicionais/Amendoranha.tres" id="40_jsasa"]
+[ext_resource type="AudioStream" uid="uid://cvaask14ly7s" path="res://audio/SFX/estrelas/Fanfarra 3 ESTRELAS.wav" id="44_s2mhk"]
+[ext_resource type="AudioStream" uid="uid://dyoya87unhvd5" path="res://audio/SFX/estrelas/Fanfarra 2 ESTRELAS.wav" id="45_5x135"]
+[ext_resource type="AudioStream" uid="uid://d2f40ue25e7qy" path="res://audio/SFX/estrelas/Fanfarra 1 ESTRELA.wav" id="46_4lnjb"]
+[ext_resource type="AudioStream" uid="uid://brrner7yti0e1" path="res://audio/SFX/estrelas/Fanfarra 0 ESTRELA.wav" id="47_0e7i2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
 font = ExtResource("5_kwymj")
@@ -180,6 +184,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7plcf")
+
+[node name="estrela3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("44_s2mhk")
+
+[node name="estrela2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("45_5x135")
+
+[node name="estrela1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_4lnjb")
+
+[node name="estrela0" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_0e7i2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

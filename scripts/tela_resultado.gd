@@ -20,6 +20,11 @@ extends Control
 @onready var botao: Button = $Button
 @onready var continuar: Button = $Button2
 
+@onready var estrela0 : AudioStreamPlayer2D = $estrela0
+@onready var estrela1 : AudioStreamPlayer2D = $estrela1
+@onready var estrela2 : AudioStreamPlayer2D = $estrela2
+@onready var estrela3 : AudioStreamPlayer2D = $estrela3
+
 var labels: Array[Label]
 
 const BASE_CRESCIMENTO = 1.2
@@ -38,12 +43,16 @@ func _ready() -> void:
 	var dia = $"/root/GlobalData".fase - 1
 	if (resultado_value <= calcular_pontuacao_requerida(dia, 3000)):
 		estrelas_value = 0
+		estrela0.play()
 	elif (resultado_value <= calcular_pontuacao_requerida(dia, 5000)):
 		estrelas_value = 1
+		estrela1.play()
 	elif (resultado_value <= calcular_pontuacao_requerida(dia, 6000)):
 		estrelas_value = 2
+		estrela2.play()
 	else:
 		estrelas_value = 3
+		estrela3.play()
 	
 	if estrelas_value > 0:
 		continuar.visible = true
@@ -73,10 +82,14 @@ func _process(delta: float) -> void:
 	cliente.text = "Cliente: x" + str(cliente_value)
 	resultado.text = "$ " + str(resultado_value)
 	match estrelas_value:
-		0: estrelas.text = ''
-		1: estrelas.text = '*'
-		2: estrelas.text = '* *'
-		3: estrelas.text = '* * *'
+		0: 
+			estrelas.text = ''
+		1: 
+			estrelas.text = '*'
+		2: 
+			estrelas.text = '* *'
+		3: 
+			estrelas.text = '* * *'
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
