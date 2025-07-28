@@ -93,6 +93,8 @@ const CONFIG = preload("res://scenes/config.tscn")
 @onready var sfx_bell: AudioStreamPlayer2D = $SFXBell
 
 func _ready() -> void:
+	checa_perde_carta_por_turno()
+	checa_perde_um_turno()
 	$Button/AnimationPlayer.play("idle")
 	print($"/root/GlobalData".fase)
 	#if $"/root/GlobalData".fase != 1 and $"/root/GlobalData".fase != 5:
@@ -786,3 +788,18 @@ func add_tag_rand():
 		var escolhida = tags_possiveis.pick_random()
 		rand_tags.append(escolhida)
 	tags_prato.append_array(rand_tags)
+
+func checa_perde_um_turno():
+	if GlobalData.perde_um_turno:
+		turno = 2
+		GlobalData.perde_um_turno = false;
+
+func checa_perde_carta_por_turno():
+	print("testando")
+	print("check de debug:", GlobalData._perde_compra)
+	if GlobalData._perde_compra:
+		print("ANNTES da modificacao de compras::",n_compras)
+		n_compras = n_compras-1
+		GlobalData._perde_compra = false
+		print("Numero de compras::",n_compras)
+	print("fim de teste")

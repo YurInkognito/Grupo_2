@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=50 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
-[ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
@@ -16,7 +15,9 @@
 [ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
 [ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/temporarios/carta12.png" id="7_jn4of"]
+[ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="7_nc1gs"]
 [ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
+[ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="8_r06dc"]
 [ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
 [ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
 [ext_resource type="Resource" uid="uid://dc5bv8mvqsddo" path="res://Cartas Adicionais/Escama de Boitata.tres" id="11_hj10q"]
@@ -255,7 +256,7 @@ text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tan
 label_settings = SubResource("LabelSettings_s2mhk")
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.375781
@@ -267,10 +268,9 @@ offset_top = 644.0
 offset_right = -3762.0
 offset_bottom = -1750.0
 scale = Vector2(0.3, 0.3)
-text = "
-"
-icon = ExtResource("5_drhht")
-flat = true
+texture_normal = ExtResource("7_nc1gs")
+texture_pressed = ExtResource("8_r06dc")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
@@ -282,7 +282,7 @@ offset_bottom = 695.112
 text = "Menu"
 label_settings = ExtResource("6_h1s8t")
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0335938
@@ -294,8 +294,9 @@ offset_top = 644.0
 offset_right = 581.0
 offset_bottom = 681.0
 scale = Vector2(0.3, 0.3)
-icon = ExtResource("5_drhht")
-flat = true
+texture_normal = ExtResource("7_nc1gs")
+texture_pressed = ExtResource("8_r06dc")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Button2"]

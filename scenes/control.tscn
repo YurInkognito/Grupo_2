@@ -62,7 +62,7 @@
 [ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
 [ext_resource type="Texture2D" uid="uid://ynq37xcq55nx" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 1.PNG" id="45_b4vnr"]
 [ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
-[ext_resource type="Texture2D" uid="uid://cdxrugawfthw6" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 2.PNG" id="46_kag07"]
+[ext_resource type="Texture2D" uid="uid://cdxrugawfthw6" path="res://sprites/UI_final/Botão Passar Turno Frame 2.PNG" id="46_kag07"]
 [ext_resource type="Texture2D" uid="uid://gu2r2tac1rgm" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 3.PNG" id="47_cs3ys"]
 [ext_resource type="Texture2D" uid="uid://crxyassvor5yr" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 4.PNG" id="48_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://5qq3shfntglo" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 5.PNG" id="49_4u7im"]
@@ -513,6 +513,8 @@ grow_horizontal = 0
 toggle_mode = true
 texture_normal = ExtResource("31_qmj53")
 texture_pressed = ExtResource("39_ks8g6")
+ignore_texture_size = true
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]
@@ -1084,6 +1086,7 @@ offset_bottom = 426.068
 texture = ExtResource("35_7o2ue")
 
 [node name="ConfigButton" type="Button" parent="."]
+process_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0109375

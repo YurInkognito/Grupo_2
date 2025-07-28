@@ -17,8 +17,8 @@ extends Control
 @export var estrelas_value: int = 0
 @export var objetivo: int = 1200
 
-@onready var botao: Button = $Button
-@onready var continuar: Button = $Button2
+@onready var botao: TextureButton = $Button
+@onready var continuar: TextureButton = $Button2
 
 var labels: Array[Label]
 

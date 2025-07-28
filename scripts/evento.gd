@@ -9,13 +9,25 @@ var n_evento_max = 3
 @onready var remover_carta_2: Button = $Evento2/RemoverCarta2
 @onready var remover_carta_3: Button = $Evento2/RemoverCarta3
 @onready var remover_carta_4: Button = $Evento2/RemoverCarta4
+
+@onready var explorar_cuidado_button: Button = $Evento3/ExplorarCuidadoButton
+@onready var explorar_correndo_button: Button = $Evento3/ExplorarCorrendoButton
+@onready var contratrar_alguem_button: Button = $Evento3/ContratrarAlguemButton
+@onready var nao_fazer_nada_button: Button = $Evento3/NaoFazerNadaButton
+
+
+
 var cartas_sorteadas: Array[CartaData] = []
+var reliquias_opcoes = []
+
+
 
 func _ready() -> void:
 	evento_sorteado = randi_range(1,3)
 	print("Evento sorteado:" , evento_sorteado)
-	evento_sorteado = 2
 	ajusta_evento(evento_sorteado)
+	gerar_reliquias_opcoes()
+	atualizar_botoes()
 
 var lista_eventos: Array = [
 	executa_evento_1,
@@ -125,3 +137,83 @@ func remover_carta(cartas_sorteadas: Array, index: int) -> void:
 	else:
 		printerr("Carta não encontrada em GlobalData.lista_cartas:", carta_para_remover.nome)
 	Transição.change_scene("res://scenes/control.tscn")
+
+
+func _on_explorar_cuidado_button_pressed() -> void:
+	perde_turno()
+	ganha_reliquia_com_reliquia(reliquias_opcoes[0])
+	GlobalData.proxima_fase()
+	
+
+
+func _on_explorar_correndo_button_pressed() -> void:
+	perde_compra_por_turno()
+	ganha_reliquia_com_reliquia(reliquias_opcoes[1])
+	GlobalData.proxima_fase()
+
+
+
+func _on_nao_fazer_nada_button_pressed() -> void:
+	GlobalData.proxima_fase()
+
+func ganha_reliquia() -> void:
+	var reliquias_disponiveis = GlobalData.TODAS_RELIQUIAS.duplicate()
+	
+	# Remove as que o jogador já tem
+	for r in GlobalData.lista_reliquias:
+		reliquias_disponiveis.erase(r)
+	
+	if reliquias_disponiveis.is_empty():
+		print("Você já possui todas as relíquias!")
+		return
+	
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var index = rng.randi_range(0, reliquias_disponiveis.size() - 1)
+	var nova_reliquia = reliquias_disponiveis[index]
+
+	GlobalData.lista_reliquias.append(nova_reliquia)
+	print("Ganhou a relíquia:", nova_reliquia.nome)
+
+func perde_turno() -> void:
+	GlobalData.perde_um_turno = true
+	print("Vai perder o próximo turno.")
+
+func perde_compra_por_turno() -> void:
+	GlobalData.perde_compra()
+
+func perde_carta_aleatoria() -> void:
+	if GlobalData.lista_cartas.is_empty():
+		printerr("Deck está vazio, não há carta para remover.")
+		return
+	
+	var rng = RandomNumberGenerator.new()
+	var index = rng.randi_range(0, GlobalData.lista_cartas.size() - 1)
+	var removida = GlobalData.lista_cartas[index]
+	GlobalData.lista_cartas.remove_at(index)
+	print("Carta removida aleatoriamente:", removida.nome)
+	
+func gerar_reliquias_opcoes():
+	var todas = GlobalData.TODAS_RELIQUIAS.duplicate()
+	# Remove as que o jogador já tem
+	for r in GlobalData.lista_reliquias:
+		todas.erase(r)
+		
+	todas.shuffle()
+	reliquias_opcoes = todas.slice(0, min(3, todas.size()))
+	
+func atualizar_botoes():
+	explorar_cuidado_button.text = "Explorar com cuidado (Perde um turno, ganha " + reliquias_opcoes[0].nome + ")"
+	explorar_correndo_button.text = "Explorar correndo (Perde uma compra, ganha " + reliquias_opcoes[1].nome + ")"
+	contratrar_alguem_button.text = "Contratar alguém (Perde uma carta aleatória, ganha " + reliquias_opcoes[2].nome + ")"
+	nao_fazer_nada_button.text = "Não fazer nada"
+
+func ganha_reliquia_com_reliquia(reliquia: CartaData) -> void:
+	GlobalData.reliquias.append(reliquia)
+	print("Ganhou a relíquia:", reliquia.nome)
+
+
+func _on_contratrar_alguem_button_pressed() -> void:
+	perde_carta_aleatoria()
+	ganha_reliquia_com_reliquia(reliquias_opcoes[2])
+	GlobalData.proxima_fase()

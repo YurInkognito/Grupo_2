@@ -93,6 +93,7 @@ theme_override_font_sizes/font_size = 32
 text = "Adotar é errado!"
 
 [node name="Evento2" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -194,7 +195,7 @@ offset_top = 102.0
 offset_right = 1226.0
 offset_bottom = 201.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 20
 text = "Explorar com cuidado"
 
 [node name="ExplorarCorrendoButton" type="Button" parent="Evento3"]
@@ -204,7 +205,7 @@ offset_top = 248.0
 offset_right = 1226.0
 offset_bottom = 347.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 20
 text = "Explorar correndo"
 
 [node name="ContratrarAlguemButton" type="Button" parent="Evento3"]
@@ -214,7 +215,7 @@ offset_top = 392.0
 offset_right = 1226.0
 offset_bottom = 491.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 20
 text = "Contratar alguém pro serviço"
 
 [node name="NaoFazerNadaButton" type="Button" parent="Evento3"]
@@ -224,7 +225,7 @@ offset_top = 540.0
 offset_right = 1226.0
 offset_bottom = 639.0
 theme = ExtResource("4_rdlqr")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 20
 text = "Não fazer nada"
 
 [connection signal="pressed" from="Evento1/AdotarRepolho" to="." method="_on_adotar_repolho_pressed"]
@@ -235,3 +236,7 @@ text = "Não fazer nada"
 [connection signal="pressed" from="Evento2/RemoverCarta2" to="." method="_on_remover_carta_2_pressed"]
 [connection signal="pressed" from="Evento2/RemoverCarta3" to="." method="_on_remover_carta_3_pressed"]
 [connection signal="pressed" from="Evento2/RemoverCarta4" to="." method="_on_remover_carta_4_pressed"]
+[connection signal="pressed" from="Evento3/ExplorarCuidadoButton" to="." method="_on_explorar_cuidado_button_pressed"]
+[connection signal="pressed" from="Evento3/ExplorarCorrendoButton" to="." method="_on_explorar_correndo_button_pressed"]
+[connection signal="pressed" from="Evento3/ContratrarAlguemButton" to="." method="_on_contratrar_alguem_button_pressed"]
+[connection signal="pressed" from="Evento3/NaoFazerNadaButton" to="." method="_on_nao_fazer_nada_button_pressed"]

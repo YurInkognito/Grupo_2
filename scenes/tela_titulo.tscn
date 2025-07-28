@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lu5ys2u8fw60"]
+[gd_scene load_steps=33 format=3 uid="uid://lu5ys2u8fw60"]
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_663uq"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="14_sj1xo"]
 [ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="16_kiu78"]
 [ext_resource type="Texture2D" uid="uid://d3bvflpc5iwpe" path="res://sprites/temporarios/menu.jpg" id="18_jx0lc"]
+[ext_resource type="Texture2D" uid="uid://h48xy15lli8j" path="res://sprites/Arte Nova.PNG" id="19_koial"]
 [ext_resource type="Texture2D" uid="uid://blifj1rd0qrgx" path="res://sprites/UI_final/Botão Play Idle (2).PNG" id="19_mopl6"]
 [ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="20_bdnts"]
 [ext_resource type="Texture2D" uid="uid://dbjix53kvispe" path="res://sprites/UI_final/Botão Play Pressionado (2).PNG" id="20_ywseg"]
@@ -40,6 +41,7 @@ lista_cartas = Array[ExtResource("2_663uq")]([ExtResource("5_mopl6"), ExtResourc
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +56,7 @@ texture = ExtResource("18_jx0lc")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("18_jx0lc")
+texture = ExtResource("19_koial")
 expand_mode = 1
 
 [node name="BotaoCutscene" type="TextureButton" parent="TextureRect3"]
