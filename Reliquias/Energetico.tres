@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_1gnbr")
-nome = "Panela de Vó"
+nome = "Energético"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Aumenta o número de turnos em um mas reduz a quantidade de cartas compradas por turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "mais_turno",
 "parametro": ""

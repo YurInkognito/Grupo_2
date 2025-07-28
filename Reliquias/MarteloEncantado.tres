@@ -8,7 +8,7 @@ nome = "Panela de Vó"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Adiciona um Martelo à sua mão no inicio de todo turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_martelo_encantado",
 "parametro": ""

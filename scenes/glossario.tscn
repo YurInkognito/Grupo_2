@@ -51,6 +51,7 @@ offset_top = 8.99279
 offset_right = 1081.0
 offset_bottom = 60.9928
 scale = Vector2(1.2, 1.2)
+focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)

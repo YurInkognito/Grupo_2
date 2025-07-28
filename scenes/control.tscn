@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=119 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -89,6 +89,7 @@
 [ext_resource type="Resource" uid="uid://cmgml8yuty4ji" path="res://Reliquias/FogoEncantado.tres" id="58_cjlmj"]
 [ext_resource type="Resource" uid="uid://caihcnwqrqusm" path="res://Reliquias/MarteloEncantado.tres" id="59_ks8g6"]
 [ext_resource type="Resource" uid="uid://cjdbrso2rk247" path="res://Reliquias/MiseEnPlace.tres" id="60_d77h8"]
+[ext_resource type="Texture2D" uid="uid://pvi2yvnhfe1k" path="res://sprites/portraits/Ícone Livro.PNG" id="60_lmvqu"]
 [ext_resource type="Resource" uid="uid://1x3ikiwjmag3" path="res://Reliquias/PaginaPerdida.tres" id="61_t8bik"]
 [ext_resource type="Resource" uid="uid://ccy6n2uivg8f5" path="res://Reliquias/panelaDeVo.tres" id="62_eu32t"]
 [ext_resource type="Resource" uid="uid://r1rhw6ci5l83" path="res://Reliquias/PocaoDeMana.tres" id="63_r4raw"]
@@ -497,15 +498,18 @@ libraries = {
 [node name="Button2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.921441
-anchor_top = 0.695679
-anchor_right = 0.950049
-anchor_bottom = 0.785374
+anchor_left = 0.917445
+anchor_top = 0.693327
+anchor_right = 0.966366
+anchor_bottom = 0.783022
 offset_right = 49.3818
 offset_bottom = 27.4198
 grow_horizontal = 0
-text = "Livro
+focus_mode = 0
+text = "
 "
+icon = ExtResource("60_lmvqu")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="TextureButton" parent="."]
@@ -836,6 +840,7 @@ offset_left = 978.517
 offset_top = 457.524
 offset_right = 1018.52
 offset_bottom = 509.524
+focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.980392, 0.996078, 0.521569, 1)
@@ -973,6 +978,7 @@ offset_top = 8.99279
 offset_right = 1081.0
 offset_bottom = 60.9928
 scale = Vector2(1.2, 1.2)
+focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)

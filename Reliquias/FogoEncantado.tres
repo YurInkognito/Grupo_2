@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_rgfou")
-nome = "Panela de Vó"
+nome = "Fogo Encantado"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Adiciona um Espirito de Fogo à sua mão no inicio de todo turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_fogo_encantado",
 "parametro": ""

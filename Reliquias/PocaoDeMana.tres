@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_nyoim")
-nome = "Panela de Vó"
+nome = "Poção de Mana"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Ganha mais dois de mana no seu primeiro turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "mais_mana_primeiro",
 "parametro": ""

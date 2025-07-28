@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_rugdi")
-nome = "Panela de Vó"
+nome = "Sopa é Janta"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Sopa tem um multiplicador melhor"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_super_sopa",
 "parametro": ""

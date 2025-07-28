@@ -9,7 +9,7 @@ nome = "Cutelo Encantado"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = "Adiciona um cutelo à sua mão no inicio de todo turno"
+desc = "Adiciona um Cutelo à sua mão no inicio de todo turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_faca_encantada",
 "parametro": ""

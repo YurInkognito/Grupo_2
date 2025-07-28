@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_y0qal")
-nome = "Panela de Vó"
+nome = "Pão de Cada Dia"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Recebe um Pão Tostado custando zero no seu primeiro turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_super_sanduiche",
 "parametro": ""

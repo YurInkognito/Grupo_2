@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_7to58")
-nome = "Panela de Vó"
+nome = "Pagina Perdida"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Aumenta a sua mana maxima em um"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "mais_mana_turno",
 "parametro": ""

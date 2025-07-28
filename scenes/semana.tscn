@@ -1,9 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=49 format=3 uid="uid://ce31bsvwp05t8"]
 
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
 [ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="3_dr0qa"]
 [ext_resource type="Texture2D" uid="uid://sm6n6v8t1va2" path="res://sprites/Calendario/IMG_2383.PNG" id="3_ekvoy"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
+[ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="4_7gsga"]
 [ext_resource type="AudioStream" uid="uid://dnlrjnkup7rr2" path="res://audio/calendario/CHECK (Calendario) SFX .wav" id="4_d4qsk"]
 [ext_resource type="AudioStream" uid="uid://555i5mu8halg" path="res://audio/calendario/Vinheta Calendário ALaCarte.wav" id="4_ga1kc"]
 [ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="5_7gsga"]
@@ -184,6 +186,9 @@ animations = [{
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vorlf")
+prato_sopa = ExtResource("5_7gsga")
+prato_salada = ExtResource("3_dr0qa")
+prato_sanduiche = ExtResource("4_7gsga")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -320,14 +325,13 @@ offset_bottom = 622.0
 
 [node name="Resultado1" type="Label" parent="Calendario1/Painel 4"]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 112.0
-offset_right = 85.0
-offset_bottom = 157.0
-scale = Vector2(0.7, 0.7)
+offset_left = 43.0112
+offset_top = 76.1785
+offset_right = 99.0112
+offset_bottom = 188.179
 theme = ExtResource("3_noqa7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 128
 text = "?"
 
 [node name="Painel 5" type="Panel" parent="Calendario1"]
@@ -718,6 +722,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato1" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 166.0
 offset_top = 321.0
@@ -728,6 +733,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 304.0
 offset_top = 321.0
@@ -738,6 +744,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato3" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 441.0
 offset_top = 321.0
@@ -748,6 +755,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato4" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 717.0
 offset_top = 321.0
@@ -758,6 +766,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato5" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 856.0
 offset_top = 321.0
@@ -768,6 +777,7 @@ texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
 [node name="prato6" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 994.0
 offset_top = 321.0

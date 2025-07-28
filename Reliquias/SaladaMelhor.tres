@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_4e2ls")
-nome = "Panela de Vó"
+nome = "Folhas mais Verdes"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Saladas tem um multiplicador melhor"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_super_salada",
 "parametro": ""

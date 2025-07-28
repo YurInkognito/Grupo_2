@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_8wkl3")
-nome = "Panela de Vó"
+nome = "Sacola Magica"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Compre duas cartas a mais todo turno"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "mais_draw_turno",
 "parametro": ""

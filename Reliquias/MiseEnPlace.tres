@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_x5vmp")
-nome = "Panela de Vó"
+nome = "Mise En Place"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "No seu primeiro turno compre duas cartas a mais"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "mais_draw_primeiro",
 "parametro": ""

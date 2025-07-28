@@ -8,7 +8,7 @@ nome = "Panela de Vó"
 custo = ""
 ingrediente = false
 is_processo = false
-desc = ""
+desc = "Aumenta em um o seu multiplicador no final do dia"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_mult_extra",
 "parametro": ""
