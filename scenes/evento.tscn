@@ -192,41 +192,45 @@ texture = ExtResource("8_o0ycd")
 layout_mode = 0
 offset_left = 702.0
 offset_top = 102.0
-offset_right = 1226.0
+offset_right = 1227.0
 offset_bottom = 201.0
 theme = ExtResource("4_rdlqr")
 theme_override_font_sizes/font_size = 20
 text = "Explorar com cuidado"
+autowrap_mode = 2
 
 [node name="ExplorarCorrendoButton" type="Button" parent="Evento3"]
 layout_mode = 0
 offset_left = 702.0
 offset_top = 248.0
-offset_right = 1226.0
+offset_right = 1227.0
 offset_bottom = 347.0
 theme = ExtResource("4_rdlqr")
 theme_override_font_sizes/font_size = 20
 text = "Explorar correndo"
+autowrap_mode = 2
 
 [node name="ContratrarAlguemButton" type="Button" parent="Evento3"]
 layout_mode = 0
 offset_left = 702.0
 offset_top = 392.0
-offset_right = 1226.0
+offset_right = 1227.0
 offset_bottom = 491.0
 theme = ExtResource("4_rdlqr")
 theme_override_font_sizes/font_size = 20
 text = "Contratar alguém pro serviço"
+autowrap_mode = 2
 
 [node name="NaoFazerNadaButton" type="Button" parent="Evento3"]
 layout_mode = 0
 offset_left = 702.0
 offset_top = 540.0
-offset_right = 1226.0
+offset_right = 1227.0
 offset_bottom = 639.0
 theme = ExtResource("4_rdlqr")
 theme_override_font_sizes/font_size = 20
 text = "Não fazer nada"
+autowrap_mode = 2
 
 [connection signal="pressed" from="Evento1/AdotarRepolho" to="." method="_on_adotar_repolho_pressed"]
 [connection signal="pressed" from="Evento1/AdotarCenoura" to="." method="_on_adotar_cenoura_pressed"]
