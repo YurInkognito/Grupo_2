@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnlrjnkup7rr2"
+path="res://.godot/imported/CHECK (Calendario) SFX .wav-e970461d8fa9663f7a72678ea988462a.sample"
+
+[deps]
+
+source_file="res://audio/calendario/CHECK (Calendario) SFX .wav"
+dest_files=["res://.godot/imported/CHECK (Calendario) SFX .wav-e970461d8fa9663f7a72678ea988462a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

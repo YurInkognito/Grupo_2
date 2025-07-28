@@ -21,6 +21,7 @@ extends Control
 @onready var turno_label: Label = $turno_label
 @onready var deck_label: Label = $deck/Label
 @onready var cliente_label: RichTextLabel = $Cliente/Panel/Label5
+@onready var cliente_foto: TextureRect = $Cliente/TextureRect
 
 @export var caminho_pasta_cartas: String = "res://Cartas/"
 
@@ -29,6 +30,13 @@ extends Control
 @export var deck = []
 @export var n_compras = 6
 var em_cooldown: bool = false
+
+@export var foto_1: Texture2D
+@export var foto_2: Texture2D
+@export var foto_3: Texture2D
+@export var foto_4: Texture2D
+@export var foto_5: Texture2D
+@export var foto_6: Texture2D
 
 @onready var hand_node: Control = $hand # Garanta que o nome do seu nó 'hand' esteja correto e seja do tipo 'hand'
 @onready var deck_node: Node2D = $deck # Crie um Position2D chamado 'DeckPosition' na sua cena para marcar a origem da animação
@@ -102,7 +110,26 @@ func _ready() -> void:
 		$Cliente.visible = true
 	var cliente = $"/root/GlobalData".cliente_temp
 	var texto_temp = cliente.nome
+	match texto_temp:
+		"Fogaço": 
+			cliente_foto.texture = foto_1
+			button_abrir_cliente.icon = foto_1
+		"Erick Jacão": 
+			cliente_foto.texture = foto_2
+			button_abrir_cliente.icon = foto_2
+		"Hyena Rizo": 
+			cliente_foto.texture = foto_3
+			button_abrir_cliente.icon = foto_3
+		"Ana Maria Praga": 
+			cliente_foto.texture = foto_4
+			button_abrir_cliente.icon = foto_4
+		"Ghork'Ohn Ahm'sey": 
+			cliente_foto.texture = foto_5
+			button_abrir_cliente.icon = foto_5
 	#texto_temp = texto_temp + ": Hoje adoraria "
+	if $"/root/GlobalData".fase == 1:
+		cliente_foto.texture = foto_6
+		button_abrir_cliente.icon = foto_6
 	var c = 0
 	for obj in cliente.objetivos:
 		match c:
@@ -205,22 +232,6 @@ func abrir_glossario():
 
 func start_tutorial():
 	$Tutorial.visible = true
-	deck.clear()
-	var cartas_para_adicionar = []
-
-	# Adiciona as cópias de cada carta à lista temporária
-	for carta in lista_de_cartas_tutorial:
-		for _i in range(2): # numero de cartas repetidas por deck
-			cartas_para_adicionar.append(carta)
-
-	for i in range(cartas_para_adicionar.size() - 1, 0, -1):
-		var j = randi_range(0, i)
-		var temp = cartas_para_adicionar[i]
-		cartas_para_adicionar[i] = cartas_para_adicionar[j]
-		cartas_para_adicionar[j] = temp
-
-	# O deck final é a lista randomizada
-	deck = cartas_para_adicionar
 
 func close_tutorial():
 	$Tutorial.visible = false

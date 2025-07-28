@@ -1,59 +1,70 @@
 [gd_scene load_steps=4 format=3 uid="uid://clnfe12n3cgpe"]
 
 [ext_resource type="Script" uid="uid://dfmiqwi84oi83" path="res://glossario.gd" id="1_10nib"]
+[ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="2_10nib"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="3_10nib"]
-[ext_resource type="Texture2D" uid="uid://w6ky12dbq660" path="res://sprites/image-7.png.png" id="3_w71hn"]
 
 [node name="Glossario" type="Node2D"]
 script = ExtResource("1_10nib")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 142.0
-offset_top = -42.0
-offset_right = 342.0
-offset_bottom = 113.0
-scale = Vector2(5, 5)
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 6.5
+offset_top = -3.05176e-05
+offset_right = 1286.5
+offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_w71hn")
+texture = ExtResource("2_10nib")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 293.0
-offset_top = 131.0
-offset_right = 612.0
-offset_bottom = 576.0
+offset_left = 269.9
+offset_top = 118.9
+offset_right = 588.9
+offset_bottom = 563.9
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
 layout_mode = 2
 columns = 3
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="."]
-offset_left = 678.0
-offset_top = 131.0
-offset_right = 1019.0
-offset_bottom = 561.0
+offset_left = 697.0
+offset_top = 118.9
+offset_right = 1038.0
+offset_bottom = 548.9
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer2"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="."]
-offset_left = 985.072
-offset_top = 68.7908
-offset_right = 1041.07
-offset_bottom = 130.791
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_10nib")
-theme_override_font_sizes/font_size = 60
-text = "X
-"
-flat = true
-
 [node name="Label" type="Label" parent="."]
-offset_left = 345.176
-offset_top = 68.7908
-offset_right = 540.176
-offset_bottom = 122.791
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 313.659
+offset_top = 47.6174
+offset_right = 521.659
+offset_bottom = 103.617
+theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_fonts/font = ExtResource("3_10nib")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 64
 text = "Estoque"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 8.99279
+offset_right = 1081.0
+offset_bottom = 60.9928
+scale = Vector2(1.2, 1.2)
+theme_override_colors/font_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_normal_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("3_10nib")
+theme_override_font_sizes/font_size = 32
+text = "🗙"
+flat = true

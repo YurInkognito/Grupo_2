@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=118 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -35,16 +35,22 @@
 [ext_resource type="Texture2D" uid="uid://drapne5lje3p2" path="res://sprites/temporarios/Board Completo (Sem Botões) 1280x720 (2) .PNG" id="26_3vrtg"]
 [ext_resource type="Resource" uid="uid://bu04lxno7pmbo" path="res://Cartas processadas/PaoCortadoTorrado.tres" id="26_8ps1h"]
 [ext_resource type="Texture2D" uid="uid://uglw51xqadxe" path="res://sprites/CURSOR2.png" id="28_3vrtg"]
+[ext_resource type="Texture2D" uid="uid://crjjnnj3f0qae" path="res://sprites/portraits/borda icone fogaço.png" id="28_lmvqu"]
+[ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="29_4u7im"]
 [ext_resource type="Texture2D" uid="uid://764rtg2s7mxe" path="res://sprites/UI_final/animação board/Frame Choque 1.PNG" id="29_85vv2"]
 [ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
 [ext_resource type="Texture2D" uid="uid://kenf4t4ia6g4" path="res://sprites/UI_final/animação board/Frame Choque 2.PNG" id="30_5q3y1"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
 [ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
+[ext_resource type="Texture2D" uid="uid://dxclnma5s5nhm" path="res://sprites/portraits/borda icone hiena rizzo.png" id="30_yddfj"]
+[ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="31_2bn8p"]
 [ext_resource type="Texture2D" uid="uid://d17qgtgr2f474" path="res://sprites/UI_final/animação board/Frame Choque 3.PNG" id="31_3tdig"]
 [ext_resource type="Texture2D" uid="uid://daeqn7fjfgl66" path="res://sprites/UI_final/Entregar Prato Idle (2).PNG" id="31_qmj53"]
+[ext_resource type="Texture2D" uid="uid://bfhr2s7srmt61" path="res://sprites/portraits/borda icone ghorkon.png" id="32_13jsj"]
 [ext_resource type="Texture2D" uid="uid://dws5j8fc8b7v0" path="res://sprites/UI_final/animação board/Frame Choque 4.PNG" id="32_oewny"]
 [ext_resource type="Texture2D" uid="uid://d4idlub8ts8p6" path="res://sprites/UI_final/animação board/Frame Choque 5.PNG" id="33_8eo7p"]
 [ext_resource type="Texture2D" uid="uid://cuvvyfe4hpbh0" path="res://sprites/UI_final/Descartes Ide.PNG" id="33_d77h8"]
+[ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="33_vl321"]
 [ext_resource type="Texture2D" uid="uid://b0pc3twrfitg4" path="res://sprites/UI_final/animação board/Frame Choque 6.PNG" id="34_6x2da"]
 [ext_resource type="AudioStream" uid="uid://dyx70dplbi3wi" path="res://audio/SFX/Baralho 1.wav" id="34_7o2ue"]
 [ext_resource type="Texture2D" uid="uid://ctyvyou4usn8v" path="res://sprites/TAGS/TAG1.png" id="35_7o2ue"]
@@ -55,7 +61,6 @@
 [ext_resource type="Texture2D" uid="uid://dr5err8fqn1rd" path="res://sprites/UI_final/Entregar Prato (Pressionado) (2).PNG" id="39_ks8g6"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="41_cjlmj"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
-[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="42_wi3jo"]
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
 [ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="43_enb33"]
 [ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="44_5a0yq"]
@@ -66,7 +71,6 @@
 [ext_resource type="Texture2D" uid="uid://gu2r2tac1rgm" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 3.PNG" id="47_cs3ys"]
 [ext_resource type="Texture2D" uid="uid://crxyassvor5yr" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 4.PNG" id="48_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://5qq3shfntglo" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 5.PNG" id="49_4u7im"]
-[ext_resource type="Texture2D" uid="uid://w6ky12dbq660" path="res://sprites/image-7.png.png" id="49_ps33n"]
 [ext_resource type="Texture2D" uid="uid://dkbsopv05yxod" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 6.PNG" id="50_yddfj"]
 [ext_resource type="Texture2D" uid="uid://6y8yilajcmrw" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 7.PNG" id="51_2bn8p"]
 [ext_resource type="Texture2D" uid="uid://c0tmis0l1ppin" path="res://sprites/TAGS/TAG2.png" id="51_sjp0i"]
@@ -92,6 +96,7 @@
 [ext_resource type="Resource" uid="uid://d048t54gwle5o" path="res://Reliquias/SanduicheMelhor.tres" id="65_so1j7"]
 [ext_resource type="Resource" uid="uid://ctxdelj7gbcsb" path="res://Reliquias/SopaMelhor.tres" id="66_cjaay"]
 [ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="67_r7wpw"]
+[ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="68_cs3ys"]
 [ext_resource type="PackedScene" uid="uid://clnfe12n3cgpe" path="res://scenes/glossario.tscn" id="71_d77h8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_01kdt"]
@@ -314,6 +319,12 @@ grow_vertical = 2
 script = ExtResource("1_qtu10")
 numero_flutuante = ExtResource("2_nk3x5")
 lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("26_8ps1h")])
+foto_1 = ExtResource("28_lmvqu")
+foto_2 = ExtResource("29_4u7im")
+foto_3 = ExtResource("30_yddfj")
+foto_4 = ExtResource("31_2bn8p")
+foto_5 = ExtResource("32_13jsj")
+foto_6 = ExtResource("33_vl321")
 mana = 4
 
 [node name="Bg" type="TextureRect" parent="."]
@@ -510,6 +521,7 @@ offset_top = -4.16
 offset_right = 0.0799561
 offset_bottom = -0.159988
 grow_horizontal = 0
+focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("31_qmj53")
 texture_pressed = ExtResource("39_ks8g6")
@@ -798,18 +810,20 @@ theme = ExtResource("41_gst0j")
 [node name="Label5" type="RichTextLabel" parent="Cliente/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.427258
+anchor_left = 0.448455
 anchor_top = 2.28323
-anchor_right = 1.82626
-anchor_bottom = 2.94127
+anchor_right = 1.59185
+anchor_bottom = 2.73788
 offset_left = -170.661
 offset_top = -371.132
 offset_right = -170.661
 offset_bottom = -261.604
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
+theme_override_colors/default_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 theme_override_constants/line_separation = 12
 theme_override_fonts/normal_font = ExtResource("41_cjlmj")
-theme_override_font_sizes/normal_font_size = 52
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Quero um prato: orem Ipsum is simply dummy text of the printing and typesetting industry
 "
@@ -818,28 +832,40 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Cliente"]
-layout_mode = 0
-offset_left = 251.926
-offset_top = 479.909
-offset_right = 1951.93
-offset_bottom = 1696.91
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("42_wi3jo")
-
 [node name="Button" type="Button" parent="Cliente"]
 layout_mode = 0
-offset_left = 972.072
-offset_top = 466.0
-offset_right = 1028.07
-offset_bottom = 528.0
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+offset_left = 978.517
+offset_top = 457.524
+offset_right = 1018.52
+offset_bottom = 509.524
+theme_override_colors/font_disabled_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_disabled_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_hover_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_focus_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/icon_normal_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_outline_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_focus_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
-theme_override_font_sizes/font_size = 60
-text = "X
+theme_override_font_sizes/font_size = 32
+text = "🗙
 "
 flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Cliente"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 239.0
+offset_top = 442.002
+offset_right = 905.0
+offset_bottom = 1154.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("33_vl321")
 
 [node name="Tutorial" type="Panel" parent="."]
 visible = false
@@ -854,22 +880,21 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Tutorial"]
 layout_mode = 0
-offset_left = 142.0
-offset_top = -42.0
-offset_right = 342.0
-offset_bottom = 113.0
-scale = Vector2(5, 5)
+offset_left = 6.5
+offset_top = -3.05176e-05
+offset_right = 1286.5
+offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("49_ps33n")
+texture = ExtResource("68_cs3ys")
 
 [node name="Label" type="Label" parent="Tutorial"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.20625
-anchor_top = 0.119444
-anchor_right = 0.7625
-anchor_bottom = 1.47639
+anchor_left = 0.19375
+anchor_top = 0.0958333
+anchor_right = 0.763281
+anchor_bottom = 1.49167
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_5q3y1")
 theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
@@ -883,7 +908,7 @@ text = "1° Coloque seus ingredientes no centro da mesa.
 
 5° Use os seus turnos para aumentar seu sabor, seguindo os desejos do cliente.
 
-6° Se não quiser um ingrediente alimente seu amigo Decartes!"
+6° Se não quiser um ingrediente ,alimente seu amigo Decartes!"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -891,10 +916,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="Tutorial"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.523438
-anchor_top = 0.119444
-anchor_right = 1.07969
-anchor_bottom = 1.46667
+anchor_left = 0.529688
+anchor_top = 0.0955428
+anchor_right = 1.10938
+anchor_bottom = 1.44277
+offset_right = -13.0
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_5q3y1")
 theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
@@ -905,54 +931,66 @@ Sanduiche: Coloque um Pão Fatiado no seu prato.  Aumenta o multiplicador para c
 
 Sopa: Coloque um Leite de Ursoruja no prato. Aumenta o multiplicador baseado na sua caracteritica mais presente.
 
-Salada: Coloque 4       no prato. Aumenta o multipicador baseado no equilibrio do seu prato."
+Salada: Coloque 4       no prato. Aumenta o multipicador baseado nas caracteristicas equilibradas do seu prato."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Tag1" type="Sprite2D" parent="Tutorial"]
-position = Vector2(459.459, 196.807)
+position = Vector2(405.782, 177)
 texture = ExtResource("35_7o2ue")
 
 [node name="Tag2" type="Sprite2D" parent="Tutorial"]
-position = Vector2(808.141, 192)
+position = Vector2(821.141, 176)
 texture = ExtResource("51_sjp0i")
 
 [node name="Tag8" type="Sprite2D" parent="Tutorial"]
-position = Vector2(891, 479)
+position = Vector2(902, 461)
 texture = ExtResource("52_q22g7")
 
 [node name="Tag3" type="Sprite2D" parent="Tutorial"]
-position = Vector2(835, 192)
+position = Vector2(848, 176)
 texture = ExtResource("52_q22g7")
 
 [node name="Tag4" type="Sprite2D" parent="Tutorial"]
-position = Vector2(861, 192)
+position = Vector2(874, 176)
 texture = ExtResource("53_8ympj")
 
 [node name="Tag5" type="Sprite2D" parent="Tutorial"]
-position = Vector2(888.14, 192)
+position = Vector2(901.14, 176)
 texture = ExtResource("54_own7q")
 
 [node name="Tag6" type="Sprite2D" parent="Tutorial"]
-position = Vector2(915, 192)
+position = Vector2(928, 176)
 texture = ExtResource("55_ekqbq")
 
 [node name="Tag7" type="Sprite2D" parent="Tutorial"]
-position = Vector2(943, 192)
+position = Vector2(956, 176)
 texture = ExtResource("56_85vv2")
 
 [node name="Button" type="Button" parent="Tutorial"]
 layout_mode = 0
-offset_left = 985.072
-offset_top = 68.7908
-offset_right = 1041.07
-offset_bottom = 130.791
+offset_left = 1041.0
+offset_top = 8.99279
+offset_right = 1081.0
+offset_bottom = 60.9928
+scale = Vector2(1.2, 1.2)
+theme_override_colors/font_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_disabled_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_hover_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/icon_normal_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
-theme_override_font_sizes/font_size = 64
-text = "X
-"
+theme_override_font_sizes/font_size = 32
+text = "🗙"
 flat = true
 
 [node name="Tutorial2" type="Panel" parent="."]
@@ -1095,6 +1133,7 @@ anchor_right = 0.0606306
 anchor_bottom = 0.983869
 offset_right = 0.392799
 offset_bottom = 0.121689
+focus_mode = 0
 theme_override_font_sizes/font_size = 24
 text = "
 "
@@ -1129,13 +1168,15 @@ stream = ExtResource("56_t8bik")
 bus = &"SFX"
 
 [node name="button_abrir_cliente" type="Button" parent="."]
+texture_filter = 2
 layout_mode = 0
-offset_left = 1155.66
-offset_top = 621.0
-offset_right = 2863.66
-offset_bottom = 1846.0
-scale = Vector2(0.08, 0.08)
-icon = ExtResource("42_wi3jo")
+offset_left = 1152.0
+offset_top = 593.0
+offset_right = 1826.0
+offset_bottom = 1266.0
+scale = Vector2(0.2, 0.2)
+focus_mode = 0
+icon = ExtResource("33_vl321")
 flat = true
 
 [node name="Reliquias" parent="." instance=ExtResource("52_r5dke")]
@@ -1149,18 +1190,6 @@ lista_reliquias = Array[ExtResource("2_rk4e5")]([ExtResource("54_i5ix0"), ExtRes
 
 [node name="Glossario" parent="." instance=ExtResource("71_d77h8")]
 visible = false
-
-[node name="Hover" type="Panel" parent="." groups=["Hover"]]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="tracejado" type="Label" parent="."]
 layout_mode = 0
@@ -1201,6 +1230,18 @@ offset_bottom = 175.0
 theme_override_colors/font_color = Color(0.705882, 0.447059, 0.141176, 1)
 text = "- - - - - - - - - - - - - - - - 
 "
+
+[node name="Hover" type="Panel" parent="." groups=["Hover"]]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Decartes/ColorRect" to="Decartes/ColorRect" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Decartes/ColorRect" to="Decartes/ColorRect" method="_on_mouse_exited"]

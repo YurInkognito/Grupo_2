@@ -74,7 +74,7 @@ func gera_cliente():
 }
 	if fase > 7:
 		cliente.dificuldade = 2
-	var nomes = ["Fogaço", "Erick Jacão", "Hyena Rizo", "Claude Trollgros", "Bela Gill"]
+	var nomes = ["Fogaço", "Erick Jacão", "Hyena Rizo", "Ana Maria Praga", "Ghork'Ohn Ahm'sey"]
 	var rng = RandomNumberGenerator.new()
 	var obj_n = []
 	var obj_1 = rng.randi_range(0, 5)

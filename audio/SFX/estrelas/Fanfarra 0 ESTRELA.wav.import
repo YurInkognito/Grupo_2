@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brrner7yti0e1"
+path="res://.godot/imported/Fanfarra 0 ESTRELA.wav-70b2e83f211a6708a00b0691daf964bb.sample"
+
+[deps]
+
+source_file="res://audio/SFX/estrelas/Fanfarra 0 ESTRELA.wav"
+dest_files=["res://.godot/imported/Fanfarra 0 ESTRELA.wav-70b2e83f211a6708a00b0691daf964bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

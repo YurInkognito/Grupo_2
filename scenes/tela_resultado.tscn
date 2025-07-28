@@ -1,436 +1,307 @@
-[gd_scene load_steps=50 format=3 uid="uid://bjx5i6vqq1ccp"]
+extends Control
 
-[ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
-[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
-[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="3_dv6s2"]
-[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
-[ext_resource type="Script" uid="uid://nd781laanjk2" path="res://scenes/upgrade.gd" id="4_6c4ii"]
-[ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
-[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
-[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
-[ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
-[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
-[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
-[ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
-[ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
-[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
-[ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/temporarios/carta12.png" id="7_jn4of"]
-[ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="7_nc1gs"]
-[ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
-[ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="8_r06dc"]
-[ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
-[ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
-[ext_resource type="Resource" uid="uid://dc5bv8mvqsddo" path="res://Cartas Adicionais/Escama de Boitata.tres" id="11_hj10q"]
-[ext_resource type="Resource" uid="uid://gy204a0jbqel" path="res://Cartas Adicionais/MandragoraReal.tres" id="12_jxvgl"]
-[ext_resource type="Resource" uid="uid://dewmiwnj8ouoa" path="res://Cartas Adicionais/MentaEsfoladoura.tres" id="13_h1s8t"]
-[ext_resource type="Resource" uid="uid://cpncsap5r31xa" path="res://Cartas Adicionais/NozPrismatica.tres" id="14_jn4of"]
-[ext_resource type="Resource" uid="uid://cksh7kgq22o63" path="res://Cartas Adicionais/OvosDeAmbrosia.tres" id="15_w4qan"]
-[ext_resource type="Resource" uid="uid://f5lg7tp3167y" path="res://Cartas Adicionais/PiclesDeBeholder.tres" id="16_g0giy"]
-[ext_resource type="Resource" uid="uid://bevuamrh23hnd" path="res://Cartas Adicionais/Queijo.tres" id="17_boxiq"]
-[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas/Repolho.tres" id="18_ol7y8"]
-[ext_resource type="Resource" uid="uid://c2e2t7cquk7a5" path="res://Cartas Adicionais/sal.tres" id="19_hwysf"]
-[ext_resource type="Resource" uid="uid://di1uo486cqo24" path="res://Cartas Adicionais/TomateVampirico.tres" id="20_wlslg"]
-[ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="26_emjtu"]
-[ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="27_jb74u"]
-[ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="28_jsasa"]
-[ext_resource type="Resource" uid="uid://pq8u1hoapxwd" path="res://Cartas/BatataNormal.tres" id="29_dv6s2"]
-[ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="30_drhht"]
-[ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="31_kwymj"]
-[ext_resource type="Resource" uid="uid://bpturhuwta3pk" path="res://Cartas/Arroz.tres" id="32_nc1gs"]
-[ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="33_r06dc"]
-[ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="34_s2mhk"]
-[ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="35_5x135"]
-[ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="36_4lnjb"]
-[ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="37_0e7i2"]
-[ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="38_1ajnj"]
-[ext_resource type="Resource" uid="uid://cd760bxg0h26d" path="res://Cartas Adicionais/CuboMaionese.tres" id="39_jb74u"]
-[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas Adicionais/Amendoranha.tres" id="40_jsasa"]
+@onready var timer = $Timer
+@onready var timer_anim = $timer_anim
+@onready var jeff = $JeffChibi
+@onready var fase = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
-font = ExtResource("5_kwymj")
-font_size = 128
-font_color = Color(0.980392, 0.996078, 0.521569, 1)
-shadow_size = 2
-shadow_color = Color(0.8, 0.407843, 0.239216, 1)
+@onready var calendario1 : TextureRect = $"Calendario1"
+@onready var calendario2 : TextureRect = $"Calendario2"
 
-[sub_resource type="LabelSettings" id="LabelSettings_w4qan"]
-font_size = 150
-font_color = Color(0.836007, 0.836006, 7.70092e-07, 1)
-outline_size = 10
-outline_color = Color(0, 0, 1, 1)
+@onready var resultado1 : Label = $'Calendario1/Painel 1/Resultado1'
+@onready var resultado2 : Label = $'Calendario1/Painel 2/Resultado2'
+@onready var resultado3 : Label = $'Calendario1/Painel 3/Resultado3'
+@onready var resultado5 : Label = $'Calendario1/Painel 5/Resultado5'
+@onready var resultado6 : Label = $'Calendario1/Painel 6/Resultado6'
+@onready var resultado7 : Label = $'Calendario1/Painel 7/Resultado7'
 
-[sub_resource type="LabelSettings" id="LabelSettings_s2mhk"]
-font = ExtResource("5_kwymj")
-font_size = 32
-font_color = Color(0.980392, 0.996078, 0.521569, 1)
-shadow_color = Color(0.8, 0.407843, 0.239216, 1)
+@onready var resultado8 : Label = $'Calendario2/Painel 8/Resultado8'
+@onready var resultado9 : Label = $'Calendario2/Painel 9/Resultado9'
+@onready var resultado10 : Label = $'Calendario2/Painel 10/Resultado10'
+@onready var resultado12 : Label = $'Calendario2/Painel 12/Resultado12'
+@onready var resultado13 : Label = $'Calendario2/Painel 13/Resultado13'
+@onready var resultado14 : Label = $'Calendario2/Painel 14/Resultado14'
 
-[sub_resource type="LabelSettings" id="LabelSettings_g0giy"]
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-outline_color = Color(0.580218, 0.572119, 1, 1)
+@onready var animdia1 : AnimatedSprite2D = $AnimDia1
+@onready var animdia2 : AnimatedSprite2D = $AnimDia2
+@onready var animdia3 : AnimatedSprite2D = $AnimDia3
+@onready var animdia4 : AnimatedSprite2D = $AnimDia4
+@onready var animdia5 : AnimatedSprite2D = $AnimDia5
+@onready var animdia6 : AnimatedSprite2D = $AnimDia6
+@onready var animdia7 : AnimatedSprite2D = $AnimDia7
 
-[node name="TelaResultado" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_7plcf")
+@onready var rosto : TextureRect = $rosto
+@onready var rosto2 : TextureRect = $rosto2
+@onready var rosto3 : TextureRect = $rosto3
+@onready var rosto4 : TextureRect = $rosto4
+@onready var rosto5 : TextureRect = $rosto5
+@onready var rosto6 : TextureRect = $rosto6
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -619.0
-offset_top = -118.0
-offset_right = 1301.0
-offset_bottom = 962.0
-texture = ExtResource("2_mjhyp")
+@onready var aliane = load("res://sprites/portraits/borda icone aliane.png")
+@onready var jaccao = load("res://sprites/portraits/borda icone erick jaccão.png")
+@onready var fogaco = load("res://sprites/portraits/borda icone fogaço.png")
+@onready var ghorkon = load("res://sprites/portraits/borda icone ghorkon.png")
+@onready var hiena = load("res://sprites/portraits/borda icone hiena rizzo.png")
+@onready var bruxa = load("res://sprites/portraits/borda icone Bruxa Braga.png")
 
-[node name="AlianeButolane-1" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 767.0
-offset_top = 250.0
-offset_right = 2467.0
-offset_bottom = 1467.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_dv6s2")
-stretch_mode = 2
+@onready var check: AudioStreamPlayer2D = $check
+@onready var vinh_cal1: AudioStreamPlayer2D = $vinh_cal1
+@onready var vinh_cal2: AudioStreamPlayer2D = $vinh_cal2
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.484375
-anchor_bottom = 1.0
-theme = ExtResource("4_hj10q")
-metadata/_edit_use_anchors_ = true
+func _ready() -> void:
+	var fase = GlobalData.fase
+	
+	var fase_pos = fase
+	if fase >= 8:
+		fase_pos = fase - 7
+	jeff.position.x = (260 + 138 * (fase_pos - 2))
+	
+	var tween = create_tween()
 
-[node name="Dia" type="Label" parent="Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.297491
-anchor_top = 0.0483029
-anchor_right = 0.704301
-anchor_bottom = 0.145525
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
-theme_override_fonts/font = ExtResource("5_kwymj")
-theme_override_font_sizes/font_size = 64
-text = "Dia 2"
-label_settings = ExtResource("6_nc1gs")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+	tween.tween_property(jeff, "position", position + Vector2(jeff.position.x + 138, jeff.position.y), 1.0)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	
+	print("fase atual: " + str(fase))
+	alterar_cliente()
+	$"/root/GlobalData".set_pontuacao_fases()
+	pontuacao_mostrar()
+	qual_semana()
+	anim_passou_dia()
+	check.play()
 
-[node name="Sabor" type="Label" parent="Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.284767
-anchor_top = 0.145525
-anchor_right = 0.717025
-anchor_bottom = 0.242747
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_kwymj")
-theme_override_font_sizes/font_size = 64
-text = "Sabor: 430"
-label_settings = ExtResource("6_nc1gs")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+func proxima_fase():
+	match fase:
+		1:
+			Transição.change_scene("res://scenes/cena_aliane.tscn")
+		#5:
+			#leva pra cutscene 2
+		#	get_tree().change_scene_to_file("res://scenes/control.tscn")
+		_:
+			Transição.change_scene("res://scenes/control.tscn")
 
-[node name="Prato" type="Label" parent="Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.297491
-anchor_top = 0.242747
-anchor_right = 0.704301
-anchor_bottom = 0.339969
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_kwymj")
-theme_override_font_sizes/font_size = 64
-text = "Prato: x4"
-label_settings = ExtResource("6_nc1gs")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+func qual_semana():
+	if GlobalData.fase <= 7 :
+		calendario1.visible = true
+		calendario2.visible = false
+		vinh_cal1.play()
+	else:
+		calendario1.visible = false
+		calendario2.visible = true
+		vinh_cal2.play()
+	
+func pontuacao_mostrar():
+	resultado1.text = "$" + str($"/root/GlobalData".pontuacao_fases[2])
+	resultado2.text = "$" + str($"/root/GlobalData".pontuacao_fases[3])
+	resultado3.text = "$" + str($"/root/GlobalData".pontuacao_fases[4])
+	resultado5.text = "$" + str($"/root/GlobalData".pontuacao_fases[5])
+	resultado6.text = "$" + str($"/root/GlobalData".pontuacao_fases[6])
+	resultado7.text = "$" + str($"/root/GlobalData".pontuacao_fases[7])
+	resultado8.text = "$" + str($"/root/GlobalData".pontuacao_fases[8])
+	resultado9.text = "$" + str($"/root/GlobalData".pontuacao_fases[9])
+	resultado10.text = "$" + str($"/root/GlobalData".pontuacao_fases[10])
+	resultado12.text = "$" + str($"/root/GlobalData".pontuacao_fases[11])
+	resultado13.text = "$" + str($"/root/GlobalData".pontuacao_fases[12])
+	resultado14.text = "$" + str($"/root/GlobalData".pontuacao_fases[13])
+	
+func _on_timer_timeout() -> void:
+	proxima_fase()
 
-[node name="Cliente" type="Label" parent="Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.271864
-anchor_top = 0.339969
-anchor_right = 0.729928
-anchor_bottom = 0.437191
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_kwymj")
-theme_override_font_sizes/font_size = 64
-text = "Cliente: x2"
-label_settings = ExtResource("6_nc1gs")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+func anim_passou_dia():
+	if GlobalData.fase == 2 or GlobalData.fase == 9:
+		await timer_anim.timeout
+		animdia1.visible = true
+		animdia1.play("default")
 
-[node name="Resultado" type="Label" parent="Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.250179
-anchor_top = 0.46821
-anchor_right = 0.753405
-anchor_bottom = 0.644135
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_kwymj")
-theme_override_font_sizes/font_size = 128
-text = "$ 2580"
-label_settings = SubResource("LabelSettings_r06dc")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+	elif GlobalData.fase == 3 or GlobalData.fase == 10:
+		animdia1.visible = true
+		animdia1.frame = 3
+		await timer_anim.timeout
+		animdia2.visible = true
+		animdia2.play("default")
 
-[node name="Estrelas" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -226.5
-offset_top = -331.0
-offset_right = 226.5
-offset_bottom = -58.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 100
-text = "★ ★ ★"
-label_settings = SubResource("LabelSettings_w4qan")
-horizontal_alignment = 1
-vertical_alignment = 1
+	elif GlobalData.fase == 4 or GlobalData.fase == 11:
+		animdia1.visible = true
+		animdia1.frame = 3
+		animdia2.visible = true
+		animdia2.frame = 3
+		await timer_anim.timeout
+		animdia3.visible = true
+		animdia3.play("default")
 
-[node name="Secret" type="Label" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.105101
-anchor_right = 0.473939
-anchor_bottom = 0.105101
-offset_top = 108.894
-offset_right = -0.457947
-offset_bottom = 218.894
-rotation = -0.785398
-theme_override_colors/font_color = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-theme_override_font_sizes/font_size = 80
-text = "Secret!"
-metadata/_edit_use_anchors_ = true
+	elif GlobalData.fase == 5 or GlobalData.fase == 12:
+		animdia1.visible = true
+		animdia1.frame = 3
+		animdia2.visible = true
+		animdia2.frame = 3
+		animdia3.visible = true
+		animdia3.frame = 3
+		await timer_anim.timeout
+		animdia4.visible = true
+		animdia4.play("default")
 
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.539844
-anchor_top = 0.695833
-anchor_right = 0.936719
-anchor_bottom = 0.9625
-theme = ExtResource("4_hj10q")
-metadata/_edit_use_anchors_ = true
+	elif GlobalData.fase == 6 or GlobalData.fase == 13:
+		animdia1.visible = true
+		animdia1.frame = 3
+		animdia2.visible = true
+		animdia2.frame = 3
+		animdia3.visible = true
+		animdia3.frame = 3
+		animdia4.visible = true
+		animdia4.frame = 3
+		await timer_anim.timeout
+		animdia5.visible = true
+		animdia5.play("default")
 
-[node name="Fala" type="Label" parent="Panel2"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0459519
-anchor_top = 0.19
-anchor_right = 0.95186
-anchor_bottom = 0.81
-offset_left = 14.6564
-offset_top = -6.48004
-offset_right = -9.54495
-offset_bottom = 5.47983
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/line_spacing = -5
-theme_override_font_sizes/font_size = 20
-text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe "
-label_settings = SubResource("LabelSettings_s2mhk")
-autowrap_mode = 2
-
-[node name="Button" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.375781
-anchor_top = -0.023611
-anchor_right = 3.34766
-anchor_bottom = 3.6875
-offset_left = 512.0
-offset_top = 644.0
-offset_right = -3762.0
-offset_bottom = -1750.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("7_nc1gs")
-texture_pressed = ExtResource("8_r06dc")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="."]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 0
-offset_left = 75.506
-offset_top = 653.112
-offset_right = 146.506
-offset_bottom = 695.112
-text = "Menu"
-label_settings = ExtResource("6_h1s8t")
-
-[node name="Button2" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0335938
-anchor_top = -0.023611
-anchor_right = 0.276563
-anchor_bottom = 0.311111
-offset_left = 490.0
-offset_top = 644.0
-offset_right = 581.0
-offset_bottom = 681.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("7_nc1gs")
-texture_pressed = ExtResource("8_r06dc")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="Button2"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 0
-offset_left = 99.9998
-offset_top = 87.0402
-offset_right = 224.0
-offset_bottom = 129.04
-scale = Vector2(3, 3)
-text = "Avançar"
-label_settings = ExtResource("6_h1s8t")
-
-[node name="Prato" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.408854
-anchor_top = 0.0787037
-anchor_right = 0.563368
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Prato"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 0
-offset_right = 197.0
-offset_bottom = 302.0
-texture = ExtResource("7_jn4of")
-
-[node name="Foto" type="TextureRect" parent="Prato"]
-layout_mode = 0
-offset_left = 28.6669
-offset_top = 16.3333
-offset_right = 171.667
-offset_bottom = 144.333
-texture = ExtResource("3_ur8ju")
-expand_mode = 1
-
-[node name="Nome" type="Label" parent="Prato"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 193.0
-offset_right = 184.0
-offset_bottom = 288.0
-theme_override_font_sizes/font_size = 10
-text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
-label_settings = SubResource("LabelSettings_g0giy")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Panel3" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="Panel" type="Panel" parent="Panel3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -156.0
-offset_right = 225.0
-offset_bottom = 156.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_hj10q")
-script = ExtResource("4_6c4ii")
-lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg"), ExtResource("26_emjtu"), ExtResource("27_jb74u"), ExtResource("28_jsasa"), ExtResource("29_dv6s2"), ExtResource("30_drhht"), ExtResource("7_7ag0k"), ExtResource("31_kwymj"), ExtResource("32_nc1gs"), ExtResource("33_r06dc"), ExtResource("34_s2mhk"), ExtResource("18_ol7y8"), ExtResource("35_5x135"), ExtResource("36_4lnjb"), ExtResource("37_0e7i2"), ExtResource("38_1ajnj"), ExtResource("39_jb74u"), ExtResource("40_jsasa")])
-
-[node name="Button" type="Button" parent="Panel3/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -97.0
-offset_right = 4779.0
-offset_bottom = 2612.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.032, 0.032)
-text = "Pular"
-icon = ExtResource("5_jxvgl")
-flat = true
-
-[node name="Label" type="Label" parent="Panel3/Panel"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 0
-offset_left = 184.0
-offset_top = 238.0
-offset_right = 277.0
-offset_bottom = 273.0
-text = "Pular"
-label_settings = ExtResource("6_h1s8t")
-
-[node name="card" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
-layout_mode = 1
-anchor_left = 0.682222
-anchor_top = 0.224359
-anchor_right = 0.895556
-anchor_bottom = 0.690513
-offset_left = -7.00006
-offset_right = -7.00006
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="card2" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
-layout_mode = 1
-anchor_left = 0.213333
-anchor_top = 0.217949
-anchor_right = 0.426667
-anchor_bottom = 0.682692
-offset_left = 84.0002
-offset_top = -9.15527e-05
-offset_right = 83.9998
-offset_bottom = 9.15527e-05
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="card3" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
-layout_mode = 1
-anchor_left = 0.362222
-anchor_top = 0.217949
-anchor_right = 0.575556
-anchor_bottom = 0.684103
-offset_left = -103.0
-offset_right = -103.0
-grow_horizontal = 1
-grow_vertical = 1
+	elif GlobalData.fase == 14:
+		animdia1.visible = true
+		animdia1.frame = 3
+		animdia2.visible = true
+		animdia2.frame = 3
+		animdia3.visible = true
+		animdia3.frame = 3
+		animdia4.visible = true
+		animdia4.frame = 3
+		animdia5.visible = true
+		animdia5.frame = 3
+		animdia6.visible = true
+		animdia6.frame = 3
+		await timer_anim.timeout
+		animdia7.visible = true
+		animdia7.play("default")
+		
+	else:
+		animdia1.visible = false
+		animdia2.visible = false
+		animdia3.visible = false
+		animdia4.visible = false
+		animdia5.visible = false
+		animdia6.visible = false
+		animdia7.visible = false
+		
+func alterar_cliente():
+	if GlobalData.fase == 1:
+		rosto.texture = aliane
+		rosto.visible = true
+	
+	match GlobalData.fase:
+		2:
+			rosto.visible = true
+			rosto2.texture = qual_cliente()
+			rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			rosto2.visible = true
+			prato2.texture = 
+			prato2.visible = true
+		3:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.texture = qual_cliente()
+			rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			rosto3.visible = true
+		5:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.texture = qual_cliente()
+			rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			rosto4.visible = true
+		6:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.visible = true
+			rosto5.texture = qual_cliente()
+			rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			rosto5.visible = true
+		7:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3. visible = true
+			rosto4.visible = true
+			rosto5.visible = true
+			rosto6.texture = qual_cliente()
+			rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			rosto6.visible = true
+		8:
+			rosto2.visible = false
+			rosto3.visible = false
+			rosto4.visible = false
+			rosto5.visible = false
+			rosto6.visible = false
+			rosto.texture = qual_cliente()
+			rosto.position.x = rosto.position.x - ajustar_pos()[0]
+			rosto.position.y = rosto.position.y - ajustar_pos()[1]
+			rosto.visible = true
+		9:
+			rosto.visible = true
+			rosto2.texture = qual_cliente()
+			rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			rosto2.visible = true
+		10:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.texture = qual_cliente()
+			rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			rosto3.visible = true
+		12:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.texture = qual_cliente()
+			rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			rosto4.visible = true
+		13:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3.visible = true
+			rosto4.visible = true
+			rosto5.texture = qual_cliente()
+			rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			rosto5.visible = true
+		14:
+			rosto.visible = true
+			rosto2.visible = true
+			rosto3. visible = true
+			rosto4.visible = true
+			rosto5.visible = true
+			rosto6.texture = qual_cliente()
+			rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			rosto6.visible = true
+			
+func qual_cliente():
+	match GlobalData.cliente_temp["nome"]:
+		"Fogaço":
+			return fogaco
+		"Erick Jacão":
+			return jaccao
+		"Hyena Rizo":
+			return hiena
+		"Claude Trollgros":
+			return ghorkon
+		"Bela Gill":
+			return bruxa
+		_:
+			return aliane
+			
+func ajustar_pos():
+	match qual_cliente():
+		fogaco:
+			return [4,5]
+		jaccao:
+			return [4,5]
+		bruxa:
+			return [8,11]
+		ghorkon:
+			return [0,10]
+		hiena:
+			return [3,11]
