@@ -688,6 +688,66 @@ scale = Vector2(0.22, 0.22)
 texture = ExtResource("5_7gsga")
 stretch_mode = 3
 
+[node name="prato1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 321.0
+offset_right = 832.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="prato2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 321.0
+offset_right = 970.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="prato3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 321.0
+offset_right = 1107.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="prato4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 321.0
+offset_right = 1383.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="prato5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 321.0
+offset_right = 1522.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
+[node name="prato6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 321.0
+offset_right = 1660.0
+offset_bottom = 1033.0
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7gsga")
+stretch_mode = 3
+
 [node name="AnimDia1" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(640, 360)

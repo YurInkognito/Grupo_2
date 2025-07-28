@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://b6gka6rawpuf5"]
 
 [ext_resource type="Script" uid="uid://dqjqx5rciawal" path="res://scripts/area.gd" id="1_bb12l"]
-[ext_resource type="AudioStream" uid="uid://dcqif0ysyn6xi" path="res://audio/SFX/FRITURA.wav" id="2_5jt5u"]
-[ext_resource type="AudioStream" uid="uid://yr4vkt3hynxm" path="res://audio/SFX/Martelo .wav" id="3_t8tu6"]
+[ext_resource type="AudioStream" uid="uid://cnt4ysptr7l4e" path="res://audio/SFX/Fogo + Fritura SFX V2.wav" id="2_t8tu6"]
+[ext_resource type="AudioStream" uid="uid://c1c4rym4nabtt" path="res://audio/SFX/Martelo SFX V2.wav" id="3_mphia"]
 [ext_resource type="AudioStream" uid="uid://c2vnivg27me6" path="res://audio/SFX/CORTE SFX.wav" id="4_mphia"]
 [ext_resource type="Texture2D" uid="uid://cxnoisx7qwhyk" path="res://sprites/temporarios/animacoes processos.png" id="5_t8tu6"]
 
@@ -147,10 +147,10 @@ theme_override_font_sizes/font_size = 9
 text = "Lixo"
 
 [node name="fogo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_5jt5u")
+stream = ExtResource("2_t8tu6")
 
 [node name="martelo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_t8tu6")
+stream = ExtResource("3_mphia")
 
 [node name="faca" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_mphia")
