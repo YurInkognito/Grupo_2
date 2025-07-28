@@ -1,16 +1,22 @@
-[gd_scene load_steps=52 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=58 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
+[ext_resource type="Texture2D" uid="uid://crjjnnj3f0qae" path="res://sprites/portraits/borda icone fogaço.png" id="2_15ve0"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
+[ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="3_0qipj"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
+[ext_resource type="Texture2D" uid="uid://b2bq63spqwvb4" path="res://sprites/portraits/borda icone hiena hyzzo.png" id="4_drksp"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
+[ext_resource type="Texture2D" uid="uid://bfhr2s7srmt61" path="res://sprites/portraits/borda icone ghorkon.png" id="5_1dpdf"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
 [ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
+[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
 [ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
 [ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
+[ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="6_tr2b6"]
 [ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="7_5x135"]
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
 [ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="8_4lnjb"]
@@ -80,6 +86,7 @@ var is_dragging_global = true
 @onready var upgrade_3: card = $card3
 
 @onready var pular: Button = $Button
+@onready var button_vitoria: Button = $Panel2/Button_Vitoria
 
 @export var mana = 0 #só pra corrigir um bug
 
@@ -87,10 +94,14 @@ var is_dragging_global = true
 func _ready() -> void:
 	lista_cartas = $\"/root/GlobalData\".lista_cartas
 	pular.pressed.connect(skip)
+	button_vitoria.pressed.connect(voltar)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func voltar():
+	Transição.change_scene(\"res://scenes/tela_titulo.tscn\")
 
 func select_card(card_data):
 	$\"/root/GlobalData\".lista_cartas.append(card_data)
@@ -175,6 +186,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7plcf")
+fogaco = ExtResource("2_15ve0")
+jaccao = ExtResource("3_0qipj")
+hiena = ExtResource("4_drksp")
+ghorkon = ExtResource("5_1dpdf")
+bruxa = ExtResource("6_tr2b6")
+aliane = ExtResource("8_4lnjb")
 
 [node name="estrela3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("44_s2mhk")
@@ -203,7 +220,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("7_5x135")
 
-[node name="AlianeButolane-1" type="TextureRect" parent="."]
+[node name="cliente" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 742.0
 offset_top = 190.493
@@ -465,7 +482,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel3" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -508,10 +524,10 @@ flat = true
 [node name="Label" type="Label" parent="Panel3/Panel"]
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 0
-offset_left = 184.0
-offset_top = 238.0
-offset_right = 277.0
-offset_bottom = 273.0
+offset_left = 191.0
+offset_top = 243.0
+offset_right = 284.0
+offset_bottom = 278.0
 text = "Pular"
 label_settings = ExtResource("12_s2mhk")
 
@@ -549,3 +565,63 @@ offset_left = -103.0
 offset_right = -103.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Panel2" type="Panel" parent="Panel3/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_hj10q")
+
+[node name="Label" type="Label" parent="Panel3/Panel/Panel2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 29.0
+offset_right = 415.0
+offset_bottom = 278.0
+text = "Parabens! 
+Você tornou o 
+A la Carte o maior restaurante de Balsas!
+
+"
+label_settings = ExtResource("6_h1s8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button_Vitoria" type="Button" parent="Panel3/Panel/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.032, 0.032)
+icon = ExtResource("5_jxvgl")
+flat = true
+
+[node name="Label2" type="Label" parent="Panel3/Panel/Panel2"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 243.0
+offset_right = 295.0
+offset_bottom = 278.0
+text = "Menu"
+label_settings = ExtResource("12_s2mhk")
+horizontal_alignment = 1

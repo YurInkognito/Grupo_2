@@ -9,6 +9,7 @@ extends Control
 @onready var fala: Label = $Panel2/Fala
 @onready var secret: Label = $Panel/Secret
 @onready var foto: TextureRect = $Prato/Foto
+@onready var cliente_foto: TextureRect = $cliente
 
 @export var sabor_value: int
 @export var prato_value: int
@@ -25,6 +26,13 @@ extends Control
 @onready var estrela2 : AudioStreamPlayer2D = $estrela2
 @onready var estrela3 : AudioStreamPlayer2D = $estrela3
 
+@export var fogaco: Texture2D
+@export var jaccao: Texture2D
+@export var hiena: Texture2D
+@export var ghorkon: Texture2D
+@export var bruxa: Texture2D
+@export var aliane: Texture2D
+
 var labels: Array[Label]
 
 const BASE_CRESCIMENTO = 1.2
@@ -35,6 +43,7 @@ func _ready() -> void:
 	botao.pressed.connect(voltar)
 	continuar.pressed.connect(upgradar)
 	foto.texture = $"/root/GlobalData".foto_final
+	cliente_foto.texture = qual_cliente()
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	sabor_value = $"/root/GlobalData".sabor_final
 	prato_value = $"/root/GlobalData".mult_final
@@ -90,6 +99,21 @@ func _process(delta: float) -> void:
 			estrelas.text = '★ ★'
 		3: 
 			estrelas.text = '★ ★ ★'
+
+func qual_cliente():
+	match GlobalData.cliente_temp["nome"]:
+		"Fogaço":
+			return fogaco
+		"Erick Jacão":
+			return jaccao
+		"Hyena Rizo":
+			return hiena
+		"Ghork'Ohn Ahm'sey":
+			return ghorkon
+		"Ana Maria Praga":
+			return bruxa
+		_:
+			return aliane
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))

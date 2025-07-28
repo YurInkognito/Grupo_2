@@ -363,9 +363,9 @@ func qual_cliente():
 			return jaccao
 		"Hyena Rizo":
 			return hiena
-		"Claude Trollgros":
+		"Ghork'Ohn Ahm'sey":
 			return ghorkon
-		"Bela Gill":
+		"Ana Maria Praga":
 			return bruxa
 		_:
 			return aliane

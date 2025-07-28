@@ -29,7 +29,7 @@
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
 [ext_resource type="Texture2D" uid="uid://b1e4jv2qipmdb" path="res://sprites/UI_final/Botão Sair Pressionado (2).PNG" id="26_agj7q"]
-[ext_resource type="Texture2D" uid="uid://dqectvtm11hba" path="res://sprites/temporarios/logo a la carte.png" id="26_jx0lc"]
+[ext_resource type="Texture2D" uid="uid://dbtnl8j46qgyl" path="res://sprites/LOGO À LA CARTE.png" id="28_koial"]
 [ext_resource type="Texture2D" uid="uid://bpd48d6semkj2" path="res://sprites/UI_final/Botão Voltar Idle (Menu Volume) (2).PNG" id="30_ywseg"]
 [ext_resource type="Texture2D" uid="uid://bvotoo0fa5tl1" path="res://sprites/UI_final/Botão Voltar Pressionado (Menu Volume) (2).PNG" id="31_koial"]
 
@@ -109,6 +109,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BotaoIniciar" type="Button" parent="TextureRect3"]
+visible = false
 layout_mode = 2
 offset_left = 747.0
 offset_top = 125.0
@@ -121,12 +122,12 @@ text = "Beta Test
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect3"]
 layout_mode = 2
-offset_left = 533.0
-offset_top = 173.0
-offset_right = 2453.0
-offset_bottom = 1253.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("26_jx0lc")
+offset_left = 565.0
+offset_top = 162.0
+offset_right = 7565.0
+offset_bottom = 5162.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("28_koial")
 
 [node name="MarginContainerContent" type="MarginContainer" parent="."]
 unique_name_in_owner = true
