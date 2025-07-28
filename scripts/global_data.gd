@@ -6,6 +6,7 @@ extends Node
 @export var fase: int = 0
 @export var lista_pratos = []
 @export var lista_reliquias: Array[CartaData]
+@export var reliquias: Array[CartaData]
 
 #durante o jogo
 @export var sabor_final: int = 0
@@ -58,6 +59,10 @@ func remover_processos(lista_de_cartas: Array[CartaData]) -> Array[CartaData]:
 	
 func proxima_fase():
 	fase += 1
+	#if fase != 4:
+		#fase = 4
+	#else:
+		#fase = 5
 	gera_cliente()
 	Transição.change_scene("res://scenes/semana.tscn")
 
@@ -246,3 +251,27 @@ func cliente_nota(cliente):
 func set_pontuacao_fases():
 	var pontuacao = sabor_final * mult_final * cliente_final
 	pontuacao_fases[fase]=pontuacao
+
+const TODAS_RELIQUIAS = [
+	preload("res://Reliquias/Bandana.tres"),
+	preload("res://Reliquias/CuteloEncantado.tres"),
+	preload("res://Reliquias/DeckDeMuitasCoisas.tres"),
+	preload("res://Reliquias/Energetico.tres"),
+	preload("res://Reliquias/FogoEncantado.tres"),
+	preload("res://Reliquias/MarteloEncantado.tres"),
+	preload("res://Reliquias/MiseEnPlace.tres"),
+	preload("res://Reliquias/PaginaPerdida.tres"),
+	preload("res://Reliquias/panelaDeVo.tres"),
+	preload("res://Reliquias/PocaoDeMana.tres"),
+	preload("res://Reliquias/SaladaMelhor.tres"),
+	preload("res://Reliquias/SanduicheMelhor.tres"),
+	preload("res://Reliquias/SopaMelhor.tres"),
+	preload("res://Reliquias/WildMagic.tres")
+]
+
+var _perde_compra
+
+func perde_compra():
+	_perde_compra = true
+
+var perde_um_turno = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdxrugawfthw6"
-path="res://.godot/imported/Botão Passar Turno Frame 2.PNG-54ccef756cd4dd61f22b557366184e55.ctex"
+uid="uid://h48xy15lli8j"
+path="res://.godot/imported/Arte Nova.PNG-09754175fd9d3540d2c193cdc7623975.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI_final/animação board/Botão Passar Turno Frame 2.PNG"
-dest_files=["res://.godot/imported/Botão Passar Turno Frame 2.PNG-54ccef756cd4dd61f22b557366184e55.ctex"]
+source_file="res://sprites/Arte Nova.PNG"
+dest_files=["res://.godot/imported/Arte Nova.PNG-09754175fd9d3540d2c193cdc7623975.ctex"]
 
 [params]
 

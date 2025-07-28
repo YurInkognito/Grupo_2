@@ -42,6 +42,13 @@ grow_vertical = 2
 script = ExtResource("1_duhc1")
 metadata/_edit_vertical_guides_ = [1082.0]
 
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -957.0
+offset_top = -576.0
+offset_right = 2110.0
+offset_bottom = 1531.0
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 609.0
@@ -132,7 +139,7 @@ offset_bottom = 337.0
 texture_normal = ExtResource("8_7eihp")
 texture_pressed = ExtResource("9_56tr2")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 3
 
 [node name="Resume" type="TextureButton" parent="Panel/Volume"]
 z_index = 12
@@ -144,7 +151,7 @@ offset_bottom = 337.0
 texture_normal = ExtResource("10_ymxxy")
 texture_pressed = ExtResource("11_maho1")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="PauseMenu" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
