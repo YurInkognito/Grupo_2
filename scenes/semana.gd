@@ -44,6 +44,10 @@ extends Control
 @onready var hiena = load("res://sprites/portraits/borda icone hiena rizzo.png")
 @onready var bruxa = load("res://sprites/portraits/borda icone Bruxa Braga.png")
 
+@onready var check: AudioStreamPlayer2D = $check
+@onready var vinh_cal1: AudioStreamPlayer2D = $vinh_cal1
+@onready var vinh_cal2: AudioStreamPlayer2D = $vinh_cal2
+
 func _ready() -> void:
 	var fase = GlobalData.fase
 	
@@ -64,6 +68,7 @@ func _ready() -> void:
 	pontuacao_mostrar()
 	qual_semana()
 	anim_passou_dia()
+	check.play()
 
 func proxima_fase():
 	match fase:
@@ -79,9 +84,11 @@ func qual_semana():
 	if GlobalData.fase <= 7 :
 		calendario1.visible = true
 		calendario2.visible = false
+		vinh_cal1.play()
 	else:
 		calendario1.visible = false
 		calendario2.visible = true
+		vinh_cal2.play()
 	
 func pontuacao_mostrar():
 	resultado1.text = "$" + str($"/root/GlobalData".pontuacao_fases[2])
