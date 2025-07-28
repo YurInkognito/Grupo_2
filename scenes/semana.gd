@@ -84,7 +84,7 @@ func _ready() -> void:
 func proxima_fase():
 	match fase:
 		1:
-			Transição.change_scene("res://scenes/cena_aliane.tscn")
+			Transição.change_scene("res://scenes/control.tscn")
 		4:
 			Transição.change_scene("res://scenes/evento.tscn")
 		_:

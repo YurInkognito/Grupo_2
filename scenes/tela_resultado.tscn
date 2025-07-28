@@ -1,8 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=52 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
-[ext_resource type="Texture2D" uid="uid://cm1scxx7tmgcx" path="res://sprites/temporarios/Aliane Butolane icon.png" id="3_dv6s2"]
 [ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
@@ -10,16 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
 [ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
 [ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
-[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
 [ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
 [ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
+[ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="7_5x135"]
 [ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
-[ext_resource type="Texture2D" uid="uid://cpdqytyf1h64s" path="res://sprites/temporarios/carta12.png" id="7_jn4of"]
+[ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="8_4lnjb"]
 [ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
 [ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
 [ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
 [ext_resource type="Resource" uid="uid://dc5bv8mvqsddo" path="res://Cartas Adicionais/Escama de Boitata.tres" id="11_hj10q"]
+[ext_resource type="LabelSettings" uid="uid://ju81lbweoxsp" path="res://recursos/magic_text_3.tres" id="12_0e7i2"]
 [ext_resource type="Resource" uid="uid://gy204a0jbqel" path="res://Cartas Adicionais/MandragoraReal.tres" id="12_jxvgl"]
+[ext_resource type="LabelSettings" uid="uid://7ebvjkdmi6te" path="res://recursos/magic_text_antigo.tres" id="12_s2mhk"]
 [ext_resource type="Resource" uid="uid://dewmiwnj8ouoa" path="res://Cartas Adicionais/MentaEsfoladoura.tres" id="13_h1s8t"]
 [ext_resource type="Resource" uid="uid://cpncsap5r31xa" path="res://Cartas Adicionais/NozPrismatica.tres" id="14_jn4of"]
 [ext_resource type="Resource" uid="uid://cksh7kgq22o63" path="res://Cartas Adicionais/OvosDeAmbrosia.tres" id="15_w4qan"]
@@ -51,26 +52,16 @@
 [sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
 font = ExtResource("5_kwymj")
 font_size = 128
-font_color = Color(0.980392, 0.996078, 0.521569, 1)
+font_color = Color(0.980392, 0.996078, 0, 1)
 shadow_size = 2
 shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_w4qan"]
-font_size = 150
-font_color = Color(0.836007, 0.836006, 7.70092e-07, 1)
-outline_size = 10
-outline_color = Color(0, 0, 1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_s2mhk"]
+[sub_resource type="LabelSettings" id="LabelSettings_1ajnj"]
 font = ExtResource("5_kwymj")
-font_size = 32
-font_color = Color(0.980392, 0.996078, 0.521569, 1)
-shadow_color = Color(0.8, 0.407843, 0.239216, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_g0giy"]
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-outline_color = Color(0.580218, 0.572119, 1, 1)
+font_size = 128
+font_color = Color(0.976471, 0.992157, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.796078, 0.407843, 0.239216, 1)
 
 [sub_resource type="GDScript" id="GDScript_drhht"]
 script/source = "extends Panel
@@ -198,6 +189,7 @@ stream = ExtResource("46_4lnjb")
 stream = ExtResource("47_0e7i2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -619.0
 offset_top = -118.0
@@ -205,21 +197,30 @@ offset_right = 1301.0
 offset_bottom = 962.0
 texture = ExtResource("2_mjhyp")
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("7_5x135")
+
 [node name="AlianeButolane-1" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 250.0
-offset_right = 2467.0
-offset_bottom = 1467.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_dv6s2")
+offset_left = 742.0
+offset_top = 190.493
+offset_right = 1357.0
+offset_bottom = 812.493
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_4lnjb")
 stretch_mode = 2
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.484375
-anchor_bottom = 1.0
+anchor_left = 0.0855584
+anchor_top = 0.024605
+anchor_right = 0.569933
+anchor_bottom = 1.0246
 theme = ExtResource("4_hj10q")
 metadata/_edit_use_anchors_ = true
 
@@ -227,10 +228,10 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.297491
-anchor_top = 0.0483029
-anchor_right = 0.704301
-anchor_bottom = 0.145525
+anchor_left = 0.0668458
+anchor_top = 0.0246918
+anchor_right = 0.473656
+anchor_bottom = 0.121914
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
@@ -246,9 +247,9 @@ self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.284767
-anchor_top = 0.145525
+anchor_top = 0.126081
 anchor_right = 0.717025
-anchor_bottom = 0.242747
+anchor_bottom = 0.223303
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_kwymj")
@@ -263,9 +264,9 @@ self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.297491
-anchor_top = 0.242747
+anchor_top = 0.214969
 anchor_right = 0.704301
-anchor_bottom = 0.339969
+anchor_bottom = 0.312191
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_kwymj")
@@ -280,9 +281,9 @@ self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.271864
-anchor_top = 0.339969
+anchor_top = 0.312191
 anchor_right = 0.729928
-anchor_bottom = 0.437191
+anchor_bottom = 0.409413
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_kwymj")
@@ -296,10 +297,10 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.250179
-anchor_top = 0.46821
-anchor_right = 0.753405
-anchor_bottom = 0.644135
+anchor_left = 0.156452
+anchor_top = 0.409722
+anchor_right = 0.824194
+anchor_bottom = 0.586111
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_kwymj")
@@ -316,15 +317,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -226.5
-offset_top = -331.0
-offset_right = 226.5
-offset_bottom = -58.0
+offset_left = -236.5
+offset_top = -406.0
+offset_right = 216.5
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 text = "★ ★ ★"
-label_settings = SubResource("LabelSettings_w4qan")
+label_settings = SubResource("LabelSettings_1ajnj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -345,6 +346,7 @@ text = "Secret!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.539844
@@ -362,16 +364,16 @@ anchor_left = 0.0459519
 anchor_top = 0.19
 anchor_right = 0.95186
 anchor_bottom = 0.81
-offset_left = 14.6564
-offset_top = -6.48004
-offset_right = -9.54495
-offset_bottom = 5.47983
+offset_left = -31.3436
+offset_top = -133.48
+offset_right = -116.545
+offset_bottom = -100.52
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 20
 text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe "
-label_settings = SubResource("LabelSettings_s2mhk")
+label_settings = ExtResource("12_0e7i2")
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
@@ -381,10 +383,10 @@ anchor_left = -0.375781
 anchor_top = -0.023611
 anchor_right = 3.34766
 anchor_bottom = 3.6875
-offset_left = 512.0
-offset_top = 644.0
-offset_right = -3762.0
-offset_bottom = -1750.0
+offset_left = 687.381
+offset_top = 557.035
+offset_right = -3586.62
+offset_bottom = -1836.97
 scale = Vector2(0.3, 0.3)
 text = "
 "
@@ -394,20 +396,20 @@ flat = true
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
 layout_mode = 0
-offset_left = 75.506
-offset_top = 653.112
-offset_right = 146.506
-offset_bottom = 695.112
+offset_left = 250.887
+offset_top = 566.147
+offset_right = 321.887
+offset_bottom = 608.147
 text = "Menu"
-label_settings = ExtResource("6_h1s8t")
+label_settings = ExtResource("12_s2mhk")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0335938
-anchor_top = -0.023611
-anchor_right = 0.276563
-anchor_bottom = 0.311111
+anchor_left = 0.343922
+anchor_top = -0.141618
+anchor_right = 0.654079
+anchor_bottom = 0.193104
 offset_left = 490.0
 offset_top = 644.0
 offset_right = 581.0
@@ -426,9 +428,10 @@ offset_right = 224.0
 offset_bottom = 129.04
 scale = Vector2(3, 3)
 text = "Avançar"
-label_settings = ExtResource("6_h1s8t")
+label_settings = ExtResource("12_s2mhk")
 
 [node name="Prato" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.408854
@@ -439,32 +442,26 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Prato"]
-self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
-layout_mode = 0
-offset_right = 197.0
-offset_bottom = 302.0
-texture = ExtResource("7_jn4of")
-
 [node name="Foto" type="TextureRect" parent="Prato"]
 layout_mode = 0
-offset_left = 28.6669
-offset_top = 16.3333
-offset_right = 171.667
-offset_bottom = 144.333
+offset_left = 159.124
+offset_top = 7.83067
+offset_right = 302.124
+offset_bottom = 135.83
 texture = ExtResource("3_ur8ju")
 expand_mode = 1
 
 [node name="Nome" type="Label" parent="Prato"]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 193.0
-offset_right = 184.0
-offset_bottom = 288.0
+offset_left = 306.547
+offset_top = 29.4869
+offset_right = 533.547
+offset_bottom = 124.487
 theme_override_font_sizes/font_size = 10
 text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
-label_settings = SubResource("LabelSettings_g0giy")
+label_settings = ExtResource("12_0e7i2")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel3" type="Panel" parent="."]
@@ -516,7 +513,7 @@ offset_top = 238.0
 offset_right = 277.0
 offset_bottom = 273.0
 text = "Pular"
-label_settings = ExtResource("6_h1s8t")
+label_settings = ExtResource("12_s2mhk")
 
 [node name="card" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
 layout_mode = 1

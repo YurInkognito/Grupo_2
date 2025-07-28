@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
 [ext_resource type="Texture2D" uid="uid://kenf4t4ia6g4" path="res://sprites/UI_final/animação board/Frame Choque 2.PNG" id="30_5q3y1"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
-[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="30_jo16n"]
 [ext_resource type="Texture2D" uid="uid://dxclnma5s5nhm" path="res://sprites/portraits/borda icone hiena rizzo.png" id="30_yddfj"]
 [ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="31_2bn8p"]
 [ext_resource type="Texture2D" uid="uid://d17qgtgr2f474" path="res://sprites/UI_final/animação board/Frame Choque 3.PNG" id="31_3tdig"]
@@ -88,6 +87,7 @@
 [ext_resource type="Resource" uid="uid://btdfcgy0drk6v" path="res://Reliquias/Energetico.tres" id="57_nk3x5"]
 [ext_resource type="Resource" uid="uid://cmgml8yuty4ji" path="res://Reliquias/FogoEncantado.tres" id="58_cjlmj"]
 [ext_resource type="Resource" uid="uid://caihcnwqrqusm" path="res://Reliquias/MarteloEncantado.tres" id="59_ks8g6"]
+[ext_resource type="LabelSettings" uid="uid://7ebvjkdmi6te" path="res://recursos/magic_text_antigo.tres" id="59_lmvqu"]
 [ext_resource type="Resource" uid="uid://cjdbrso2rk247" path="res://Reliquias/MiseEnPlace.tres" id="60_d77h8"]
 [ext_resource type="Texture2D" uid="uid://pvi2yvnhfe1k" path="res://sprites/portraits/Ícone Livro.PNG" id="60_lmvqu"]
 [ext_resource type="Resource" uid="uid://1x3ikiwjmag3" path="res://Reliquias/PaginaPerdida.tres" id="61_t8bik"]
@@ -484,7 +484,7 @@ offset_bottom = 53.2187
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 1
 text = "Próximo Turno"
-label_settings = ExtResource("30_jo16n")
+label_settings = ExtResource("59_lmvqu")
 
 [node name="Timer" type="Timer" parent="Button"]
 wait_time = 2.5
@@ -770,7 +770,7 @@ grow_vertical = 0
 scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 32
 text = "Turno 1/5"
-label_settings = ExtResource("30_jo16n")
+label_settings = ExtResource("59_lmvqu")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -816,13 +816,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.448455
 anchor_top = 2.28323
-anchor_right = 1.59185
-anchor_bottom = 2.73788
+anchor_right = 1.4285
+anchor_bottom = 2.56273
 offset_left = -170.661
 offset_top = -371.132
 offset_right = -170.661
 offset_bottom = -261.604
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 theme_override_colors/default_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 theme_override_constants/line_separation = 12
@@ -865,11 +865,11 @@ flat = true
 [node name="TextureRect" type="TextureRect" parent="Cliente"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 239.0
-offset_top = 442.002
-offset_right = 905.0
-offset_bottom = 1154.0
-scale = Vector2(0.3, 0.3)
+offset_left = 252.138
+offset_top = 446.783
+offset_right = 918.138
+offset_bottom = 1158.78
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("33_vl321")
 
 [node name="Tutorial" type="Panel" parent="."]
@@ -1238,7 +1238,6 @@ text = "- - - - - - - - - - - - - - - -
 "
 
 [node name="Hover" type="Panel" parent="." groups=["Hover"]]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15

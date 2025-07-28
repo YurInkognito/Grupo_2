@@ -17,8 +17,8 @@ extends Control
 @export var estrelas_value: int = 0
 @export var objetivo: int = 1200
 
-@onready var botao: TextureButton = $Button
-@onready var continuar: TextureButton = $Button2
+@onready var botao: Button = $Button
+@onready var continuar: Button = $Button2
 
 @onready var estrela0 : AudioStreamPlayer2D = $estrela0
 @onready var estrela1 : AudioStreamPlayer2D = $estrela1
@@ -59,7 +59,7 @@ func _ready() -> void:
 		$Panel3/Panel.recompensar(estrelas_value)
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
-	if cliente_value == 2 and estrelas_value == 3:
+	if dia == 1 and cliente_value == 2 and estrelas_value == 3:
 		labels.append(secret)
 		
 	
@@ -85,11 +85,11 @@ func _process(delta: float) -> void:
 		0: 
 			estrelas.text = ''
 		1: 
-			estrelas.text = '*'
+			estrelas.text = '★'
 		2: 
-			estrelas.text = '* *'
+			estrelas.text = '★ ★'
 		3: 
-			estrelas.text = '* * *'
+			estrelas.text = '★ ★ ★'
 
 func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 	var pontuacao_bruta = float(valor_inicial) * pow(BASE_CRESCIMENTO, float(fase - 1))
