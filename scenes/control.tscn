@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dqvxp5khj1603"]
+[gd_scene load_steps=120 format=3 uid="uid://dqvxp5khj1603"]
 
 [ext_resource type="Script" uid="uid://bl3fsn10ty3xf" path="res://scripts/hand.gd" id="1_62e2m"]
 [ext_resource type="Script" uid="uid://5quqg7lmedkm" path="res://scripts/control.gd" id="1_qtu10"]
@@ -63,7 +63,6 @@
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
 [ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="43_enb33"]
 [ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="44_5a0yq"]
-[ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
 [ext_resource type="Texture2D" uid="uid://ynq37xcq55nx" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 1.PNG" id="45_b4vnr"]
 [ext_resource type="AudioStream" uid="uid://bm64tpyn3kmy1" path="res://audio/SFX/RingBell.wav" id="46_5nmap"]
 [ext_resource type="Texture2D" uid="uid://cdxrugawfthw6" path="res://sprites/UI_final/Botão Passar Turno Frame 2.PNG" id="46_kag07"]
@@ -99,6 +98,8 @@
 [ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="67_r7wpw"]
 [ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="68_cs3ys"]
 [ext_resource type="PackedScene" uid="uid://clnfe12n3cgpe" path="res://scenes/glossario.tscn" id="71_d77h8"]
+[ext_resource type="AudioStream" uid="uid://badylskbjsh0v" path="res://audio/SFX/MULTIPLICADOR SFX .wav" id="79_4u7im"]
+[ext_resource type="AudioStream" uid="uid://c7lsf88ow8bdm" path="res://audio/V2 - A La Carte Main Theme .wav" id="79_lmvqu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_01kdt"]
 animations = [{
@@ -1149,9 +1150,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("44_qmj53")
+stream = ExtResource("79_lmvqu")
 autoplay = true
 bus = &"Music"
+
+[node name="SFXMultiplicador" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1164, 576)
+stream = ExtResource("79_4u7im")
+bus = &"SFX"
 
 [node name="SFXNewHand" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)

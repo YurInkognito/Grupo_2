@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dgqaj5irxi78b" path="res://scripts/tela_titulo.gd" id="1_bp1iq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_663uq"]
-[ext_resource type="AudioStream" uid="uid://cq7dfdjelgq66" path="res://audio/SFX/Loop Restaurante.wav" id="3_b8sri"]
 [ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="5_mopl6"]
 [ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="6_ywseg"]
 [ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas/Repolho.tres" id="7_0nxg4"]
@@ -30,6 +29,7 @@
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
 [ext_resource type="Texture2D" uid="uid://b1e4jv2qipmdb" path="res://sprites/UI_final/Botão Sair Pressionado (2).PNG" id="26_agj7q"]
 [ext_resource type="Texture2D" uid="uid://dbtnl8j46qgyl" path="res://sprites/LOGO À LA CARTE.png" id="28_koial"]
+[ext_resource type="AudioStream" uid="uid://c45khnafh47le" path="res://audio/SFX/Loop Restaurante ABAFADO.wav" id="29_koial"]
 [ext_resource type="Texture2D" uid="uid://bpd48d6semkj2" path="res://sprites/UI_final/Botão Voltar Idle (Menu Volume) (2).PNG" id="30_ywseg"]
 [ext_resource type="Texture2D" uid="uid://bvotoo0fa5tl1" path="res://sprites/UI_final/Botão Voltar Pressionado (Menu Volume) (2).PNG" id="31_koial"]
 
@@ -154,7 +154,7 @@ theme_override_constants/separation = -5
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("3_b8sri")
+stream = ExtResource("29_koial")
 autoplay = true
 bus = &"Music"
 
