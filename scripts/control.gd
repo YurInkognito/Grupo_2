@@ -57,6 +57,9 @@ var em_cooldown: bool = false
 @export var tags_prato: Array[String]
 @export var ingredientes_prato: Array[String]
 
+#variavel pra checar alteração do sabor
+var sabor_anterior = sabor
+
 #efeitos
 @export var sal: float = 1
 @export var queijos: Array[int]
@@ -99,6 +102,7 @@ const CONFIG = preload("res://scenes/config.tscn")
 @onready var sfx_new_hand: AudioStreamPlayer2D = $SFXNewHand
 @onready var sfx_new_hand_alternate: AudioStreamPlayer2D = $SFXNewHandAlternate
 @onready var sfx_bell: AudioStreamPlayer2D = $SFXBell
+@onready var multiplicador_audio : AudioStreamPlayer2D = $SFXMultiplicador
 
 func _ready() -> void:
 	checa_perde_carta_por_turno()
@@ -196,6 +200,9 @@ func _ready() -> void:
 	$Glossario.set_deck()
 
 func _process(delta: float) -> void:
+	if sabor != sabor_anterior:
+		multiplicador_audio.play()
+		sabor_anterior = sabor
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	mana_label.text = str(mana)
 	max_mana_label.text = str(max_mana)
@@ -628,6 +635,7 @@ func mostrar_mensagem(mensagem: String):
 
 func add_sabor(pontos: String):
 	sabor = sabor + int(pontos) * sal
+	multiplicador_audio.play()
 
 func sal_mult(mult: String):
 	sal = sal + float(mult)
