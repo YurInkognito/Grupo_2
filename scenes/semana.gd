@@ -44,6 +44,9 @@ extends Control
 @onready var prato5 : TextureRect = $prato5
 @onready var prato6 : TextureRect = $prato6
 
+@onready var rostos: Array[TextureRect] = [$rosto, $rosto2, $rosto3, $rosto4, $rosto5, $rosto6]
+@onready var pratos: Array[TextureRect] = [$prato1, $prato2, $prato3, $prato4, $prato5]
+
 @onready var aliane = load("res://sprites/portraits/borda icone aliane.png")
 @onready var jaccao = load("res://sprites/portraits/borda icone erick jaccão.png")
 @onready var fogaco = load("res://sprites/portraits/borda icone fogaço.png")
@@ -58,6 +61,7 @@ extends Control
 @export var prato_sopa: Texture2D
 @export var prato_salada: Texture2D
 @export var prato_sanduiche: Texture2D
+@export var prato_base: Texture2D
 
 func _ready() -> void:
 	fase = GlobalData.fase
@@ -87,6 +91,8 @@ func proxima_fase():
 			Transição.change_scene("res://scenes/control.tscn")
 		4:
 			Transição.change_scene("res://scenes/evento.tscn")
+		11:
+			Transição.change_scene("res://scenes/evento.tscn")
 		_:
 			Transição.change_scene("res://scenes/control.tscn")
 
@@ -104,15 +110,15 @@ func pontuacao_mostrar():
 	resultado1.text = "$" + str($"/root/GlobalData".pontuacao_fases[2])
 	resultado2.text = "$" + str($"/root/GlobalData".pontuacao_fases[3])
 	resultado3.text = "$" + str($"/root/GlobalData".pontuacao_fases[4])
-	resultado5.text = "$" + str($"/root/GlobalData".pontuacao_fases[5])
-	resultado6.text = "$" + str($"/root/GlobalData".pontuacao_fases[6])
-	resultado7.text = "$" + str($"/root/GlobalData".pontuacao_fases[7])
-	resultado8.text = "$" + str($"/root/GlobalData".pontuacao_fases[8])
-	resultado9.text = "$" + str($"/root/GlobalData".pontuacao_fases[9])
-	resultado10.text = "$" + str($"/root/GlobalData".pontuacao_fases[10])
-	resultado12.text = "$" + str($"/root/GlobalData".pontuacao_fases[11])
-	resultado13.text = "$" + str($"/root/GlobalData".pontuacao_fases[12])
-	resultado14.text = "$" + str($"/root/GlobalData".pontuacao_fases[13])
+	resultado5.text = "$" + str($"/root/GlobalData".pontuacao_fases[6])
+	resultado6.text = "$" + str($"/root/GlobalData".pontuacao_fases[7])
+	resultado7.text = "$" + str($"/root/GlobalData".pontuacao_fases[8])
+	resultado8.text = "$" + str($"/root/GlobalData".pontuacao_fases[9])
+	resultado9.text = "$" + str($"/root/GlobalData".pontuacao_fases[10])
+	resultado10.text = "$" + str($"/root/GlobalData".pontuacao_fases[11])
+	resultado12.text = "$" + str($"/root/GlobalData".pontuacao_fases[13])
+	resultado13.text = "$" + str($"/root/GlobalData".pontuacao_fases[14])
+	resultado14.text = "$" + str("0")
 	
 func _on_timer_timeout() -> void:
 	proxima_fase()
@@ -163,7 +169,7 @@ func anim_passou_dia():
 		animdia5.visible = true
 		animdia5.play("default")
 
-	elif GlobalData.fase == 14:
+	elif GlobalData.fase == 7 or GlobalData.fase == 14:
 		animdia1.visible = true
 		animdia1.frame = 3
 		animdia2.visible = true
@@ -174,11 +180,9 @@ func anim_passou_dia():
 		animdia4.frame = 3
 		animdia5.visible = true
 		animdia5.frame = 3
-		animdia6.visible = true
-		animdia6.frame = 3
 		await timer_anim.timeout
-		animdia7.visible = true
-		animdia7.play("default")
+		animdia6.visible = true
+		animdia6.play("default")
 		
 	else:
 		animdia1.visible = false
@@ -188,174 +192,228 @@ func anim_passou_dia():
 		animdia5.visible = false
 		animdia6.visible = false
 		animdia7.visible = false
-		
-func alterar_cliente():
-	if GlobalData.fase == 1:
-		rosto.texture = aliane
-		rosto.visible = true
-	
-	match GlobalData.fase:
-		2:
-			rosto.visible = true
-			rosto2.texture = qual_cliente()
-			#rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
-			#rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
-			rosto2.visible = true
-			prato1.texture = qual_prato()
-			prato1.visible = true
-		3:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.texture = qual_cliente()
-			#rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
-			#rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
-			rosto3.visible = true
-			prato1.visible = true
-			prato2.texture = qual_prato()
-			prato2.visible = true
-		4:
-			rosto4.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.texture = qual_prato()
-			prato3.visible = true
-		5:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.visible = true
-			rosto4.texture = qual_cliente()
-			#rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
-			#rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
-			rosto4.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-		6:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.visible = true
-			rosto4.visible = true
-			rosto5.texture = qual_cliente()
-			#rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
-			#rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
-			rosto5.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-			prato4.texture = qual_prato()
-			prato4.visible = true
-		7:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3. visible = true
-			rosto4.visible = true
-			rosto5.visible = true
-			rosto6.texture = qual_cliente()
-			#rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
-			#rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
-			rosto6.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-			prato4.visible = true
-			prato5.texture = qual_prato()
-			prato5.visible = true
-		8:
-			rosto2.visible = false
-			rosto3.visible = false
-			rosto4.visible = false
-			rosto5.visible = false
-			rosto6.visible = false
-			rosto.texture = qual_cliente()
-			#rosto.position.x = rosto.position.x - ajustar_pos()[0]
-			#rosto.position.y = rosto.position.y - ajustar_pos()[1]
-			rosto.visible = true
-			prato1.visible = false
-			prato2.visible = false
-			prato3.visible = false
-			prato4.visible = false
-			prato5.visible = false
-			#prato6.texture = qual_prato()
-			#prato6.visible = true
-		9:
-			rosto.visible = true
-			rosto2.texture = qual_cliente()
-			#rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
-			#rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
-			rosto2.visible = true
-			prato1.texture = qual_prato()
-			prato1.visible = true
-		10:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.texture = qual_cliente()
-			#rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
-			#rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
-			rosto3.visible = true
-			prato1.visible = true
-			prato2.texture = qual_prato()
-			prato2.visible = true
-		11:
-			rosto4.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.texture = qual_prato()
-			prato3.visible = true
-		12:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.visible = true
-			rosto4.texture = qual_cliente()
-			#rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
-			#rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
-			rosto4.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-		13:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3.visible = true
-			rosto4.visible = true
-			rosto5.texture = qual_cliente()
-			#rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
-			#rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
-			rosto5.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-			prato4.texture = qual_prato()
-			prato4.visible = true
-		14:
-			rosto.visible = true
-			rosto2.visible = true
-			rosto3. visible = true
-			rosto4.visible = true
-			rosto5.visible = true
-			rosto6.texture = qual_cliente()
-			#rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
-			#rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
-			rosto6.visible = true
-			prato1.visible = true
-			prato2.visible = true
-			prato3.visible = true
-			prato4.visible = true
-			prato5.texture = qual_prato()
-			prato5.visible = true
+
+#func alterar_cliente_old():
+	#if GlobalData.fase == 1:
+		#rosto.texture = aliane
+		#rosto.visible = true
+	#
+	#match GlobalData.fase:
+		#2:
+			#rosto.visible = true
+			#rosto2.texture = qual_cliente()
+			##rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			##rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			#rosto2.visible = true
+			#prato1.texture = qual_prato()
+			#prato1.visible = true
+		#3:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.texture = qual_cliente()
+			##rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			##rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			#rosto3.visible = true
+			#prato1.visible = true
+			#prato2.texture = qual_prato()
+			#prato2.visible = true
+		#4:
+			#rosto4.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.texture = qual_prato()
+			#prato3.visible = true
+		#5:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.visible = true
+			#rosto4.texture = qual_cliente()
+			##rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			##rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			#rosto4.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+		#6:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.visible = true
+			#rosto4.visible = true
+			#rosto5.texture = qual_cliente()
+			##rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			##rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			#rosto5.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+			#prato4.texture = qual_prato()
+			#prato4.visible = true
+		#7:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3. visible = true
+			#rosto4.visible = true
+			#rosto5.visible = true
+			#rosto6.texture = qual_cliente()
+			##rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			##rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			#rosto6.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+			#prato4.visible = true
+			#prato5.texture = qual_prato()
+			#prato5.visible = true
+		#8:
+			#rosto2.visible = false
+			#rosto3.visible = false
+			#rosto4.visible = false
+			#rosto5.visible = false
+			#rosto6.visible = false
+			#rosto.texture = qual_cliente()
+			##rosto.position.x = rosto.position.x - ajustar_pos()[0]
+			##rosto.position.y = rosto.position.y - ajustar_pos()[1]
+			#rosto.visible = true
+			#prato1.visible = false
+			#prato2.visible = false
+			#prato3.visible = false
+			#prato4.visible = false
+			#prato5.visible = false
+			##prato6.texture = qual_prato()
+			##prato6.visible = true
+		#9:
+			#rosto.visible = true
+			#rosto2.texture = qual_cliente()
+			##rosto2.position.x = rosto2.position.x - ajustar_pos()[0]
+			##rosto2.position.y = rosto2.position.y - ajustar_pos()[1]
+			#rosto2.visible = true
+			#prato1.texture = qual_prato()
+			#prato1.visible = true
+		#10:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.texture = qual_cliente()
+			##rosto3.position.x = rosto3.position.x - ajustar_pos()[0]
+			##rosto3.position.y = rosto3.position.y - ajustar_pos()[1]
+			#rosto3.visible = true
+			#prato1.visible = true
+			#prato2.texture = qual_prato()
+			#prato2.visible = true
+		#11:
+			#rosto4.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.texture = qual_prato()
+			#prato3.visible = true
+		#12:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.visible = true
+			#rosto4.texture = qual_cliente()
+			##rosto4.position.x = rosto4.position.x - ajustar_pos()[0]
+			##rosto4.position.y = rosto4.position.y - ajustar_pos()[1]
+			#rosto4.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+		#13:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3.visible = true
+			#rosto4.visible = true
+			#rosto5.texture = qual_cliente()
+			##rosto5.position.x = rosto5.position.x - ajustar_pos()[0]
+			##rosto5.position.y = rosto5.position.y - ajustar_pos()[1]
+			#rosto5.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+			#prato4.texture = qual_prato()
+			#prato4.visible = true
+		#14:
+			#rosto.visible = true
+			#rosto2.visible = true
+			#rosto3. visible = true
+			#rosto4.visible = true
+			#rosto5.visible = true
+			#rosto6.texture = qual_cliente()
+			##rosto6.position.x = rosto6.position.x - ajustar_pos()[0]
+			##rosto6.position.y = rosto6.position.y - ajustar_pos()[1]
+			#rosto6.visible = true
+			#prato1.visible = true
+			#prato2.visible = true
+			#prato3.visible = true
+			#prato4.visible = true
+			#prato5.texture = qual_prato()
+			#prato5.visible = true
 			
 
-func qual_prato():
+func alterar_cliente():
+	# Limpa todos os rostos e pratos visuais primeiro
+	for r in rostos:
+		r.visible = false
+	for p in pratos:
+		p.visible = false
+
+	var historico_clientes = GlobalData.historico_cliente
+	var cliente_count = historico_clientes.size()
+
+	var start_index = 0
+	if GlobalData.fase >= 8:
+		start_index = 6
+
+	# Define o índice de exibição para os arrays 'rostos' e 'pratos'
+	var display_index = 0
+
+	# --- Lógica para todas as outras fases, exibindo o histórico correto ---
+	# O loop agora começa do 'start_index'
+	for i in range(start_index, cliente_count):
+		var cliente_data = historico_clientes[i]
+		var cliente_rosto_texture = qual_cliente(cliente_data["nome"])
+
+		# Exibe o rosto do cliente no índice de exibição correto (0, 1, 2...)
+		if display_index < rostos.size():
+			rostos[display_index].texture = cliente_rosto_texture
+			rostos[display_index].visible = true
+
+		# Exibe o prato correspondente para todos os clientes, exceto o mais recente
+		if fase == 4 or fase == 11 or (i < cliente_count - 1 and display_index < pratos.size()):
+			pratos[display_index].texture = qual_prato(i)
+			pratos[display_index].visible = true
+		
+		display_index += 1
+
+func qual_cliente(nome_cliente_param: String) -> Texture2D:
+	match nome_cliente_param:
+		"Fogaço":
+			return fogaco
+		"Erick Jacão":
+			return jaccao
+		"Hyena Rizo":
+			return hiena
+		"Ghork'Ohn Ahm'sey":
+			return ghorkon
+		"Ana Maria Praga":
+			return bruxa
+		"Aliane":
+			return aliane
+		_:
+			return aliane
+
+func qual_prato(fase):
 	var lista = $"/root/GlobalData".lista_pratos
-	var nome = lista[lista.size() - 1].nome
+	var nome = lista[fase].nome
 	print(nome)
 	if nome.contains("Sopa"):
 		return prato_sopa
-	if nome.contains("Salada"):
+	elif nome.contains("Salada"):
 		return prato_salada
-	if nome.contains("Sanduiche"):
+	elif nome.contains("Sanduiche"):
 		return prato_sanduiche
+	else:
+		return prato_base
 
-func qual_cliente():
+func qual_cliente_old():
 	match GlobalData.cliente_temp["nome"]:
 		"Fogaço":
 			return fogaco
@@ -370,15 +428,15 @@ func qual_cliente():
 		_:
 			return aliane
 
-func ajustar_pos():
-	match qual_cliente():
-		fogaco:
-			return [4,5]
-		jaccao:
-			return [4,5]
-		bruxa:
-			return [8,11]
-		ghorkon:
-			return [0,10]
-		hiena:
-			return [3,11]
+#func ajustar_pos():
+	#match qual_cliente():
+		#fogaco:
+			#return [4,5]
+		#jaccao:
+			#return [4,5]
+		#bruxa:
+			#return [8,11]
+		#ghorkon:
+			#return [0,10]
+		#hiena:
+			#return [3,11]

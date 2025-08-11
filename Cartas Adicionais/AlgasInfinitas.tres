@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://byvnrm7j0a46f"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://byvnrm7j0a46f"]
 
 [ext_resource type="Resource" uid="uid://c7vg3vfvwaoyi" path="res://Cartas processadas/PicadinhoInfinito.tres" id="1_cjnds"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_kasnf"]
+[ext_resource type="Texture2D" uid="uid://25v4koecpgxb" path="res://sprites/CARTAS 21-05/carta41.png" id="3_kasnf"]
 
 [resource]
 script = ExtResource("2_kasnf")
@@ -9,15 +10,16 @@ nome = "Algas Infinitas"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+ 30 Sabor"
+desc = "+ 50 Sabor"
 on_faca = ExtResource("1_cjnds")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
-"parametro": "30"
+"parametro": "50"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Refrescante", "Umami"])
+sprite = ExtResource("3_kasnf")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

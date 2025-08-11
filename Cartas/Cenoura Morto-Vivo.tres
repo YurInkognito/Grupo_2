@@ -10,7 +10,7 @@ nome = "Cenoura Morto-Vivo"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "Decarte sua mão e compre uma nova."
+desc = "Decarte sua mão e compre uma nova"
 on_fogo = ExtResource("1_nmast")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "troca_mao",

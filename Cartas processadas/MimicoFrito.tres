@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://drhewinwybs8d"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://drhewinwybs8d"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_pkpvc"]
+[ext_resource type="Texture2D" uid="uid://d1sro5ny1xiw0" path="res://sprites/CARTAS 21-05/carta38.png" id="2_souu6"]
 
 [resource]
 script = ExtResource("2_pkpvc")
@@ -8,7 +9,7 @@ nome = "Mimico Frito"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "+20 de Sabor para cada carta no prato."
+desc = "Ao entregar: +20 de Sabor para cada carta no prato"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_por_prato",
 "parametro": "20"
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Suave", "Crocante"])
+sprite = ExtResource("2_souu6")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

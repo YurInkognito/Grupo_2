@@ -10,7 +10,7 @@ nome = "Cogumelo Murmurante"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+10 sabor por tag Suave no prato"
+desc = "Ao entregar: +10 de sabor para cada Suave no prato"
 on_martelo = ExtResource("1_kstmb")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_tag",

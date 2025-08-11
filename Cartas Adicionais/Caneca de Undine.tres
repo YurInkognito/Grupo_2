@@ -9,7 +9,7 @@ nome = "Caneca de Undine"
 custo = "0"
 ingrediente = true
 is_processo = false
-desc = "Coloca o Sabor do prato em 0. Define o prato como *Sopa*"
+desc = "Coloca o Sabor do prato em 0. Define o prato como Sopa"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "set_sopa",
 "parametro": ""

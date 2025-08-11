@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://dkavmnkrmngek"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://dkavmnkrmngek"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_jdolq"]
+[ext_resource type="Texture2D" uid="uid://dlmak6753jf7i" path="res://sprites/CARTAS 21-05/carta43.png" id="2_y2347"]
 
 [resource]
 script = ExtResource("1_jdolq")
@@ -8,7 +9,7 @@ nome = "Bife de Minotauro Assado"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "+200 de Sabor. Se sua tag mais presente for Ácida adicione +100 de Sabor"
+desc = "+200 de Sabor. Se seu prato é Acido adicione +100 de Sabor"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",
 "parametro": "200"
@@ -19,6 +20,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Umami", "Umami"])
+sprite = ExtResource("2_y2347")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

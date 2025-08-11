@@ -1,27 +1,26 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://cqp26snttcna4"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cqp26snttcna4"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_gd6o4"]
+[ext_resource type="Texture2D" uid="uid://b1scocchlsqjm" path="res://sprites/CARTAS 21-05/carta36.png" id="2_gmo5a"]
 
 [resource]
 script = ExtResource("1_gd6o4")
-nome = "Broto de Névoa-Limão"
-custo = "3"
+nome = "Cebolho"
+custo = "2"
 ingrediente = true
 is_processo = false
-desc = "A Próxima carta com tag [img width=40 height=40]res://sprites/TAGS/TAG7png.png[/img], [img width=40 height=40]res://sprites/TAGS/TAG3.png[/img] ou [img width=40 height=40]res://sprites/TAGS/TAG5png.png[/img] não custa mana"
+desc = "A Próxima carta acido ou refrescante não custa mana"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "prox_ingrediente_zero",
 "parametro": "Acido"
-}, {
-"funcao": "prox_ingrediente_zero",
-"parametro": "Suave"
 }, {
 "funcao": "prox_ingrediente_zero",
 "parametro": "Refrescante"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String](["Suave", "Refrescante", "Acido"])
+tags = Array[String](["Refrescante", "Acido"])
+sprite = ExtResource("2_gmo5a")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

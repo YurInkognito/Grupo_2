@@ -34,11 +34,9 @@
 [ext_resource type="Resource" uid="uid://d183pxbckigjc" path="res://Cartas/Escama de Boitata.tres" id="25_po8yf"]
 [ext_resource type="Texture2D" uid="uid://drapne5lje3p2" path="res://sprites/temporarios/Board Completo (Sem Botões) 1280x720 (2) .PNG" id="26_3vrtg"]
 [ext_resource type="Resource" uid="uid://bu04lxno7pmbo" path="res://Cartas processadas/PaoCortadoTorrado.tres" id="26_8ps1h"]
-[ext_resource type="Texture2D" uid="uid://uglw51xqadxe" path="res://sprites/CURSOR2.png" id="28_3vrtg"]
 [ext_resource type="Texture2D" uid="uid://crjjnnj3f0qae" path="res://sprites/portraits/borda icone fogaço.png" id="28_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="29_4u7im"]
 [ext_resource type="Texture2D" uid="uid://764rtg2s7mxe" path="res://sprites/UI_final/animação board/Frame Choque 1.PNG" id="29_85vv2"]
-[ext_resource type="Texture2D" uid="uid://ddxuwj8730dc8" path="res://sprites/CURSOR (1).png" id="29_r5dke"]
 [ext_resource type="Texture2D" uid="uid://kenf4t4ia6g4" path="res://sprites/UI_final/animação board/Frame Choque 2.PNG" id="30_5q3y1"]
 [ext_resource type="Texture2D" uid="uid://csffftjvirrke" path="res://sprites/temporarios/carta13.png" id="30_61o30"]
 [ext_resource type="Texture2D" uid="uid://dxclnma5s5nhm" path="res://sprites/portraits/borda icone hiena rizzo.png" id="30_yddfj"]
@@ -62,6 +60,8 @@
 [ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="41_gst0j"]
 [ext_resource type="Texture2D" uid="uid://do2u5mq8juw1r" path="res://sprites/UI_final/Botão pause (2).PNG" id="43_5nmap"]
 [ext_resource type="Texture2D" uid="uid://bbx8d13nxoy6a" path="res://sprites/UI_final/Botão Passar Turno Idle.PNG" id="43_enb33"]
+[ext_resource type="Texture2D" uid="uid://crthadjutoxl6" path="res://sprites/cursor_2.png" id="43_lmvqu"]
+[ext_resource type="Texture2D" uid="uid://6dqvw0sjkiml" path="res://sprites/cursor_1.png" id="44_4u7im"]
 [ext_resource type="Texture2D" uid="uid://cf11emgttmtd1" path="res://sprites/UI_final/Botão Passar Turno Pressionado.PNG" id="44_5a0yq"]
 [ext_resource type="AudioStream" uid="uid://p0s6vsnusxhv" path="res://audio/A La Carte Main Theme.wav" id="44_qmj53"]
 [ext_resource type="Texture2D" uid="uid://ynq37xcq55nx" path="res://sprites/UI_final/animação board/Botão Passar Turno Frame 1.PNG" id="45_b4vnr"]
@@ -364,8 +364,8 @@ color = Color(1, 1, 1, 0.164706)
 script = ExtResource("1_62e2m")
 hand_curve = SubResource("Curve_62e2m")
 rotation_curve = SubResource("Curve_qtu10")
-drag_cursor_texture = ExtResource("28_3vrtg")
-normal_cursor_texture = ExtResource("29_r5dke")
+drag_cursor_texture = ExtResource("43_lmvqu")
+normal_cursor_texture = ExtResource("44_4u7im")
 
 [node name="Area de areas" type="ColorRect" parent="."]
 layout_mode = 1
@@ -838,10 +838,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Cliente"]
 layout_mode = 0
-offset_left = 978.517
-offset_top = 457.524
-offset_right = 1018.52
-offset_bottom = 509.524
+offset_left = 977.517
+offset_top = 454.524
+offset_right = 1017.52
+offset_bottom = 518.524
 focus_mode = 0
 theme_override_colors/font_disabled_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
@@ -857,9 +857,8 @@ theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_focus_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_colors/font_pressed_color = Color(0.980392, 0.996078, 0.521569, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
-theme_override_font_sizes/font_size = 32
-text = "🗙
-"
+theme_override_font_sizes/font_size = 64
+text = "x"
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="Cliente"]
@@ -995,8 +994,8 @@ theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_fonts/font = ExtResource("41_cjlmj")
-theme_override_font_sizes/font_size = 32
-text = "🗙"
+theme_override_font_sizes/font_size = 64
+text = "x"
 flat = true
 
 [node name="Tutorial2" type="Panel" parent="."]

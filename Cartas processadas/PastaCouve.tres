@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://cfvcsd0y84rhj"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cfvcsd0y84rhj"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_1dy60"]
+[ext_resource type="Texture2D" uid="uid://dfl5xvid0srhm" path="res://sprites/CARTAS 21-05/novas cartas/Suco de Couve.png" id="2_mi56q"]
 
 [resource]
 script = ExtResource("2_1dy60")
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido", "Acido"])
+sprite = ExtResource("2_mi56q")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

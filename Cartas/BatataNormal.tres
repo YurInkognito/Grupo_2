@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://pq8u1hoapxwd"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://pq8u1hoapxwd"]
 
 [ext_resource type="Resource" uid="uid://drhewinwybs8d" path="res://Cartas processadas/MimicoFrito.tres" id="1_8k1bs"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_w3wni"]
+[ext_resource type="Texture2D" uid="uid://0mo7jkp8oinx" path="res://sprites/CARTAS 21-05/carta37.png" id="3_w3wni"]
 
 [resource]
 script = ExtResource("2_w3wni")
@@ -9,7 +10,7 @@ nome = "Batata \"Normal\""
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+10 de Sabor para cada Tag mais presente no prato."
+desc = "Ao entregar: +10 de Sabor para cada caracteristica mais presente no prato"
 on_fogo = ExtResource("1_8k1bs")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_tag",
@@ -18,6 +19,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Suave"])
+sprite = ExtResource("3_w3wni")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

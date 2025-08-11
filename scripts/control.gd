@@ -325,7 +325,8 @@ func start_turn():
 func end_game():
 	sfx_bell.play()
 	await $prato.send_cards()
-	
+	#$"/root/GlobalData".set_sabor(999999)
+	$"/root/GlobalData".set_cliente()
 	get_tree().change_scene_to_file("res://scenes/tela_resultado.tscn")
 
 func _on_timer_timeout() -> void:

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=5 format=3 uid="uid://d3qcwraht7lw6"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=6 format=3 uid="uid://d3qcwraht7lw6"]
 
 [ext_resource type="Resource" uid="uid://bhv1yqugtj2vd" path="res://Cartas processadas/Laminetas.tres" id="1_362wo"]
 [ext_resource type="Resource" uid="uid://cbb14lwlp20fn" path="res://Cartas processadas/Couve-Frita.tres" id="2_pb6i5"]
 [ext_resource type="Resource" uid="uid://cfvcsd0y84rhj" path="res://Cartas processadas/PastaCouve.tres" id="3_g488v"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="3_pb6i5"]
+[ext_resource type="Texture2D" uid="uid://dqvlg2pqf7yrf" path="res://sprites/CARTAS 21-05/novas cartas/Couve Afiada.png" id="5_pb6i5"]
 
 [resource]
 script = ExtResource("3_pb6i5")
@@ -22,6 +23,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido"])
+sprite = ExtResource("5_pb6i5")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

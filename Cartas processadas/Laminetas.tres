@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://bhv1yqugtj2vd"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bhv1yqugtj2vd"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_7hdte"]
+[ext_resource type="Texture2D" uid="uid://qbut6n35p0bx" path="res://sprites/CARTAS 21-05/novas cartas/Laminetas.png" id="2_e7nw2"]
 
 [resource]
 script = ExtResource("2_7hdte")
@@ -19,5 +20,7 @@ efeitos_on_board = Array[Dictionary]([{
 "parametro": "Cutelo"
 }])
 tags = Array[String](["Acido", "Acido"])
+sprite = ExtResource("2_e7nw2")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

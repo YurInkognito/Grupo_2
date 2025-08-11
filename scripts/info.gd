@@ -10,9 +10,12 @@ extends Panel
 @export var prato_sopa: Texture2D
 @export var prato_sanduiche: Texture2D
 @export var prato_salada: Texture2D
+@export var prato_base: Texture2D
+@export var prato_vazio: Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#$"/root/GlobalData".foto_final = prato_base
 	pass
 
 
@@ -22,6 +25,8 @@ func _process(delta: float) -> void:
 	#mult_label.text = 'X' + str(mult)
 	nome_label.text = $"..".gerar_nome()
 	var prato = $"..".tipo_prato
+	if $"..".ingredientes_prato.size() == 0:
+		prato = "Vazio"
 	match prato:
 		"Sopa": 
 			foto.texture = prato_sopa
@@ -32,6 +37,12 @@ func _process(delta: float) -> void:
 		"Salada": 
 			foto.texture = prato_salada
 			$"/root/GlobalData".foto_final = prato_salada
+		"Vazio": 
+			foto.texture = prato_vazio
+			$"/root/GlobalData".foto_final = prato_vazio
+		_:
+			foto.texture = prato_base
+			$"/root/GlobalData".foto_final = prato_base
 
 func set_pontos(pontos_externos: int):
 	pontos = pontos_externos

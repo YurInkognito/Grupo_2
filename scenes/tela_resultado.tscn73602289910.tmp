@@ -1,0 +1,829 @@
+[gd_scene load_steps=73 format=3 uid="uid://bjx5i6vqq1ccp"]
+
+[ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
+[ext_resource type="Texture2D" uid="uid://crjjnnj3f0qae" path="res://sprites/portraits/borda icone fogaço.png" id="2_15ve0"]
+[ext_resource type="Texture2D" uid="uid://3f1txdsmh36g" path="res://sprites/Fundos/BG a la carte.png" id="2_mjhyp"]
+[ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="3_0qipj"]
+[ext_resource type="Texture2D" uid="uid://d31y13arivlnm" path="res://sprites/temporarios/prato_tamplate.png" id="3_ur8ju"]
+[ext_resource type="Texture2D" uid="uid://b2bq63spqwvb4" path="res://sprites/portraits/borda icone hiena hyzzo.png" id="4_drksp"]
+[ext_resource type="Theme" uid="uid://c4gpag4vkfek8" path="res://tema_painel.tres" id="4_hj10q"]
+[ext_resource type="Texture2D" uid="uid://bfhr2s7srmt61" path="res://sprites/portraits/borda icone ghorkon.png" id="5_1dpdf"]
+[ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="5_7ag0k"]
+[ext_resource type="Texture2D" uid="uid://b4y234nc3c76" path="res://sprites/UI/Botão Passar Turno Idle-1.png.png" id="5_drhht"]
+[ext_resource type="PackedScene" uid="uid://dhdb53ws7fnxt" path="res://scenes/card.tscn" id="5_ftm4o"]
+[ext_resource type="Texture2D" uid="uid://bk54251y6jsqa" path="res://sprites/UI/Botão Passar Turno Idle.PNG" id="5_jxvgl"]
+[ext_resource type="FontFile" uid="uid://bespfcctqcv3c" path="res://recursos/windows_command_prompt.ttf" id="5_kwymj"]
+[ext_resource type="LabelSettings" uid="uid://pdpkogmdctmq" path="res://recursos/magic_text_2.tres" id="6_h1s8t"]
+[ext_resource type="Resource" uid="uid://byvnrm7j0a46f" path="res://Cartas Adicionais/AlgasInfinitas.tres" id="6_haov8"]
+[ext_resource type="LabelSettings" uid="uid://ddvo4ge40qwqi" path="res://label_resultado.tres" id="6_nc1gs"]
+[ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="6_tr2b6"]
+[ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="7_5x135"]
+[ext_resource type="Resource" uid="uid://cnfr6rao5a251" path="res://Cartas/Cenoura Morto-Vivo.tres" id="7_7ag0k"]
+[ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="8_4lnjb"]
+[ext_resource type="Resource" uid="uid://cqp26snttcna4" path="res://Cartas Adicionais/BrotoDeNévoa-Limão.tres" id="8_f2sfv"]
+[ext_resource type="Resource" uid="uid://bcuo6beixvs7e" path="res://Cartas Adicionais/Caneca de Undine.tres" id="9_0km7v"]
+[ext_resource type="Resource" uid="uid://efx71mo80sxo" path="res://Cartas Adicionais/CarneDeMinotauro.tres" id="10_mjhyp"]
+[ext_resource type="Resource" uid="uid://dc5bv8mvqsddo" path="res://Cartas Adicionais/Escama de Boitata.tres" id="11_hj10q"]
+[ext_resource type="LabelSettings" uid="uid://ju81lbweoxsp" path="res://recursos/magic_text_3.tres" id="12_0e7i2"]
+[ext_resource type="Resource" uid="uid://gy204a0jbqel" path="res://Cartas Adicionais/MandragoraReal.tres" id="12_jxvgl"]
+[ext_resource type="LabelSettings" uid="uid://7ebvjkdmi6te" path="res://recursos/magic_text_antigo.tres" id="12_s2mhk"]
+[ext_resource type="Resource" uid="uid://dewmiwnj8ouoa" path="res://Cartas Adicionais/MentaEsfoladoura.tres" id="13_h1s8t"]
+[ext_resource type="Resource" uid="uid://cpncsap5r31xa" path="res://Cartas Adicionais/NozPrismatica.tres" id="14_jn4of"]
+[ext_resource type="Resource" uid="uid://cksh7kgq22o63" path="res://Cartas Adicionais/OvosDeAmbrosia.tres" id="15_w4qan"]
+[ext_resource type="Resource" uid="uid://f5lg7tp3167y" path="res://Cartas Adicionais/PiclesDeBeholder.tres" id="16_g0giy"]
+[ext_resource type="Resource" uid="uid://bevuamrh23hnd" path="res://Cartas Adicionais/Queijo.tres" id="17_boxiq"]
+[ext_resource type="Resource" uid="uid://dagpqbj838c4l" path="res://Cartas/Repolho.tres" id="18_ol7y8"]
+[ext_resource type="Resource" uid="uid://c2e2t7cquk7a5" path="res://Cartas Adicionais/sal.tres" id="19_hwysf"]
+[ext_resource type="Resource" uid="uid://di1uo486cqo24" path="res://Cartas Adicionais/TomateVampirico.tres" id="20_wlslg"]
+[ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="26_emjtu"]
+[ext_resource type="Resource" uid="uid://dcxscjhhol13y" path="res://Cartas/Fogo.tres" id="27_jb74u"]
+[ext_resource type="Resource" uid="uid://dl7exv81i0d60" path="res://Cartas/Faca.tres" id="28_jsasa"]
+[ext_resource type="Resource" uid="uid://pq8u1hoapxwd" path="res://Cartas/BatataNormal.tres" id="29_dv6s2"]
+[ext_resource type="Resource" uid="uid://cy45h8bh2tk3y" path="res://Cartas/CarneDragao.tres" id="30_drhht"]
+[ext_resource type="Resource" uid="uid://rolcnsltf6x7" path="res://Cartas/CogumeloMurmurante.tres" id="31_kwymj"]
+[ext_resource type="Resource" uid="uid://bpturhuwta3pk" path="res://Cartas/Arroz.tres" id="32_nc1gs"]
+[ext_resource type="Resource" uid="uid://cxnxgci4n72vq" path="res://Cartas/Pao.tres" id="33_r06dc"]
+[ext_resource type="Resource" uid="uid://davivv61mw4ju" path="res://Cartas/LeiteMeteoro.tres" id="34_s2mhk"]
+[ext_resource type="Resource" uid="uid://dttv4mvwr0ddf" path="res://Cartas/Slime.tres" id="35_5x135"]
+[ext_resource type="Resource" uid="uid://5yp4p727e341" path="res://Cartas/Foguito.tres" id="36_4lnjb"]
+[ext_resource type="Resource" uid="uid://b2m5r8ci233b8" path="res://Cartas/Peixe-Martelete.tres" id="37_0e7i2"]
+[ext_resource type="Resource" uid="uid://d3qcwraht7lw6" path="res://Cartas/CouveAfiada.tres" id="38_1ajnj"]
+[ext_resource type="Resource" uid="uid://cd760bxg0h26d" path="res://Cartas Adicionais/CuboMaionese.tres" id="39_jb74u"]
+[ext_resource type="Resource" uid="uid://dogshbarq7kre" path="res://Cartas Adicionais/Amendoranha.tres" id="40_jsasa"]
+[ext_resource type="AudioStream" uid="uid://cvaask14ly7s" path="res://audio/SFX/estrelas/Fanfarra 3 ESTRELAS.wav" id="44_s2mhk"]
+[ext_resource type="AudioStream" uid="uid://dyoya87unhvd5" path="res://audio/SFX/estrelas/Fanfarra 2 ESTRELAS.wav" id="45_5x135"]
+[ext_resource type="AudioStream" uid="uid://d2f40ue25e7qy" path="res://audio/SFX/estrelas/Fanfarra 1 ESTRELA.wav" id="46_4lnjb"]
+[ext_resource type="AudioStream" uid="uid://brrner7yti0e1" path="res://audio/SFX/estrelas/Fanfarra 0 ESTRELA.wav" id="47_0e7i2"]
+[ext_resource type="Resource" uid="uid://tiycc0j5uu81" path="res://Reliquias/Bandana.tres" id="52_s4h6m"]
+[ext_resource type="Resource" uid="uid://b1sd4ommbymkg" path="res://Reliquias/CuteloEncantado.tres" id="53_w0dox"]
+[ext_resource type="PackedScene" uid="uid://cmic66v3r24bt" path="res://scenes/reliquia.tscn" id="54_drksp"]
+[ext_resource type="Resource" uid="uid://bsh83clyr1iu0" path="res://Reliquias/DeckDeMuitasCoisas.tres" id="54_udfto"]
+[ext_resource type="Resource" uid="uid://btdfcgy0drk6v" path="res://Reliquias/Energetico.tres" id="55_de4fm"]
+[ext_resource type="Resource" uid="uid://cmgml8yuty4ji" path="res://Reliquias/FogoEncantado.tres" id="56_8ba63"]
+[ext_resource type="Resource" uid="uid://caihcnwqrqusm" path="res://Reliquias/MarteloEncantado.tres" id="57_cqmug"]
+[ext_resource type="Resource" uid="uid://cjdbrso2rk247" path="res://Reliquias/MiseEnPlace.tres" id="58_w1bqw"]
+[ext_resource type="Resource" uid="uid://1x3ikiwjmag3" path="res://Reliquias/PaginaPerdida.tres" id="59_56t0k"]
+[ext_resource type="Resource" uid="uid://ccy6n2uivg8f5" path="res://Reliquias/panelaDeVo.tres" id="60_5rbf1"]
+[ext_resource type="Resource" uid="uid://r1rhw6ci5l83" path="res://Reliquias/PocaoDeMana.tres" id="61_8fia1"]
+[ext_resource type="Resource" uid="uid://bxcaax5tvsml7" path="res://Reliquias/SaladaMelhor.tres" id="62_w6f78"]
+[ext_resource type="Resource" uid="uid://d048t54gwle5o" path="res://Reliquias/SanduicheMelhor.tres" id="63_k2p1u"]
+[ext_resource type="Resource" uid="uid://ctxdelj7gbcsb" path="res://Reliquias/SopaMelhor.tres" id="64_onf8w"]
+[ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="65_2j7ry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
+font = ExtResource("5_kwymj")
+font_size = 128
+font_color = Color(0.980392, 0.996078, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.8, 0.407843, 0.239216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ajnj"]
+font = ExtResource("5_kwymj")
+font_size = 128
+font_color = Color(0.976471, 0.992157, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.796078, 0.407843, 0.239216, 1)
+
+[sub_resource type="GDScript" id="GDScript_drhht"]
+script/source = "extends Panel
+
+var is_dragging_global = true
+
+@export var pool_1: Array[String] = [\"Algas Infinitas\", \"Noz Prismática\", \"Queijo de Tauren\", \"Amendoranha\",\"Cogumelo Murmurante\",\"Arroz\",\"Pão\",\"Leite de Meteoro\",\"Slime\",\"Foguito\",\"Peixe-Martelete\",\"Couve Afiada\"]
+@export var pool_2: Array[String] = [\"Cubo de Maionese\", \"Escama de Boitata\", \"Caneca de Undine\", \"Mandragora Real\", \"Carne de Minotauro\", \"Batata \\\"Normal\\\"\",\"Carne de Dragão\",\"Cenoura Morto-Vivo\",\"Repolho Carnívoro\"]
+@export var pool_3: Array[String] = [\"Menta Esfoladoura\", \"Ovo de Basilisco\", \"Sal\", \"Tomate Vampírico\", \"Picles de Beholder\", \"Broto de Névoa-Limão\",\"Cutelo\",\"Espirito de Fogo\",\"Martelo\"]
+
+@export var lista_cartas: Array[CartaData]
+@export var lista_cartas_upgrade: Array[CartaData]
+
+@onready var upgrade_1: card = $card
+@onready var upgrade_2: card = $card2
+@onready var upgrade_3: card = $card3
+
+@onready var pular: Button = $Button
+@onready var button_vitoria: Button = $Panel2/Button_Vitoria
+
+@export var mana = 0 #só pra corrigir um bug
+
+@onready var button1: Button = $Panel3/Reliquia/Button
+@onready var button2: Button = $Panel3/Reliquia2/Button
+@onready var button3: Button = $Panel3/Reliquia3/Button
+
+@onready var relic_display_1: Node = $Panel3/Reliquia
+@onready var relic_display_2: Node = $Panel3/Reliquia2
+@onready var relic_display_3: Node = $Panel3/Reliquia3
+
+#@export var relic_pool_1: Array[String] = [\"Panela de Vó\", \"Martelo Encantado\", \"Cutelo Encantado\"] # Pool de relíquias nível 1
+#@export var relic_pool_2: Array[String] = [\"Fogo Encantado\", \"Sacola Magica\", \"Sopa é Janta\"] # Pool de relíquias nível 2
+#@export var relic_pool_3: Array[String] = [\"Pagina Perdida\", \"Folhas mais Verdes\", \"Pão de Cada Dia\"] # Pool de relíquias nível 3
+
+@export var relic_pool_1: Array[String] = [\"Panela de Vó\", \"Martelo Encantado\", \"Cutelo Encantado\"] # Pool de relíquias nível 1
+@export var relic_pool_2: Array[String] = [\"Fogo Encantado\", \"Sacola Magica\"] # Pool de relíquias nível 2
+@export var relic_pool_3: Array[String] = [\"Pagina Perdida\"] # Pool de relíquias nível 3
+
+# --- INFERÊNCIA: Lista de todas as relíquias para buscar por nome ---
+# Assumo que você terá uma estrutura de dados (Resource ou Node) para suas relíquias,
+# similar a 'CartaData', para que você possa instanciar e configurar.
+# Você precisará preencher esta lista, talvez também via @export ou carregamento.
+@export var lista_reliquias_disponiveis: Array[CartaData]
+
+var r1_relic = ''
+var r2_relic = ''
+var r3_relic = ''
+	
+func _ready() -> void:
+	button1.pressed.connect(selecionar_reliquia_1())
+	button2.pressed.connect(selecionar_reliquia_2())
+	button3.pressed.connect(selecionar_reliquia_3())
+	
+	lista_cartas = $\"/root/GlobalData\".lista_cartas
+	pular.pressed.connect(skip)
+	button_vitoria.pressed.connect(voltar)
+	if $\"/root/GlobalData\".fase == 1 or $\"/root/GlobalData\".fase == 12:
+		$Panel3.visible = true
+	if $\"/root/GlobalData\".fase == 14:
+		$Panel2.visible = true
+
+func _process(delta: float) -> void:
+	pass
+
+func voltar():
+	Transição.change_scene(\"res://scenes/tela_titulo.tscn\")
+
+func select_card(card_data):
+	$\"/root/GlobalData\".lista_cartas.append(card_data)
+	upgrade_1.card_data.upgrade = false
+	upgrade_2.card_data.upgrade = false
+	upgrade_3.card_data.upgrade = false
+	$\"..\".visible = false
+	if $\"/root/GlobalData\".fase == 1:
+		$\"../..\".final_aliane()
+	$\"/root/GlobalData\".proxima_fase()
+
+func encontrar_carta_data_por_nome(nome: String) -> CartaData:
+	print(lista_cartas_upgrade)
+	for carta_data in lista_cartas_upgrade:
+		if carta_data.nome == nome:
+			print(carta_data.nome)
+			var data_alterada = carta_data
+			data_alterada.upgrade = true
+			return data_alterada
+	printerr(\"CartaData com o nome '\", nome, \"' não encontrado.\")
+	return null
+
+func encontrar_reliquia_data_por_nome(nome: String) -> CartaData:
+	for relic_data in lista_reliquias_disponiveis:
+		if relic_data.nome == nome:
+			# INFERÊNCIA: Se a CartaData é um Resource e você precisa de uma cópia única, use .duplicate()
+			return relic_data # Ou 'relic_data.duplicate()' se precisar de uma nova instância.
+	printerr(\"CartaData com o nome '\", nome, \"' não encontrado.\")
+	return null
+
+func recompensar(estrelas):
+	var rng = RandomNumberGenerator.new()
+	var r1 = ''
+	var r2 = ''
+	var r3 = ''
+	rng.randomize() 
+
+	match estrelas:
+		0: pass
+		1:
+			var index_1 = rng.randi_range(0, pool_1.size() - 1)
+			var index_2 = rng.randi_range(0, pool_1.size() - 1)
+			var index_3 = rng.randi_range(0, pool_1.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool_1.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool_1.size() - 1)
+			r1 = pool_1[index_1]
+			r2 = pool_1[index_2]
+			r3 = pool_1[index_3]
+		2:
+			var pool = pool_1 + pool_2 + pool_2 
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1 = pool[index_1]
+			r2 = pool[index_2]
+			r3 = pool[index_3]
+		3:
+			var pool = pool_1 + pool_2 + pool_2 + pool_3 + pool_3 + pool_3 
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1 = pool[index_1]
+			r2 = pool[index_2]
+			r3 = pool[index_3]
+	print(\"Cartas de upgrade sugeridas: \", r1, \", \", r2, \", \", r3)
+	upgrade_1.set_card(encontrar_carta_data_por_nome(r1))
+	upgrade_2.set_card(encontrar_carta_data_por_nome(r2))
+	upgrade_3.set_card(encontrar_carta_data_por_nome(r3))
+
+func recompensar_reliquia(estrelas):
+	var rng = RandomNumberGenerator.new()
+	r1_relic = ''
+	r2_relic = ''
+	r3_relic = ''
+	rng.randomize() 
+
+	match estrelas:
+		0: pass
+		1:
+			var index_1 = rng.randi_range(0, relic_pool_1.size() - 1)
+			var index_2 = rng.randi_range(0, relic_pool_1.size() - 1)
+			var index_3 = rng.randi_range(0, relic_pool_1.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, relic_pool_1.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, relic_pool_1.size() - 1)
+			r1_relic = relic_pool_1[index_1]
+			r2_relic = relic_pool_1[index_2]
+			r3_relic = relic_pool_1[index_3]
+		2:
+			var pool = relic_pool_1 + relic_pool_2 + relic_pool_2
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1_relic = pool[index_1]
+			r2_relic = pool[index_2]
+			r3_relic = pool[index_3]
+		3:
+			var pool = relic_pool_1 + relic_pool_2 + relic_pool_2 + relic_pool_3 + relic_pool_3 + relic_pool_3
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1_relic = pool[index_1]
+			r2_relic = pool[index_2]
+			r3_relic = pool[index_3]
+	print(\"Relíquias sugeridas: \", r1_relic, \", \", r2_relic, \", \", r3_relic)
+
+	if is_instance_valid(relic_display_1):
+		relic_display_1.set_relic(encontrar_reliquia_data_por_nome(r1_relic))
+	if is_instance_valid(relic_display_2):
+		relic_display_2.set_relic(encontrar_reliquia_data_por_nome(r2_relic))
+	if is_instance_valid(relic_display_3):
+		relic_display_3.set_relic(encontrar_reliquia_data_por_nome(r3_relic))
+
+func selecionar_reliquia_1():
+	$\"/root/GlobalData\".reliquias.append(r1_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func selecionar_reliquia_2():
+	$\"/root/GlobalData\".reliquias.append(r2_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func selecionar_reliquia_3():
+	$\"/root/GlobalData\".reliquias.append(r3_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func skip():
+	if $\"/root/GlobalData\".fase == 1:
+		$\"../..\".final_aliane()
+	else:
+		$\"/root/GlobalData\".proxima_fase()
+"
+
+[node name="TelaResultado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7plcf")
+fogaco = ExtResource("2_15ve0")
+jaccao = ExtResource("3_0qipj")
+hiena = ExtResource("4_drksp")
+ghorkon = ExtResource("5_1dpdf")
+bruxa = ExtResource("6_tr2b6")
+aliane = ExtResource("8_4lnjb")
+
+[node name="estrela3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("44_s2mhk")
+
+[node name="estrela2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("45_5x135")
+
+[node name="estrela1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_4lnjb")
+
+[node name="estrela0" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_0e7i2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -619.0
+offset_top = -118.0
+offset_right = 1301.0
+offset_bottom = 962.0
+texture = ExtResource("2_mjhyp")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("7_5x135")
+
+[node name="cliente" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 190.493
+offset_right = 1357.0
+offset_bottom = 812.493
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_4lnjb")
+stretch_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0855584
+anchor_top = 0.024605
+anchor_right = 0.569933
+anchor_bottom = 1.0246
+theme = ExtResource("4_hj10q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Dia" type="Label" parent="Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0668458
+anchor_top = 0.0246918
+anchor_right = 0.473656
+anchor_bottom = 0.121914
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0.996078, 0.521569, 1)
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
+text = "Dia 2"
+label_settings = ExtResource("6_nc1gs")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sabor" type="Label" parent="Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.284767
+anchor_top = 0.126081
+anchor_right = 0.717025
+anchor_bottom = 0.223303
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
+text = "Sabor: 430"
+label_settings = ExtResource("6_nc1gs")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Prato" type="Label" parent="Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297491
+anchor_top = 0.214969
+anchor_right = 0.704301
+anchor_bottom = 0.312191
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
+text = "Prato: x4"
+label_settings = ExtResource("6_nc1gs")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cliente" type="Label" parent="Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271864
+anchor_top = 0.312191
+anchor_right = 0.729928
+anchor_bottom = 0.409413
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 64
+text = "Cliente: x2"
+label_settings = ExtResource("6_nc1gs")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Resultado" type="Label" parent="Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156452
+anchor_top = 0.409722
+anchor_right = 0.824194
+anchor_bottom = 0.586111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kwymj")
+theme_override_font_sizes/font_size = 128
+text = "$ 2580"
+label_settings = SubResource("LabelSettings_r06dc")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Estrelas" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -236.5
+offset_top = -406.0
+offset_right = 216.5
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "★ ★ ★"
+label_settings = SubResource("LabelSettings_1ajnj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Secret" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.105101
+anchor_right = 0.473939
+anchor_bottom = 0.105101
+offset_top = 108.894
+offset_right = -0.457947
+offset_bottom = 218.894
+rotation = -0.785398
+theme_override_colors/font_color = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+theme_override_font_sizes/font_size = 80
+text = "Secret!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.539844
+anchor_top = 0.695833
+anchor_right = 0.936719
+anchor_bottom = 0.9625
+theme = ExtResource("4_hj10q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Fala" type="Label" parent="Panel2"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0459519
+anchor_top = 0.19
+anchor_right = 0.95186
+anchor_bottom = 0.81
+offset_left = -31.3436
+offset_top = -133.48
+offset_right = -116.545
+offset_bottom = -100.52
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 20
+text = "Já condigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe "
+label_settings = ExtResource("12_0e7i2")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.375781
+anchor_top = -0.023611
+anchor_right = 3.34766
+anchor_bottom = 3.6875
+offset_left = 687.381
+offset_top = 557.035
+offset_right = -3586.62
+offset_bottom = -1836.97
+scale = Vector2(0.3, 0.3)
+text = "
+"
+icon = ExtResource("5_drhht")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 250.887
+offset_top = 566.147
+offset_right = 321.887
+offset_bottom = 608.147
+text = "Menu"
+label_settings = ExtResource("12_s2mhk")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.343922
+anchor_top = -0.141618
+anchor_right = 0.654079
+anchor_bottom = 0.193104
+offset_left = 490.0
+offset_top = 644.0
+offset_right = 581.0
+offset_bottom = 681.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("5_drhht")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Button2"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 99.9998
+offset_top = 87.0402
+offset_right = 224.0
+offset_bottom = 129.04
+scale = Vector2(3, 3)
+text = "Avançar"
+label_settings = ExtResource("12_s2mhk")
+
+[node name="Prato" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.408854
+anchor_top = 0.0787037
+anchor_right = 0.563368
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Foto" type="TextureRect" parent="Prato"]
+layout_mode = 0
+offset_left = 159.124
+offset_top = 7.83067
+offset_right = 302.124
+offset_bottom = 135.83
+texture = ExtResource("3_ur8ju")
+expand_mode = 1
+
+[node name="Nome" type="Label" parent="Prato"]
+layout_mode = 0
+offset_left = 306.547
+offset_top = 29.4869
+offset_right = 533.547
+offset_bottom = 124.487
+theme_override_font_sizes/font_size = 10
+text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
+label_settings = ExtResource("12_0e7i2")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Panel" type="Panel" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_hj10q")
+script = SubResource("GDScript_drhht")
+lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg"), ExtResource("26_emjtu"), ExtResource("27_jb74u"), ExtResource("28_jsasa"), ExtResource("29_dv6s2"), ExtResource("30_drhht"), ExtResource("7_7ag0k"), ExtResource("31_kwymj"), ExtResource("32_nc1gs"), ExtResource("33_r06dc"), ExtResource("34_s2mhk"), ExtResource("18_ol7y8"), ExtResource("35_5x135"), ExtResource("36_4lnjb"), ExtResource("37_0e7i2"), ExtResource("38_1ajnj"), ExtResource("39_jb74u"), ExtResource("40_jsasa")])
+lista_reliquias_disponiveis = Array[ExtResource("5_7ag0k")]([ExtResource("52_s4h6m"), ExtResource("53_w0dox"), ExtResource("54_udfto"), ExtResource("55_de4fm"), ExtResource("56_8ba63"), ExtResource("57_cqmug"), ExtResource("58_w1bqw"), ExtResource("59_56t0k"), ExtResource("60_5rbf1"), ExtResource("61_8fia1"), ExtResource("62_w6f78"), ExtResource("63_k2p1u"), ExtResource("64_onf8w"), ExtResource("65_2j7ry")])
+
+[node name="Button" type="Button" parent="Panel3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.032, 0.032)
+text = "Pular"
+icon = ExtResource("5_jxvgl")
+flat = true
+
+[node name="Label" type="Label" parent="Panel3/Panel"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 243.0
+offset_right = 284.0
+offset_bottom = 278.0
+text = "Pular"
+label_settings = ExtResource("12_s2mhk")
+
+[node name="card" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
+layout_mode = 1
+anchor_left = 0.682222
+anchor_top = 0.224359
+anchor_right = 0.895556
+anchor_bottom = 0.690513
+offset_left = -7.00006
+offset_right = -7.00006
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="card2" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
+layout_mode = 1
+anchor_left = 0.213333
+anchor_top = 0.217949
+anchor_right = 0.426667
+anchor_bottom = 0.682692
+offset_left = 84.0002
+offset_top = -9.15527e-05
+offset_right = 83.9998
+offset_bottom = 9.15527e-05
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="card3" parent="Panel3/Panel" instance=ExtResource("5_ftm4o")]
+layout_mode = 1
+anchor_left = 0.362222
+anchor_top = 0.217949
+anchor_right = 0.575556
+anchor_bottom = 0.684103
+offset_left = -103.0
+offset_right = -103.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Panel3" type="Panel" parent="Panel3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_hj10q")
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.032, 0.032)
+text = "Pular"
+icon = ExtResource("5_jxvgl")
+flat = true
+
+[node name="Label" type="Label" parent="Panel3/Panel/Panel3"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 243.0
+offset_right = 284.0
+offset_bottom = 278.0
+text = "Pular"
+label_settings = ExtResource("12_s2mhk")
+
+[node name="Reliquia" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(305, 96.7155)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
+
+[node name="Reliquia2" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(183, 96.7155)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia2"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
+
+[node name="Reliquia3" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(56.9999, 96.4931)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia3"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
+
+[node name="Panel2" type="Panel" parent="Panel3/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_hj10q")
+
+[node name="Label" type="Label" parent="Panel3/Panel/Panel2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 29.0
+offset_right = 415.0
+offset_bottom = 278.0
+text = "Parabens! 
+Você tornou o 
+A la Carte o maior restaurante de Balsas!
+
+"
+label_settings = ExtResource("6_h1s8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button_Vitoria" type="Button" parent="Panel3/Panel/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.032, 0.032)
+icon = ExtResource("5_jxvgl")
+flat = true
+
+[node name="Label2" type="Label" parent="Panel3/Panel/Panel2"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 243.0
+offset_right = 295.0
+offset_bottom = 278.0
+text = "Menu"
+label_settings = ExtResource("12_s2mhk")
+horizontal_alignment = 1

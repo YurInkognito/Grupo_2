@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_7bkx8")
 nome = "Mandragora Real"
-custo = "2"
+custo = "1"
 ingrediente = true
 is_processo = false
 desc = "Compre uma carta do deck e mude seu custo para 0"

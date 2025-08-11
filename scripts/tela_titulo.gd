@@ -17,6 +17,11 @@ func _on_botao_iniciar_pressed() -> void:
 	
 func _on_botao_cutscene_pressed() -> void:
 	$"/root/GlobalData".set_cartas(lista_cartas)
+	$"/root/GlobalData".historico_cliente = []
+	$"/root/GlobalData".lista_pratos = []
+	$"/root/GlobalData".reliquias.clear()
+	$"/root/GlobalData".pontuacao_fases =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	$"/root/GlobalData".historico_cliente = []
 	Transição.change_scene("res://scenes/cena_aliane.tscn")
 	#$"/root/GlobalData".proxima_fase()
 	

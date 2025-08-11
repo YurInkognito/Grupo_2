@@ -9,7 +9,7 @@ nome = "Repolho Carnívoro"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "O próximo ingrediente suave tem o efeito dobrado"
+desc = "O próximo ingrediente suave tem o efeito do texto dobrado"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "prox_ingrediente_double",
 "parametro": "Suave"

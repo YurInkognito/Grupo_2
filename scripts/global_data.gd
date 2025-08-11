@@ -7,6 +7,7 @@ extends Node
 @export var lista_pratos = []
 @export var lista_reliquias: Array[CartaData]
 @export var reliquias: Array[CartaData]
+@export var historico_cliente = []
 
 #durante o jogo
 @export var sabor_final: int = 0
@@ -43,6 +44,8 @@ func set_cliente():
 		1: cliente_final = critico_1_nota()
 		#5: cliente_final = critico_2_nota()
 		_: cliente_final = cliente_nota(cliente_temp)
+	if sabor_final == 999999:
+		cliente_final = 2
 
 func set_tags(tags):
 	tags_final = tags
@@ -138,6 +141,17 @@ func gera_cliente():
 	cliente.objetivos.pop_front()
 	print("cliente: " + str(cliente))
 	cliente_temp = cliente
+	if fase == 1:
+		var aliane: Dictionary = {
+			"nome": "Aliane",
+			"objetivos": [["setup","nada"]],
+			"dificuldade": 1
+		}
+		historico_cliente.append(aliane)
+	elif fase == 4 or fase == 11:
+		pass
+	else:
+		historico_cliente.append(cliente)
 
 func gera_fala(nota):
 	print("resumo: " + str(fase) + " " + str(cliente_final) + " " + str(nota))
@@ -151,30 +165,13 @@ func gera_fala(nota):
 						0: return "Da póxima vez me traga só a garrafa de pimenta no prato."
 						1: return "A pimenta está no ponto, me ajudou a engolir."
 						2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
-						3: return "Já consigo imaginar a capa da próxima Elf's Digest! (cutscene do ending)"
+						3: return "..."
 				2:
 					match nota:
 						0: return "Horrivel... Horrivel, Horrivel!"
 						1: return "Você tinha um trabalho anão..."
 						2: return "Melhor do que eu esperava, mas eu não esperava muito."
-						3: return "O que foi isso? Estava bom? Eu... Eu gostei? (cutscene do secret ending)"
-
-		5:
-			match cliente_final:
-				0: 
-					return "Horrivel... Horrivel, Horrivel!"
-				1:
-					match nota:
-						0: return "Jogar um pouco de pimenta em terra não torna ela um prato picante..."
-						1: return "Bom, com certeza já comi pratos piores. Já comi melhores, também."
-						2: return "A picancia está agradavel, infelizmente."
-						3: return "Bom trabalho. Talvez um pouco mais de pimenta na próxima."
-				2:
-					match nota:
-						0: return "Da póxima vez me traga só a garrafa de pimenta no prato."
-						1: return "A pimenta está no ponto, me ajudou a engolir."
-						2: return "Flamejante! Ufa. Do jeitinho que eu gosto mesmo. Belo trabalho."
-						3: return "Já consigo imaginar a capa da próxima Elf's Digest! Tanta picancia tanto sabor! Anão... digo Jeff, a comida de minha mãe jamais chegou neste nivel. Foi um prazer que espero sentir novamente. Até."
+						3: return "..."
 		_:
 			match cliente_final:
 				0: 
@@ -253,20 +250,20 @@ func set_pontuacao_fases():
 	pontuacao_fases[fase]=pontuacao
 
 const TODAS_RELIQUIAS = [
-	preload("res://Reliquias/Bandana.tres"),
+	#preload("res://Reliquias/Bandana.tres"),
 	preload("res://Reliquias/CuteloEncantado.tres"),
 	preload("res://Reliquias/DeckDeMuitasCoisas.tres"),
-	preload("res://Reliquias/Energetico.tres"),
+	#preload("res://Reliquias/Energetico.tres"),
 	preload("res://Reliquias/FogoEncantado.tres"),
 	preload("res://Reliquias/MarteloEncantado.tres"),
-	preload("res://Reliquias/MiseEnPlace.tres"),
+	#preload("res://Reliquias/MiseEnPlace.tres"),
 	preload("res://Reliquias/PaginaPerdida.tres"),
 	preload("res://Reliquias/panelaDeVo.tres"),
-	preload("res://Reliquias/PocaoDeMana.tres"),
-	preload("res://Reliquias/SaladaMelhor.tres"),
-	preload("res://Reliquias/SanduicheMelhor.tres"),
-	preload("res://Reliquias/SopaMelhor.tres"),
-	preload("res://Reliquias/WildMagic.tres")
+	#preload("res://Reliquias/PocaoDeMana.tres"),
+	#preload("res://Reliquias/SaladaMelhor.tres"),
+	#preload("res://Reliquias/SanduicheMelhor.tres"),
+	#preload("res://Reliquias/SopaMelhor.tres"),
+	#preload("res://Reliquias/WildMagic.tres")
 ]
 
 var _perde_compra

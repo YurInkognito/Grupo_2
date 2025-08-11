@@ -69,7 +69,8 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="uid://ddxuwj8730dc8"
+mouse_cursor/custom_image="uid://6dqvw0sjkiml"
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
 [editor]
 
@@ -78,6 +79,10 @@ movie_writer/movie_file="C:/Users/Leo/Downloads/godot videos/video.avi"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[gui]
+
+timers/tooltip_delay_sec=0.2
 
 [input]
 

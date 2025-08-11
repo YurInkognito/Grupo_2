@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://b1sd4ommbymkg"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_34nb3"]
-[ext_resource type="Texture2D" uid="uid://bxal8cngiskdl" path="res://sprites/UI_final/Botão Info Personagem.PNG" id="2_86r8w"]
+[ext_resource type="Texture2D" uid="uid://dd4cenlrgqh8s" path="res://sprites/arte_reliquias/cutelo encantado.png" id="2_86r8w"]
 
 [resource]
 script = ExtResource("1_34nb3")

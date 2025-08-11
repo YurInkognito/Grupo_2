@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://cqfcw8m2jv4qt"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cqfcw8m2jv4qt"]
 
+[ext_resource type="Texture2D" uid="uid://do2ssnspiogf5" path="res://sprites/CARTAS 21-05/novas cartas/Refogado morto-vivo.png" id="2_pwo0k"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_s02wq"]
 
 [resource]
@@ -8,7 +9,7 @@ nome = "Refogado Morto-Vivo"
 custo = "3"
 ingrediente = true
 is_processo = false
-desc = "+150 de Sabor para cada carta com tag Refrescante na mão"
+desc = "+150 de Sabor para cada carta Refrescante na mão"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_por_mao",
 "parametro": ["150", "Refrescante"]
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Crocante", "Refrescante"])
+sprite = ExtResource("2_pwo0k")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

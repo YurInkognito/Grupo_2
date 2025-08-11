@@ -66,6 +66,7 @@ theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_focus_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_colors/font_pressed_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 theme_override_fonts/font = ExtResource("3_10nib")
-theme_override_font_sizes/font_size = 32
-text = "🗙"
+theme_override_font_sizes/font_size = 64
+text = "x
+"
 flat = true

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://2p3fu0dfjjo8"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://2p3fu0dfjjo8"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_muo44"]
+[ext_resource type="Texture2D" uid="uid://dnoun0ufdhpvs" path="res://sprites/CARTAS 21-05/novas cartas/foguito infernal.png" id="2_wef4y"]
 
 [resource]
 script = ExtResource("2_muo44")
@@ -19,5 +20,7 @@ efeitos_on_board = Array[Dictionary]([{
 "parametro": "Espirito de Fogo"
 }])
 tags = Array[String](["Picante", "Picante"])
+sprite = ExtResource("2_wef4y")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://djfblhd5mw1y1" path="res://scenes/aliane_suave.gd" id="1_t54to"]
 [ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="2_1ajtf"]
-[ext_resource type="Script" uid="uid://dgm3o784pmi52" path="res://scenes/botao_skip_picante.gd" id="3_t54to"]
+[ext_resource type="Script" path="res://scenes/botao_skip_picante.gd" id="3_t54to"]
 
 [node name="Cena_Aliane" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_t54to")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -15,7 +16,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_t54to")
 
 [node name="BotaoSkip" type="CanvasLayer" parent="."]
 layer = 2

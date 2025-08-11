@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://cd760bxg0h26d"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://cd760bxg0h26d"]
 
+[ext_resource type="Texture2D" uid="uid://bhvofy23aduna" path="res://sprites/CARTAS 21-05/novas cartas/Cubo de Maionese.png" id="2_aoe4v"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_p7nh7"]
 
 [resource]
@@ -8,7 +9,7 @@ nome = "Cubo de Maionese"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "+30 de Sabor para cada tag única no prato"
+desc = "Ao entregar: +30 de Sabor para cada tag única no prato"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_tag",
 "parametro": ["20", "Unica"]
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Suave"])
+sprite = ExtResource("2_aoe4v")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

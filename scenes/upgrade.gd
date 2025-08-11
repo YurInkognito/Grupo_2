@@ -4,7 +4,7 @@ var is_dragging_global = true
 
 @export var pool_1: Array[String] = ["Algas Infinitas", "Noz Prismática", "Queijo de Tauren", "Amendoranha","Cogumelo Murmurante","Arroz","Pão","Leite de Meteoro","Slime","Foguito","Peixe-Martelete","Couve Afiada"]
 @export var pool_2: Array[String] = ["Cubo de Maionese", "Escama de Boitata", "Caneca de Undine", "Mandragora Real", "Carne de Minotauro", "Batata \"Normal\"","Carne de Dragão","Cenoura Morto-Vivo","Repolho Carnívoro"]
-@export var pool_3: Array[String] = ["Menta Esfoladoura", "Ovo de Basilisco", "Sal", "Tomate Vampírico", "Picles de Beholder", "Broto de Névoa-Limão","Cutelo","Espirito de Fogo","Martelo"]
+@export var pool_3: Array[String] = ["Menta Esfoladoura", "Ovo de Basilisco", "Sal", "Tomate Vampírico", "Picles de Beholder", "Cebolho","Cutelo","Espirito de Fogo","Martelo"]
 
 @export var lista_cartas: Array[CartaData]
 @export var lista_cartas_upgrade: Array[CartaData]

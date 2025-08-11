@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blv6nh8gejbmf" path="res://scenes/aliane_picante.gd" id="1_6s440"]
 [ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="2_vsuxd"]
-[ext_resource type="Script" uid="uid://dgm3o784pmi52" path="res://scenes/botao_skip_picante.gd" id="3_6s440"]
+[ext_resource type="Script" path="res://scenes/botao_skip_picante.gd" id="3_6s440"]
 
 [node name="Cena_Aliane" type="Control"]
 layout_mode = 3

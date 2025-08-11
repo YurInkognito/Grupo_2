@@ -9,7 +9,7 @@ nome = "Geleia de Slime"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "+ 30 Sabor para cada Umami e Picante"
+desc = "Ao entregar: + 30 Sabor para cada Umami e Picante no prato"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_tag",
 "parametro": ["30", "Picante"]

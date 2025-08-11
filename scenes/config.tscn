@@ -58,6 +58,7 @@ offset_bottom = 203.0
 theme = ExtResource("2_vbxg0")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = -282.0
 offset_top = -67.0
@@ -65,6 +66,21 @@ offset_right = 322.0
 offset_bottom = 363.0
 texture = ExtResource("3_d33r4")
 expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -64.0
+offset_right = 176.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_vbxg0")
 
 [node name="Volume" type="Control" parent="Panel"]
 visible = false

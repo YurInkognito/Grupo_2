@@ -23,6 +23,7 @@ var reliquias_opcoes = []
 
 
 func _ready() -> void:
+	randomize()
 	evento_sorteado = randi_range(1,3)
 	print("Evento sorteado:" , evento_sorteado)
 	ajusta_evento(evento_sorteado)
@@ -92,21 +93,21 @@ func sortear_cartas() -> void:
 	disponiveis.shuffle()
 	cartas_sorteadas = disponiveis.slice(0, min(4, disponiveis.size()))
 	if cartas_sorteadas.size() > 0:
-		remover_carta_1.text = cartas_sorteadas[0].nome
+		$Evento2/RemoverCarta1/Label.text = cartas_sorteadas[0].nome
 	else:
-		remover_carta_1.text = "—"
+		$Evento2/RemoverCarta1/Label.text = "—"
 	if cartas_sorteadas.size() > 1:
-		remover_carta_2.text = cartas_sorteadas[1].nome
+		$Evento2/RemoverCarta2/Label.text = cartas_sorteadas[1].nome
 	else:
-		remover_carta_2.text = "—"
+		$Evento2/RemoverCarta2/Label.text = "—"
 	if cartas_sorteadas.size() > 2:
-		remover_carta_3.text = cartas_sorteadas[2].nome
+		$Evento2/RemoverCarta3/Label.text = cartas_sorteadas[2].nome
 	else:
-		remover_carta_3.text = "—"
+		$Evento2/RemoverCarta3/Label.text = "—"
 	if cartas_sorteadas.size() > 3:
-		remover_carta_4.text = cartas_sorteadas[3].nome
+		$Evento2/RemoverCarta4/Label.text = cartas_sorteadas[3].nome
 	else:
-		remover_carta_4.text = "—"
+		$Evento2/RemoverCarta4/Label.text = "—"
 
 func _on_remover_carta_1_pressed() -> void:
 	remover_carta(cartas_sorteadas, 0)
@@ -203,10 +204,10 @@ func gerar_reliquias_opcoes():
 	reliquias_opcoes = todas.slice(0, min(3, todas.size()))
 	
 func atualizar_botoes():
-	explorar_cuidado_button.text = "Explorar com cuidado (Perde um turno, ganha " + reliquias_opcoes[0].nome + ")"
-	explorar_correndo_button.text = "Explorar correndo (Perde uma compra, ganha " + reliquias_opcoes[1].nome + ")"
-	contratrar_alguem_button.text = "Contratar alguém (Perde uma carta aleatória, ganha " + reliquias_opcoes[2].nome + ")"
-	nao_fazer_nada_button.text = "Não fazer nada"
+	$Evento3/ExplorarCuidadoButton/Label.text = "Explorar com cuidado (Perde um turno, ganha " + reliquias_opcoes[0].nome + ")"
+	$Evento3/ExplorarCorrendoButton/Label.text = "Explorar correndo (Perde uma compra, ganha " + reliquias_opcoes[1].nome + ")"
+	$Evento3/ContratrarAlguemButton/Label.text = "Contratar alguém (Perde uma carta aleatória, ganha " + reliquias_opcoes[2].nome + ")"
+	$Evento3/NaoFazerNadaButton/Label.text = "Fechar o buraco"
 
 func ganha_reliquia_com_reliquia(reliquia: CartaData) -> void:
 	GlobalData.reliquias.append(reliquia)

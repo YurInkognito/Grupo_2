@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bxstp7mf765wi"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=4 format=3 uid="uid://bxstp7mf765wi"]
 
 [ext_resource type="Resource" uid="uid://dkavmnkrmngek" path="res://Cartas processadas/BifeDeMinotauroAssada.tres" id="1_d5qiw"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_gmfn5"]
+[ext_resource type="Texture2D" uid="uid://cwfu5p0b3iy88" path="res://sprites/CARTAS 21-05/carta40.png" id="3_ptbo8"]
 
 [resource]
 script = ExtResource("2_gmfn5")
@@ -18,5 +19,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Umami", "Umami"])
+sprite = ExtResource("3_ptbo8")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

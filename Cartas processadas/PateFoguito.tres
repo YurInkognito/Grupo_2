@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://ybi8h5xxtutq"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://ybi8h5xxtutq"]
 
+[ext_resource type="Texture2D" uid="uid://bsj1kge333oec" path="res://sprites/CARTAS 21-05/novas cartas/pasta de pimenta.png" id="2_bh4gq"]
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_hecp2"]
 
 [resource]
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Picante"])
+sprite = ExtResource("2_bh4gq")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

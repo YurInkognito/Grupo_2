@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://crmcli70hd8y4"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://crmcli70hd8y4"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_7avut"]
+[ext_resource type="Texture2D" uid="uid://lu57srri8k21" path="res://sprites/CARTAS 21-05/novas cartas/Ketchupa.png" id="2_ekp7k"]
 
 [resource]
 script = ExtResource("2_7avut")
@@ -8,7 +9,7 @@ nome = "Ketchupa"
 custo = "2"
 ingrediente = true
 is_processo = false
-desc = "+30 de Sabor para cada descartada neste jogo."
+desc = "Ao entregar: +30 de Sabor para cada descartada neste jogo."
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "descarte_ponto",
 "parametro": "30"
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Acido", "Picante"])
+sprite = ExtResource("2_ekp7k")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

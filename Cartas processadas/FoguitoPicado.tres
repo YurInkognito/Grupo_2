@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://nite8oikyplp"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://nite8oikyplp"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_hs0on"]
+[ext_resource type="Texture2D" uid="uid://bgilgb0eua5a3" path="res://sprites/CARTAS 21-05/novas cartas/Foguito picado.png" id="2_rf2ox"]
 
 [resource]
 script = ExtResource("2_hs0on")
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Picante", "Picante"])
+sprite = ExtResource("2_rf2ox")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

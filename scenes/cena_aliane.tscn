@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chhg3u07w8pcd"]
 
 [ext_resource type="Script" uid="uid://0hxl4sapludd" path="res://scripts/cutsceneAliane.gd" id="1_c2u6d"]
-[ext_resource type="Texture2D" uid="uid://djoxmfl8bbqty" path="res://sprites/UI/Botão Play.PNG" id="2_0h5in"]
+[ext_resource type="Texture2D" uid="uid://blifj1rd0qrgx" path="res://sprites/UI_final/Botão Play Idle (2).PNG" id="2_0h5in"]
 [ext_resource type="Script" uid="uid://cdp3hven76vem" path="res://scenes/botao_skip.gd" id="2_dsy0b"]
 
 [node name="Cena_Aliane" type="Control"]
@@ -19,14 +19,10 @@ script = ExtResource("1_c2u6d")
 
 [node name="BotaoSkip" type="CanvasLayer" parent="."]
 layer = 2
-scale = Vector2(0.02, 0.02)
-transform = Transform2D(0.02, 0, 0, 0.02, 0, 0)
 
 [node name="MarginContainer" type="MarginContainer" parent="BotaoSkip"]
-offset_left = 700.0
-offset_top = 400.0
-offset_right = 5553.0
-offset_bottom = 3113.0
+offset_right = 4853.0
+offset_bottom = 2713.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotaoSkip/MarginContainer"]
 layout_mode = 2
@@ -39,7 +35,7 @@ layout_mode = 2
 
 [node name="BotaoSkip" type="Button" parent="BotaoSkip/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "▶▶"
+focus_mode = 0
 icon = ExtResource("2_0h5in")
 flat = true
 script = ExtResource("2_dsy0b")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://1x3ikiwjmag3"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_7to58"]
-[ext_resource type="Texture2D" uid="uid://bxal8cngiskdl" path="res://sprites/UI_final/Botão Info Personagem.PNG" id="2_qrdde"]
+[ext_resource type="Texture2D" uid="uid://dlga0ahk2artc" path="res://sprites/arte_reliquias/PágRasgada.PNG" id="2_qrdde"]
 
 [resource]
 script = ExtResource("1_7to58")

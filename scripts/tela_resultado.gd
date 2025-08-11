@@ -44,6 +44,8 @@ func _ready() -> void:
 	continuar.pressed.connect(upgradar)
 	foto.texture = $"/root/GlobalData".foto_final
 	cliente_foto.texture = qual_cliente()
+	if  $"/root/GlobalData".fase == 1:
+		cliente_foto.texture = aliane
 	dia.text = "Dia " + str($"/root/GlobalData".fase)
 	sabor_value = $"/root/GlobalData".sabor_final
 	prato_value = $"/root/GlobalData".mult_final
@@ -66,9 +68,10 @@ func _ready() -> void:
 	if estrelas_value > 0:
 		continuar.visible = true
 		$Panel3/Panel.recompensar(estrelas_value)
+		$Panel3/Panel.recompensar_reliquia(estrelas_value)
 	
 	labels = [sabor, prato, cliente, resultado, estrelas]
-	if dia == 1 and cliente_value == 2 and estrelas_value == 3:
+	if dia == 0 and cliente_value == 2 and estrelas_value == 3:
 		labels.append(secret)
 		
 	
@@ -79,7 +82,7 @@ func _ready() -> void:
 	
 	var prato_salvo = {
 		nome = $"/root/GlobalData".nome_final,
-		sabor = sabor_value
+		sabor = resultado_value
 	}
 	$"/root/GlobalData".lista_pratos.append(prato_salvo)
 	show_anim()
@@ -94,11 +97,11 @@ func _process(delta: float) -> void:
 		0: 
 			estrelas.text = ''
 		1: 
-			estrelas.text = '★'
+			estrelas.text = '*'
 		2: 
-			estrelas.text = '★ ★'
+			estrelas.text = '* *'
 		3: 
-			estrelas.text = '★ ★ ★'
+			estrelas.text = '* * *'
 
 func qual_cliente():
 	match GlobalData.cliente_temp["nome"]:
@@ -121,11 +124,19 @@ func calcular_pontuacao_requerida(fase: int, valor_inicial: int) -> int:
 
 func voltar():
 	reset_pontos()
-	get_tree().change_scene_to_file("res://scenes/tela_titulo.tscn")
+	Transição.change_scene("res://scenes/tela_titulo.tscn")
 	
 func upgradar():
 	$Panel3.visible = true
 
+func final_aliane():
+	print("aliane final estrelas: " + str(estrelas_value) + ' cliente: ' + str(cliente_value))
+	if estrelas_value == 3 and cliente_value == 2:
+		print("teste")
+		Transição.change_scene("res://scenes/cena_aliane_suave.tscn")
+	if estrelas_value == 3 and cliente_value == 1:
+		Transição.change_scene("res://scenes/cena_aliane_picante.tscn")
+	
 func reset_pontos():
 	var temp_array: Array[String] = []
 	$"/root/GlobalData".set_sabor(0)

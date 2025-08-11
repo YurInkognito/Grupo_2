@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bjx5i6vqq1ccp"]
+[gd_scene load_steps=73 format=3 uid="uid://bjx5i6vqq1ccp"]
 
 [ext_resource type="Script" uid="uid://b3orybvgyki0g" path="res://scripts/tela_resultado.gd" id="1_7plcf"]
 [ext_resource type="Texture2D" uid="uid://crjjnnj3f0qae" path="res://sprites/portraits/borda icone fogaço.png" id="2_15ve0"]
@@ -54,6 +54,21 @@
 [ext_resource type="AudioStream" uid="uid://dyoya87unhvd5" path="res://audio/SFX/estrelas/Fanfarra 2 ESTRELAS.wav" id="45_5x135"]
 [ext_resource type="AudioStream" uid="uid://d2f40ue25e7qy" path="res://audio/SFX/estrelas/Fanfarra 1 ESTRELA.wav" id="46_4lnjb"]
 [ext_resource type="AudioStream" uid="uid://brrner7yti0e1" path="res://audio/SFX/estrelas/Fanfarra 0 ESTRELA.wav" id="47_0e7i2"]
+[ext_resource type="Resource" uid="uid://tiycc0j5uu81" path="res://Reliquias/Bandana.tres" id="52_s4h6m"]
+[ext_resource type="Resource" uid="uid://b1sd4ommbymkg" path="res://Reliquias/CuteloEncantado.tres" id="53_w0dox"]
+[ext_resource type="PackedScene" uid="uid://cmic66v3r24bt" path="res://scenes/reliquia.tscn" id="54_drksp"]
+[ext_resource type="Resource" uid="uid://bsh83clyr1iu0" path="res://Reliquias/DeckDeMuitasCoisas.tres" id="54_udfto"]
+[ext_resource type="Resource" uid="uid://btdfcgy0drk6v" path="res://Reliquias/Energetico.tres" id="55_de4fm"]
+[ext_resource type="Resource" uid="uid://cmgml8yuty4ji" path="res://Reliquias/FogoEncantado.tres" id="56_8ba63"]
+[ext_resource type="Resource" uid="uid://caihcnwqrqusm" path="res://Reliquias/MarteloEncantado.tres" id="57_cqmug"]
+[ext_resource type="Resource" uid="uid://cjdbrso2rk247" path="res://Reliquias/MiseEnPlace.tres" id="58_w1bqw"]
+[ext_resource type="Resource" uid="uid://1x3ikiwjmag3" path="res://Reliquias/PaginaPerdida.tres" id="59_56t0k"]
+[ext_resource type="Resource" uid="uid://ccy6n2uivg8f5" path="res://Reliquias/panelaDeVo.tres" id="60_5rbf1"]
+[ext_resource type="Resource" uid="uid://r1rhw6ci5l83" path="res://Reliquias/PocaoDeMana.tres" id="61_8fia1"]
+[ext_resource type="Resource" uid="uid://bxcaax5tvsml7" path="res://Reliquias/SaladaMelhor.tres" id="62_w6f78"]
+[ext_resource type="Resource" uid="uid://d048t54gwle5o" path="res://Reliquias/SanduicheMelhor.tres" id="63_k2p1u"]
+[ext_resource type="Resource" uid="uid://ctxdelj7gbcsb" path="res://Reliquias/SopaMelhor.tres" id="64_onf8w"]
+[ext_resource type="Resource" uid="uid://ib4acfmnt1i1" path="res://Reliquias/WildMagic.tres" id="65_2j7ry"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r06dc"]
 font = ExtResource("5_kwymj")
@@ -62,9 +77,8 @@ font_color = Color(0.980392, 0.996078, 0, 1)
 shadow_size = 2
 shadow_color = Color(0.8, 0.407843, 0.239216, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_1ajnj"]
-font = ExtResource("5_kwymj")
-font_size = 128
+[sub_resource type="LabelSettings" id="LabelSettings_s4h6m"]
+font_size = 170
 font_color = Color(0.976471, 0.992157, 0, 1)
 shadow_size = 2
 shadow_color = Color(0.796078, 0.407843, 0.239216, 1)
@@ -76,7 +90,7 @@ var is_dragging_global = true
 
 @export var pool_1: Array[String] = [\"Algas Infinitas\", \"Noz Prismática\", \"Queijo de Tauren\", \"Amendoranha\",\"Cogumelo Murmurante\",\"Arroz\",\"Pão\",\"Leite de Meteoro\",\"Slime\",\"Foguito\",\"Peixe-Martelete\",\"Couve Afiada\"]
 @export var pool_2: Array[String] = [\"Cubo de Maionese\", \"Escama de Boitata\", \"Caneca de Undine\", \"Mandragora Real\", \"Carne de Minotauro\", \"Batata \\\"Normal\\\"\",\"Carne de Dragão\",\"Cenoura Morto-Vivo\",\"Repolho Carnívoro\"]
-@export var pool_3: Array[String] = [\"Menta Esfoladoura\", \"Ovo de Basilisco\", \"Sal\", \"Tomate Vampírico\", \"Picles de Beholder\", \"Broto de Névoa-Limão\",\"Cutelo\",\"Espirito de Fogo\",\"Martelo\"]
+@export var pool_3: Array[String] = [\"Menta Esfoladoura\", \"Ovo de Basilisco\", \"Sal\", \"Tomate Vampírico\", \"Picles de Beholder\", \"Cebolho\",\"Cutelo\",\"Espirito de Fogo\",\"Martelo\"]
 
 @export var lista_cartas: Array[CartaData]
 @export var lista_cartas_upgrade: Array[CartaData]
@@ -90,13 +104,46 @@ var is_dragging_global = true
 
 @export var mana = 0 #só pra corrigir um bug
 
-# Called when the node enters the scene tree for the first time.
+@onready var button1: Button = $Panel3/Reliquia/Button
+@onready var button2: Button = $Panel3/Reliquia2/Button
+@onready var button3: Button = $Panel3/Reliquia3/Button
+
+@onready var relic_display_1: Node = $Panel3/Reliquia
+@onready var relic_display_2: Node = $Panel3/Reliquia2
+@onready var relic_display_3: Node = $Panel3/Reliquia3
+
+#@export var relic_pool_1: Array[String] = [\"Panela de Vó\", \"Martelo Encantado\", \"Cutelo Encantado\"] # Pool de relíquias nível 1
+#@export var relic_pool_2: Array[String] = [\"Fogo Encantado\", \"Sacola Magica\", \"Sopa é Janta\"] # Pool de relíquias nível 2
+#@export var relic_pool_3: Array[String] = [\"Pagina Perdida\", \"Folhas mais Verdes\", \"Pão de Cada Dia\"] # Pool de relíquias nível 3
+
+@export var relic_pool_1: Array[String] = [\"Panela de Vó\", \"Martelo Encantado\", \"Cutelo Encantado\"] # Pool de relíquias nível 1
+@export var relic_pool_2: Array[String] = [\"Fogo Encantado\", \"Sacola Magica\"] # Pool de relíquias nível 2
+@export var relic_pool_3: Array[String] = [\"Pagina Perdida\"] # Pool de relíquias nível 3
+
+# --- INFERÊNCIA: Lista de todas as relíquias para buscar por nome ---
+# Assumo que você terá uma estrutura de dados (Resource ou Node) para suas relíquias,
+# similar a 'CartaData', para que você possa instanciar e configurar.
+# Você precisará preencher esta lista, talvez também via @export ou carregamento.
+@export var lista_reliquias_disponiveis: Array[CartaData]
+
+var r1_relic = ''
+var r2_relic = ''
+var r3_relic = ''
+	
 func _ready() -> void:
+	button1.pressed.connect(selecionar_reliquia_1)
+	button2.pressed.connect(selecionar_reliquia_2)
+	button3.pressed.connect(selecionar_reliquia_3)
+	
 	lista_cartas = $\"/root/GlobalData\".lista_cartas
 	pular.pressed.connect(skip)
 	button_vitoria.pressed.connect(voltar)
+	if $\"/root/GlobalData\".fase == 5 or $\"/root/GlobalData\".fase == 12:
+		#$Panel3.visible = true
+		pass
+	if $\"/root/GlobalData\".fase == 14:
+		$Panel2.visible = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -109,7 +156,10 @@ func select_card(card_data):
 	upgrade_2.card_data.upgrade = false
 	upgrade_3.card_data.upgrade = false
 	$\"..\".visible = false
-	$\"/root/GlobalData\".proxima_fase()
+	if $\"/root/GlobalData\".fase == 1:
+		$\"../..\".final_aliane()
+	else:
+		$\"/root/GlobalData\".proxima_fase()
 
 func encontrar_carta_data_por_nome(nome: String) -> CartaData:
 	print(lista_cartas_upgrade)
@@ -122,11 +172,21 @@ func encontrar_carta_data_por_nome(nome: String) -> CartaData:
 	printerr(\"CartaData com o nome '\", nome, \"' não encontrado.\")
 	return null
 
+func encontrar_reliquia_data_por_nome(nome: String) -> CartaData:
+	for relic_data in lista_reliquias_disponiveis:
+		if relic_data.nome == nome:
+			# INFERÊNCIA: Se a CartaData é um Resource e você precisa de uma cópia única, use .duplicate()
+			return relic_data # Ou 'relic_data.duplicate()' se precisar de uma nova instância.
+	printerr(\"CartaData com o nome '\", nome, \"' não encontrado.\")
+	return null
+
 func recompensar(estrelas):
 	var rng = RandomNumberGenerator.new()
 	var r1 = ''
 	var r2 = ''
 	var r3 = ''
+	rng.randomize() 
+
 	match estrelas:
 		0: pass
 		1:
@@ -141,7 +201,7 @@ func recompensar(estrelas):
 			r2 = pool_1[index_2]
 			r3 = pool_1[index_3]
 		2:
-			var pool = pool_1 + pool_2 + pool_2
+			var pool = pool_1 + pool_2 + pool_2 
 			var index_1 = rng.randi_range(0, pool.size() - 1)
 			var index_2 = rng.randi_range(0, pool.size() - 1)
 			var index_3 = rng.randi_range(0, pool.size() - 1)
@@ -153,7 +213,7 @@ func recompensar(estrelas):
 			r2 = pool[index_2]
 			r3 = pool[index_3]
 		3:
-			var pool = pool_1 + pool_2 + pool_2 + pool_3 + pool_3 + pool_3
+			var pool = pool_1 + pool_2 + pool_2 + pool_3 + pool_3 + pool_3 
 			var index_1 = rng.randi_range(0, pool.size() - 1)
 			var index_2 = rng.randi_range(0, pool.size() - 1)
 			var index_3 = rng.randi_range(0, pool.size() - 1)
@@ -164,18 +224,87 @@ func recompensar(estrelas):
 			r1 = pool[index_1]
 			r2 = pool[index_2]
 			r3 = pool[index_3]
-	print(r1,r2)
+	print(\"Cartas de upgrade sugeridas: \", r1, \", \", r2, \", \", r3)
 	upgrade_1.set_card(encontrar_carta_data_por_nome(r1))
 	upgrade_2.set_card(encontrar_carta_data_por_nome(r2))
 	upgrade_3.set_card(encontrar_carta_data_por_nome(r3))
 
+func recompensar_reliquia(estrelas):
+	var rng = RandomNumberGenerator.new()
+	r1_relic = ''
+	r2_relic = ''
+	r3_relic = ''
+	rng.randomize() 
+
+	match estrelas:
+		0: pass
+		1:
+			var index_1 = rng.randi_range(0, relic_pool_1.size() - 1)
+			var index_2 = rng.randi_range(0, relic_pool_1.size() - 1)
+			var index_3 = rng.randi_range(0, relic_pool_1.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, relic_pool_1.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, relic_pool_1.size() - 1)
+			r1_relic = relic_pool_1[index_1]
+			r2_relic = relic_pool_1[index_2]
+			r3_relic = relic_pool_1[index_3]
+		2:
+			var pool = relic_pool_1 + relic_pool_2 + relic_pool_2
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1_relic = pool[index_1]
+			r2_relic = pool[index_2]
+			r3_relic = pool[index_3]
+		3:
+			var pool = relic_pool_1 + relic_pool_2 + relic_pool_2 + relic_pool_3 + relic_pool_3 + relic_pool_3
+			var index_1 = rng.randi_range(0, pool.size() - 1)
+			var index_2 = rng.randi_range(0, pool.size() - 1)
+			var index_3 = rng.randi_range(0, pool.size() - 1)
+			while index_2 == index_1:
+				index_2 = rng.randi_range(0, pool.size() - 1)
+			while index_3 == index_1 or index_3 == index_2:
+				index_3 = rng.randi_range(0, pool.size() - 1)
+			r1_relic = pool[index_1]
+			r2_relic = pool[index_2]
+			r3_relic = pool[index_3]
+	print(\"Relíquias sugeridas: \", r1_relic, \", \", r2_relic, \", \", r3_relic)
+
+	if is_instance_valid(relic_display_1):
+		relic_display_1.set_relic(encontrar_reliquia_data_por_nome(r1_relic))
+	if is_instance_valid(relic_display_2):
+		relic_display_2.set_relic(encontrar_reliquia_data_por_nome(r2_relic))
+	if is_instance_valid(relic_display_3):
+		relic_display_3.set_relic(encontrar_reliquia_data_por_nome(r3_relic))
+
+func selecionar_reliquia_1():
+	$\"/root/GlobalData\".lista_reliquias.append(r1_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func selecionar_reliquia_2():
+	$\"/root/GlobalData\".lista_reliquias.append(r2_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
+func selecionar_reliquia_3():
+	$\"/root/GlobalData\".lista_reliquias.append(r3_relic)
+	$\"..\".visible = false
+	$Panel3.visible = false
+	$\"/root/GlobalData\".proxima_fase()
+
 func skip():
-	if GlobalData.fase == 1:
-		if $\"/root/GlobalData\".estrelas_value == 3:
-			if $\"/root/GlobalData\".cliente_value == 2:
-				Transição.change_scene(\"res://scenes/cena_aliane_suave.tscn\")
-			else:
-					Transição.change_scene(\"res://scenes/cena_aliane_picante.tscn\")
+	if $\"/root/GlobalData\".fase == 1:
+		$\"../..\".final_aliane()
+	else:
+		$\"/root/GlobalData\".proxima_fase()
 "
 
 [node name="TelaResultado" type="Control"]
@@ -335,14 +464,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -236.5
-offset_top = -406.0
+offset_top = -373.0
 offset_right = 216.5
-offset_bottom = -133.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 100
-text = "★ ★ ★"
-label_settings = SubResource("LabelSettings_1ajnj")
+text = "* * *"
+label_settings = SubResource("LabelSettings_s4h6m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -467,13 +596,14 @@ offset_right = 302.124
 offset_bottom = 135.83
 texture = ExtResource("3_ur8ju")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Nome" type="Label" parent="Prato"]
 layout_mode = 0
 offset_left = 306.547
-offset_top = 29.4869
+offset_top = 25.4869
 offset_right = 533.547
-offset_bottom = 124.487
+offset_bottom = 120.487
 theme_override_font_sizes/font_size = 10
 text = "Prato Vazio de kkkkkk kkkkkkkkkkkkkk"
 label_settings = ExtResource("12_0e7i2")
@@ -482,6 +612,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel3" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -501,7 +632,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_hj10q")
 script = SubResource("GDScript_drhht")
-lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg"), ExtResource("26_emjtu"), ExtResource("27_jb74u"), ExtResource("28_jsasa"), ExtResource("29_dv6s2"), ExtResource("30_drhht"), ExtResource("7_7ag0k"), ExtResource("31_kwymj"), ExtResource("32_nc1gs"), ExtResource("33_r06dc"), ExtResource("34_s2mhk"), ExtResource("18_ol7y8"), ExtResource("35_5x135"), ExtResource("36_4lnjb"), ExtResource("37_0e7i2"), ExtResource("38_1ajnj"), ExtResource("39_jb74u"), ExtResource("40_jsasa")])
+lista_cartas_upgrade = Array[ExtResource("5_7ag0k")]([ExtResource("6_haov8"), ExtResource("7_7ag0k"), ExtResource("8_f2sfv"), ExtResource("9_0km7v"), ExtResource("10_mjhyp"), ExtResource("11_hj10q"), ExtResource("12_jxvgl"), ExtResource("13_h1s8t"), ExtResource("14_jn4of"), ExtResource("15_w4qan"), ExtResource("16_g0giy"), ExtResource("17_boxiq"), ExtResource("18_ol7y8"), ExtResource("19_hwysf"), ExtResource("20_wlslg"), ExtResource("26_emjtu"), ExtResource("27_jb74u"), ExtResource("28_jsasa"), ExtResource("29_dv6s2"), ExtResource("30_drhht"), ExtResource("31_kwymj"), ExtResource("32_nc1gs"), ExtResource("33_r06dc"), ExtResource("34_s2mhk"), ExtResource("35_5x135"), ExtResource("36_4lnjb"), ExtResource("37_0e7i2"), ExtResource("38_1ajnj"), ExtResource("39_jb74u"), ExtResource("40_jsasa")])
+lista_reliquias_disponiveis = Array[ExtResource("5_7ag0k")]([ExtResource("52_s4h6m"), ExtResource("53_w0dox"), ExtResource("54_udfto"), ExtResource("55_de4fm"), ExtResource("56_8ba63"), ExtResource("57_cqmug"), ExtResource("58_w1bqw"), ExtResource("59_56t0k"), ExtResource("60_5rbf1"), ExtResource("61_8fia1"), ExtResource("62_w6f78"), ExtResource("63_k2p1u"), ExtResource("64_onf8w"), ExtResource("65_2j7ry")])
 
 [node name="Button" type="Button" parent="Panel3/Panel"]
 layout_mode = 1
@@ -565,6 +697,80 @@ offset_left = -103.0
 offset_right = -103.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Panel3" type="Panel" parent="Panel3/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -156.0
+offset_right = 225.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_hj10q")
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -97.0
+offset_right = 4779.0
+offset_bottom = 2612.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.032, 0.032)
+text = "Pular"
+icon = ExtResource("5_jxvgl")
+flat = true
+
+[node name="Label" type="Label" parent="Panel3/Panel/Panel3"]
+self_modulate = Color(0.996078, 0.996078, 0.996078, 1)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 243.0
+offset_right = 284.0
+offset_bottom = 278.0
+text = "Pular"
+label_settings = ExtResource("12_s2mhk")
+
+[node name="Reliquia" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(305, 96.7155)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
+
+[node name="Reliquia2" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(183, 96.7155)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia2"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
+
+[node name="Reliquia3" parent="Panel3/Panel/Panel3" instance=ExtResource("54_drksp")]
+position = Vector2(56.9999, 96.4931)
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="Panel3/Panel/Panel3/Reliquia3"]
+offset_top = 0.0229689
+offset_right = 64.0
+offset_bottom = 64.023
+flat = true
 
 [node name="Panel2" type="Panel" parent="Panel3/Panel"]
 visible = false

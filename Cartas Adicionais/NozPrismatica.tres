@@ -9,7 +9,7 @@ nome = "Noz Prismática"
 custo = "0"
 ingrediente = true
 is_processo = false
-desc = "-100 de Sabor. +1 na tag mais presente no prato"
+desc = "-100 de Sabor. +1 na caracteristica mais presente no prato"
 on_martelo = ExtResource("1_pvxjq")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor",

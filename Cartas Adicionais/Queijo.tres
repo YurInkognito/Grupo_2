@@ -10,7 +10,7 @@ nome = "Queijo de Tauren"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "+70 de Sabor se o prato é uma *Sopa*"
+desc = "+70 de Sabor se o prato é uma Sopa"
 on_faca = ExtResource("1_b7t0w")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_prato",

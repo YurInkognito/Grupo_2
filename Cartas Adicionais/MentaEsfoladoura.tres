@@ -8,7 +8,7 @@ nome = "Menta Esfoladoura"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Descarte a carta mais a direita da sua mão e recupere 2 de mana"
+desc = "Descarte a carta mais a esquerda da sua mão e recupere 2 de mana"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "descarta_direita",
 "parametro": null

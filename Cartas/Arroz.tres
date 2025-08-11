@@ -9,14 +9,14 @@ nome = "Arroz"
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Se ao entregar o prato ele não tiver um tipo multiplique seu Sabor por 3."
+desc = "Ao entregar: +3 de multiplicador se seu prato não tiver um tipo"
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "set_mult_prato",
-"parametro": "3"
+"parametro": "4"
 }])
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
-tags = Array[String]([])
+tags = Array[String](["Crocante"])
 sprite = ExtResource("2_wwy3e")
 visual = false
 upgrade = false

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://b73bstehe4gcg"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://b73bstehe4gcg"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="2_5s5ei"]
+[ext_resource type="Texture2D" uid="uid://dga0kix0p76b6" path="res://sprites/CARTAS 21-05/novas cartas/Manteigoruja.png" id="2_fy2hc"]
 
 [resource]
 script = ExtResource("2_5s5ei")
-nome = "Caramelo-Meteoro"
+nome = "Manteiga"
 custo = "2"
 ingrediente = true
 is_processo = false
@@ -16,5 +17,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Crocante"])
+sprite = ExtResource("2_fy2hc")
+visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

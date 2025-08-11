@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_mtrte")
-nome = "Bandana"
+nome = "Bandana do Leste"
 custo = ""
 ingrediente = false
 is_processo = false

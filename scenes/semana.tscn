@@ -1,13 +1,16 @@
-[gd_scene load_steps=48 format=3 uid="uid://ce31bsvwp05t8"]
+[gd_scene load_steps=51 format=3 uid="uid://ce31bsvwp05t8"]
 
 [ext_resource type="Script" uid="uid://dmbabo6xwqscs" path="res://scenes/semana.gd" id="1_vorlf"]
+[ext_resource type="Texture2D" uid="uid://b3p7d7sduahn6" path="res://sprites/portraits/PRATO_SOPA.png" id="2_dl547"]
+[ext_resource type="Texture2D" uid="uid://byx42ayw5an13" path="res://sprites/portraits/sopa.png" id="2_dr0qa"]
 [ext_resource type="Texture2D" uid="uid://ujl3ln4kb8bo" path="res://sprites/Fundos/dark_darker_yet_darker.png" id="2_ekvoy"]
-[ext_resource type="Texture2D" uid="uid://bnis0qkcchhua" path="res://sprites/portraits/borda icone erick jaccão.png" id="3_dr0qa"]
 [ext_resource type="Texture2D" uid="uid://sm6n6v8t1va2" path="res://sprites/Calendario/IMG_2383.PNG" id="3_ekvoy"]
+[ext_resource type="Texture2D" uid="uid://b4ahbmvnb6tls" path="res://sprites/portraits/PRATO_SALADA.png" id="3_ir730"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="3_noqa7"]
-[ext_resource type="Texture2D" uid="uid://l3tqmwfsgkn7" path="res://sprites/portraits/borda icone Bruxa Braga.png" id="4_7gsga"]
 [ext_resource type="AudioStream" uid="uid://dnlrjnkup7rr2" path="res://audio/calendario/CHECK (Calendario) SFX .wav" id="4_d4qsk"]
 [ext_resource type="AudioStream" uid="uid://555i5mu8halg" path="res://audio/calendario/Vinheta Calendário ALaCarte.wav" id="4_ga1kc"]
+[ext_resource type="Texture2D" uid="uid://de5mqke3nl7bg" path="res://sprites/portraits/PRATO_SANDUBA.png" id="4_yqmeb"]
+[ext_resource type="Texture2D" uid="uid://b667g2jpdmivw" path="res://sprites/portraits/PRATO_COMIDA.png" id="5_4ccdi"]
 [ext_resource type="Texture2D" uid="uid://cl5lpp1nnifw7" path="res://sprites/portraits/borda icone aliane.png" id="5_7gsga"]
 [ext_resource type="AudioStream" uid="uid://bjxaui4twbdit" path="res://audio/calendario/V2 - Vinheta Calendário ALaCarte.wav" id="5_8nsqs"]
 [ext_resource type="Texture2D" uid="uid://b3svafr7vtu8b" path="res://sprites/Calendario/IMG_2384.PNG" id="6_c2q0q"]
@@ -185,9 +188,10 @@ animations = [{
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vorlf")
-prato_sopa = ExtResource("5_7gsga")
-prato_salada = ExtResource("3_dr0qa")
-prato_sanduiche = ExtResource("4_7gsga")
+prato_sopa = ExtResource("2_dl547")
+prato_salada = ExtResource("3_ir730")
+prato_sanduiche = ExtResource("4_yqmeb")
+prato_base = ExtResource("5_4ccdi")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -541,16 +545,15 @@ offset_top = 132.0
 offset_right = 734.0
 offset_bottom = 622.0
 
-[node name="Resultado1" type="Label" parent="Calendario2/Painel 11"]
+[node name="Resultado2" type="Label" parent="Calendario2/Painel 11"]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 112.0
-offset_right = 85.0
-offset_bottom = 157.0
-scale = Vector2(0.7, 0.7)
+offset_left = 43.0112
+offset_top = 76.1785
+offset_right = 99.0112
+offset_bottom = 188.179
 theme = ExtResource("3_noqa7")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.509804, 0.313726, 0.180392, 1)
+theme_override_font_sizes/font_size = 128
 text = "?"
 
 [node name="Painel 12" type="Panel" parent="Calendario2"]
@@ -725,10 +728,10 @@ visible = false
 layout_mode = 0
 offset_left = 166.0
 offset_top = 321.0
-offset_right = 832.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 235.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="prato2" type="TextureRect" parent="."]
@@ -736,32 +739,32 @@ visible = false
 layout_mode = 0
 offset_left = 304.0
 offset_top = 321.0
-offset_right = 970.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 373.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="prato3" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 441.0
+offset_left = 442.0
 offset_top = 321.0
-offset_right = 1107.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 511.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="prato4" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 717.0
+offset_left = 718.0
 offset_top = 321.0
-offset_right = 1383.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 787.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="prato5" type="TextureRect" parent="."]
@@ -769,10 +772,10 @@ visible = false
 layout_mode = 0
 offset_left = 856.0
 offset_top = 321.0
-offset_right = 1522.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 925.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="prato6" type="TextureRect" parent="."]
@@ -780,10 +783,10 @@ visible = false
 layout_mode = 0
 offset_left = 994.0
 offset_top = 321.0
-offset_right = 1660.0
-offset_bottom = 1033.0
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("5_7gsga")
+offset_right = 1063.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_dr0qa")
 stretch_mode = 3
 
 [node name="AnimDia1" type="AnimatedSprite2D" parent="."]

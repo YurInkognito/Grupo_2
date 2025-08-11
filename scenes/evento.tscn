@@ -173,6 +173,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Evento2"]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("3_56das")
@@ -186,6 +187,7 @@ offset_bottom = 717.0
 theme = ExtResource("2_rdlqr")
 
 [node name="Label" type="Label" parent="Evento2/Panel"]
+layout_mode = 0
 offset_left = 249.98
 offset_top = 415.555
 offset_right = 669.98
@@ -298,6 +300,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Evento3"]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("3_56das")
@@ -316,6 +319,7 @@ scale = Vector2(0.35, 0.338)
 texture = ExtResource("8_o0ycd")
 
 [node name="Label" type="Label" parent="Evento3/Panel"]
+layout_mode = 0
 offset_left = 249.98
 offset_top = 415.555
 offset_right = 669.98
@@ -347,6 +351,7 @@ text = "Explorar com cuidado"
 label_settings = ExtResource("8_vas5k")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ExplorarCorrendoButton" type="Button" parent="Evento3"]
 self_modulate = Color(1, 1, 1, 0.12549)
