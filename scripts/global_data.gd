@@ -260,9 +260,9 @@ const TODAS_RELIQUIAS = [
 	preload("res://Reliquias/PaginaPerdida.tres"),
 	preload("res://Reliquias/panelaDeVo.tres"),
 	#preload("res://Reliquias/PocaoDeMana.tres"),
-	#preload("res://Reliquias/SaladaMelhor.tres"),
-	#preload("res://Reliquias/SanduicheMelhor.tres"),
-	#preload("res://Reliquias/SopaMelhor.tres"),
+	preload("res://Reliquias/SaladaMelhor.tres"),
+	preload("res://Reliquias/SanduicheMelhor.tres"),
+	preload("res://Reliquias/SopaMelhor.tres"),
 	#preload("res://Reliquias/WildMagic.tres")
 ]
 

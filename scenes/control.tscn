@@ -99,7 +99,7 @@
 [ext_resource type="Texture2D" uid="uid://vgddmudvp48u" path="res://sprites/portraits/Livro.PNG" id="68_cs3ys"]
 [ext_resource type="PackedScene" uid="uid://clnfe12n3cgpe" path="res://scenes/glossario.tscn" id="71_d77h8"]
 [ext_resource type="AudioStream" uid="uid://badylskbjsh0v" path="res://audio/SFX/MULTIPLICADOR SFX .wav" id="79_4u7im"]
-[ext_resource type="AudioStream" uid="uid://c7lsf88ow8bdm" path="res://audio/V2 - A La Carte Main Theme .wav" id="79_lmvqu"]
+[ext_resource type="AudioStream" uid="uid://dl4osmg6tbmvv" path="res://audio/V2 - A La Carte Main Theme REEXPORTADO.wav" id="79_yddfj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_01kdt"]
 animations = [{
@@ -321,6 +321,7 @@ grow_vertical = 2
 script = ExtResource("1_qtu10")
 numero_flutuante = ExtResource("2_nk3x5")
 lista_de_cartas = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("26_8ps1h")])
+lista_de_cartas_ref = Array[ExtResource("2_rk4e5")]([ExtResource("3_0hfu7"), ExtResource("4_fd2iw"), ExtResource("5_mnht8"), ExtResource("6_sxeuk"), ExtResource("7_nnsnw"), ExtResource("10_7o2ue"), ExtResource("11_72v1w"), ExtResource("12_qsysb"), ExtResource("13_hl4in"), ExtResource("15_mgshk"), ExtResource("16_xbjxg"), ExtResource("17_jo16n"), ExtResource("18_qmj53"), ExtResource("19_5nmap"), ExtResource("20_gst0j"), ExtResource("21_wi3jo"), ExtResource("22_p1ehl"), ExtResource("23_3vrtg"), ExtResource("24_nnsnw"), ExtResource("25_po8yf"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("8_61o30"), ExtResource("9_po8yf"), ExtResource("14_136wn"), ExtResource("26_8ps1h")])
 foto_1 = ExtResource("28_lmvqu")
 foto_2 = ExtResource("29_4u7im")
 foto_3 = ExtResource("30_yddfj")
@@ -905,7 +906,7 @@ theme = SubResource("Theme_5q3y1")
 theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 text = "1° Coloque seus ingredientes no centro da mesa.
 
-2° Voce pode melhorar seus ingredientes        usando as cartas azuis de instrumentos.
+2° Você pode melhorar seus ingredientes        usando as cartas azuis de instrumentos.
 
 3° Para os ingredientes aplicarem seus efeitos arraste eles para o prato.
 
@@ -913,7 +914,7 @@ text = "1° Coloque seus ingredientes no centro da mesa.
 
 5° Use os seus turnos para aumentar seu sabor, seguindo os desejos do cliente.
 
-6° Se não quiser um ingrediente ,alimente seu amigo Decartes!"
+6° Se não quiser um ingrediente, alimente seu amigo Descartes!"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -930,19 +931,19 @@ scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_5q3y1")
 theme_override_colors/font_color = Color(0.247059, 0.0862745, 0.0627451, 1)
 text = "Para aumentar seu 
-multiplicador de sabor faça pratos mais complexos e fique de olho nas caracterisitcas do seu prato (                                     ).
+multiplicador de sabor faça pratos mais complexos e fique de olho nas características do seu prato (                                     ).
 
-Sanduiche: Coloque um Pão Fatiado no seu prato.  Aumenta o multiplicador para cada caracteristica unica.
+Sanduíche: Coloque um Pão Fatiado no seu prato.  Aumenta o multiplicador para cada característica unica.
 
-Sopa: Coloque um Leite de Ursoruja no prato. Aumenta o multiplicador baseado na sua caracteritica mais presente.
+Sopa: Coloque um Leite de Ursoruja no prato. Aumenta o multiplicador baseado na sua característica mais presente.
 
-Salada: Coloque 4       no prato. Aumenta o multipicador baseado nas caracteristicas equilibradas do seu prato."
+Salada: Coloque 4       no prato. Aumenta o multiplicador baseado nas características equilibradas do seu prato."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Tag1" type="Sprite2D" parent="Tutorial"]
-position = Vector2(405.782, 177)
+position = Vector2(409.782, 177)
 texture = ExtResource("35_7o2ue")
 
 [node name="Tag2" type="Sprite2D" parent="Tutorial"]
@@ -1149,7 +1150,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SFXBackground" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 288)
-stream = ExtResource("79_lmvqu")
+stream = ExtResource("79_yddfj")
 autoplay = true
 bus = &"Music"
 

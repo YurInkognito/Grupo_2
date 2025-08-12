@@ -22,6 +22,11 @@ const SIZE = Vector2(100, 140)
 @export var picante: Texture2D
 @export var suave: Texture2D
 
+@export var mana0: Texture2D
+@export var mana1: Texture2D
+@export var mana2: Texture2D
+@export var mana3: Texture2D
+
 @onready var hover_layer: Panel = $"../../Hover"
 @onready var prato: ColorRect = $"../../prato"
 @onready var hand_node = $".." # Referência ao nó 'hand'
@@ -68,6 +73,11 @@ func _ready() -> void:
 	nome.text = nome_t
 	desc.text = desc_t
 	custo.text = custo_t
+	match int(custo_t):
+		0: $Mana_custo.texture = mana0
+		1: $Mana_custo.texture = mana1
+		2: $Mana_custo.texture = mana2
+		3: $Mana_custo.texture = mana3
 	original_scale = scale
 
 func substituir_palavras_por_tags(texto_original: String) -> String:
@@ -102,6 +112,11 @@ func set_card(carta: CartaData, zerado = false) -> void:
 	nome.text = carta.nome
 	desc.text = substituir_palavras_por_tags(carta.desc)
 	custo.text = carta.custo
+	match int(carta.custo):
+		0: $Mana_custo.texture = mana0
+		1: $Mana_custo.texture = mana1
+		2: $Mana_custo.texture = mana2
+		3: $Mana_custo.texture = mana3
 	nome_t = carta.nome
 	desc_t = substituir_palavras_por_tags(carta.desc)
 	custo_t = carta.custo
@@ -243,6 +258,10 @@ func end_drag():
 	hand_node.on_drag_ended_globally(self)
 	sfx_throw_card.play()
 	if is_played:
+		if get_tree().get_first_node_in_group("control").dia_finalizado:
+			is_dragging = false
+			position = Vector2(0.0, 0.0)
+			return false
 		var drop_area = get_drop_area(false)
 		if drop_area:
 			if drop_area.prato_check:
@@ -266,6 +285,10 @@ func end_drag():
 			is_dragging = false
 			position = Vector2(0.0, 0.0)
 	else:
+		if get_tree().get_first_node_in_group("control").dia_finalizado:
+			is_dragging = false
+			return_to_hand()
+			return false
 		var drop_area = get_drop_area(true)
 		if drop_area and drop_area.can_accept_card(self) and !card_data.is_processo:
 			is_dragging = false

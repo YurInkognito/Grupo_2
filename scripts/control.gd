@@ -26,7 +26,7 @@ extends Control
 @export var caminho_pasta_cartas: String = "res://Cartas/"
 
 @export var lista_de_cartas: Array[CartaData]
-@export var lista_de_cartas_tutorial: Array[CartaData]
+@export var lista_de_cartas_ref: Array[CartaData]
 @export var deck = []
 @export var n_compras = 6
 var em_cooldown: bool = false
@@ -48,6 +48,7 @@ var em_cooldown: bool = false
 @export var turno: int = 1
 @export var max_turno: int = 5
 @export var cool_down_end_turn = 1
+@export var dia_finalizado = false
 
 #pontuação
 @export var tipo_prato: String = "Prato"
@@ -105,6 +106,8 @@ const CONFIG = preload("res://scenes/config.tscn")
 @onready var multiplicador_audio : AudioStreamPlayer2D = $SFXMultiplicador
 
 func _ready() -> void:
+	dia_finalizado = false
+	$deck.visible = true
 	checa_perde_carta_por_turno()
 	checa_perde_um_turno()
 	$Button/AnimationPlayer.play("idle")
@@ -208,6 +211,8 @@ func _process(delta: float) -> void:
 	max_mana_label.text = str(max_mana)
 	turno_label.text = 'Turno ' + str(turno) + '/' + str(max_turno)
 	deck_label.text = str(deck.size())
+	if deck.size() == 0:
+		$deck.visible = false
 
 func substituir_palavras_por_tags(texto_original: String) -> String:
 	var substituicoes: Dictionary = {
@@ -331,6 +336,7 @@ func start_turn():
 
 func end_game():
 	sfx_bell.play()
+	dia_finalizado = true
 	await $prato.send_cards()
 	#$"/root/GlobalData".set_sabor(999999)
 	$"/root/GlobalData".set_cliente()
@@ -420,7 +426,7 @@ func gerar_deck():
 	return deck
 
 func encontrar_carta_data_por_nome(nome: String) -> CartaData:
-	for carta_data in lista_de_cartas:
+	for carta_data in lista_de_cartas_ref:
 		print(carta_data.nome)
 		if carta_data.nome == nome:
 			return carta_data
@@ -514,9 +520,6 @@ func aplicar_efeitos_carta(carta: CartaData):
 				call(funcao_nome, parametro)
 			else:
 				call(funcao_nome)
-			if ((sabor + sabor_continuo - sabor_aux) >= principal_pontos):
-				principal_pontos = sabor + sabor_continuo - sabor_aux
-				principal = carta.nome
 		else:
 			printerr("Aviso: Função '", efeito.get("funcao", "desconhecida"), "' não encontrada ou nome inválido na carta '", carta.nome, "'.")
 	if tags_prato.count("Refrescante") >= 4 && tipo_prato == "Prato":
@@ -525,8 +528,13 @@ func aplicar_efeitos_carta(carta: CartaData):
 	calculo_mult()
 	$Info/Info_tags.atualiza_tag()
 	print(mult)
-	if sabor + sabor_continuo - sabor_aux > 0 : mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,340))
-	await get_tree().create_timer(0.6).timeout
+	if sabor + sabor_continuo - sabor_aux > 0 : 
+		mostrar_numero_flutuante(sabor + sabor_continuo - sabor_aux, Vector2(612,66), Vector2(59,340))
+		await get_tree().create_timer(0.6).timeout
+		multiplicador_audio.play()
+	if ((sabor + sabor_continuo - sabor_aux) >= principal_pontos):
+				principal_pontos = sabor + sabor_continuo - sabor_aux
+				principal = carta.nome
 	$Info.set_pontos(sabor + sabor_continuo)
 	$"/root/GlobalData".set_sabor(sabor + sabor_continuo)
 	$"/root/GlobalData".set_mult(mult)
@@ -635,7 +643,6 @@ func mostrar_mensagem(mensagem: String):
 
 func add_sabor(pontos: String):
 	sabor = sabor + int(pontos) * sal
-	multiplicador_audio.play()
 
 func sal_mult(mult: String):
 	sal = sal + float(mult)

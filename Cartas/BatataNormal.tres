@@ -10,7 +10,7 @@ nome = "Batata \"Normal\""
 custo = "1"
 ingrediente = true
 is_processo = false
-desc = "Ao entregar: +10 de Sabor para cada caracteristica mais presente no prato"
+desc = "Ao entregar: +10 de Sabor para característica principal"
 on_fogo = ExtResource("1_8k1bs")
 efeitos_ao_jogar = Array[Dictionary]([{
 "funcao": "add_sabor_tag",

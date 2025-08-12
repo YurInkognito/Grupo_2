@@ -27,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://dsro6eg4abb33" path="res://Cartas/Martelo.tres" id="25_dw1xu"]
 [ext_resource type="Script" uid="uid://cube5tbshrcyf" path="res://scripts/tela_credits.gd" id="25_mq8vl"]
 [ext_resource type="Texture2D" uid="uid://b1e4jv2qipmdb" path="res://sprites/UI_final/Botão Sair Pressionado (2).PNG" id="26_agj7q"]
-[ext_resource type="Texture2D" uid="uid://dbtnl8j46qgyl" path="res://sprites/LOGO À LA CARTE.png" id="28_koial"]
+[ext_resource type="Texture2D" uid="uid://cdlem68bdrp0b" path="res://sprites/temporarios/4052d241-4718-416e-ad29-ca78aa2259d3.png" id="27_ywseg"]
 [ext_resource type="AudioStream" uid="uid://c45khnafh47le" path="res://audio/SFX/Loop Restaurante ABAFADO.wav" id="29_koial"]
 [ext_resource type="Texture2D" uid="uid://bpd48d6semkj2" path="res://sprites/UI_final/Botão Voltar Idle (Menu Volume) (2).PNG" id="30_ywseg"]
 [ext_resource type="Texture2D" uid="uid://bvotoo0fa5tl1" path="res://sprites/UI_final/Botão Voltar Pressionado (Menu Volume) (2).PNG" id="31_koial"]
@@ -119,14 +119,15 @@ theme_override_font_sizes/font_size = 28
 text = "Beta Test
 "
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect3"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="TextureRect3"]
+layout_mode = 0
 offset_left = 565.0
-offset_top = 162.0
-offset_right = 7565.0
-offset_bottom = 5162.0
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("28_koial")
+offset_top = 159.0
+offset_right = 1062.0
+offset_bottom = 525.0
+texture = ExtResource("27_ywseg")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="MarginContainerContent" type="MarginContainer" parent="."]
 unique_name_in_owner = true

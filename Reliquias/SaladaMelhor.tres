@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://bxcaax5tvsml7"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_4e2ls"]
-[ext_resource type="Texture2D" uid="uid://bxal8cngiskdl" path="res://sprites/UI_final/Botão Info Personagem.PNG" id="2_h6dno"]
+[ext_resource type="Texture2D" uid="uid://b4ahbmvnb6tls" path="res://sprites/portraits/PRATO_SALADA.png" id="2_h6dno"]
 
 [resource]
 script = ExtResource("1_4e2ls")

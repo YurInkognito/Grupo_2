@@ -22,8 +22,8 @@ script = ExtResource("1_c2u6d")
 layer = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="BotaoSkip"]
-offset_right = 4853.0
-offset_bottom = 2713.0
+offset_right = 146.0
+offset_bottom = 74.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotaoSkip/MarginContainer"]
 layout_mode = 2

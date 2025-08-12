@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CartaData" load_steps=2 format=3 uid="uid://dewmiwnj8ouoa"]
+[gd_resource type="Resource" script_class="CartaData" load_steps=3 format=3 uid="uid://dewmiwnj8ouoa"]
 
 [ext_resource type="Script" uid="uid://bemxb877oehdb" path="res://recursos/card_data.gd" id="1_xbv1s"]
+[ext_resource type="Texture2D" uid="uid://62g4fiuue2yg" path="res://sprites/CARTAS 21-05/carta44.png" id="2_pwce6"]
 
 [resource]
 script = ExtResource("1_xbv1s")
@@ -19,6 +20,7 @@ efeitos_ao_jogar = Array[Dictionary]([{
 efeitos_ao_processar = Array[Dictionary]([])
 efeitos_on_board = Array[Dictionary]([])
 tags = Array[String](["Picante", "Refrescante"])
+sprite = ExtResource("2_pwce6")
 visual = false
 upgrade = false
 metadata/_custom_type_script = "uid://bemxb877oehdb"

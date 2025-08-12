@@ -62,6 +62,7 @@ offset_bottom = 598.555
 scale = Vector2(0.87, 0.87)
 text = "Uma carroça que levava vegetais ao o porto \"tombou\" em frente a seu estabelecimento! Agora você pode \"adotar\" um dos pobres vegetais perdidos na rua."
 label_settings = SubResource("LabelSettings_rhxjg")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Evento1" type="Sprite2D" parent="Evento1/Panel"]
@@ -193,8 +194,9 @@ offset_top = 415.555
 offset_right = 669.98
 offset_bottom = 598.555
 scale = Vector2(0.87, 0.87)
-text = "é Aniversario do Decartes! Voce passou o dia realizando os desejos do seu pet (que sem dúvida não é um deus antigo). Para finalizar o dia de um presente delicioso para ele!"
+text = "é Aniversario do Descartes! Você passou o dia realizando os desejos do seu pet (que sem dúvida não é um deus antigo). Para finalizar o dia dê um presente delicioso para ele!"
 label_settings = SubResource("LabelSettings_rhxjg")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Evento1" type="Sprite2D" parent="Evento2/Panel"]
@@ -327,6 +329,7 @@ offset_bottom = 598.555
 scale = Vector2(0.87, 0.87)
 text = "Você  encontra um buraco na parede depois de errar a martelada em um slime. Dentro dele parece haver uma masmorra antiga. O que você decide fazer?"
 label_settings = SubResource("LabelSettings_rhxjg")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="ExplorarCuidadoButton" type="Button" parent="Evento3"]

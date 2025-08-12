@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h06s7hwket5s"
+path="res://.godot/imported/V2 - A La Carte Main Theme .wav-506b7fd800ca83a8d52ed8ffb6727257.sample"
+
+[deps]
+
+source_file="res://audio/SFX/V2 - A La Carte Main Theme .wav"
+dest_files=["res://.godot/imported/V2 - A La Carte Main Theme .wav-506b7fd800ca83a8d52ed8ffb6727257.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

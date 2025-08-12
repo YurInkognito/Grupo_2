@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dhdb53ws7fnxt"]
+[gd_scene load_steps=23 format=3 uid="uid://dhdb53ws7fnxt"]
 
 [ext_resource type="Script" uid="uid://dku8lmad88ej1" path="res://scripts/card.gd" id="2_ktuci"]
 [ext_resource type="AudioStream" uid="uid://jwxcmjkbfqy4" path="res://audio/SFX/SelecionarCarta_cut.wav" id="3_kg30u"]
@@ -13,8 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dllkerrc3em28" path="res://sprites/TAGS/TAG7.png" id="9_54seb"]
 [ext_resource type="Texture2D" uid="uid://corbdlr1l1g5k" path="res://sprites/temporarios/mana0.png" id="10_hpf3o"]
 [ext_resource type="Shader" uid="uid://85u06ywnndh8" path="res://scenes/card.gdshader" id="10_xjciw"]
+[ext_resource type="Texture2D" uid="uid://c6w47ltbry5jn" path="res://sprites/CARTAS 21-05/mana0 (1).png" id="10_xuy1i"]
 [ext_resource type="Theme" uid="uid://ctukg3k7tc638" path="res://texto.tres" id="11_hpf3o"]
+[ext_resource type="Texture2D" uid="uid://b2bd5ocfh33md" path="res://sprites/CARTAS 21-05/mana1.png" id="11_rywyy"]
 [ext_resource type="Texture2D" uid="uid://e05ixdtp53xa" path="res://sprites/temporarios/card_glow.png" id="11_xjciw"]
+[ext_resource type="Texture2D" uid="uid://bqq3n7e2pmcty" path="res://sprites/CARTAS 21-05/mana2.png" id="12_le4ky"]
+[ext_resource type="Texture2D" uid="uid://dtki7kk4v8w2g" path="res://sprites/CARTAS 21-05/mana3.png" id="13_125j1"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xjciw"]
 metadata/_preview_in_3d_space_ = true
@@ -56,6 +60,10 @@ crocante = ExtResource("6_hpf3o")
 acido = ExtResource("7_42b55")
 picante = ExtResource("8_xjciw")
 suave = ExtResource("9_54seb")
+mana0 = ExtResource("10_xuy1i")
+mana1 = ExtResource("11_rywyy")
+mana2 = ExtResource("12_le4ky")
+mana3 = ExtResource("13_125j1")
 metadata/_edit_use_anchors_ = true
 
 [node name="aura" type="Sprite2D" parent="."]
@@ -130,9 +138,9 @@ texture_filter = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = 93.0
-offset_right = 328.0
-offset_bottom = 283.0
-scale = Vector2(0.25, 0.25)
+offset_right = 343.0
+offset_bottom = 272.0
+scale = Vector2(0.24, 0.24)
 mouse_filter = 2
 theme = ExtResource("11_hpf3o")
 theme_override_colors/default_color = Color(0.20322, 0.0657249, 0.047516, 1)
@@ -143,7 +151,7 @@ text = "+200 de Sabor. Se sua tag mais presente for Ácida adicione +200 de Sabo
 scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+vertical_alignment = 1
 
 [node name="SFXSelectCard" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 289)
@@ -170,6 +178,9 @@ texture = ExtResource("3_we8pq")
 visible = false
 position = Vector2(14.5, 14.25)
 texture = ExtResource("3_we8pq")
+
+[node name="Mana_custo" type="Sprite2D" parent="."]
+position = Vector2(82.42, 13.79)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
