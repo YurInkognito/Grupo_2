@@ -62,7 +62,7 @@ func _on_adotar_repolho_pressed() -> void:
 		print("Repolho adicionada ao deck!")
 	else:
 		printerr("Falha ao carregar Repolho.tres")
-	Transição.change_scene("res://scenes/control.tscn")
+	GlobalData.proxima_fase()
 
 
 func _on_adotar_cenoura_pressed() -> void:
@@ -72,7 +72,7 @@ func _on_adotar_cenoura_pressed() -> void:
 		print("Cenoura Morto‑Vivo adicionada ao deck!")
 	else:
 		printerr("Falha ao carregar Cenoura Morto‑Vivo.tres")
-	Transição.change_scene("res://scenes/control.tscn")
+	GlobalData.proxima_fase()
 
 
 func _on_adotar_mandragora_pressed() -> void:
@@ -82,10 +82,10 @@ func _on_adotar_mandragora_pressed() -> void:
 		print("Mandrágora Real adicionada ao deck!")
 	else:
 		printerr("Falha ao carregar MandragoraReal.tres")
-	Transição.change_scene("res://scenes/control.tscn")
+	GlobalData.proxima_fase()
 
 func _on_adotar_ninguem_pressed() -> void:
-		Transição.change_scene("res://scenes/control.tscn")
+		GlobalData.proxima_fase()
 
 
 func sortear_cartas() -> void:
@@ -127,7 +127,7 @@ func _on_remover_carta_4_pressed() -> void:
 func remover_carta(cartas_sorteadas: Array, index: int) -> void:
 	if index < 0 or index >= cartas_sorteadas.size():
 		printerr("Índice de carta inválido:", index)
-		Transição.change_scene("res://scenes/control.tscn")
+		GlobalData.proxima_fase()
 		return
 	var carta_para_remover: CartaData = cartas_sorteadas[index]
 	var gd = get_node("/root/GlobalData")               
@@ -137,7 +137,7 @@ func remover_carta(cartas_sorteadas: Array, index: int) -> void:
 		print("Removida do deck:", carta_para_remover.nome)
 	else:
 		printerr("Carta não encontrada em GlobalData.lista_cartas:", carta_para_remover.nome)
-	Transição.change_scene("res://scenes/control.tscn")
+	GlobalData.proxima_fase()
 
 
 func _on_explorar_cuidado_button_pressed() -> void:
